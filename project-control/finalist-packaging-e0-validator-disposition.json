@@ -1,0 +1,38 @@
+{
+    "schema_version":  "1.0",
+    "record_type":  "tracesoc-finalist-packaging-attempt-disposition",
+    "phase":  "FINALIST_PACKAGING_PHASE_E0_VALIDATION",
+    "classification":  "VALIDATOR_FALSE_NEGATIVES",
+    "narrative":  {
+                      "path":  "evidence/finalist-problem-impact-proof-defense.md",
+                      "sha256":  "792b6d093ebdbb88e4cdc9f7de596655d2552ede568e791b327fd89a2109ee2d",
+                      "rewritten_to_satisfy_validator":  false
+                  },
+    "successful_checks_before_closure":  [
+                                             "10/10 required narrative sections present",
+                                             "reference 5442 canonical observations present",
+                                             "reference 5442/5442 raw-locator coverage present",
+                                             "32658 detector evaluations present",
+                                             "23145 external Zeek measurement present",
+                                             "156458 holdout source/canonical measurements present",
+                                             "938748 holdout detector-evaluation measurement present",
+                                             "185045 combined separate-run observation measurement present",
+                                             "524/524 regression measurement present",
+                                             "4/4 public acceptance measurement present",
+                                             "198463-record scale measurement present",
+                                             "15.9617856-second benchmark measurement present",
+                                             "486924288-byte peak working-set measurement present",
+                                             "UNADJUDICATED holdout accuracy boundary present"
+                                         ],
+    "rejected_validator_assumptions":  [
+                                           "Required one exact arrow-form prose sentence for holdout accounting.",
+                                           "Required number-before-label wording for detector evaluations.",
+                                           "Required the phrase capability-based inside one specific section even though the document states the business boundary elsewhere.",
+                                           "Treated Markdown prose as a rigid serialization format."
+                                       ],
+    "disposition":  "Narrative accepted from authenticated source identity, passed structural checks and passed measured-fact checks. No further content mutation is permitted merely to satisfy stylistic validator expectations.",
+    "product_defect":  false,
+    "evidence_defect":  false,
+    "narrative_defect":  false,
+    "final_status":  "CLOSED_VALIDATOR_FALSE_NEGATIVES"
+}

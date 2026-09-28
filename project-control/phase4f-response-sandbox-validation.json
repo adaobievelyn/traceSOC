@@ -1,0 +1,56 @@
+{
+    "record_type":  "tracesoc-phase4f-response-sandbox-validation",
+    "schema_version":  1,
+    "phase":  "PHASE-4F-A",
+    "generated_utc":  "2026-09-16T13:49:46.4912402Z",
+    "result":  "PASS",
+    "parent_commit":  "75e7b4f15048cfd6485a40f1ead37f24f756b5a9",
+    "requirement":  {
+                        "requirement_id":  "PRE-005",
+                        "start_state":  "OPEN",
+                        "end_state":  "PARTIAL"
+                    },
+    "implementation":  {
+                           "path":  "src/tracesoc/response/sandbox.py",
+                           "sha256":  "4eecf410c4db8c6700bf4dcbc77f1ea41a425410ffde39001a5c9f69b4ee36d4",
+                           "execution_mode":  "SIMULATED_LOCAL_STATE",
+                           "real_host_changes":  false,
+                           "raw_evidence_access":  false,
+                           "holdout_access":  false
+                       },
+    "lifecycle":  {
+                      "evidence_preservation_precondition":  true,
+                      "dry_run":  true,
+                      "controlled_action":  true,
+                      "measured_verification":  true,
+                      "explicit_verification_failure":  true,
+                      "fail_closed_state_drift":  true,
+                      "rollback":  true,
+                      "rollback_verification":  true,
+                      "business_tradeoff_present":  true,
+                      "recovery_objective_present":  true,
+                      "machine_readable_result":  true
+                  },
+    "validation":  {
+                       "test_path":  "tests/unit/test_response_sandbox.py",
+                       "test_sha256":  "4da71786315d0dacb6a3201e09438f20472adeefcaf494443c61e8474ca2d9ee",
+                       "targeted_tests":  6,
+                       "targeted_failures":  0,
+                       "full_unit_tests":  177,
+                       "full_unit_failures":  0
+                   },
+    "boundaries":  {
+                       "production_host_isolation":  false,
+                       "operating_system_firewall_changes":  false,
+                       "account_changes":  false,
+                       "external_network_changes":  false,
+                       "malware_execution":  false
+                   },
+    "remaining_PRE005_work":  [
+                                  "execute one repository-level simulated response scenario",
+                                  "persist machine-readable response execution result",
+                                  "reconcile response execution into canonical test ledger",
+                                  "adjudicate whether additional response action coverage is required before PRE-005 closure"
+                              ],
+    "next":  "PHASE_4F_RESPONSE_VALIDATION_INTEGRATION"
+}

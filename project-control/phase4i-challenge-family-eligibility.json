@@ -1,0 +1,371 @@
+{
+    "record_type":  "tracesoc-phase4i-challenge-family-eligibility",
+    "schema_version":  1,
+    "phase":  "PHASE-4I-D1",
+    "generated_utc":  "2026-09-16T18:02:19.1988294Z",
+    "result":  "PASS",
+    "parent_commit":  "7da7e238ba3796f2d49d76184d1c5d75f648d030",
+    "recovery":  {
+                     "prior_stop_class":  "CSV_SCHEMA_FIELD_NAME_ASSUMPTION",
+                     "production_defect_established":  false,
+                     "evidence_defect_established":  false,
+                     "prior_mutation_reached":  false,
+                     "corrected_acquisition_identifier_column":  "source_id",
+                     "corrected_compatibility_identifier_column":  "source_or_artifact",
+                     "corrected_family_column":  "telemetry_family"
+                 },
+    "frozen_matrix":  {
+                          "path":  "project-control/phase4i-challenge-matrix-freeze.json",
+                          "sha256":  "e7f4d2c853f39b62f0442e5625c58152d62894098c6c43853233f16c395fbdff",
+                          "challenge_classes":  15
+                      },
+    "authoritative_inputs":  {
+                                 "acquisition_register":  {
+                                                              "path":  "project-control/evidence-acquisition-register.csv",
+                                                              "sha256":  "e5661a816d208d53211c70d10fe99e2c33528840ec8eae20e52e440771e14b49",
+                                                              "rows":  16
+                                                          },
+                                 "real_format_compatibility_matrix":  {
+                                                                          "path":  "project-control/real-format-compatibility-matrix.csv",
+                                                                          "sha256":  "6d9eeda2ec88b59190db1a8d7dd8ae14f2c93a4a1f48cff14c0538939ffb49eb",
+                                                                          "rows":  12,
+                                                                          "note":  "The historical compatibility field is retained as recorded context; observed_format and later validated production behavior are the basis for this eligibility phase."
+                                                                      },
+                                 "evidence_coverage_matrix":  {
+                                                                  "path":  "project-control/evidence-coverage-matrix.csv",
+                                                                  "sha256":  "da355649ffe0112aae73fb2fe4361434ba6ee457f9ca84ffb52a4fe56739ef20",
+                                                                  "COV_010_status":  "DERIVED_CORPUS_PENDING"
+                                                              }
+                             },
+    "core_source_format_basis":  [
+                                     {
+                                         "source_id":  "TS-DEV-SPLUNK-PS-001",
+                                         "role":  "DEVELOPMENT",
+                                         "telemetry_family":  "POWERSHELL",
+                                         "origin_type":  "PUBLIC_CURATED_ATTACK_DATA",
+                                         "observed_format":  "XML_EVENT_STREAM",
+                                         "registered_sha256":  "ce45d417d0bd66e05939f835935dd24cfe6f55b257d7b2bb968c726ae378c8c3",
+                                         "integrity_status":  "VERIFIED",
+                                         "compatibility_record_id":  "RFC005",
+                                         "legacy_compatibility_field":  "ADAPTATION_REQUIRED"
+                                     },
+                                     {
+                                         "source_id":  "TS-DEV-SPLUNK-SYSMON-001",
+                                         "role":  "DEVELOPMENT",
+                                         "telemetry_family":  "SYSMON",
+                                         "origin_type":  "PUBLIC_CURATED_ATTACK_DATA",
+                                         "observed_format":  "XML_EVENT_STREAM",
+                                         "registered_sha256":  "8886e363b137555f5a0403783106e656b77e328fab2e503a645015f5e1cc3756",
+                                         "integrity_status":  "VERIFIED",
+                                         "compatibility_record_id":  "RFC006",
+                                         "legacy_compatibility_field":  "ADAPTATION_REQUIRED"
+                                     },
+                                     {
+                                         "source_id":  "TS-DEV-SPLUNK-SECURITY-001",
+                                         "role":  "DEVELOPMENT",
+                                         "telemetry_family":  "WINDOWS_SECURITY",
+                                         "origin_type":  "PUBLIC_CURATED_ATTACK_DATA",
+                                         "observed_format":  "TEXT_EVENT_EXPORT",
+                                         "registered_sha256":  "b55c57fd0256fa73f55116f9ad307de3b7403f1ba7536c10431b56426a09bd89",
+                                         "integrity_status":  "VERIFIED",
+                                         "compatibility_record_id":  "RFC007",
+                                         "legacy_compatibility_field":  "ADAPTATION_REQUIRED"
+                                     },
+                                     {
+                                         "source_id":  "TS-DEV-IOT23-034-ZEEK",
+                                         "role":  "DEVELOPMENT",
+                                         "telemetry_family":  "ZEEK",
+                                         "origin_type":  "PUBLISHER_DERIVED_ZEEK_LOG",
+                                         "observed_format":  "ZEEK_TSV_CONN_LOG",
+                                         "registered_sha256":  "d69e49b2aae8c1bd33286936531658202dec47d989f0439bad3f8be180467a6e",
+                                         "integrity_status":  "VERIFIED",
+                                         "compatibility_record_id":  "RFC008",
+                                         "legacy_compatibility_field":  "ADAPTATION_REQUIRED"
+                                     }
+                                 ],
+    "label_eligibility":  {
+                              "non_holdout_label_bearing_zeek_candidate_count":  9,
+                              "candidate_source_ids":  [
+                                                           "TS-BEN-IOT23V2-ECHO-META",
+                                                           "TS-BEN-IOT23V2-ECHO-PCAP",
+                                                           "TS-BEN-IOT23V2-ECHO-ZEEK",
+                                                           "TS-BEN-IOT23V2-HUE-META",
+                                                           "TS-BEN-IOT23V2-HUE-PCAP",
+                                                           "TS-BEN-IOT23V2-HUE-ZEEK",
+                                                           "TS-DEV-IOT23-034-META",
+                                                           "TS-DEV-IOT23-034-PCAP",
+                                                           "TS-DEV-IOT23-034-ZEEK"
+                                                       ],
+                              "exact_source_selected":  false
+                          },
+    "mixed_role_eligibility":  {
+                                   "development_families":  [
+                                                                "POWERSHELL",
+                                                                "SYSMON",
+                                                                "WINDOWS_SECURITY",
+                                                                "ZEEK"
+                                                            ],
+                                   "benign_control_families":  [
+                                                                   "WINDOWS_EVTX",
+                                                                   "ZEEK"
+                                                               ],
+                                   "shared_candidate_families":  [
+                                                                     "ZEEK"
+                                                                 ],
+                                   "exact_sources_selected":  false
+                               },
+    "correlation_contracts":  {
+                                  "TRC_CORR_001":  {
+                                                       "source_path":  "src/tracesoc/correlation/web_retrieval_network.py",
+                                                       "sha256":  "839c24216ba6957a1261f05156e43af373226a4987d212cf8a3a82d98c72964d",
+                                                       "directional_contract_observed":  true
+                                                   },
+                                  "TRC_CORR_002":  {
+                                                       "source_path":  "src/tracesoc/correlation/powershell_process.py",
+                                                       "sha256":  "cb039132424df07e5e64944b65a8f05ead0ee041f24b342b7eee8e1533a9e46c",
+                                                       "directional_contract_observed":  true,
+                                                       "frozen_maximum_seconds":  30,
+                                                       "supporting_proof":  "project-control/phase4g-multisource-scenario-002-validation.json",
+                                                       "supporting_proof_sha256":  "10e0101afe6ece11e13b9d47f70c1ec14dc0c4479d271fe8f3a5e0e4a8ef8182"
+                                                   }
+                              },
+    "eligibility":  [
+                        {
+                            "challenge_id":  "CHAL-DUP-001",
+                            "eligible_families":  [
+                                                      "POWERSHELL",
+                                                      "SYSMON",
+                                                      "WINDOWS_SECURITY",
+                                                      "ZEEK"
+                                                  ],
+                            "correlation_contract":  "NOT_APPLICABLE",
+                            "parent_cardinality":  1,
+                            "rationale":  "One parseable real record can be duplicated in a derived artifact while preserving explicit duplicate accounting.",
+                            "exact_source_selection":  "PENDING",
+                            "exact_raw_record_selection":  "PENDING",
+                            "challenge_artifact_generation":  "NOT_STARTED",
+                            "challenge_test_result":  "NOT_RUN"
+                        },
+                        {
+                            "challenge_id":  "CHAL-DUP-002",
+                            "eligible_families":  [
+                                                      "POWERSHELL",
+                                                      "SYSMON",
+                                                      "WINDOWS_SECURITY",
+                                                      "ZEEK"
+                                                  ],
+                            "correlation_contract":  "NOT_APPLICABLE",
+                            "parent_cardinality":  1,
+                            "rationale":  "One parseable real event can be used as the semantic basis for a separate derived record; exact byte-distinct implementation remains pending exact-parent validation.",
+                            "exact_source_selection":  "PENDING",
+                            "exact_raw_record_selection":  "PENDING",
+                            "challenge_artifact_generation":  "NOT_STARTED",
+                            "challenge_test_result":  "NOT_RUN"
+                        },
+                        {
+                            "challenge_id":  "CHAL-MAL-001",
+                            "eligible_families":  [
+                                                      "POWERSHELL",
+                                                      "SYSMON",
+                                                      "WINDOWS_SECURITY",
+                                                      "ZEEK"
+                                                  ],
+                            "correlation_contract":  "NOT_APPLICABLE",
+                            "parent_cardinality":  1,
+                            "rationale":  "All four grounded real-format families have record structures that can be tested for derived truncation; exact record boundaries remain an exact-parent-selection gate.",
+                            "exact_source_selection":  "PENDING",
+                            "exact_raw_record_selection":  "PENDING",
+                            "challenge_artifact_generation":  "NOT_STARTED",
+                            "challenge_test_result":  "NOT_RUN"
+                        },
+                        {
+                            "challenge_id":  "CHAL-MAL-002",
+                            "eligible_families":  [
+                                                      "POWERSHELL",
+                                                      "SYSMON"
+                                                  ],
+                            "correlation_contract":  "NOT_APPLICABLE",
+                            "parent_cardinality":  1,
+                            "rationale":  "The grounded PowerShell and Sysmon development formats are XML event streams and directly support a malformed structured-record challenge.",
+                            "exact_source_selection":  "PENDING",
+                            "exact_raw_record_selection":  "PENDING",
+                            "challenge_artifact_generation":  "NOT_STARTED",
+                            "challenge_test_result":  "NOT_RUN"
+                        },
+                        {
+                            "challenge_id":  "CHAL-MISS-001",
+                            "eligible_families":  [
+                                                      "POWERSHELL",
+                                                      "SYSMON",
+                                                      "WINDOWS_SECURITY",
+                                                      "ZEEK"
+                                                  ],
+                            "correlation_contract":  "NOT_APPLICABLE",
+                            "parent_cardinality":  1,
+                            "rationale":  "All four grounded production real-format families contain time-bearing records; the exact timestamp representation must be verified before mutation.",
+                            "exact_source_selection":  "PENDING",
+                            "exact_raw_record_selection":  "PENDING",
+                            "challenge_artifact_generation":  "NOT_STARTED",
+                            "challenge_test_result":  "NOT_RUN"
+                        },
+                        {
+                            "challenge_id":  "CHAL-MISS-002",
+                            "eligible_families":  [
+                                                      "POWERSHELL",
+                                                      "SYSMON",
+                                                      "WINDOWS_SECURITY",
+                                                      "ZEEK"
+                                                  ],
+                            "correlation_contract":  "NOT_APPLICABLE",
+                            "parent_cardinality":  1,
+                            "rationale":  "A required semantic input can be removed only from a derived record after the exact production mapping requirement is verified.",
+                            "exact_source_selection":  "PENDING",
+                            "exact_raw_record_selection":  "PENDING",
+                            "challenge_artifact_generation":  "NOT_STARTED",
+                            "challenge_test_result":  "NOT_RUN"
+                        },
+                        {
+                            "challenge_id":  "CHAL-TIME-001",
+                            "eligible_families":  [
+                                                      "POWERSHELL",
+                                                      "SYSMON",
+                                                      "ZEEK"
+                                                  ],
+                            "correlation_contract":  "NOT_APPLICABLE",
+                            "parent_cardinality":  2,
+                            "rationale":  "Requires at least two records with usable observed times. Windows Security is excluded from this ordering challenge so unresolved global clock interpretation is not silently converted into a timeline assumption.",
+                            "exact_source_selection":  "PENDING",
+                            "exact_raw_record_selection":  "PENDING",
+                            "challenge_artifact_generation":  "NOT_STARTED",
+                            "challenge_test_result":  "NOT_RUN"
+                        },
+                        {
+                            "challenge_id":  "CHAL-TIME-002",
+                            "eligible_families":  [
+                                                      "SYSMON",
+                                                      "POWERSHELL"
+                                                  ],
+                            "correlation_contract":  "TRC-CORR-002",
+                            "parent_cardinality":  2,
+                            "rationale":  "TRC-CORR-002 has a frozen directional maximum_seconds value of 30 and therefore supplies an explicit exact-boundary contract.",
+                            "exact_source_selection":  "PENDING",
+                            "exact_raw_record_selection":  "PENDING",
+                            "challenge_artifact_generation":  "NOT_STARTED",
+                            "challenge_test_result":  "NOT_RUN"
+                        },
+                        {
+                            "challenge_id":  "CHAL-TIME-003",
+                            "eligible_families":  [
+                                                      "SYSMON",
+                                                      "POWERSHELL"
+                                                  ],
+                            "correlation_contract":  "TRC-CORR-002",
+                            "parent_cardinality":  2,
+                            "rationale":  "Uses the same frozen TRC-CORR-002 contract as CHAL-TIME-002 but will place the derived pair immediately outside the allowed interval.",
+                            "exact_source_selection":  "PENDING",
+                            "exact_raw_record_selection":  "PENDING",
+                            "challenge_artifact_generation":  "NOT_STARTED",
+                            "challenge_test_result":  "NOT_RUN"
+                        },
+                        {
+                            "challenge_id":  "CHAL-CLOCK-001",
+                            "eligible_families":  [
+                                                      "WINDOWS_SECURITY"
+                                                  ],
+                            "correlation_contract":  "NOT_APPLICABLE",
+                            "parent_cardinality":  1,
+                            "rationale":  "Windows Security supplies the appropriate conservative clock-state surface. Exact-parent selection must preserve the existing rule against fabricating UTC.",
+                            "exact_source_selection":  "PENDING",
+                            "exact_raw_record_selection":  "PENDING",
+                            "challenge_artifact_generation":  "NOT_STARTED",
+                            "challenge_test_result":  "NOT_RUN"
+                        },
+                        {
+                            "challenge_id":  "CHAL-UNKNOWN-001",
+                            "eligible_families":  [
+                                                      "POWERSHELL",
+                                                      "SYSMON",
+                                                      "WINDOWS_SECURITY",
+                                                      "ZEEK"
+                                                  ],
+                            "correlation_contract":  "NOT_APPLICABLE",
+                            "parent_cardinality":  1,
+                            "rationale":  "Each grounded real-format family exposes a provider, event-code, or log-type discriminator suitable for an unsupported-input derived mutation.",
+                            "exact_source_selection":  "PENDING",
+                            "exact_raw_record_selection":  "PENDING",
+                            "challenge_artifact_generation":  "NOT_STARTED",
+                            "challenge_test_result":  "NOT_RUN"
+                        },
+                        {
+                            "challenge_id":  "CHAL-LABEL-001",
+                            "eligible_families":  [
+                                                      "ZEEK"
+                                                  ],
+                            "correlation_contract":  "NOT_APPLICABLE",
+                            "parent_cardinality":  1,
+                            "rationale":  "The acquisition register contains non-holdout Zeek artifacts with publisher-label context. Exact source selection remains pending and labels remain forbidden production selectors.",
+                            "exact_source_selection":  "PENDING",
+                            "exact_raw_record_selection":  "PENDING",
+                            "challenge_artifact_generation":  "NOT_STARTED",
+                            "challenge_test_result":  "NOT_RUN"
+                        },
+                        {
+                            "challenge_id":  "CHAL-MIX-001",
+                            "eligible_families":  [
+                                                      "ZEEK"
+                                                  ],
+                            "correlation_contract":  "NOT_APPLICABLE",
+                            "parent_cardinality":  2,
+                            "rationale":  "Eligibility is restricted to non-holdout telemetry families represented by both development and benign-control acquisition roles. Exact records must later demonstrate the suspicious-behavior and benign-control roles without using labels as selectors.",
+                            "exact_source_selection":  "PENDING",
+                            "exact_raw_record_selection":  "PENDING",
+                            "challenge_artifact_generation":  "NOT_STARTED",
+                            "challenge_test_result":  "NOT_RUN"
+                        },
+                        {
+                            "challenge_id":  "CHAL-CORR-001",
+                            "eligible_families":  [
+                                                      "POWERSHELL",
+                                                      "ZEEK"
+                                                  ],
+                            "correlation_contract":  "TRC-CORR-001",
+                            "parent_cardinality":  2,
+                            "rationale":  "The production PowerShell-to-Zeek correlation surface supplies identity, destination, and directional constraints for a same-destination but wrong-source-identity challenge.",
+                            "exact_source_selection":  "PENDING",
+                            "exact_raw_record_selection":  "PENDING",
+                            "challenge_artifact_generation":  "NOT_STARTED",
+                            "challenge_test_result":  "NOT_RUN"
+                        },
+                        {
+                            "challenge_id":  "CHAL-CORR-002",
+                            "eligible_families":  [
+                                                      "POWERSHELL",
+                                                      "ZEEK"
+                                                  ],
+                            "correlation_contract":  "TRC-CORR-001",
+                            "parent_cardinality":  2,
+                            "rationale":  "The production PowerShell-to-Zeek correlation is directional and supplies the appropriate network-direction reversal challenge surface.",
+                            "exact_source_selection":  "PENDING",
+                            "exact_raw_record_selection":  "PENDING",
+                            "challenge_artifact_generation":  "NOT_STARTED",
+                            "challenge_test_result":  "NOT_RUN"
+                        }
+                    ],
+    "boundaries":  {
+                       "holdout_parent_allowed":  false,
+                       "posthoc_holdout_parent_allowed":  false,
+                       "holdout_semantic_access_performed":  false,
+                       "raw_semantic_parent_inspection_performed":  false,
+                       "raw_evidence_mutated":  false,
+                       "registered_artifact_integrity_recheck_permitted":  true,
+                       "exact_source_selected":  false,
+                       "exact_raw_record_selected":  false,
+                       "challenge_artifact_generated":  false,
+                       "challenge_test_executed":  false,
+                       "analytic_logic_changed":  false,
+                       "coverage_status_changed":  false,
+                       "real_incident_membership_inferred":  false,
+                       "security_global_utc_assumed":  false
+                   },
+    "next":  "PHASE_4I_CHALLENGE_EXACT_PARENT_SELECTION"
+}

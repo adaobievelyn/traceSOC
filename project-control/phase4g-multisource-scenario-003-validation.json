@@ -1,0 +1,99 @@
+{
+    "record_type":  "tracesoc-phase4g-multisource-scenario-validation",
+    "schema_version":  1,
+    "phase":  "PHASE-4G-D",
+    "generated_utc":  "2026-09-16T14:26:50.9357510Z",
+    "result":  "PASS",
+    "parent_commit":  "dfade8ca569b69a41f634bf933d80b6f336a4f7a",
+    "red_green_repair":  {
+                             "red_test":  "test_breaking_network_edge_invalidates_chain",
+                             "red_test_original_sha256":  "74fa82b929ea5abec536341aaf41fe5331fdc3755728bd06211da550cf966732",
+                             "observed_reason_code":  "destination_ip_mismatch",
+                             "incorrect_expected_reason_code":  "destination_mismatch",
+                             "established_correlation_reason_code":  "destination_ip_mismatch",
+                             "failure_class":  "TEST_HARNESS_REASON_CODE_EXPECTATION_DEFECT",
+                             "production_correlation_defect":  false,
+                             "correlation_logic_changed":  false,
+                             "scenario_data_changed":  false,
+                             "repair_scope":  "TEST_ASSERTION_ONLY",
+                             "repaired_test_sha256":  "6c24e8d1c750c66b90dbabc5ece791d2d76b36df0a0605e6463bacb64ade1a23",
+                             "green_retest":  "6_OF_6_PASS"
+                         },
+    "scenario":  {
+                     "scenario_id":  "MULTISOURCE-SCENARIO-0003",
+                     "classification":  "SYNTHETIC_ARCHITECTURE_REGRESSION",
+                     "shape":  "THREE_SOURCE_TWO_EDGE_CHAIN",
+                     "telemetry_families":  [
+                                                "SYSMON",
+                                                "POWERSHELL",
+                                                "ZEEK"
+                                            ],
+                     "powershell_path":  "tests/fixtures/scenarios/multisource-three-source-chain-003/powershell.jsonl",
+                     "powershell_sha256":  "ef8f7e19864a52da5ebd4adb54f07b04932bdf4c3c9c71a180b97cad20e2e25e",
+                     "sysmon_path":  "tests/fixtures/scenarios/multisource-three-source-chain-003/sysmon.jsonl",
+                     "sysmon_sha256":  "e1d673e5712fc7f106b7d91e1e9488af2552265a925987badb86ea3de076ffc4",
+                     "zeek_path":  "tests/fixtures/scenarios/multisource-three-source-chain-003/zeek.jsonl",
+                     "zeek_sha256":  "2122ae9fab400474a35401e9d7f36770a395ecb1c0431500eda66153abf28667",
+                     "manifest_path":  "tests/fixtures/scenarios/multisource-three-source-chain-003/scenario-manifest.json",
+                     "manifest_sha256":  "a1383132a96a4279b6242e461a001bdab6cbf67e3bdb6e5b0ea3b56af7c5b4b0"
+                 },
+    "graph":  {
+                  "nodes":  3,
+                  "edges":  2,
+                  "shared_middle_node":  "POWERSHELL_EVENT",
+                  "correlations":  [
+                                       "TRC-CORR-002",
+                                       "TRC-CORR-001"
+                                   ],
+                  "correlation_001_sha256":  "839c24216ba6957a1261f05156e43af373226a4987d212cf8a3a82d98c72964d",
+                  "correlation_002_sha256":  "cb039132424df07e5e64944b65a8f05ead0ee041f24b342b7eee8e1533a9e46c"
+              },
+    "production_path":  {
+                            "production_parsers_used":  true,
+                            "semantic_boundary_used":  true,
+                            "production_detector_used":  true,
+                            "production_correlations_used":  2
+                        },
+    "falsification":  {
+                          "process_edge_principal_mismatch":  "NO_MATCH_PRINCIPAL_MISMATCH",
+                          "network_edge_destination_ip_mismatch":  "NO_MATCH_DESTINATION_IP_MISMATCH",
+                          "network_edge_outside_time_window":  "NO_MATCH_OUTSIDE_TIME_WINDOW",
+                          "complete_graph_requires_both_edges":  true
+                      },
+    "anti_hardcoding":  {
+                            "fixture_id_reached_semantic_fields":  false,
+                            "expected_answer_reached_semantic_fields":  false,
+                            "fixture_id_used_as_selector":  false,
+                            "expected_answer_used_as_selector":  false,
+                            "publisher_label_used_as_selector":  false,
+                            "scenario_id_used_as_selector":  false
+                        },
+    "claim_boundary":  {
+                           "real_corpora_joined":  false,
+                           "real_incident_established":  false,
+                           "malicious_intent_established":  false,
+                           "causality_established":  false,
+                           "exact_pid_ancestry_established":  false,
+                           "synthetic_three_source_graph_established":  true
+                       },
+    "machine_result":  {
+                           "path":  "results/scenarios/MULTISOURCE-SCENARIO-0003.json",
+                           "sha256":  "c0d59a7d4e514916539f6df342af66125b4ec79049f7bbb7d30dcfb8f40a3d18",
+                           "deterministic":  true,
+                           "exclusive_create":  true
+                       },
+    "tests":  {
+                  "unit_tests":  177,
+                  "integration_tests":  21,
+                  "total_tests":  198,
+                  "failures_after_repair":  0
+              },
+    "multisource_scenario_progress":  "3_OF_3",
+    "success_criterion":  {
+                              "criterion":  "SC-06",
+                              "requirement":  "AT_LEAST_3_MULTI_SOURCE_SCENARIOS_RECONSTRUCT_REPRODUCIBLY",
+                              "status":  "SATISFIED_BY_CONTROLLED_SYNTHETIC_SCENARIOS",
+                              "real_incident_equivalence_claimed":  false
+                          },
+    "next":  "PHASE_4H_CLAIM_EXPLAIN_RELEASE_CLOSURE"
+}

@@ -1,0 +1,462 @@
+{
+  "benign_selection": {
+    "non_selected_structural_witness": {
+      "artifact_integrity_reverified": true,
+      "byte_length": 131,
+      "byte_offset": 504,
+      "exact_slice_integrity_reverified": true,
+      "line_number": 9,
+      "line_number_reverified": true,
+      "origin_type": "PUBLISHER_DERIVED_ZEEK_LOG",
+      "record_index": 0,
+      "record_sha256": "b3e28f3aa347a23135dbb22c0530f1729aa857c557de098705d2ee85f24f88f1",
+      "role": "NON_SELECTED_BENIGN_STRUCTURAL_WITNESS",
+      "source_id": "TS-BEN-IOT23V2-HUE-ZEEK",
+      "source_role": "BENIGN_CONTROL",
+      "source_sha256": "aebe40ea0e03b120265a5c7bc140dd9b0d3fe2fce65559e84776b7dd5360e71e",
+      "storage_path": "D:\\TraceSOC-Evidence\\raw\\benign_control\\iot23-v2\\CTU-Honeypot-Capture-4-1\\2018-10-25-14-06-32-192.168.1.132-zeek-conn.log.labeled",
+      "telemetry_family": "ZEEK"
+    },
+    "selected_source": "TS-BEN-IOT23V2-ECHO-ZEEK",
+    "structurally_eligible_sources": [
+      "TS-BEN-IOT23V2-ECHO-ZEEK",
+      "TS-BEN-IOT23V2-HUE-ZEEK"
+    ],
+    "tie_break": "LEXICAL_SOURCE_ID_AFTER_STRUCTURAL_ELIGIBILITY"
+  },
+  "challenge_class_count": 15,
+  "challenges": {
+    "CHAL-CLOCK-001": {
+      "allowed_families": [
+        "WINDOWS_SECURITY"
+      ],
+      "natural_cross_source_relation_required": false,
+      "parents": [
+        "PARENT-SECURITY-CLOCK-001"
+      ],
+      "purpose": "Invalid or unresolved time handling."
+    },
+    "CHAL-CORR-001": {
+      "allowed_families": [
+        "POWERSHELL",
+        "ZEEK"
+      ],
+      "correlation_contract": "TRC-CORR-001",
+      "derived_relation_required": true,
+      "natural_cross_source_relation_required": false,
+      "natural_real_correlation_established": false,
+      "parents": [
+        "PARENT-PS-DET002-001",
+        "PARENT-ZEEK-DEV-IRC-001"
+      ],
+      "purpose": "Same derived destination with wrong host or source identity."
+    },
+    "CHAL-CORR-002": {
+      "allowed_families": [
+        "POWERSHELL",
+        "ZEEK"
+      ],
+      "correlation_contract": "TRC-CORR-001",
+      "derived_relation_required": true,
+      "natural_cross_source_relation_required": false,
+      "natural_real_correlation_established": false,
+      "parents": [
+        "PARENT-PS-DET002-001",
+        "PARENT-ZEEK-DEV-IRC-001"
+      ],
+      "purpose": "Same derived host and destination with reversed directionality."
+    },
+    "CHAL-DUP-001": {
+      "allowed_families": [
+        "POWERSHELL",
+        "SYSMON",
+        "WINDOWS_SECURITY",
+        "ZEEK"
+      ],
+      "natural_cross_source_relation_required": false,
+      "parents": [
+        "PARENT-PS-DET002-001"
+      ],
+      "purpose": "Exact duplicate record."
+    },
+    "CHAL-DUP-002": {
+      "allowed_families": [
+        "POWERSHELL",
+        "SYSMON",
+        "WINDOWS_SECURITY",
+        "ZEEK"
+      ],
+      "natural_cross_source_relation_required": false,
+      "parents": [
+        "PARENT-SYSMON-DET005-LATE"
+      ],
+      "purpose": "Semantically repeated separate record."
+    },
+    "CHAL-LABEL-001": {
+      "allowed_families": [
+        "ZEEK"
+      ],
+      "label_policy": "SOURCE_CONTEXT_ONLY_NEVER_PRODUCTION_SELECTOR",
+      "natural_cross_source_relation_required": false,
+      "parents": [
+        "PARENT-ZEEK-BENIGN-ECHO-001"
+      ],
+      "purpose": "Publisher-label challenge context.",
+      "record_selection_uses_publisher_label_value": false
+    },
+    "CHAL-MAL-001": {
+      "allowed_families": [
+        "POWERSHELL",
+        "SYSMON",
+        "WINDOWS_SECURITY",
+        "ZEEK"
+      ],
+      "natural_cross_source_relation_required": false,
+      "parents": [
+        "PARENT-SECURITY-CLOCK-001"
+      ],
+      "purpose": "Truncated record."
+    },
+    "CHAL-MAL-002": {
+      "allowed_families": [
+        "POWERSHELL",
+        "SYSMON"
+      ],
+      "natural_cross_source_relation_required": false,
+      "parents": [
+        "PARENT-SYSMON-POWERSHELL-PROCESS-001"
+      ],
+      "purpose": "Malformed structured record."
+    },
+    "CHAL-MISS-001": {
+      "allowed_families": [
+        "POWERSHELL",
+        "SYSMON",
+        "WINDOWS_SECURITY",
+        "ZEEK"
+      ],
+      "natural_cross_source_relation_required": false,
+      "parents": [
+        "PARENT-ZEEK-DEV-IRC-001"
+      ],
+      "purpose": "Missing timestamp."
+    },
+    "CHAL-MISS-002": {
+      "allowed_families": [
+        "POWERSHELL",
+        "SYSMON",
+        "WINDOWS_SECURITY",
+        "ZEEK"
+      ],
+      "natural_cross_source_relation_required": false,
+      "parents": [
+        "PARENT-PS-DET002-001"
+      ],
+      "purpose": "Missing required semantic field."
+    },
+    "CHAL-MIX-001": {
+      "allowed_families": [
+        "ZEEK"
+      ],
+      "natural_cross_source_relation_required": false,
+      "parents": [
+        "PARENT-ZEEK-DEV-IRC-001",
+        "PARENT-ZEEK-BENIGN-ECHO-001"
+      ],
+      "purpose": "Suspicious-context and benign Zeek records in one derived run."
+    },
+    "CHAL-TIME-001": {
+      "allowed_families": [
+        "POWERSHELL",
+        "SYSMON",
+        "ZEEK"
+      ],
+      "natural_cross_source_relation_required": false,
+      "parents": [
+        "PARENT-SYSMON-DET005-EARLY",
+        "PARENT-SYSMON-DET005-LATE"
+      ],
+      "purpose": "Reordered records relative to observed timestamps."
+    },
+    "CHAL-TIME-002": {
+      "allowed_families": [
+        "SYSMON",
+        "POWERSHELL"
+      ],
+      "correlation_contract": "TRC-CORR-002",
+      "derived_relation_required": true,
+      "natural_cross_source_relation_required": false,
+      "parents": [
+        "PARENT-SYSMON-POWERSHELL-PROCESS-001",
+        "PARENT-PS-DET002-001"
+      ],
+      "purpose": "Derived pair positioned exactly at the bounded process-correlation time boundary."
+    },
+    "CHAL-TIME-003": {
+      "allowed_families": [
+        "SYSMON",
+        "POWERSHELL"
+      ],
+      "correlation_contract": "TRC-CORR-002",
+      "derived_relation_required": true,
+      "natural_cross_source_relation_required": false,
+      "parents": [
+        "PARENT-SYSMON-POWERSHELL-PROCESS-001",
+        "PARENT-PS-DET002-001"
+      ],
+      "purpose": "Derived pair positioned just outside the bounded process-correlation time window."
+    },
+    "CHAL-UNKNOWN-001": {
+      "allowed_families": [
+        "POWERSHELL",
+        "SYSMON",
+        "WINDOWS_SECURITY",
+        "ZEEK"
+      ],
+      "natural_cross_source_relation_required": false,
+      "parents": [
+        "PARENT-PS-DET002-001"
+      ],
+      "purpose": "Unsupported provider, event, or log type."
+    }
+  },
+  "coverage_state": {
+    "COV_010": "DERIVED_CORPUS_PENDING",
+    "reason": "Exact parents are now frozen, but no derived challenge artifact has been generated or executed yet."
+  },
+  "generated_utc": "2026-09-16T19:18:40.460233+00:00",
+  "integrity": {
+    "challenge_artifacts_generated": 0,
+    "holdout_sources_opened": 0,
+    "selected_artifacts_reverified": 6,
+    "selected_parent_count": 7,
+    "selected_parent_slices_reverified": 7
+  },
+  "next": "PHASE_4I_CHALLENGE_GENERATION",
+  "parent_reuse": {
+    "PARENT-PS-DET002-001": [
+      "CHAL-CORR-001",
+      "CHAL-CORR-002",
+      "CHAL-DUP-001",
+      "CHAL-MISS-002",
+      "CHAL-TIME-002",
+      "CHAL-TIME-003",
+      "CHAL-UNKNOWN-001"
+    ],
+    "PARENT-SECURITY-CLOCK-001": [
+      "CHAL-CLOCK-001",
+      "CHAL-MAL-001"
+    ],
+    "PARENT-SYSMON-DET005-EARLY": [
+      "CHAL-TIME-001"
+    ],
+    "PARENT-SYSMON-DET005-LATE": [
+      "CHAL-DUP-002",
+      "CHAL-TIME-001"
+    ],
+    "PARENT-SYSMON-POWERSHELL-PROCESS-001": [
+      "CHAL-MAL-002",
+      "CHAL-TIME-002",
+      "CHAL-TIME-003"
+    ],
+    "PARENT-ZEEK-BENIGN-ECHO-001": [
+      "CHAL-LABEL-001",
+      "CHAL-MIX-001"
+    ],
+    "PARENT-ZEEK-DEV-IRC-001": [
+      "CHAL-CORR-001",
+      "CHAL-CORR-002",
+      "CHAL-MISS-001",
+      "CHAL-MIX-001"
+    ]
+  },
+  "parents": {
+    "PARENT-PS-DET002-001": {
+      "artifact_integrity_reverified": true,
+      "byte_length": 1238,
+      "byte_offset": 328537,
+      "canonical_event_id": "evt_8de5db9db6d7b1e278254a6da0ace3a9c9f1b3b5d1dec9badf67278f9c056b31",
+      "evidence_basis": [
+        "PHASE_4I-G3",
+        "TRC-DET-002"
+      ],
+      "exact_slice_integrity_reverified": true,
+      "line_number": 8314,
+      "line_number_reverified": true,
+      "origin_type": "PUBLIC_CURATED_ATTACK_DATA",
+      "record_index": 22,
+      "record_sha256": "41f5b4b00ee630ab850ce3a4a313334f5a542c3480de15432190600f42c758a8",
+      "selection_predicate": "Lowest byte_offset among the four exact raw parents reproduced by the production TRC-DET-002 pipeline in Phase 4I-G3.",
+      "semantic_role": "DET002_MATCHED_POWERSHELL_EVENT",
+      "source_id": "TS-DEV-SPLUNK-PS-001",
+      "source_role": "DEVELOPMENT",
+      "source_sha256": "ce45d417d0bd66e05939f835935dd24cfe6f55b257d7b2bb968c726ae378c8c3",
+      "storage_path": "D:\\TraceSOC-Evidence\\raw\\development\\splunk-attack-data\\T1087.002\\AD_discovery\\windows-powershell-xml.log",
+      "telemetry_family": "POWERSHELL"
+    },
+    "PARENT-SECURITY-CLOCK-001": {
+      "artifact_integrity_reverified": true,
+      "byte_length": 1868,
+      "byte_offset": 0,
+      "canonical_event_id": null,
+      "evidence_basis": [
+        "PHASE_4I-G1",
+        "WINDOWS_SECURITY_CLOCK_UNRESOLVED"
+      ],
+      "exact_slice_integrity_reverified": true,
+      "line_number": 1,
+      "line_number_reverified": true,
+      "origin_type": "PUBLIC_CURATED_ATTACK_DATA",
+      "record_index": 0,
+      "record_sha256": "9fe042d221a0bde814024b48498e3ee17ebf7fe58cb8975eba0e6ddb0fb97816",
+      "selection_predicate": "First exact accepted Windows Security raw record by byte_offset. Source canonical clock remains UNRESOLVED; no UTC assumption is introduced.",
+      "semantic_role": "WINDOWS_SECURITY_UNRESOLVED_CLOCK_RECORD",
+      "source_id": "TS-DEV-SPLUNK-SECURITY-001",
+      "source_role": "DEVELOPMENT",
+      "source_sha256": "b55c57fd0256fa73f55116f9ad307de3b7403f1ba7536c10431b56426a09bd89",
+      "storage_path": "D:\\TraceSOC-Evidence\\raw\\development\\splunk-attack-data\\T1562.001\\win_app_defender_disabling\\windows-security.log",
+      "telemetry_family": "WINDOWS_SECURITY"
+    },
+    "PARENT-SYSMON-DET005-EARLY": {
+      "artifact_integrity_reverified": true,
+      "byte_length": 1089,
+      "byte_offset": 16547172,
+      "canonical_event_id": "evt_0e024c458be1269075179c7aecb9262d80b48c2fa4a385fb5829ef947e5e74ef",
+      "event_time_utc": "2021-03-31T12:04:39.318000+00:00",
+      "evidence_basis": [
+        "PHASE_4I-F3",
+        "TRC-DET-005"
+      ],
+      "exact_slice_integrity_reverified": true,
+      "line_number": 9466,
+      "line_number_reverified": true,
+      "origin_type": "PUBLIC_CURATED_ATTACK_DATA",
+      "record_index": 9465,
+      "record_sha256": "7604de165fa39e7e09c13a8ba28cc153f4087ed2ec7cb8d15db60b05b1bf603e",
+      "selection_predicate": "Earlier observed-UTC member of the two persisted exact TRC-DET-005 raw parents.",
+      "semantic_role": "DET005_EXACT_TIMED_EVENT_EARLY",
+      "source_id": "TS-DEV-SPLUNK-SYSMON-001",
+      "source_role": "DEVELOPMENT",
+      "source_sha256": "8886e363b137555f5a0403783106e656b77e328fab2e503a645015f5e1cc3756",
+      "storage_path": "D:\\TraceSOC-Evidence\\raw\\development\\splunk-attack-data\\T1562.001\\win_app_defender_disabling\\windows-sysmon.log",
+      "telemetry_family": "SYSMON"
+    },
+    "PARENT-SYSMON-DET005-LATE": {
+      "artifact_integrity_reverified": true,
+      "byte_length": 1089,
+      "byte_offset": 16468071,
+      "canonical_event_id": "evt_bf597cedb371079b6ccf8be516a0eb571b9f4da7ab02cf27a53adc1133414758",
+      "event_time_utc": "2021-03-31T12:04:39.411000+00:00",
+      "evidence_basis": [
+        "PHASE_4I-F3",
+        "TRC-DET-005"
+      ],
+      "exact_slice_integrity_reverified": true,
+      "line_number": 9400,
+      "line_number_reverified": true,
+      "origin_type": "PUBLIC_CURATED_ATTACK_DATA",
+      "record_index": 9399,
+      "record_sha256": "934cfe2581594436a718afe935099b0e296f8b307e3bf854c19ab05bea1b455d",
+      "selection_predicate": "Later observed-UTC member of the two persisted exact TRC-DET-005 raw parents; reused as the general Sysmon challenge parent.",
+      "semantic_role": "DET005_EXACT_TIMED_EVENT_LATE",
+      "source_id": "TS-DEV-SPLUNK-SYSMON-001",
+      "source_role": "DEVELOPMENT",
+      "source_sha256": "8886e363b137555f5a0403783106e656b77e328fab2e503a645015f5e1cc3756",
+      "storage_path": "D:\\TraceSOC-Evidence\\raw\\development\\splunk-attack-data\\T1562.001\\win_app_defender_disabling\\windows-sysmon.log",
+      "telemetry_family": "SYSMON"
+    },
+    "PARENT-SYSMON-POWERSHELL-PROCESS-001": {
+      "artifact_integrity_reverified": true,
+      "byte_length": 7485,
+      "byte_offset": 94166,
+      "canonical_event_id": null,
+      "evidence_basis": [
+        "PHASE_4I-G1",
+        "TRC-CORR-002_STRUCTURAL_PARENT"
+      ],
+      "exact_slice_integrity_reverified": true,
+      "line_number": 55,
+      "line_number_reverified": true,
+      "origin_type": "PUBLIC_CURATED_ATTACK_DATA",
+      "record_index": 54,
+      "record_sha256": "bf2952c93ba49be2c4901477051447de3eadf334d58f7df14a47cb84d0bc79d7",
+      "selection_predicate": "Lowest byte_offset among the exact Sysmon EventID 1 records whose raw process identity is in the PowerShell process family, as recovered by the production raw reader in Phase 4I-G1.",
+      "semantic_role": "POWERSHELL_PROCESS_CREATE",
+      "source_id": "TS-DEV-SPLUNK-SYSMON-001",
+      "source_role": "DEVELOPMENT",
+      "source_sha256": "8886e363b137555f5a0403783106e656b77e328fab2e503a645015f5e1cc3756",
+      "storage_path": "D:\\TraceSOC-Evidence\\raw\\development\\splunk-attack-data\\T1562.001\\win_app_defender_disabling\\windows-sysmon.log",
+      "telemetry_family": "SYSMON"
+    },
+    "PARENT-ZEEK-BENIGN-ECHO-001": {
+      "artifact_integrity_reverified": true,
+      "byte_length": 125,
+      "byte_offset": 504,
+      "canonical_event_id": null,
+      "evidence_basis": [
+        "PHASE_4I-G1",
+        "BENIGN_CONTROL"
+      ],
+      "exact_slice_integrity_reverified": true,
+      "line_number": 9,
+      "line_number_reverified": true,
+      "origin_type": "PUBLISHER_DERIVED_ZEEK_LOG",
+      "record_index": 0,
+      "record_sha256": "3ae0e2fd02d2e93deda640166c775c6dcd7a29f44b72d94f4ed44b03371e1972",
+      "selection_predicate": "Both ECHO and HUE were structurally eligible. ECHO is selected solely by lexical source_id tie-break, then the first exact record by byte_offset. File size and publisher-label value are not selection criteria.",
+      "semantic_role": "BENIGN_ZEEK_CONNECTION",
+      "source_id": "TS-BEN-IOT23V2-ECHO-ZEEK",
+      "source_role": "BENIGN_CONTROL",
+      "source_sha256": "f36db06e7d6ba7364e932a5b003f75835e004b320d70019e8a2f0ba8685d9262",
+      "storage_path": "D:\\TraceSOC-Evidence\\raw\\benign_control\\iot23-v2\\CTU-Honeypot-Capture-5-1\\2018-09-21-11-40-22-192.168.2.3-zeek-conn-log.labeled",
+      "telemetry_family": "ZEEK"
+    },
+    "PARENT-ZEEK-DEV-IRC-001": {
+      "artifact_integrity_reverified": true,
+      "byte_length": 145,
+      "byte_offset": 15950,
+      "canonical_event_id": null,
+      "evidence_basis": [
+        "PHASE_4I-G1",
+        "TRC-DET-004_STRUCTURAL_PARENT"
+      ],
+      "exact_slice_integrity_reverified": true,
+      "line_number": 131,
+      "line_number_reverified": true,
+      "origin_type": "PUBLISHER_DERIVED_ZEEK_LOG",
+      "record_index": 122,
+      "record_sha256": "a3e082937a06bfebdc1be555d7a3a92badc35c8b2435f7386f491a4974410640",
+      "selection_predicate": "Lowest byte_offset among the 1,641 exact development Zeek records containing the IRC service token recovered through the production Zeek raw reader.",
+      "semantic_role": "DEVELOPMENT_ZEEK_IRC_CONNECTION",
+      "source_id": "TS-DEV-IOT23-034-ZEEK",
+      "source_role": "DEVELOPMENT",
+      "source_sha256": "d69e49b2aae8c1bd33286936531658202dec47d989f0439bad3f8be180467a6e",
+      "storage_path": "D:\\TraceSOC-Evidence\\raw\\development\\iot23\\CTU-IoT-Malware-Capture-34-1\\bro\\conn.log.labeled",
+      "telemetry_family": "ZEEK"
+    }
+  },
+  "phase": "PHASE-4I-G4",
+  "record_type": "tracesoc-challenge-exact-parent-selection",
+  "requirement": "COV-010",
+  "result": "PASS",
+  "schema_version": 1,
+  "scientific_boundary": {
+    "TRC_CORR_001_native_destination_present_in_selected_DET002_parent": false,
+    "causality_implied": false,
+    "correlation_challenge_relation": "DERIVED_TEST_RELATION_ONLY",
+    "malicious_intent_implied": false,
+    "natural_real_cross_source_correlation_established": false,
+    "real_incident_membership_implied": false,
+    "windows_security_global_utc_established": false
+  },
+  "selection_status": "AUTHORITATIVE_FOR_CHALLENGE_GENERATION",
+  "source_policy": {
+    "benign_tie_break": "LEXICAL_SOURCE_ID_AFTER_STRUCTURAL_ELIGIBILITY",
+    "file_size_used_for_benign_selection": false,
+    "holdout_allowed": false,
+    "production_logic_modified": false,
+    "publisher_label_value_used_for_record_selection": false,
+    "publisher_labels_as_production_selectors": false,
+    "raw_evidence_modified": false
+  }
+}

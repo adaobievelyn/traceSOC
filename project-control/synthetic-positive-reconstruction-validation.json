@@ -1,0 +1,110 @@
+{
+  "analytic_path": {
+    "correlate": "PASS",
+    "correlation_id": "TRC-CORR-001",
+    "data_class": "CONTROLLED_SYNTHETIC_SCENARIO",
+    "detect": "PASS",
+    "detection_id": "TRC-DET-001",
+    "explain": "PASS",
+    "finding_id": "FINDING-001",
+    "ingest": "PASS",
+    "installed_package_logical_locator": "external-install/tracesoc/__init__.py",
+    "semantic_event_count": 2
+  },
+  "finding_boundary": {
+    "alternative_explanation": "Authorized administrative, software retrieval, testing, or other legitimate scripted activity remains plausible.",
+    "business_impact": "UNKNOWN — this finding is generated from a synthetic architecture-validation fixture and no real business impact is claimed.",
+    "falsifier": "This finding must not form if agreement on host, source IP, destination IP, destination port, directionality, or the 60-second time bound is removed.",
+    "finding_hash_verified": true,
+    "finding_sha256": "fbb56699bb3f1dd5f75f5ccf153d10f0956be3940ed55a9edf3c9667e89e3c90",
+    "inference": "Independent endpoint and network telemetry corroborate that the observed PowerShell web-retrieval behavior corresponded to a network connection to the same destination within the bounded correlation window.",
+    "malicious_intent_established": false,
+    "observed_facts": [
+      "A PowerShell semantic event satisfied TRC-DET-001: recognized web-retrieval behavior was observed.",
+      "Zeek recorded a connection from the same host and source IP to 198.51.100.25:8080 5.000 seconds after the PowerShell event."
+    ],
+    "raw_evidence_hashes_verified": 2,
+    "raw_evidence_reference_count": 2,
+    "residual_risk": "The retrieved content, application-level retrieval success, execution of retrieved content, user intent, and malicious purpose are not established by this correlation.",
+    "response_validation_status": "NOT_APPLICABLE_SYNTHETIC_FIXTURE",
+    "synthetic_fixture": true
+  },
+  "fresh_install": {
+    "byte_different_python_files": 0,
+    "external_install": true,
+    "extra_python_files": 0,
+    "installed_product_fingerprint_sha256": "295b4093b81b6b5146b3ee0a468362a5a76c4ef4a993143cfbd89e4495899355",
+    "installed_python_file_count": 60,
+    "missing_python_files": 0,
+    "source_install_equivalence": "60/60",
+    "source_python_file_count": 60,
+    "wheel_built": true,
+    "wheel_byte_reproducibility_claimed": false,
+    "wheel_filename": "tracesoc-0.1.0-py3-none-any.whl",
+    "wheel_sha256": "941a737a8436e736ea8b7865ad668c034cffdd6c59a0b29cdc62e0c2b745105e"
+  },
+  "generated_utc": "2026-09-24T06:15:12.021945Z",
+  "implementation": {
+    "analytical_candidate_sha256": "8f4f3033683141744a6e5b35bc86a06cbe6337961af316e63ef0fdb3bfa49566",
+    "canonical_commit_blob_fingerprint": {
+      "algorithm": "sha256(path|file_sha256 newline rows; ordinal path order)",
+      "file_count": 174,
+      "sha256": "5f166d992e61003d26cd874b50463bb90a0ce598acd13bc8b70d9739125fb610"
+    },
+    "frozen_file_count": 174,
+    "implementation_freeze_record": "project-control/v04-implementation-freeze.json",
+    "implementation_freeze_record_sha256": "749ee97a19b4e7c3af11e34842667da2ab3c255303454cb6369ac4459d6c11a9",
+    "source_commit": "af8ea21eccad94061c3b99ad3c18faafda42fb5a",
+    "synthetic_helper": "scripts/run_sc10_analytic_path.py",
+    "synthetic_helper_scope": "outside frozen src/tests implementation scope",
+    "synthetic_helper_sha256": "b267b72138ffdce2eff4be4ee5f317af644dba860cf8f322acb7084d9b3d7970"
+  },
+  "interpretation": "This controlled synthetic proof establishes that a fresh external installation of the frozen TraceSOC implementation can execute the positive ingest -> detect -> correlate -> explain reconstruction path. It is architecture-validation evidence only and does not establish that disconnected real development corpora belong to one incident.",
+  "product": "TraceSOC",
+  "product_version": "v0.4.8-RC",
+  "proof_files": [
+    {
+      "bytes": 2428,
+      "logical_name": "scenario-result.json",
+      "sha256": "2705ec2c92e8a8577ed143263c36e10d988773a1b8bcbd9a265704cf5204f794"
+    },
+    {
+      "bytes": 4605,
+      "logical_name": "finding-explanation.json",
+      "sha256": "e4d196ee7eb4cdffbb89e1b752dd4c198763150e5ee19176e624dc1d23aed7af"
+    },
+    {
+      "bytes": 809,
+      "logical_name": "analytic-path.json",
+      "sha256": "19184251255222ea0a46fd6b96b6a16bfb15c86b77b3bf474552032c4e57eb61"
+    }
+  ],
+  "record_type": "synthetic-positive-reconstruction-validation",
+  "safety": {
+    "generated_metadata_machine_path_count": 0,
+    "holdout_accessed": false,
+    "raw_text_preserved": true,
+    "real_incident_claim": false,
+    "stage9a_accessed": false
+  },
+  "scenario_boundary": {
+    "business_impact": "Unknown for this synthetic scenario; no real business asset is represented.",
+    "claim_boundary": "Scenario proves synthetic multi-source integration and correlation mechanics only. It does not establish that any independent real PowerShell and Zeek corpora describe the same incident or malicious intent.",
+    "expected_answer_used_as_selector": false,
+    "falsifier": "The correlation must not form if host, source IP, URI destination IP/port, or directional bounded time relationship fails.",
+    "fixture_id_used_as_selector": false,
+    "malicious_intent_established": false,
+    "production_selector_hardcoding": false,
+    "publisher_label_used": false,
+    "real_incident_claim": false,
+    "residual_risk": "Malicious intent and applicability to independent real corpora remain not established.",
+    "scenario_id": "MULTISOURCE-SCENARIO-0001",
+    "telemetry_families": [
+      "powershell",
+      "zeek"
+    ],
+    "validation_status": "PASS"
+  },
+  "schema_version": "tracesoc-synthetic-positive-reconstruction-validation-v1",
+  "status": "PASS"
+}

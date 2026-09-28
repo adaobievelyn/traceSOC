@@ -1,0 +1,52 @@
+{
+    "record_type":  "tracesoc-phase4c3-benign-control-validation",
+    "generated_utc":  "2026-09-14T14:52:12.1073220Z",
+    "phase":  "4C.3",
+    "parent_commit":  "f3968bd58ef0ae06639095ad5252549d54a2f701",
+    "source_version_refinement":  {
+                                      "acquisition_version":  "IoT-23-v2",
+                                      "historical_candidate_ids":  [
+                                                                       "CAND-003",
+                                                                       "CAND-004"
+                                                                   ],
+                                      "role_changed":  false,
+                                      "same_traffic_as_v1_per_publisher":  true,
+                                      "publisher_v2_work_in_progress":  true
+                                  },
+    "benign_controls":  {
+                            "independent_controls":  2,
+                            "controls":  [
+                                             "Philips Hue",
+                                             "Amazon Echo Dot"
+                                         ],
+                            "artifacts_acquired":  6
+                        },
+    "integrity":  {
+                      "registered_artifacts_total":  12,
+                      "all_registered_hashes_verified":  "12/12",
+                      "new_readonly_artifacts":  6,
+                      "pcap_structural_verification":  "2/2",
+                      "zeek_structural_verification":  "2/2"
+                  },
+    "safety":  {
+                   "malware_binary_acquired":  false,
+                   "malware_executed":  false,
+                   "holdout_acquired":  false,
+                   "detector_tuning_performed":  false,
+                   "source_labels_used_as_selectors":  false
+               },
+    "coverage":  {
+                     "four_family_core":  "4/4",
+                     "benign_network_controls":  "2/2",
+                     "final_corpus_complete":  false
+                 },
+    "external_manifest":  {
+                              "path":  "D:\\TraceSOC-Evidence\\manifests\\phase4c3-benign-network-controls.json",
+                              "sha256":  "7cfd491851b9f6fa676f6a1a804b7704e222392276042ac97c14750740bbd551"
+                          },
+    "consolidated_test_record":  {
+                                     "path":  "project-control/test-ledger.jsonl",
+                                     "changed_this_phase":  false
+                                 },
+    "next":  "PHASE_4C4_ENDPOINT_BENIGN_EVIDENCE_SELECTION"
+}

@@ -1,0 +1,41 @@
+{
+    "schema_version":  "1.0",
+    "record_type":  "tracesoc-finalist-packaging-attempt-disposition",
+    "phase":  "FINALIST_PACKAGING_PHASE_D3_FINAL_BOUNDARY_CHECK",
+    "classification":  "HARNESS_EXPECTATION_DEFECT",
+    "technical_freeze":  {
+                             "commit":  "8751a679f36b4983cdd3d2b0b35f44e9a11c4f39",
+                             "tree":  "fc420ee3fd1988cf578c0cf309ee3aefcccf33b2"
+                         },
+    "product_defect":  false,
+    "evidence_defect":  false,
+    "promotion_defect":  false,
+    "root_promotion_succeeded":  true,
+    "root_cause":  "The D3 tracked-mutation gate expected ioc-set.csv to appear in git diff. The pre-promotion root ioc-set.csv and the template-compliant promoted zero-row ioc-set.csv were already byte-identical at SHA-256 ba46259fae599800dbddc327beac3bc82cbdeeb70aa3939a9c658a6f6ed187de. Git therefore correctly reported no tracked modification for that file. finalist-evidence-ledger.json is new/untracked and likewise is not emitted by git diff --name-only.",
+    "corrected_tracked_mutations":  [
+                                        "assessment-manifest.json",
+                                        "evidence-index.csv",
+                                        "results/acceptance/public-test-results.json",
+                                        "timeline.csv"
+                                    ],
+    "unchanged_tracked_artifact":  {
+                                       "path":  "ioc-set.csv",
+                                       "sha256":  "ba46259fae599800dbddc327beac3bc82cbdeeb70aa3939a9c658a6f6ed187de",
+                                       "reason":  "PREVIOUS_ROOT_ALREADY_BYTE_IDENTICAL_TO_FINAL_ZERO_ROW_TEMPLATE_COMPLIANT_FILE"
+                                   },
+    "new_untracked_root_artifact":  {
+                                        "path":  "finalist-evidence-ledger.json",
+                                        "sha256":  "2712a26b628a3e40d641d83dc2ba5b194cd1c14afad3b84d84047d18bd658ec0"
+                                    },
+    "validation":  {
+                       "evidence_index_rows":  16,
+                       "timeline_rows":  5442,
+                       "timeline_blank_exact_locators":  0,
+                       "timeline_blank_artifact_paths":  0,
+                       "confirmed_malicious_ioc_rows":  0,
+                       "regression_tests_passed":  524,
+                       "production_source_diff_count":  0,
+                       "test_source_diff_count":  0
+                   },
+    "final_status":  "CLOSED_HARNESS_DEFECT_PROMOTION_VALID"
+}

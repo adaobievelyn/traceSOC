@@ -1,0 +1,101 @@
+{
+  "anti_hardcoding": {
+    "delta_aware_gate": "PASS",
+    "forbidden_production_delta_hits": 0,
+    "scenario_or_answer_selector": false,
+    "sysmon_event_id_1_class": "source_protocol_semantic_identifier"
+  },
+  "clock_contract": {
+    "canonical_time_source": "EventData/UtcTime",
+    "clock_contract_changed_by_promotion": false,
+    "clock_correction_performed": false,
+    "clock_state": "observed",
+    "observed_utc_count": 11618
+  },
+  "evidence": {
+    "canonical_events": 11618,
+    "event_id_1_records": 349,
+    "non_event_id_1_records": 11269,
+    "sha256": "8886e363b137555f5a0403783106e656b77e328fab2e503a645015f5e1cc3756",
+    "source_id": "TS-DEV-SPLUNK-SYSMON-001"
+  },
+  "external_evidence_modified": false,
+  "generated_utc": "2026-09-15T13:05:23Z",
+  "historical_test_contract_repair": {
+    "historical_test_updated": "tests/unit/test_sysmon_real_mapping.py",
+    "new_expectation": "Phase 4D.3G promotes Event ID 1 to process_create while non-Event-ID-1 records remain sysmon_event.",
+    "production_bug_found": false,
+    "production_repatch_required": false,
+    "required": true,
+    "root_cause": "STALE_PRE_PROMOTION_TEST_CONTRACT",
+    "superseded_expectation": "Phase 4D.3F asserted Event ID 1 remained sysmon_event because semantic promotion had not yet occurred."
+  },
+  "holdout_accessed": false,
+  "implementation": {
+    "historical_test_module": "tests/unit/test_sysmon_real_mapping.py",
+    "historical_test_module_sha256": "db2f39081b705b240c41a82fd151e0bc6ee9c01a75b7676c82809bdc5440ef28",
+    "mapper": "load_sysmon_windows_event_xml",
+    "production_module": "src/tracesoc/parsers/sysmon.py",
+    "production_module_sha256": "32616f5719139571ab714f9828065573a3b1847be54b74132fd53556fe7b2611",
+    "promotion_test_module": "tests/unit/test_sysmon_event1_promotion.py",
+    "promotion_test_module_sha256": "7bb03af7627f03f264a57fc70dee6e7e6af068478d108bec44c2e07366b7449e"
+  },
+  "next": "PHASE_4D3H_POWERSHELL_REAL_CANONICAL_MAPPING",
+  "objective": "Promote source-defined Sysmon Event ID 1 records into TraceSOC's established process_create semantic vocabulary while preserving all other Sysmon event families at the bounded generic layer.",
+  "parent_commit": "d5400d2e4b822507b388fb84603c9d36d9a93bae",
+  "phase": "PHASE-4D.3G",
+  "promotion_contract": {
+    "command_line_coverage": "349/349",
+    "command_line_source": "CommandLine",
+    "generic_count": 11269,
+    "generic_event_type": "sysmon_event",
+    "parent_command_line_coverage": "349/349",
+    "parent_command_line_source": "ParentCommandLine",
+    "parent_process_coverage": "349/349",
+    "parent_process_guid_coverage": "349/349",
+    "parent_process_guid_source": "ParentProcessGuid",
+    "parent_process_id_coverage": "349/349",
+    "parent_process_id_source": "ParentProcessId",
+    "parent_process_source": "ParentImage",
+    "principal_coverage": "349/349",
+    "principal_source": "User",
+    "process_guid_coverage": "349/349",
+    "process_guid_source": "ProcessGuid",
+    "process_id_coverage": "349/349",
+    "process_id_source": "ProcessId",
+    "process_name_coverage": "349/349",
+    "process_name_source": "Image",
+    "promoted_count": 349,
+    "promoted_event_type": "process_create",
+    "source_event_id": 1
+  },
+  "record_type": "tracesoc-phase4d3g-sysmon-event1-process-create-promotion-validation",
+  "result": "PASS",
+  "scope_boundary": {
+    "correlation_logic_added": false,
+    "detection_logic_added": false,
+    "generic_sysmon_events_preserved": 11269,
+    "maliciousness_inferred": false,
+    "non_event_id_1_semantic_promotion": false
+  },
+  "source_value_preservation": {
+    "command_line_modified": false,
+    "parent_process_id_reformatted": false,
+    "principal_modified": false,
+    "process_guid_reformatted": false,
+    "process_id_reformatted": false
+  },
+  "validation": {
+    "deterministic_promoted_identity": "PASS",
+    "event_id_1_only_promotion": "PASS",
+    "full_process_field_coverage": "349/349_PASS",
+    "full_unit_regression": "88/88_PASS",
+    "generic_sysmon_preservation": "11269/11269_PASS",
+    "observed_utc_clock_preserved": "11618/11618_PASS",
+    "process_create_promotion": "349/349_PASS",
+    "promotion_focused_tests": "6/6_PASS",
+    "real_mapping_regression_tests": "6/6_PASS",
+    "repository_text_integrity": "PASS",
+    "semantic_separation": "PASS"
+  }
+}

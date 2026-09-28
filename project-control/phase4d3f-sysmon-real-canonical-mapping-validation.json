@@ -1,0 +1,98 @@
+{
+  "anti_hardcoding": {
+    "delta_aware_gate": "PASS",
+    "forbidden_production_delta_hits": 0
+  },
+  "canonical_contract": {
+    "deterministic_event_identity": true,
+    "event_type": "sysmon_event",
+    "event_type_count": 11618,
+    "exact_raw_provenance_preserved": true,
+    "principal_fabricated": false,
+    "semantic_fields_empty_count": 11618,
+    "semantic_source_context_separation": true,
+    "source_type": "sysmon"
+  },
+  "clock_adjudication_observed": {
+    "eventdata_utctime_format": "YYYY-MM-DD HH:MM:SS.mmm",
+    "eventdata_utctime_present": 11618,
+    "interpretive_boundary": "The two source timestamps are preserved as distinct clock observations. The mapper does not infer that their difference is a correction offset.",
+    "maximum_system_minus_utctime_ms": 45153.3024,
+    "median_system_minus_utctime_ms": 8.9585,
+    "systemtime_after_utctime_count": 11618,
+    "systemtime_before_utctime_count": 0,
+    "systemtime_equal_utctime_count": 0,
+    "systemtime_explicit_z_count": 11618
+  },
+  "clock_contract": {
+    "canonical_clock_state": "observed",
+    "canonical_observed_utc_count": 11618,
+    "canonical_raw_time_source": "EventData/UtcTime",
+    "clock_correction_performed": false,
+    "event_log_time_retained_in_source_context": true,
+    "event_log_time_source": "System/TimeCreated@SystemTime",
+    "timezone_fabricated": false
+  },
+  "event_id_distribution": {
+    "1": 349,
+    "10": 8362,
+    "11": 164,
+    "12": 49,
+    "13": 491,
+    "16": 1,
+    "17": 58,
+    "18": 12,
+    "22": 89,
+    "23": 1389,
+    "25": 1,
+    "3": 627,
+    "4": 2,
+    "5": 1,
+    "6": 8,
+    "7": 15
+  },
+  "evidence": {
+    "canonical_events": 11618,
+    "canonical_quarantined": 0,
+    "observed_event_id_families": 16,
+    "observed_hosts": 1,
+    "raw_records": 11618,
+    "sha256": "8886e363b137555f5a0403783106e656b77e328fab2e503a645015f5e1cc3756",
+    "source_id": "TS-DEV-SPLUNK-SYSMON-001"
+  },
+  "external_evidence_modified": false,
+  "generated_utc": "2026-09-15T12:56:20Z",
+  "holdout_accessed": false,
+  "implementation": {
+    "mapper": "load_sysmon_windows_event_xml",
+    "module": "src/tracesoc/parsers/sysmon.py",
+    "module_sha256": "1d58c651e77d2cea8af72558e3c6abcbafe7d07f068568795cfe58c0148e09da",
+    "test_module": "tests/unit/test_sysmon_real_mapping.py",
+    "test_module_sha256": "c6cb483037f69c812bf8f5a50ae2887d24419ddb9e7dc04e47a7e35ee685f18c"
+  },
+  "next": "PHASE_4D3G_SYSMON_EVENT1_PROCESS_CREATE_PROMOTION",
+  "objective": "Map all validated real Sysmon XML records into the generic TraceSOC CanonicalEvent contract using the source-native Sysmon UtcTime activity timestamp while retaining Windows Event Log SystemTime separately.",
+  "parent_commit": "3501ede3d1a98dcc4e06330ee276548093bd4cc9",
+  "phase": "PHASE-4D.3F",
+  "record_type": "tracesoc-phase4d3f-sysmon-real-canonical-mapping-validation",
+  "result": "PASS",
+  "scope_boundary": {
+    "correlation_logic_added": false,
+    "detection_logic_added": false,
+    "event_id_1_process_promotion_deferred": true,
+    "event_specific_semantic_promotion_performed": false,
+    "maliciousness_inferred": false
+  },
+  "validation": {
+    "event_log_systemtime_retention": "11618/11618_PASS",
+    "focused_real_mapping_tests": "6/6_PASS",
+    "full_unit_regression": "82/82_PASS",
+    "generic_semantic_boundary": "11618/11618_PASS",
+    "observed_utc_clock": "11618/11618_PASS",
+    "raw_provenance_preservation": "11618/11618_PASS",
+    "real_canonical_accounting": "11618/11618_PASS",
+    "repository_text_integrity": "PASS",
+    "semantic_separation": "PASS",
+    "source_utctime_preservation": "11618/11618_PASS"
+  }
+}

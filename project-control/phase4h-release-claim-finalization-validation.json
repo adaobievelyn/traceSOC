@@ -1,0 +1,114 @@
+{
+    "record_type":  "tracesoc-phase4h-release-claim-finalization-validation",
+    "schema_version":  1,
+    "phase":  "PHASE-4H-E",
+    "generated_utc":  "2026-09-16T16:19:45.3022816Z",
+    "result":  "PASS",
+    "parent_commit":  "0fd726ff225aaff18010e3d78ba4ad0892b19ad1",
+    "material_claim_denominator":  2,
+    "claims":  [
+                   {
+                       "claim_id":  "CLAIM-REAL-TRC-DET-003",
+                       "detection_id":  "TRC-DET-003",
+                       "source_id":  "TS-DEV-SPLUNK-PS-001",
+                       "state":  "OBSERVED",
+                       "status":  "FINAL",
+                       "contributing_event_ids":  5,
+                       "raw_to_result_lineage":  "PASS",
+                       "four_layer_claim_fields":  "PASS",
+                       "explicit_falsifier":  "PASS",
+                       "independent_same_incident_corroboration":  "NOT_ESTABLISHED"
+                   },
+                   {
+                       "claim_id":  "CLAIM-REAL-TRC-DET-005",
+                       "detection_id":  "TRC-DET-005",
+                       "source_id":  "TS-DEV-SPLUNK-SYSMON-001",
+                       "state":  "OBSERVED",
+                       "status":  "FINAL",
+                       "contributing_event_ids":  2,
+                       "raw_to_result_lineage":  "PASS",
+                       "four_layer_claim_fields":  "PASS",
+                       "explicit_falsifier":  "PASS",
+                       "effective_firewall_disablement":  "NOT_ESTABLISHED",
+                       "independent_same_incident_corroboration":  "NOT_ESTABLISHED"
+                   }
+               ],
+    "denominator_accounting":  {
+                                   "final_material_claims":  2,
+                                   "claim_event_references":  7,
+                                   "claims_with_observed_fact":  "2/2",
+                                   "claims_with_inference":  "2/2",
+                                   "claims_with_state":  "2/2",
+                                   "claims_with_alternative":  "2/2",
+                                   "claims_with_residual_risk":  "2/2",
+                                   "claims_with_falsifier":  "2/2",
+                                   "claims_with_business_impact":  "2/2",
+                                   "claims_with_decision_required":  "2/2",
+                                   "claims_with_proof_path":  "2/2"
+                               },
+    "requirement_adjudication":  {
+                                     "PRE_001":  {
+                                                     "status":  "PASS",
+                                                     "basis":  "Two defense-ready real raw-to-result proof paths are complete with 7/7 event references carrying verified registered-artifact SHA-256, exact record SHA-256, and byte locators."
+                                                 },
+                                     "PRE_002":  {
+                                                     "status":  "PARTIAL",
+                                                     "claim_layer_coverage":  "2/2",
+                                                     "remaining_blocker":  "Final executive/business outputs have not yet been regenerated from the finalized claims."
+                                                 },
+                                     "PRE_003":  {
+                                                     "status":  "PASS",
+                                                     "falsifier_coverage":  "2/2"
+                                                 }
+                                 },
+    "root_visibility":  {
+                            "evidence_index":  {
+                                                   "path":  "evidence-index.csv",
+                                                   "sha256":  "415bc0a574ad03a97dd44a178388b75d1e81efb7d989c016444793f1d2c10e01",
+                                                   "rows":  20,
+                                                   "material_claim_rows":  2
+                                               },
+                            "ioc_set":  {
+                                            "path":  "ioc-set.csv",
+                                            "sha256":  "ba46259fae599800dbddc327beac3bc82cbdeeb70aa3939a9c658a6f6ed187de",
+                                            "rows":  0,
+                                            "zero_row_state":  "ADJUDICATED_ZERO_SUPPORTED_IOCS"
+                                        },
+                            "timeline":  {
+                                             "path":  "timeline.csv",
+                                             "sha256":  "0acead58e62d4e6a6db192bf01bea7a844bd1853c49d78a2a346bc8c47565059",
+                                             "rows":  7
+                                         }
+                        },
+    "control_files":  {
+                          "claim_register":  {
+                                                 "path":  "project-control/claim-register.csv",
+                                                 "sha256":  "c0ca5bafbb92fce838f9cb9c81843aa8c12d7ef16708f2e8d601a650b5f64134",
+                                                 "rows":  2
+                                             },
+                          "requirements_matrix":  {
+                                                      "path":  "project-control/requirements-matrix.csv",
+                                                      "sha256":  "8f9996e4b928da4fe39b5445d7d4042eabb19cb8ef8e5bcb7f3f0c36c3334f32"
+                                                  },
+                          "release_evidence":  {
+                                                   "path":  "results/release/real-event-level-release-evidence.json",
+                                                   "sha256":  "3b8c71f48e5ccaa69d616e2e0c637d7c67faf963bb786073d78defc79bef7214"
+                                               },
+                          "release_evidence_proof":  {
+                                                         "path":  "project-control/phase4h-real-event-level-release-evidence-validation.json",
+                                                         "sha256":  "f63ca4db56aa5e3c432131155042e8f4985dc98a77b5ca6e7c0f1e0a47325bf9"
+                                                     }
+                      },
+    "evidence_boundaries":  {
+                                "claim_state_promoted_above_observed":  false,
+                                "corroboration_fabricated":  false,
+                                "cross_corpus_incident_membership_claimed":  false,
+                                "credential_acquisition_claimed":  false,
+                                "effective_firewall_disablement_claimed":  false,
+                                "malicious_intent_claimed":  false,
+                                "raw_evidence_mutated":  false,
+                                "holdout_accessed":  false,
+                                "analytic_logic_changed":  false
+                            },
+    "next":  "PHASE_4H_EXECUTIVE_BUSINESS_PROPAGATION"
+}

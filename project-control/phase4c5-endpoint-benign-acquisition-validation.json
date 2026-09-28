@@ -1,0 +1,70 @@
+{
+    "record_type":  "tracesoc-phase4c5-endpoint-benign-acquisition-validation",
+    "generated_utc":  "2026-09-15T07:49:17.1441460Z",
+    "phase":  "4C.5",
+    "parent_commit":  "78652b88d4f2b0fb539b79026babbdad7ed12bd4",
+    "candidate_id":  "CAND-010",
+    "recovery":  {
+                     "initial_attempt_status":  "STOPPED_SAFELY",
+                     "failure":  "TEMP_OUTPUT_DIRECTORY_ALREADY_EXISTED",
+                     "failed_before_raw_storage":  true,
+                     "failed_before_register_update":  true,
+                     "downloaded_archive_was_already_verified":  true,
+                     "recovery_action":  "VERIFY_EMPTY_OUTPUT_REMOVE_ONLY_EMPTY_TEMP_DIRECTORY_REUSE_HASH_VERIFIED_DOWNLOAD",
+                     "redownload":  false,
+                     "final_status":  "GREEN"
+                 },
+    "raw_archive":  {
+                        "source_id":  "TS-BEN-NEXTRON-WIN10-ARCHIVE",
+                        "byte_size":  70844052,
+                        "publisher_expected_sha256":  "d48f1b328d48db6c6dfaa9b6e232dbb454d93e833c6e1248efc0faf690b6808e",
+                        "observed_sha256":  "d48f1b328d48db6c6dfaa9b6e232dbb454d93e833c6e1248efc0faf690b6808e",
+                        "publisher_hash_match":  true,
+                        "immutable":  true
+                    },
+    "selected_channels":  [
+                              {
+                                  "family":  "WINDOWS_SECURITY",
+                                  "archive_member":  "Logs_Client/Security.evtx",
+                                  "derived_path":  "D:\\TraceSOC-Evidence\\derived\\benign_control\\nextron-evtx-baseline\\v0.8.4\\win10-client\\Security.evtx",
+                                  "sha256":  "543f73f57f0b9a682a3a6e7bdab890e94484c86dc1771e5780e481386a6044fe"
+                              },
+                              {
+                                  "family":  "SYSMON",
+                                  "archive_member":  "Logs_Client/Microsoft-Windows-Sysmon%4Operational.evtx",
+                                  "derived_path":  "D:\\TraceSOC-Evidence\\derived\\benign_control\\nextron-evtx-baseline\\v0.8.4\\win10-client\\Microsoft-Windows-Sysmon%4Operational.evtx",
+                                  "sha256":  "efbc4d4cd450eddf7665f5965b0f6cfe30088f8f69225886e1d433329fb950cb"
+                              },
+                              {
+                                  "family":  "POWERSHELL",
+                                  "archive_member":  "Logs_Client/Microsoft-Windows-PowerShell%4Operational.evtx",
+                                  "derived_path":  "D:\\TraceSOC-Evidence\\derived\\benign_control\\nextron-evtx-baseline\\v0.8.4\\win10-client\\Microsoft-Windows-PowerShell%4Operational.evtx",
+                                  "sha256":  "fc95504793682c73aece8e89c7d799545a5b607119afe3466c3e879ca8db1464"
+                              }
+                          ],
+    "integrity":  {
+                      "registered_external_raw_artifacts":  13,
+                      "raw_hash_revalidation":  "13/13",
+                      "derived_evtx_revalidation":  "3/3",
+                      "evtx_magic_verification":  "3/3"
+                  },
+    "coverage":  {
+                     "core_telemetry":  "4/4",
+                     "network_benign_controls":  "2/2",
+                     "endpoint_benign_control":  "CLOSED",
+                     "final_corpus_complete":  false
+                 },
+    "safety":  {
+                   "extract_all_used":  false,
+                   "raw_archive_modified":  false,
+                   "executable_content_executed":  false,
+                   "detector_tuning_performed":  false,
+                   "source_labels_used_as_selectors":  false
+               },
+    "manifest":  {
+                     "path":  "D:\\TraceSOC-Evidence\\manifests\\phase4c5-endpoint-benign-evidence.json",
+                     "sha256":  "17fbf6f7680c5ffb75920720238c3aaf84ad85706b4a52f97002675e6b1ef270"
+                 },
+    "consolidated_test_record_changed":  false,
+    "next":  "PHASE_4C6_HOLDOUT_ACQUISITION_DESIGN"
+}

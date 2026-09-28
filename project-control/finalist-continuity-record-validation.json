@@ -1,0 +1,69 @@
+{
+    "schema_version":  "1.0",
+    "record_type":  "tracesoc-finalist-continuity-record-validation",
+    "tracesoc_technical_freeze":  {
+                                      "commit":  "8751a679f36b4983cdd3d2b0b35f44e9a11c4f39",
+                                      "tree":  "fc420ee3fd1988cf578c0cf309ee3aefcccf33b2"
+                                  },
+    "prior_stage":  {
+                        "stage":  "STAGE_9A",
+                        "technical_freeze":  {
+                                                 "commit":  "53b7e35a65203d31b348317dc11fbdba7b919a49",
+                                                 "tree":  "f4b9670a10a6c3b0c8c0399eef7395abec875da6",
+                                                 "subject":  "Refresh raw-to-final proof after provenance binding"
+                                             },
+                        "historical_freeze_binding":  {
+                                                          "report_package_commit":  "ca2e634b235ee9bfa73a975a2a93ac01cf23bd35",
+                                                          "report_package_assessment_blob":  "7296aeda6d6d3ba2f69b22cf1d09d74d1c95f442",
+                                                          "template_aligned_commit":  "26c4f0d75ae49074bec9a6a3b2e03b094e02a4c2",
+                                                          "template_aligned_assessment_blob":  "443545d0b28951251d808e4b4b8eb08a3c84b50b",
+                                                          "bound_manifest_commit":  "53b7e35a65203d31b348317dc11fbdba7b919a49"
+                                                      },
+                        "assessed_submission_authority":  {
+                                                              "authority":  "SUBMITTED_STAGE9A_PACKAGE",
+                                                              "archive_filename":  "UBI-2026-0091-STAGE_9-20260911T160346Z-1-001.zip",
+                                                              "archive_sha256":  "83ae8b71ead89033f9ae0aa58eee96b8af437860d6f270202664c27c551da0b6"
+                                                          },
+                        "production_source_copied_into_tracesoc":  false
+                    },
+    "supplied_contract":  {
+                              "path":  "evidence/submission-templates/portfolio-continuity.md",
+                              "sha256":  "c41a8917d3e312550987d8f53b32d29d5e7a827e015de91c9a2adf29ff567426",
+                              "required_sections_present":  5,
+                              "required_sections_total":  5
+                          },
+    "superseded_record":  {
+                              "sha256":  "fd55e8a14af168480657948c9d8623e5099fe9f568dbfd532696ad08fa3606e3",
+                              "disposition":  "SUPERSEDED_DEVELOPMENT_DRAFT",
+                              "external_backup":  "C:\\TraceSOC-Reference-Case\\working\\finalist-continuity-backup-d4\\continuity-record.development-draft.md"
+                          },
+    "final_record":  {
+                         "path":  "continuity-record.md",
+                         "sha256":  "884ae876ef78b7e1a8baab59e205af75fcfe957ffca7eb6554f359a3b3f62ab0",
+                         "stale_placeholder_count":  0
+                     },
+    "continuity_model":  {
+                             "model":  "VERIFIED_PRIOR_CONTRACTS_AND_PROOF_TO_TRACESOC_NATIVE_IMPLEMENTATION",
+                             "prior_runtime_copied":  false,
+                             "raw_to_result_provenance_preserved":  true,
+                             "incompatible_migrations_recorded":  true,
+                             "next_stage_handoff_identified":  true
+                         },
+    "measured_proof":  {
+                           "reference_case_canonical_observations":  5442,
+                           "reference_case_raw_locator_coverage":  "5442/5442",
+                           "external_real_zeek_rows":  23145,
+                           "postfreeze_holdout_rows":  156458,
+                           "current_regression":  "524/524 PASS",
+                           "holdout_detection_accuracy":  "UNADJUDICATED"
+                       },
+    "boundaries":  {
+                       "product_source_mutated":  false,
+                       "test_source_mutated":  false,
+                       "holdout_rerun":  false,
+                       "stage_performed":  false,
+                       "commit_created":  false,
+                       "push_performed":  false
+                   },
+    "final_status":  "PASS"
+}

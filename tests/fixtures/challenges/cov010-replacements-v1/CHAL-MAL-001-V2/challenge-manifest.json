@@ -1,0 +1,89 @@
+{
+  "challenge_id": "CHAL-MAL-001-V2",
+  "contract_freeze_commit": "f42e9b122bad5bbef841be47c56d9eb3b275cb94",
+  "contract_path": "project-control/phase4i-cov010-replacement-contracts-v1.json",
+  "contract_sha256": "0fbc57c552b8fddea20a9aa2cdb271ecc8c352338964410389f02a6b8df0b900",
+  "execution_status": "NOT_EXECUTED",
+  "frozen_genuine_red_if": [
+    "The malformed replacement record disappears from accounting.",
+    "The malformed replacement record is accepted as canonical.",
+    "The invalid RecordNumber is silently coerced to valid numeric metadata.",
+    "Malformed record boundaries are silently merged with another record."
+  ],
+  "frozen_pass_invariants": [
+    "Exactly one physical replacement record is accounted for.",
+    "Accepted canonical event count is zero.",
+    "Quarantined record count is exactly one.",
+    "Quarantine reason is invalid_field.",
+    "The quarantine locator remains bound to the full derived replacement record.",
+    "No canonical event is fabricated from the malformed record."
+  ],
+  "generated_artifacts": [
+    {
+      "bytes": 1874,
+      "path": "CHAL-MAL-001-V2/windows-security.txt",
+      "role": "MALFORMED_WINDOWS_SECURITY_INPUT",
+      "sha256": "9a8214077c384f800072ede8aa9cf34baf7ec235fbe2db411dbe00f1ddfcf45d"
+    }
+  ],
+  "generation_contract": {
+    "all_other_bytes": "PRESERVE_EXACTLY",
+    "field": "RecordNumber",
+    "forbidden_mutation_logic": [
+      "Do not truncate by byte percentage.",
+      "Do not depend on original record length as a production signal.",
+      "Do not depend on missing final newline.",
+      "Do not depend on publisher prose completeness.",
+      "Do not depend on expected hash/count selectors."
+    ],
+    "mutation_operator": "REPLACE_REQUIRED_NUMERIC_RECORDNUMBER_WITH_NON_NUMERIC_LITERAL",
+    "replacement_count": 1,
+    "replacement_value": "not-a-number",
+    "source_lineage": "SAME_FROZEN_SECURITY_PARENT_AS_ORIGINAL_CHAL_MAL_001",
+    "source_precondition": "Exactly one top-level RecordNumber field must exist in the selected parent and its value must be an ASCII decimal integer.",
+    "structural_observability": "Malformed state is observable from the replacement bytes themselves because required numeric RecordNumber is non-numeric."
+  },
+  "generator_path": "scripts/generate_cov010_replacements_v1.py",
+  "generator_sha256": "f25e681ea1145d7c0132508c3f2519401c36ad62838a7d45ae585cc0af4a9eff",
+  "generator_version": "1.0.0",
+  "mutation": {
+    "all_other_bytes_preserved": true,
+    "derived_record_bytes": 1874,
+    "derived_record_sha256": "9a8214077c384f800072ede8aa9cf34baf7ec235fbe2db411dbe00f1ddfcf45d",
+    "field": "RecordNumber",
+    "new_value": "not-a-number",
+    "old_value": "246562",
+    "operator": "REPLACE_REQUIRED_NUMERIC_RECORDNUMBER_WITH_NON_NUMERIC_LITERAL",
+    "replacement_count": 1,
+    "source_record_bytes": 1868,
+    "source_record_sha256": "9fe042d221a0bde814024b48498e3ee17ebf7fe58cb8975eba0e6ddb0fb97816"
+  },
+  "original_red_must_remain_preserved": true,
+  "production_call_chain": [
+    "read_windows_security_splunk_records",
+    "load_windows_security_splunk"
+  ],
+  "production_defect_previously_established": false,
+  "record_type": "tracesoc-cov010-replacement-challenge-manifest-v1",
+  "replacement_set_id": "COV010-RPL-V1",
+  "replaces_original_challenge_id": "CHAL-MAL-001",
+  "replaces_original_matrix_row": 7,
+  "schema_version": 1,
+  "source_lineage": {
+    "exact_locator": {
+      "byte_length": 1868,
+      "byte_offset": 0,
+      "line_number": 1,
+      "record_index": 0
+    },
+    "kind": "EXACT_SELECTED_DEVELOPMENT_PARENT",
+    "parent_id": "PARENT-SECURITY-CLOCK-001",
+    "parent_selection_path": "project-control/phase4i-challenge-exact-parent-selection.json",
+    "parent_selection_sha256": "b9838e2d9c8c9d81a6f0a5220442ee6652a8c396d4a1411ff5a8754049efb53e",
+    "source_id": "TS-DEV-SPLUNK-SECURITY-001",
+    "source_record_sha256": "9fe042d221a0bde814024b48498e3ee17ebf7fe58cb8975eba0e6ddb0fb97816",
+    "source_role": "DEVELOPMENT",
+    "source_sha256": "b55c57fd0256fa73f55116f9ad307de3b7403f1ba7536c10431b56426a09bd89",
+    "telemetry_family": "WINDOWS_SECURITY"
+  }
+}

@@ -1,0 +1,90 @@
+{
+    "schema_version":  "1.0",
+    "record_type":  "tracesoc-finalist-packaging-attempt-disposition",
+    "phase":  "FINALIST_PACKAGING_PHASE_D2_ATTEMPT_1",
+    "classification":  "PACKAGING_SERIALIZATION_ORDER_DEFECT",
+    "product_defect":  false,
+    "evidence_defect":  false,
+    "template_key_set_correct":  true,
+    "template_key_order_correct":  false,
+    "promoted_to_root":  false,
+    "holdout_rerun":  false,
+    "technical_freeze":  {
+                             "commit":  "8751a679f36b4983cdd3d2b0b35f44e9a11c4f39",
+                             "tree":  "fc420ee3fd1988cf578c0cf309ee3aefcccf33b2"
+                         },
+    "failed_generator":  {
+                             "path":  "scripts/build_finalist_package.py",
+                             "sha256":  "df3aefcda5d9ceaaed9d66214445f7d9e009bf52eceea65bbf3f69fa0d4a0135"
+                         },
+    "failed_assessment":  {
+                              "sha256":  "6760fddafed9e1a50381da520ea8dcdd590dbef6474589ae89773a7608b01ed8",
+                              "missing_template_keys":  0,
+                              "extra_template_keys":  0,
+                              "template_order":  [
+                                                     "schema_version",
+                                                     "project_id",
+                                                     "variant",
+                                                     "candidate_binding",
+                                                     "assigned_pack",
+                                                     "commit",
+                                                     "supported_environment",
+                                                     "commands",
+                                                     "results",
+                                                     "inputs",
+                                                     "outputs",
+                                                     "manual_preconditions",
+                                                     "known_limitations"
+                                                 ],
+                              "serialized_order":  [
+                                                       "assigned_pack",
+                                                       "candidate_binding",
+                                                       "commands",
+                                                       "commit",
+                                                       "inputs",
+                                                       "known_limitations",
+                                                       "manual_preconditions",
+                                                       "outputs",
+                                                       "project_id",
+                                                       "results",
+                                                       "schema_version",
+                                                       "supported_environment",
+                                                       "variant"
+                                                   ]
+                          },
+    "failed_outputs":  [
+                           {
+                               "file":  "assessment-manifest.json",
+                               "bytes":  4637,
+                               "sha256":  "6760fddafed9e1a50381da520ea8dcdd590dbef6474589ae89773a7608b01ed8"
+                           },
+                           {
+                               "file":  "evidence-index.csv",
+                               "bytes":  9927,
+                               "sha256":  "c595986b5538cac972cc2e4aa8c306fb5a16bfd09cbfabe9ef72de69153a37b7"
+                           },
+                           {
+                               "file":  "finalist-evidence-ledger.json",
+                               "bytes":  37764,
+                               "sha256":  "2712a26b628a3e40d641d83dc2ba5b194cd1c14afad3b84d84047d18bd658ec0"
+                           },
+                           {
+                               "file":  "ioc-set.csv",
+                               "bytes":  153,
+                               "sha256":  "ba46259fae599800dbddc327beac3bc82cbdeeb70aa3939a9c658a6f6ed187de"
+                           },
+                           {
+                               "file":  "package-generation-record.json",
+                               "bytes":  2013,
+                               "sha256":  "537d193089ae77f560c6a1e71fc95fb1acee858111c13ef271972f9a4927d19e"
+                           },
+                           {
+                               "file":  "timeline.csv",
+                               "bytes":  3855240,
+                               "sha256":  "7761048806d90a9b6809a5b83f72c245fc01d39339809e92bd93a9d22cc585be"
+                           }
+                       ],
+    "root_cause":  "The Python assessment object retained the supplied template key order in memory, but the shared JSON writer serialized dictionaries with sort_keys=True. The generator\u0027s pre-serialization schema gate therefore passed while the independent post-serialization template-order gate correctly failed.",
+    "corrective_action":  "Preserve sorted deterministic JSON for other generated JSON records, but serialize assessment-manifest.json with sort_keys=False so the supplied UBI template key order is retained exactly.",
+    "final_status":  "REJECTED_NOT_PROMOTED"
+}

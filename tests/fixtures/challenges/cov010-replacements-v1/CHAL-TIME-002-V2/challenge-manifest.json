@@ -1,0 +1,87 @@
+{
+  "challenge_id": "CHAL-TIME-002-V2",
+  "contract_freeze_commit": "f42e9b122bad5bbef841be47c56d9eb3b275cb94",
+  "contract_path": "project-control/phase4i-cov010-replacement-contracts-v1.json",
+  "contract_sha256": "0fbc57c552b8fddea20a9aa2cdb271ecc8c352338964410389f02a6b8df0b900",
+  "execution_status": "NOT_EXECUTED",
+  "frozen_genuine_red_if": [
+    "TRC-DET-001 fails to match or bind the generated PowerShell event.",
+    "The generated directional delta is not exactly 30.0 seconds.",
+    "CORR002 rejects an otherwise qualifying pair at exactly 30.0 seconds.",
+    "CORR002 matches without detection-event binding.",
+    "CORR002 matches without required identity alignment.",
+    "A matched CORR002 result has no edge."
+  ],
+  "frozen_pass_invariants": [
+    "PowerShell input is accepted exactly once.",
+    "Sysmon input is accepted exactly once.",
+    "TRC-DET-001 MATCHES the supplied PowerShell event.",
+    "TRC-DET-001 contributing_event_ids contains that PowerShell event.",
+    "Directional PowerShell-minus-Sysmon delta is exactly 30.0 seconds.",
+    "Required CORR002 identity dimensions align.",
+    "TRC-CORR-002 MATCHES at exactly 30.0 seconds.",
+    "A non-null CORR002 edge is returned."
+  ],
+  "generated_artifacts": [
+    {
+      "bytes": 436,
+      "path": "CHAL-TIME-002-V2/powershell.jsonl",
+      "role": "POWERSHELL_SCRIPT_EXECUTION_INPUT",
+      "sha256": "31c59257440b32f96517ff814bc9df4eef5435af5e02f07f278bd1fbf1b93703"
+    },
+    {
+      "bytes": 456,
+      "path": "CHAL-TIME-002-V2/sysmon.jsonl",
+      "role": "SYSMON_PROCESS_CREATE_INPUT",
+      "sha256": "0e27ed1318cf90672a39e450b363ce0355fad400ff8c020f5c893d558200d488"
+    }
+  ],
+  "generation_contract": {
+    "all_non_timestamp_semantic_fields": "PRESERVE_FROM_GROUNDED_SCENARIO_002_PAIR",
+    "correlation": "TRC-CORR-002",
+    "directional_delta_seconds": 30.0,
+    "forbidden_source": "PARENT-PS-DET002-001",
+    "max_seconds": 30.0,
+    "powershell_detector": "TRC-DET-001",
+    "preserve_detector_positive_behavior": true,
+    "preserve_identity_dimensions": true,
+    "source": "GROUNDED_MULTISOURCE_SCENARIO_002_POSITIVE_PAIR",
+    "timestamp_rule": "Preserve the Scenario 002 Sysmon timestamp as the anchor. Set only the PowerShell timestamp to anchor plus exactly 30 seconds."
+  },
+  "generator_path": "scripts/generate_cov010_replacements_v1.py",
+  "generator_sha256": "f25e681ea1145d7c0132508c3f2519401c36ad62838a7d45ae585cc0af4a9eff",
+  "generator_version": "1.0.0",
+  "mutation": {
+    "derived_powershell_timestamp": "2026-02-04T12:00:30Z",
+    "directional_delta_seconds": 30.0,
+    "non_timestamp_powershell_fields_changed": false,
+    "operator": "SET_POWERSHELL_TIMESTAMP_RELATIVE_TO_UNCHANGED_SYSMON_ANCHOR",
+    "original_powershell_timestamp": "2026-02-04T12:00:08Z",
+    "sysmon_anchor_timestamp": "2026-02-04T12:00:00Z",
+    "sysmon_object_changed": false
+  },
+  "original_red_must_remain_preserved": true,
+  "production_call_chain": [
+    "load_powershell_jsonl",
+    "load_sysmon_jsonl",
+    "detect_powershell_web_retrieval",
+    "correlate_powershell_detection_with_sysmon_process"
+  ],
+  "production_defect_previously_established": false,
+  "record_type": "tracesoc-cov010-replacement-challenge-manifest-v1",
+  "replacement_set_id": "COV010-RPL-V1",
+  "replaces_original_challenge_id": "CHAL-TIME-002",
+  "replaces_original_matrix_row": 13,
+  "schema_version": 1,
+  "source_lineage": {
+    "kind": "GROUNDED_MULTISOURCE_SCENARIO_002_POSITIVE_PAIR",
+    "manifest_path": "tests/fixtures/scenarios/multisource-powershell-process-002/scenario-manifest.json",
+    "manifest_sha256": "a94f7690432e3d66dc1e5c2abfe12ed8ff8c3f0bdce6a176c511029f316d3dce",
+    "powershell_path": "tests/fixtures/scenarios/multisource-powershell-process-002/powershell.jsonl",
+    "powershell_sha256": "a2fbc7d78017b09f21440ab64c3de682ecf7d178f72f5a3dea8f65e4a088d00d",
+    "production_baseline_grounding": "Scenario 002 is frozen by contract as the existing TRC-DET-001 to TRC-CORR-002 positive source.",
+    "scenario_id": "MULTISOURCE-SCENARIO-0002",
+    "sysmon_path": "tests/fixtures/scenarios/multisource-powershell-process-002/sysmon.jsonl",
+    "sysmon_sha256": "0e27ed1318cf90672a39e450b363ce0355fad400ff8c020f5c893d558200d488"
+  }
+}

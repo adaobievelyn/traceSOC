@@ -1,0 +1,44 @@
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-PowerShell' Guid='{a0c1853b-5c40-4b15-8766-3cf1c58f985a}'/><EventID>4104</EventID><Version>1</Version><Level>5</Level><Task>2</Task><Opcode>15</Opcode><Keywords>0x0</Keywords><TimeCreated SystemTime='2026-09-24T12:14:54.3028760Z'/><EventRecordID>4363</EventRecordID><Correlation ActivityID='{062c9bc6-4bf0-0000-7ef0-3906f04bdd01}'/><Execution ProcessID='7156' ThreadID='7064'/><Channel>Microsoft-Windows-PowerShell/Operational</Channel><Computer>SensationalEve</Computer><Security UserID='S-1-5-21-2367207782-2933974256-153965027-1001'/></System><EventData><Data Name='MessageNumber'>1</Data><Data Name='MessageTotal'>1</Data><Data Name='ScriptBlockText'>$ErrorActionPreference = "Stop"
+
+$TraceSOCUri = "https://1.1.1.1/"
+$TraceSOCIP = "1.1.1.1"
+$TraceSOCPort = 443
+
+$client = New-Object System.Net.Sockets.TcpClient
+
+try {
+    $client.Connect(
+        $TraceSOCIP,
+        $TraceSOCPort
+    )
+
+    if (-not $client.Connected) {
+        throw "Direct TCP connection was not established."
+    }
+
+    Start-Sleep -Milliseconds 750
+}
+finally {
+    $client.Close()
+}
+
+try {
+    Invoke-WebRequest `
+        -UseBasicParsing `
+        -Uri $TraceSOCUri `
+        -TimeoutSec 5 `
+        -ErrorAction Stop |
+        Out-Null
+}
+catch {
+    Write-Output (
+        "TRACESOC_INVOKE_WEBREQUEST_RESULT=" +
+        $_.Exception.GetType().FullName
+    )
+}
+
+Invoke-Expression '$global:TraceSOCReferenceResult = 1'
+
+Write-Output "TRACESOC_REFERENCE_ACTIVITY_COMPLETE"</Data><Data Name='ScriptBlockId'>7a718c94-8229-4e79-a85e-920c8b77d2b3</Data><Data Name='Path'>C:\TraceSOC-Reference-Case\working\reference-activity.ps1</Data></EventData></Event>
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-PowerShell' Guid='{a0c1853b-5c40-4b15-8766-3cf1c58f985a}'/><EventID>4104</EventID><Version>1</Version><Level>5</Level><Task>2</Task><Opcode>15</Opcode><Keywords>0x0</Keywords><TimeCreated SystemTime='2026-09-24T12:15:00.6487051Z'/><EventRecordID>4364</EventRecordID><Correlation ActivityID='{062c9bc6-4bf0-0001-de1d-3706f04bdd01}'/><Execution ProcessID='7156' ThreadID='7064'/><Channel>Microsoft-Windows-PowerShell/Operational</Channel><Computer>SensationalEve</Computer><Security UserID='S-1-5-21-2367207782-2933974256-153965027-1001'/></System><EventData><Data Name='MessageNumber'>1</Data><Data Name='MessageTotal'>1</Data><Data Name='ScriptBlockText'>$global:TraceSOCReferenceResult = 1</Data><Data Name='ScriptBlockId'>6f07b321-a1db-48bb-b2b5-cd9d98c771a1</Data><Data Name='Path'></Data></EventData></Event>
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-PowerShell' Guid='{a0c1853b-5c40-4b15-8766-3cf1c58f985a}'/><EventID>4104</EventID><Version>1</Version><Level>5</Level><Task>2</Task><Opcode>15</Opcode><Keywords>0x0</Keywords><TimeCreated SystemTime='2026-09-24T12:15:00.6529739Z'/><EventRecordID>4365</EventRecordID><Correlation ActivityID='{062c9bc6-4bf0-0002-ea13-3f06f04bdd01}'/><Execution ProcessID='7156' ThreadID='7064'/><Channel>Microsoft-Windows-PowerShell/Operational</Channel><Computer>SensationalEve</Computer><Security UserID='S-1-5-21-2367207782-2933974256-153965027-1001'/></System><EventData><Data Name='MessageNumber'>1</Data><Data Name='MessageTotal'>1</Data><Data Name='ScriptBlockText'>$global:?</Data><Data Name='ScriptBlockId'>6ed03bee-898f-4e85-886e-5639b52391ce</Data><Data Name='Path'></Data></EventData></Event>

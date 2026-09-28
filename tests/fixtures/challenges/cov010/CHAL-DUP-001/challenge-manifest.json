@@ -1,0 +1,48 @@
+{
+  "base_parents": [
+    {
+      "exact_locator": {
+        "byte_length": 1238,
+        "byte_offset": 328537,
+        "line_number": 8314,
+        "record_index": 22
+      },
+      "parent_id": "PARENT-PS-DET002-001",
+      "record_sha256": "41f5b4b00ee630ab850ce3a4a313334f5a542c3480de15432190600f42c758a8",
+      "semantic_role": "DET002_MATCHED_POWERSHELL_EVENT",
+      "source_id": "TS-DEV-SPLUNK-PS-001",
+      "source_sha256": "ce45d417d0bd66e05939f835935dd24cfe6f55b257d7b2bb968c726ae378c8c3",
+      "telemetry_family": "POWERSHELL"
+    }
+  ],
+  "challenge_id": "CHAL-DUP-001",
+  "challenge_id_embedded_in_input": false,
+  "challenge_id_is_test_metadata": true,
+  "creation_timestamp_utc": "2026-09-17T10:13:44.7916301Z",
+  "execution_status": "NOT_EXECUTED",
+  "expected_analytical_boundary": "Both raw inputs must remain explicitly accounted for.",
+  "expected_answer_is_production_selector": false,
+  "expected_structural_effect": "Two byte-identical PowerShell Event records.",
+  "generated_artifacts": [
+    {
+      "parent_ids": [
+        "PARENT-PS-DET002-001"
+      ],
+      "path": "CHAL-DUP-001/powershell.xml",
+      "sha256": "1dba8b86e16134e1c58dc806efcfcfc6ab7be49b7b1b363ef3ef1da1230c020a"
+    }
+  ],
+  "mutation": {
+    "operator": "EXACT_RECORD_DUPLICATION",
+    "parameters": {
+      "copies": 2
+    }
+  },
+  "publisher_label_is_production_selector": false,
+  "purpose": "Exact duplicate record.",
+  "raw_original_modified": false,
+  "real_incident_claim": false,
+  "record_type": "tracesoc-derived-challenge-v1",
+  "serialization_templates": [],
+  "tool_script_version": "1.0.0"
+}

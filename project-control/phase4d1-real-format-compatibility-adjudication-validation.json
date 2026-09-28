@@ -1,0 +1,51 @@
+{
+    "record_type":  "tracesoc-phase4d1-real-format-compatibility-adjudication-validation",
+    "generated_utc":  "2026-09-15T09:35:56.9638102Z",
+    "phase":  "4D.1",
+    "parent_commit":  "ed4265f93104a1b58e4dc55bc7f7b5c4054585bd",
+    "external_evidence":  {
+                              "registered":  15,
+                              "hash_revalidation":  "15/15"
+                          },
+    "holdout":  {
+                    "history_events":  6,
+                    "semantic_access_events":  0,
+                    "label_access_events":  0,
+                    "semantic_compatibility_tested":  false
+                },
+    "observed_formats":  {
+                             "powershell_development":  "XML_EVENT_STREAM",
+                             "sysmon_development":  "XML_EVENT_STREAM",
+                             "windows_security_development":  "TEXT_EVENT_EXPORT",
+                             "zeek_development":  "ZEEK_TSV_CONN_LOG",
+                             "powershell_benign":  "EVTX",
+                             "windows_security_benign":  "EVTX",
+                             "sysmon_benign":  "EVTX"
+                         },
+    "current_adapters":  {
+                             "powershell":  "load_powershell_jsonl",
+                             "sysmon":  "load_sysmon_jsonl",
+                             "windows_security":  "load_windows_security_jsonl",
+                             "zeek":  "load_zeek_jsonl"
+                         },
+    "compatibility_accounting":  {
+                                     "baseline_compatible":  4,
+                                     "adaptation_required":  6,
+                                     "diagnosis_required":  1,
+                                     "sealed_not_adjudicated":  1,
+                                     "matrix_rows":  12
+                                 },
+    "benign_evtx":  {
+                        "powershell":  "READABLE",
+                        "security":  "READABLE",
+                        "sysmon":  "DIAGNOSIS_REQUIRED",
+                        "sysmon_observed_error":  "No events were found that match the specified selection criteria.",
+                        "sysmon_corruption_claimed":  false
+                    },
+    "zeek_label_policy":  "SOURCE_CONTEXT_ONLY_NOT_DETECTION_SELECTOR",
+    "existing_jsonl_adapters_retained":  true,
+    "parser_code_changed":  false,
+    "detector_code_changed":  false,
+    "consolidated_test_record_changed":  false,
+    "next":  "PHASE_4D2_SYSMON_EVTX_READABILITY_DIAGNOSIS"
+}

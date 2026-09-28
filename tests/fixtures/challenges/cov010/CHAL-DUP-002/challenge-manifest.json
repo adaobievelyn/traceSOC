@@ -1,0 +1,49 @@
+{
+  "base_parents": [
+    {
+      "exact_locator": {
+        "byte_length": 1089,
+        "byte_offset": 16468071,
+        "line_number": 9400,
+        "record_index": 9399
+      },
+      "parent_id": "PARENT-SYSMON-DET005-LATE",
+      "record_sha256": "934cfe2581594436a718afe935099b0e296f8b307e3bf854c19ab05bea1b455d",
+      "semantic_role": "DET005_EXACT_TIMED_EVENT_LATE",
+      "source_id": "TS-DEV-SPLUNK-SYSMON-001",
+      "source_sha256": "8886e363b137555f5a0403783106e656b77e328fab2e503a645015f5e1cc3756",
+      "telemetry_family": "SYSMON"
+    }
+  ],
+  "challenge_id": "CHAL-DUP-002",
+  "challenge_id_embedded_in_input": false,
+  "challenge_id_is_test_metadata": true,
+  "creation_timestamp_utc": "2026-09-17T10:13:44.7916301Z",
+  "execution_status": "NOT_EXECUTED",
+  "expected_analytical_boundary": "A semantic repeat must remain separately accountable.",
+  "expected_answer_is_production_selector": false,
+  "expected_structural_effect": "Two separate Sysmon records retain the selected behavior.",
+  "generated_artifacts": [
+    {
+      "parent_ids": [
+        "PARENT-SYSMON-DET005-LATE"
+      ],
+      "path": "CHAL-DUP-002/sysmon.xml",
+      "sha256": "22c0057f5fdab73c3a816702aa63d059b08a1a770d7f2fb260c8bbef6864d760"
+    }
+  ],
+  "mutation": {
+    "operator": "SEMANTIC_REPEAT_DISTINCT_EVENT_RECORD_ID",
+    "parameters": {
+      "derived_event_record_id": 1009338,
+      "original_event_record_id": 9338
+    }
+  },
+  "publisher_label_is_production_selector": false,
+  "purpose": "Semantically repeated separate record.",
+  "raw_original_modified": false,
+  "real_incident_claim": false,
+  "record_type": "tracesoc-derived-challenge-v1",
+  "serialization_templates": [],
+  "tool_script_version": "1.0.0"
+}

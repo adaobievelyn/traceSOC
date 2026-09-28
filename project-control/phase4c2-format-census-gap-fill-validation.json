@@ -1,0 +1,69 @@
+{
+    "record_type":  "tracesoc-phase4c2-format-census-gap-fill-validation",
+    "generated_utc":  "2026-09-14T14:20:44.4354193Z",
+    "phase":  "4C.2",
+    "parent_commit":  "c49406469ca835ae85b49b165dd38ff2e6e7f0c5",
+    "splunk_pinned_commit":  "be1980668e58497d23ba77ba25769996c4d1efaa",
+    "structural_census":  {
+                              "powershell":  "XML_EVENT_STREAM",
+                              "zeek":  "ZEEK_TAB_SEPARATED_LOG",
+                              "pcap_first_packet_read":  true,
+                              "tshark_path":  "C:\\Program Files\\Wireshark\\tshark.exe",
+                              "sysmon":  "XML_EVENT_STREAM",
+                              "windows_security":  "TEXT_EVENT_EXPORT"
+                          },
+    "real_telemetry_families":  {
+                                    "required":  4,
+                                    "acquired":  4,
+                                    "missing":  0,
+                                    "families":  [
+                                                     "SYSMON",
+                                                     "WINDOWS_SECURITY",
+                                                     "POWERSHELL",
+                                                     "ZEEK"
+                                                 ]
+                                },
+    "total_registered_real_artifacts":  6,
+    "integrity_revalidation":  "6/6",
+    "safety":  {
+                   "malware_binary_acquired":  false,
+                   "malware_executed":  false,
+                   "holdout_acquired":  false,
+                   "benign_control_acquired":  false
+               },
+    "analysis":  {
+                     "structural_format_probe_performed":  true,
+                     "semantic_adapter_changes_performed":  false,
+                     "detector_tuning_performed":  false,
+                     "source_labels_used_as_selectors":  false
+                 },
+    "corpus":  {
+                   "core_four_family_requirement_satisfied":  true,
+                   "final_corpus_complete":  false,
+                   "remaining_major_gaps":  [
+                                                "BENIGN_NETWORK_CONTROLS",
+                                                "BENIGN_ENDPOINT_EVIDENCE",
+                                                "NETWORK_HOLDOUT",
+                                                "ADDITIONAL_SUSPICIOUS_SCENARIOS",
+                                                "DERIVED_CHALLENGE_CORPUS",
+                                                "SCALE_CORPUS",
+                                                "REAL_FORMAT_ADAPTER_VALIDATION"
+                                            ]
+               },
+    "files":  {
+                  "project-control/phase4c2-real-format-census.json":  "e03a10f173865887987fc4e013a40969c586430f5c3319a5ce3fbad9fd87269d",
+                  "project-control/evidence-acquisition-register.csv":  "d89121cd78d76afc8f697ba3beb3d012540713bfce2b4541fdc5e7091b05e61b",
+                  "project-control/evidence-source-reference.md":  "ca348d0f441eca5cd6ce852fbe250a94db4a6798ad577f131322f72ddb573daf",
+                  "project-control/evidence-coverage-matrix.csv":  "9546f6fd9962f382e53e828fa2540371b1b334c4159f481151004dc2841688f7"
+              },
+    "external_manifest":  {
+                              "path":  "D:\\TraceSOC-Evidence\\manifests\\phase4c2-core-endpoint-gap-fill.json",
+                              "sha256":  "799b5a34f0b887aa3f0aa879f99f0ac2c1ddc349882601341bd61295e7b4838c"
+                          },
+    "consolidated_test_record":  {
+                                     "path":  "project-control/test-ledger.jsonl",
+                                     "changed_this_phase":  false,
+                                     "reason":  "No new analytic/unit test suite executed; phase performed evidence integrity and structural-format validation"
+                                 },
+    "next":  "PHASE_4C3_BENIGN_CONTROL_ACQUISITION"
+}

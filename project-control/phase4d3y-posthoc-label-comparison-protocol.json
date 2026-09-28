@@ -1,0 +1,298 @@
+{
+    "record_type":  "tracesoc-holdout-posthoc-label-comparison-protocol-v1",
+    "schema_version":  1,
+    "phase":  "PHASE-4D.3Y",
+    "generated_utc":  "2026-09-16T12:49:06.8736582Z",
+    "result":  "PASS",
+    "parent_commit":  "c8e9d26e0f28de3f612e1b6a372823c5186b11af",
+    "purpose":  "Freeze the exact post-hoc alignment, accounting, publisher-label inspection, interpretation, and failure rules before the first label-bearing content inspection.",
+    "comparison":  {
+                       "comparison_id":  "HOLDOUT-LABEL-COMPARE-0001",
+                       "result_path":  "results/holdout/HOLDOUT-LABEL-COMPARE-0001.json",
+                       "result_write_mode":  "EXCLUSIVE_CREATE",
+                       "result_overwrite_allowed":  false,
+                       "original_evaluation_id":  "HOLDOUT-EVAL-0001",
+                       "original_result_path":  "results/holdout/HOLDOUT-EVAL-0001.json",
+                       "original_result_sha256":  "35231e57f0eed7233e7ec2836cb1280766d72a485a4002191abcf4c033dc7143",
+                       "original_result_modified":  false,
+                       "original_evaluation_rerun_allowed":  false,
+                       "frozen_detection_id":  "TRC-DET-004",
+                       "frozen_detection_version":  "1.0.0",
+                       "frozen_matched_events":  0,
+                       "frozen_nonmatched_events":  156458,
+                       "frozen_reason_code_counts":  {
+                                                         "missing_service":  155720,
+                                                         "service_not_irc":  738
+                                                     }
+                   },
+    "sources":  {
+                    "plain":  {
+                                  "source_id":  "TS-HOLD-IOT23V2-003-ZEEK",
+                                  "sha256":  "1481a5c82b96ce3b902e383b7da7dbebc0466275af6a8bfaf1b453443bd2c7ba",
+                                  "role":  "FROZEN_FIRST_USE_SEMANTIC_SOURCE",
+                                  "labels_present":  false
+                              },
+                    "labeled":  {
+                                    "source_id":  "TS-HOLD-IOT23V2-003-ZEEK-LABELED",
+                                    "sha256":  "9851009bbca03e15089fa1a356dd4b5eee4a98161a51703626058a0b507f50d0",
+                                    "role":  "POSTHOC_PUBLISHER_SCORING_EVIDENCE",
+                                    "publisher_checksum_status":  "NOT_ESTABLISHED",
+                                    "local_registered_hash_verified":  true,
+                                    "labels_present_by_publisher_artifact_definition":  true
+                                }
+                },
+    "access_event":  {
+                         "log_path":  "project-control/holdout-access-log.jsonl",
+                         "event_id":  "HOLDOUT-EVENT-0010",
+                         "append_only":  true,
+                         "append_timing":  "IMMEDIATELY_BEFORE_FIRST_LABEL_BEARING_CONTENT_OPEN",
+                         "fixed_values":  {
+                                              "record_type":  "tracesoc-holdout-access-event",
+                                              "schema_version":  1,
+                                              "event_id":  "HOLDOUT-EVENT-0010",
+                                              "event_type":  "POSTHOC_LABEL_COMPARISON_ACCESS",
+                                              "access_class":  "POSTHOC_LABEL_COMPARISON_ACCESS",
+                                              "phase":  "PHASE-4D.3Z",
+                                              "candidate_id":  "CAND-011",
+                                              "source_id":  "TS-HOLD-IOT23V2-003-ZEEK-LABELED",
+                                              "companion_source_id":  "TS-HOLD-IOT23V2-003-ZEEK",
+                                              "comparison_id":  "HOLDOUT-LABEL-COMPARE-0001",
+                                              "evaluation_id":  "HOLDOUT-EVAL-0001",
+                                              "semantic_payload_accessed":  true,
+                                              "labels_accessed":  true,
+                                              "operation":  "COMPARE_PUBLISHER_LABELED_ZEEK_ROWS_TO_FROZEN_HOLDOUT_RESULT",
+                                              "purpose":  "Post-hoc scoring and consistency adjudication after independent frozen TraceSOC result",
+                                              "protocol_path":  "project-control/phase4d3y-posthoc-label-comparison-protocol.json",
+                                              "result_path":  "results/holdout/HOLDOUT-LABEL-COMPARE-0001.json"
+                                          },
+                         "runtime_fields":  [
+                                                "generated_utc",
+                                                "git_head",
+                                                "protocol_commit",
+                                                "protocol_sha256"
+                                            ]
+                     },
+    "permitted_content_access":  {
+                                     "labeled_zeek_header_directives":  true,
+                                     "labeled_zeek_data_rows":  true,
+                                     "plain_zeek_header_directives":  true,
+                                     "plain_zeek_data_rows":  true,
+                                     "purpose":  "Alignment and post-hoc scoring only",
+                                     "labels_config":  false,
+                                     "pcap":  false,
+                                     "readme_reopen_required":  false,
+                                     "detector_execution":  false,
+                                     "correlation_execution":  false,
+                                     "normalization_mutation":  false,
+                                     "parser_mutation":  false,
+                                     "detector_mutation":  false,
+                                     "analytic_tuning":  false
+                                 },
+    "zeek_structure_discovery":  {
+                                     "header_fields_may_be_discovered_after_access_event":  true,
+                                     "label_field_names_are_not_pre_assumed":  true,
+                                     "required_relationship":  "Labeled artifact field list must contain the complete plain conn.log field list in the same order followed by exactly two additional publisher fields.",
+                                     "expected_additional_publisher_fields":  2,
+                                     "if_relationship_fails":  "CAPTURE_ALIGNMENT_FAILURE_RESULT_AND_DO_NOT_PERFORM_SUBSTANTIVE_SCORING",
+                                     "allowed_header_directives":  [
+                                                                       "#separator",
+                                                                       "#set_separator",
+                                                                       "#empty_field",
+                                                                       "#unset_field",
+                                                                       "#path",
+                                                                       "#open",
+                                                                       "#fields",
+                                                                       "#types",
+                                                                       "#close"
+                                                                   ]
+                                 },
+    "row_alignment":  {
+                          "method":  "EXACT_BASE_FIELD_VECTOR_MULTISET",
+                          "description":  "For each plain data row, construct the ordered vector of every plain #fields value exactly as serialized after Zeek separator decoding. For each labeled row, construct the vector over the same base-field prefix, excluding only the two additional publisher fields. Compare complete multisets including multiplicity.",
+                          "row_order_required":  false,
+                          "unique_uid_assumed":  false,
+                          "duplicate_base_rows_allowed":  true,
+                          "duplicate_multiplicity_preserved":  true,
+                          "hardcoded_scenario_identifiers_used_for_alignment":  false,
+                          "publisher_label_values_used_for_alignment":  false,
+                          "required_invariants":  [
+                                                      "plain_data_rows == 156458",
+                                                      "labeled_data_rows == 156458",
+                                                      "plain_data_rows == labeled_data_rows",
+                                                      "plain_base_vector_multiset == labeled_base_vector_multiset",
+                                                      "aligned_rows == plain_data_rows",
+                                                      "unaligned_plain_rows == 0",
+                                                      "unaligned_labeled_rows == 0"
+                                                  ],
+                          "frozen_count_156458_usage":  "VALIDATION_GATE_ONLY_NOT_ROW_SELECTOR",
+                          "alignment_failure_result":  "ALIGNMENT_NOT_ESTABLISHED"
+                      },
+    "service_condition_scoring":  {
+                                      "field":  "service",
+                                      "rule_under_comparison":  "TRC-DET-004 matches only when semantic service.strip().casefold() equals irc.",
+                                      "scoring_source":  "ALIGNED_BASE_ZEEK_SERVICE_FIELD",
+                                      "missing_definition":  "Use the Zeek file declared unset/empty-field semantics and record both raw and interpreted service buckets.",
+                                      "buckets":  [
+                                                      "service_missing_or_unset",
+                                                      "service_nonempty_non_irc",
+                                                      "service_irc"
+                                                  ],
+                                      "accounting_invariants":  [
+                                                                    "service_missing_or_unset + service_nonempty_non_irc + service_irc == aligned_rows",
+                                                                    "service_irc_label_distribution_total == service_irc",
+                                                                    "publisher_label_distribution_total == aligned_rows"
+                                                                ],
+                                      "frozen_comparison":  {
+                                                                "frozen_matches":  0,
+                                                                "frozen_missing_service":  155720,
+                                                                "frozen_service_not_irc":  738,
+                                                                "consistency_requires":  [
+                                                                                             "alignment_status == ALIGNED",
+                                                                                             "service_irc == frozen_matches",
+                                                                                             "service_missing_or_unset == frozen_missing_service",
+                                                                                             "service_nonempty_non_irc == frozen_service_not_irc"
+                                                                                         ]
+                                                            }
+                                  },
+    "publisher_label_scoring":  {
+                                    "label_columns":  "THE_TWO_STRUCTURALLY_ADDITIONAL_PUBLISHER_FIELDS_DISCOVERED_FROM_HEADER",
+                                    "allowed_uses":  [
+                                                         "exact value distribution over all aligned rows",
+                                                         "exact value distribution among service_irc rows",
+                                                         "post-hoc comparison/accounting",
+                                                         "publisher-assessment context"
+                                                     ],
+                                    "prohibited_uses":  [
+                                                            "detector selection",
+                                                            "detector tuning",
+                                                            "normalization tuning",
+                                                            "correlation tuning",
+                                                            "retroactive event selection",
+                                                            "retroactive alteration of HOLDOUT-EVAL-0001",
+                                                            "scenario-specific production logic"
+                                                        ],
+                                    "value_mapping":  "NONE",
+                                    "requirement":  "Preserve exact publisher strings and counts; do not silently map publisher labels into TraceSOC semantic states."
+                                },
+    "required_result_accounting":  [
+                                       "plain_data_rows",
+                                       "labeled_data_rows",
+                                       "aligned_rows",
+                                       "unaligned_plain_rows",
+                                       "unaligned_labeled_rows",
+                                       "service_missing_or_unset",
+                                       "service_nonempty_non_irc",
+                                       "service_irc",
+                                       "publisher_label_distribution",
+                                       "service_irc_publisher_label_distribution"
+                                   ],
+    "interpretation_rules":  {
+                                 "if_alignment_fails":  {
+                                                            "comparison_status":  "ALIGNMENT_NOT_ESTABLISHED",
+                                                            "trc_det004_condition_consistency":  "NOT_ESTABLISHED",
+                                                            "generalization_success":  "NOT_ESTABLISHED",
+                                                            "generalization_failure":  "NOT_ESTABLISHED"
+                                                        },
+                                 "if_alignment_passes_and_service_accounting_matches_frozen_result":  {
+                                                                                                          "comparison_status":  "ALIGNED",
+                                                                                                          "trc_det004_condition_consistency":  "CONSISTENT_WITH_ALIGNED_ZEEK_SERVICE_EVIDENCE",
+                                                                                                          "meaning":  "The frozen zero-match result is consistent with the service field condition present in the aligned Zeek flow evidence.",
+                                                                                                          "generalization_success":  "NOT_ESTABLISHED",
+                                                                                                          "generalization_failure":  "NOT_ESTABLISHED"
+                                                                                                      },
+                                 "if_alignment_passes_and_service_irc_differs_from_frozen_matches":  {
+                                                                                                         "comparison_status":  "ALIGNED",
+                                                                                                         "trc_det004_condition_consistency":  "INCONSISTENT_WITH_ALIGNED_ZEEK_SERVICE_EVIDENCE",
+                                                                                                         "meaning":  "A discrepancy exists between the frozen detector-path result and the aligned raw Zeek service evidence and requires separate root-cause adjudication.",
+                                                                                                         "generalization_success":  "NOT_ESTABLISHED",
+                                                                                                         "generalization_failure":  "NOT_ESTABLISHED"
+                                                                                                     },
+                                 "publisher_malicious_label_without_irc":  "Does not by itself constitute a TRC-DET-004 false negative because TRC-DET-004 is explicitly an IRC-service observation rule, not a general malware detector.",
+                                 "zeek_service_irc_present":  "May establish observed Zeek service classification IRC in aligned flows; does not independently establish underlying packet-level IRC protocol ground truth.",
+                                 "zeek_service_irc_absent":  "May establish no IRC service classification in the aligned Zeek flow artifact; does not establish absence of IRC in underlying packet-level network reality.",
+                                 "underlying_network_irc_presence":  "NOT_ESTABLISHED_FROM_ZEEK_LABEL_COMPARISON_ALONE",
+                                 "underlying_network_irc_absence":  "NOT_ESTABLISHED_FROM_ZEEK_LABEL_COMPARISON_ALONE",
+                                 "publisher_labels_are_ground_truth_for_traceSOC":  false,
+                                 "publisher_labels_are_publisher_assessment":  true,
+                                 "maliciousness_independently_established_by_traceSOC_from_labels":  false,
+                                 "broad_detector_generalization_success":  "NOT_ESTABLISHED",
+                                 "broad_detector_generalization_failure":  "NOT_ESTABLISHED"
+                             },
+    "failure_rules":  {
+                          "access_event_already_exists":  "STOP_NO_DUPLICATE_LABEL_ACCESS",
+                          "result_path_already_exists":  "STOP_NO_OVERWRITE",
+                          "failure_before_access_event_append":  "NO_LABEL_CONTENT_ACCESSED",
+                          "failure_after_access_event_append":  "PRESERVE_ACCESS_EVENT_AND_DO_NOT_ERASE_OR_REWRITE_IT",
+                          "failure_after_first_label_read_before_result_capture":  "STOP_AND_ADJUDICATE_BEFORE_RERUN",
+                          "source_hash_mismatch":  "STOP_BEFORE_LABEL_CONTENT_ACCESS",
+                          "plain_labeled_structure_mismatch":  "CAPTURE_ALIGNMENT_FAILURE_RESULT",
+                          "row_multiset_mismatch":  "CAPTURE_ALIGNMENT_FAILURE_RESULT",
+                          "labels_config_access":  "PROHIBITED",
+                          "pcap_access":  "PROHIBITED",
+                          "detector_rerun":  "PROHIBITED",
+                          "analytic_tuning":  "PROHIBITED",
+                          "original_result_mutation":  "PROHIBITED"
+                      },
+    "result_schema":  {
+                          "record_type":  "tracesoc-holdout-posthoc-label-comparison-v1",
+                          "schema_version":  1,
+                          "comparison_id":  "HOLDOUT-LABEL-COMPARE-0001",
+                          "required_fields":  [
+                                                  "record_type",
+                                                  "schema_version",
+                                                  "comparison_id",
+                                                  "generated_utc",
+                                                  "access_event_id",
+                                                  "protocol_commit",
+                                                  "protocol_path",
+                                                  "protocol_sha256",
+                                                  "evaluation_id",
+                                                  "frozen_result_sha256",
+                                                  "plain_source_id",
+                                                  "plain_source_sha256",
+                                                  "labeled_source_id",
+                                                  "labeled_source_sha256",
+                                                  "plain_fields",
+                                                  "labeled_fields",
+                                                  "publisher_label_fields",
+                                                  "alignment_status",
+                                                  "plain_data_rows",
+                                                  "labeled_data_rows",
+                                                  "aligned_rows",
+                                                  "unaligned_plain_rows",
+                                                  "unaligned_labeled_rows",
+                                                  "service_missing_or_unset",
+                                                  "service_nonempty_non_irc",
+                                                  "service_irc",
+                                                  "publisher_label_distribution",
+                                                  "service_irc_publisher_label_distribution",
+                                                  "frozen_matched_events",
+                                                  "frozen_reason_code_counts",
+                                                  "trc_det004_condition_consistency",
+                                                  "generalization_success",
+                                                  "generalization_failure",
+                                                  "underlying_network_irc_presence",
+                                                  "underlying_network_irc_absence",
+                                                  "labels_accessed",
+                                                  "detector_executed",
+                                                  "rule_tuning_performed",
+                                                  "original_result_modified"
+                                              ],
+                          "serialization":  {
+                                                "encoding":  "UTF-8",
+                                                "bom":  false,
+                                                "json_sort_keys":  true,
+                                                "json_separators":  "COMPACT",
+                                                "terminal_newline":  true
+                                            }
+                      },
+    "evidence_preservation":  {
+                                  "plain_source_modified":  false,
+                                  "labeled_source_modified":  false,
+                                  "frozen_evaluation_modified":  false,
+                                  "publisher_labels_become_additional_posthoc_evidence":  true,
+                                  "publisher_labels_replace_plain_source":  false,
+                                  "evidence_discarded":  false
+                              },
+    "next":  "PHASE_4D3Z_POSTHOC_LABEL_COMPARISON_EXECUTION"
+}

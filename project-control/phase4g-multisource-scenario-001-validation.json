@@ -1,0 +1,75 @@
+{
+    "record_type":  "tracesoc-phase4g-multisource-scenario-validation",
+    "schema_version":  1,
+    "phase":  "PHASE-4G-B",
+    "generated_utc":  "2026-09-16T14:09:04.9854819Z",
+    "result":  "PASS",
+    "parent_commit":  "42ca1871c3d3e4083bccaae347db5a9987c99531",
+    "scenario":  {
+                     "scenario_id":  "MULTISOURCE-SCENARIO-0001",
+                     "classification":  "SYNTHETIC_ARCHITECTURE_REGRESSION",
+                     "telemetry_families":  [
+                                                "POWERSHELL",
+                                                "ZEEK"
+                                            ],
+                     "manifest_path":  "tests/fixtures/scenarios/multisource-web-retrieval-001/scenario-manifest.json",
+                     "manifest_sha256":  "92a3d333649da13719998537779a9937dff793ddb0875fb90f8b02d57823889d",
+                     "powershell_path":  "tests/fixtures/scenarios/multisource-web-retrieval-001/powershell.jsonl",
+                     "powershell_sha256":  "feab81c6562b1f297fac59ffce207e24478fea1d4b635bdb665809d0eba864e2",
+                     "zeek_path":  "tests/fixtures/scenarios/multisource-web-retrieval-001/zeek.jsonl",
+                     "zeek_sha256":  "489fef4da7d7cf8e59837ba064d7ec05fd8534acdb2304119dbe6ea595a04103"
+                 },
+    "lineage":  {
+                    "parent_powershell_fixture":  "tests/fixtures/tiny/powershell.jsonl",
+                    "parent_powershell_sha256":  "fd3a8972b229c1103cfa0e962c7ae1ed118208a9e1ce7844a0ec9b8c47fc5b8d",
+                    "parent_zeek_fixture":  "tests/fixtures/tiny/zeek.jsonl",
+                    "parent_zeek_sha256":  "2e9f9c60d619b07ba81ae7f605b700c428f22d4d8a442bee2830e6d709b40a88",
+                    "parent_selection":  "BEHAVIORAL_PRODUCTION_INTERFACES_ONLY",
+                    "publisher_labels_used":  false,
+                    "expected_answer_used_for_selection":  false,
+                    "fixture_id_used_for_selection":  false
+                },
+    "production_path":  {
+                            "parsers_used":  [
+                                                 "load_powershell_jsonl",
+                                                 "load_zeek_jsonl"
+                                             ],
+                            "semantic_event_boundary_used":  true,
+                            "detector":  "TRC-DET-001",
+                            "detector_matched":  true,
+                            "correlation":  "TRC-CORR-001",
+                            "correlation_matched":  true,
+                            "correlation_reason":  "cross_source_retrieval_corroborated"
+                        },
+    "anti_hardcoding":  {
+                            "fixture_id_reached_semantic_fields":  false,
+                            "expected_answer_reached_semantic_fields":  false,
+                            "fixture_id_used_as_production_selector":  false,
+                            "expected_answer_used_as_production_selector":  false,
+                            "publisher_label_used_as_production_selector":  false,
+                            "scenario_id_used_as_production_selector":  false
+                        },
+    "falsification":  {
+                          "wrong_host":  "NO_MATCH_HOST_MISMATCH",
+                          "outside_60_second_window":  "NO_MATCH_OUTSIDE_TIME_WINDOW"
+                      },
+    "machine_result":  {
+                           "path":  "results/scenarios/MULTISOURCE-SCENARIO-0001.json",
+                           "sha256":  "2705ec2c92e8a8577ed143263c36e10d988773a1b8bcbd9a265704cf5204f794",
+                           "deterministic":  true,
+                           "exclusive_create":  true
+                       },
+    "claim_boundary":  {
+                           "real_corpora_joined":  false,
+                           "real_incident_established":  false,
+                           "malicious_intent_established":  false,
+                           "synthetic_multisource_integration_established":  true
+                       },
+    "tests":  {
+                  "unit_tests":  177,
+                  "integration_tests":  8,
+                  "total_tests":  185,
+                  "failures":  0
+              },
+    "next":  "PHASE_4G_MULTISOURCE_SCENARIO_2"
+}

@@ -1,0 +1,259 @@
+{
+    "record_type":  "tracesoc-phase4i-challenge-matrix-freeze",
+    "schema_version":  1,
+    "phase":  "PHASE-4I-B1",
+    "generated_utc":  "2026-09-16T17:23:53.4171900Z",
+    "result":  "PASS",
+    "parent_commit":  "6492263ad4a0f7ff1bcdb7a2301077761d2bf82d",
+    "recovery":  {
+                     "prior_stop_class":  "POWERSHELL_5_1_JSON_ARRAY_PIPELINE_CARDINALITY_HARNESS_ERROR",
+                     "python_extracted_classes":  15,
+                     "json_deserialized_type":  "System.Object[]",
+                     "deserialized_array_length":  15,
+                     "production_defect_established":  false,
+                     "evidence_defect_established":  false,
+                     "prior_mutation_reached":  false
+                 },
+    "cov010":  {
+                   "requirement_id":  "COV-010",
+                   "category":  "CHALLENGE_CORPUS",
+                   "family":  "MULTI",
+                   "role":  "DERIVED_TEST",
+                   "requirement":  "Duplicate malformed missing-field reordered timing-boundary variants",
+                   "status":  "DERIVED_CORPUS_PENDING",
+                   "mandatory_before_final":  "TRUE",
+                   "source_or_candidate":  "project-control/evidence-challenge-corpus-plan.md",
+                   "coverage_matrix_path":  "project-control/evidence-coverage-matrix.csv",
+                   "coverage_matrix_sha256":  "da355649ffe0112aae73fb2fe4361434ba6ee457f9ca84ffb52a4fe56739ef20",
+                   "challenge_plan_path":  "project-control/evidence-challenge-corpus-plan.md",
+                   "challenge_plan_sha256":  "9a8d3b9fd1ce6b79df3441487bac57cf2533f80de0d31c16671411e72a65e23c"
+               },
+    "freeze":  {
+                   "challenge_class_denominator":  15,
+                   "frozen_classes":  [
+                                          {
+                                              "challenge_id":  "CHAL-DUP-001",
+                                              "family":  "DUP",
+                                              "title":  "exact duplicate record.",
+                                              "purpose":  "Verify duplicate accounting and ensure repeated input is not silently lost.",
+                                              "test_domain":  "EVIDENCE_ACCOUNTING",
+                                              "status":  "FROZEN_PENDING_GENERATION",
+                                              "parent_source_selection":  "PENDING_FORMAT_COMPATIBILITY_SELECTION",
+                                              "challenge_artifact_generated":  false,
+                                              "test_result":  "NOT_RUN"
+                                          },
+                                          {
+                                              "challenge_id":  "CHAL-DUP-002",
+                                              "family":  "DUP",
+                                              "title":  "semantically repeated event represented by a separate record.",
+                                              "purpose":  "Distinguish exact byte duplication from repeated real-world behavior.",
+                                              "test_domain":  "EVIDENCE_ACCOUNTING",
+                                              "status":  "FROZEN_PENDING_GENERATION",
+                                              "parent_source_selection":  "PENDING_FORMAT_COMPATIBILITY_SELECTION",
+                                              "challenge_artifact_generated":  false,
+                                              "test_result":  "NOT_RUN"
+                                          },
+                                          {
+                                              "challenge_id":  "CHAL-MAL-001",
+                                              "family":  "MAL",
+                                              "title":  "truncated record.",
+                                              "purpose":  "Verify quarantine and source accounting.",
+                                              "test_domain":  "PARSER_FAILURE_BEHAVIOR",
+                                              "status":  "FROZEN_PENDING_GENERATION",
+                                              "parent_source_selection":  "PENDING_FORMAT_COMPATIBILITY_SELECTION",
+                                              "challenge_artifact_generated":  false,
+                                              "test_result":  "NOT_RUN"
+                                          },
+                                          {
+                                              "challenge_id":  "CHAL-MAL-002",
+                                              "family":  "MAL",
+                                              "title":  "malformed structured record.",
+                                              "purpose":  "Verify explicit parse failure rather than silent coercion.",
+                                              "test_domain":  "PARSER_FAILURE_BEHAVIOR",
+                                              "status":  "FROZEN_PENDING_GENERATION",
+                                              "parent_source_selection":  "PENDING_FORMAT_COMPATIBILITY_SELECTION",
+                                              "challenge_artifact_generated":  false,
+                                              "test_result":  "NOT_RUN"
+                                          },
+                                          {
+                                              "challenge_id":  "CHAL-MISS-001",
+                                              "family":  "MISS",
+                                              "title":  "missing timestamp.",
+                                              "purpose":  "Exercise UNTIMED or rejection behavior according to the evidence contract.",
+                                              "test_domain":  "NORMALIZATION_AND_SEMANTIC_ABSENCE",
+                                              "status":  "FROZEN_PENDING_GENERATION",
+                                              "parent_source_selection":  "PENDING_FORMAT_COMPATIBILITY_SELECTION",
+                                              "challenge_artifact_generated":  false,
+                                              "test_result":  "NOT_RUN"
+                                          },
+                                          {
+                                              "challenge_id":  "CHAL-MISS-002",
+                                              "family":  "MISS",
+                                              "title":  "missing required semantic field.",
+                                              "purpose":  "Verify explicit rejection/quarantine and no fabricated value.",
+                                              "test_domain":  "NORMALIZATION_AND_SEMANTIC_ABSENCE",
+                                              "status":  "FROZEN_PENDING_GENERATION",
+                                              "parent_source_selection":  "PENDING_FORMAT_COMPATIBILITY_SELECTION",
+                                              "challenge_artifact_generated":  false,
+                                              "test_result":  "NOT_RUN"
+                                          },
+                                          {
+                                              "challenge_id":  "CHAL-TIME-001",
+                                              "family":  "TIME",
+                                              "title":  "records reordered relative to timestamps.",
+                                              "purpose":  "Verify deterministic timeline handling independent of file order.",
+                                              "test_domain":  "TIMELINE_AND_CORRELATION_BOUNDARY",
+                                              "status":  "FROZEN_PENDING_GENERATION",
+                                              "parent_source_selection":  "PENDING_FORMAT_COMPATIBILITY_SELECTION",
+                                              "challenge_artifact_generated":  false,
+                                              "test_result":  "NOT_RUN"
+                                          },
+                                          {
+                                              "challenge_id":  "CHAL-TIME-002",
+                                              "family":  "TIME",
+                                              "title":  "correlation exactly at allowed time boundary.",
+                                              "purpose":  "Test inclusive boundary behavior.",
+                                              "test_domain":  "TIMELINE_AND_CORRELATION_BOUNDARY",
+                                              "status":  "FROZEN_PENDING_GENERATION",
+                                              "parent_source_selection":  "PENDING_FORMAT_COMPATIBILITY_SELECTION",
+                                              "challenge_artifact_generated":  false,
+                                              "test_result":  "NOT_RUN"
+                                          },
+                                          {
+                                              "challenge_id":  "CHAL-TIME-003",
+                                              "family":  "TIME",
+                                              "title":  "correlation immediately outside allowed boundary.",
+                                              "purpose":  "Prove the correlation does not silently expand its time window.",
+                                              "test_domain":  "TIMELINE_AND_CORRELATION_BOUNDARY",
+                                              "status":  "FROZEN_PENDING_GENERATION",
+                                              "parent_source_selection":  "PENDING_FORMAT_COMPATIBILITY_SELECTION",
+                                              "challenge_artifact_generated":  false,
+                                              "test_result":  "NOT_RUN"
+                                          },
+                                          {
+                                              "challenge_id":  "CHAL-CLOCK-001",
+                                              "family":  "CLOCK",
+                                              "title":  "invalid or unresolved time value.",
+                                              "purpose":  "Verify clock-state handling and no fabricated UTC time.",
+                                              "test_domain":  "CLOCK_STATE",
+                                              "status":  "FROZEN_PENDING_GENERATION",
+                                              "parent_source_selection":  "PENDING_FORMAT_COMPATIBILITY_SELECTION",
+                                              "challenge_artifact_generated":  false,
+                                              "test_result":  "NOT_RUN"
+                                          },
+                                          {
+                                              "challenge_id":  "CHAL-UNKNOWN-001",
+                                              "family":  "UNKNOWN",
+                                              "title":  "unsupported provider/event code/log type.",
+                                              "purpose":  "Verify graceful unsupported-input accounting.",
+                                              "test_domain":  "UNSUPPORTED_INPUT_ACCOUNTING",
+                                              "status":  "FROZEN_PENDING_GENERATION",
+                                              "parent_source_selection":  "PENDING_FORMAT_COMPATIBILITY_SELECTION",
+                                              "challenge_artifact_generated":  false,
+                                              "test_result":  "NOT_RUN"
+                                          },
+                                          {
+                                              "challenge_id":  "CHAL-LABEL-001",
+                                              "family":  "LABEL",
+                                              "title":  "publisher label present.",
+                                              "purpose":  "Prove that labels remain outside detector-facing semantics and cannot trigger production behavior by themselves.",
+                                              "test_domain":  "LABEL_SEMANTIC_ISOLATION",
+                                              "status":  "FROZEN_PENDING_GENERATION",
+                                              "parent_source_selection":  "PENDING_FORMAT_COMPATIBILITY_SELECTION",
+                                              "challenge_artifact_generated":  false,
+                                              "test_result":  "NOT_RUN"
+                                          },
+                                          {
+                                              "challenge_id":  "CHAL-MIX-001",
+                                              "family":  "MIX",
+                                              "title":  "benign and suspicious records mixed in the same processing run.",
+                                              "purpose":  "Verify that file-level labels do not contaminate per-event decisions.",
+                                              "test_domain":  "PER_EVENT_DECISION_ISOLATION",
+                                              "status":  "FROZEN_PENDING_GENERATION",
+                                              "parent_source_selection":  "PENDING_FORMAT_COMPATIBILITY_SELECTION",
+                                              "challenge_artifact_generated":  false,
+                                              "test_result":  "NOT_RUN"
+                                          },
+                                          {
+                                              "challenge_id":  "CHAL-CORR-001",
+                                              "family":  "CORR",
+                                              "title":  "same destination but wrong host/source identity.",
+                                              "purpose":  "Prove that time/destination adjacency alone cannot create a correlation.",
+                                              "test_domain":  "CORRELATION_IDENTITY_AND_DIRECTIONALITY",
+                                              "status":  "FROZEN_PENDING_GENERATION",
+                                              "parent_source_selection":  "PENDING_FORMAT_COMPATIBILITY_SELECTION",
+                                              "challenge_artifact_generated":  false,
+                                              "test_result":  "NOT_RUN"
+                                          },
+                                          {
+                                              "challenge_id":  "CHAL-CORR-002",
+                                              "family":  "CORR",
+                                              "title":  "same host and destination but reversed directionality.",
+                                              "purpose":  "Prove directionality remains part of the bounded correlation contract.",
+                                              "test_domain":  "CORRELATION_IDENTITY_AND_DIRECTIONALITY",
+                                              "status":  "FROZEN_PENDING_GENERATION",
+                                              "parent_source_selection":  "PENDING_FORMAT_COMPATIBILITY_SELECTION",
+                                              "challenge_artifact_generated":  false,
+                                              "test_result":  "NOT_RUN"
+                                          }
+                                      ],
+                   "all_classes_generated":  false,
+                   "all_classes_executed":  false,
+                   "corpus_closed":  false
+               },
+    "artifact_contract":  {
+                              "required_fields":  [
+                                                      "challenge_id",
+                                                      "base_tracesoc_source_id",
+                                                      "base_raw_sha256",
+                                                      "mutation_operator",
+                                                      "mutation_parameters",
+                                                      "generated_artifact_sha256",
+                                                      "purpose",
+                                                      "expected_structural_effect",
+                                                      "expected_analytical_boundary",
+                                                      "creation_timestamp",
+                                                      "tool_script_version"
+                                                  ],
+                              "required_field_count":  11,
+                              "immutable_originals_may_be_edited":  false,
+                              "challenge_artifacts_must_be_derived":  true,
+                              "new_external_dataset_required":  false,
+                              "parent_source_id_and_sha_required":  true,
+                              "generated_sha_required":  true,
+                              "mutation_operator_and_parameters_required":  true,
+                              "expected_structural_effect_required":  true,
+                              "expected_analytical_boundary_required":  true,
+                              "tool_script_version_required":  true
+                          },
+    "semantic_isolation":  {
+                               "challenge_id_is_test_metadata":  true,
+                               "challenge_id_may_enter_production_semantic_fields":  false,
+                               "challenge_id_may_be_production_selector":  false,
+                               "publisher_label_may_trigger_detection_by_itself":  false
+                           },
+    "current_surface":  {
+                            "production_detector_ids":  [
+                                                            "TRC-DET-001",
+                                                            "TRC-DET-002",
+                                                            "TRC-DET-003",
+                                                            "TRC-DET-004",
+                                                            "TRC-DET-005"
+                                                        ],
+                            "production_detector_count":  5,
+                            "detector_breadth_finalized":  false,
+                            "note":  "COV-010 matrix freeze does not adjudicate the provisional 8-12 detector breadth target."
+                        },
+    "non_mutation":  {
+                         "raw_evidence_mutated":  false,
+                         "challenge_parent_selection_performed":  false,
+                         "challenge_generation_performed":  false,
+                         "holdout_used_for_challenge_selection":  false,
+                         "analytic_logic_changed":  false,
+                         "claims_changed":  false,
+                         "requirements_changed":  false,
+                         "coverage_status_changed":  false,
+                         "root_views_changed":  false
+                     },
+    "next":  "PHASE_4I_CHALLENGE_PARENT_SELECTION"
+}

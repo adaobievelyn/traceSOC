@@ -1,0 +1,4 @@
+{"timestamp":"2026-09-14T10:00:20Z","event_type":"connection","uid":"CZEEK001","src_ip":"10.10.20.15","dst_ip":"198.51.100.25","dst_port":8080,"proto":"tcp","service":"http","bytes_out":420,"bytes_in":2048,"host":"LAB-WKS-01","log_type":"conn","fixture_id":"ZEEK-001","expected_answer":"candidate"}
+{"timestamp":"2026-09-14T10:05:40Z","event_type":"connection","uid":"CZEEK002","src_ip":"10.10.20.15","dst_ip":"10.10.20.53","dst_port":53,"proto":"udp","service":"dns","bytes_out":72,"bytes_in":144,"host":"LAB-WKS-01","log_type":"conn","fixture_id":"ZEEK-002","expected_answer":"benign_control"}
+{"timestamp":"2026-09-14T10:07:00Z","event_type":"connection","uid":"CZEEK003","src_ip":"10.10.20.16","dst_ip":"203.0.113.20","dst_port":443,"proto":"tcp","service":"ssl","bytes_out":850,"bytes_in":4096,"host":"LAB-WKS-02","log_type":"conn","fixture_id":"ZEEK-003","expected_answer":"context"}
+["not","a","zeek","object"]

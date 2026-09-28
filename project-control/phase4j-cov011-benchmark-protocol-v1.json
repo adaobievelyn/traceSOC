@@ -1,0 +1,177 @@
+{
+  "acceptance": {
+    "all_source_accounting_invariants_must_hold": true,
+    "benchmark_must_complete_without_unhandled_exception": true,
+    "new_external_dataset_required_for_pass": false,
+    "peak_working_set_must_not_exceed_bytes": 4000000000,
+    "production_logic_must_remain_unchanged": true,
+    "runtime_has_pass_fail_threshold": false,
+    "source_bytes_must_remain_unchanged": true,
+    "volume_target_preexecution": "PASS"
+  },
+  "accounting": {
+    "accepted_plus_quarantined_must_equal_physical_records": true,
+    "every_source_must_be_accounted": true,
+    "expected_records_per_run": 198463,
+    "per_source_counts_required": true,
+    "quarantine_counts_required": true,
+    "silent_discard_allowed": false
+  },
+  "benchmark_class": "EXISTING_REAL_MULTI_SOURCE_RESOURCE_BENCHMARK",
+  "failure_rules": {
+    "accounting_failure": "FAIL_BENCHMARK_PRESERVE_RESULT",
+    "benchmark_exception_after_payload_open": "PRESERVE_FAILURE_DO_NOT_HIDE_OR_OVERWRITE",
+    "peak_working_set_above_threshold": "FAIL_PRE006_COV011_REMAINS_OPEN",
+    "production_change_required_to_pass": "SEPARATE_REPAIR_PHASE_REQUIRED",
+    "registered_hash_mismatch": "STOP_BEFORE_PAYLOAD_OPEN",
+    "source_resolution_not_unique": "STOP_BEFORE_PAYLOAD_OPEN"
+  },
+  "holdout_resource_use": {
+    "analytic_tuning_allowed": false,
+    "analytical_accuracy_claim_allowed": false,
+    "analytics_frozen_before_secondary_use": true,
+    "detector_token_selection_allowed": false,
+    "expected_outcome_selection_allowed": false,
+    "field_selection_allowed": false,
+    "primary_role_remains": "HOLDOUT",
+    "production_logic_change_allowed": false,
+    "publisher_label_use_allowed": false,
+    "reclassified": false,
+    "regex_selection_allowed": false,
+    "secondary_use": "RESOURCE_MEASUREMENT_ONLY"
+  },
+  "measurement": {
+    "execution_process": "FRESH_REPOSITORY_VENV_PYTHON_PROCESS",
+    "measured_runs": 1,
+    "memory_api": "Windows GetProcessMemoryInfo",
+    "memory_metric": "PeakWorkingSetSize",
+    "memory_requirement_text": "<=4 GB",
+    "memory_scope": "WHOLE_PROCESS_WORKING_SET",
+    "memory_threshold_bytes": 4000000000,
+    "memory_threshold_interpretation": "Conservative decimal operationalization of the frozen <=4 GB requirement; stricter than 4 GiB.",
+    "runtime_interpretation": "DESCRIPTIVE_ONLY_NO_INVENTED_THRESHOLD",
+    "runtime_threshold_seconds": null,
+    "wall_clock_metric": "time.perf_counter_ns",
+    "workstation_cpu": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+    "workstation_logical_processors": 4,
+    "workstation_os": "Microsoft Windows 11 Home",
+    "workstation_os_version": "10.0.26100",
+    "workstation_total_physical_memory_bytes": 8433340416
+  },
+  "next": "PHASE_4J_D_SOURCE_RESOLUTION_AND_RUNNER_FREEZE",
+  "parent_commit": "3ac5ec1a6f049f8f44e4ceeaae9da1354643736c",
+  "phase": "PHASE-4J-CR",
+  "production_execution": {
+    "canonical_to_semantic": "tracesoc.models.SemanticEvent.from_canonical",
+    "powershell_parser": "tracesoc.parsers.powershell.load_powershell_windows_event_xml",
+    "real_cross_source_correlation_execution": false,
+    "real_cross_source_correlation_reason": "No justified real cross-source incident is established; resource benchmarking must not invent one.",
+    "security_parser": "tracesoc.parsers.windows_security.load_windows_security_splunk",
+    "sysmon_parser": "tracesoc.parsers.sysmon.load_sysmon_windows_event_xml",
+    "zeek_parser": "tracesoc.parsers.zeek.load_zeek_conn_ascii"
+  },
+  "protocol_freeze_history": [
+    {
+      "benchmark_executed": false,
+      "cause": "EXACT_UNICODE_RANGE_LITERAL_COMPARISON",
+      "payload_opened": false,
+      "phase": "PHASE-4J-C",
+      "product_defect_established": false,
+      "protocol_written": false,
+      "result": "HARNESS_FAILURE_BEFORE_PROTOCOL_WRITE"
+    },
+    {
+      "phase": "PHASE-4J-CR",
+      "result": "PROTOCOL_FREEZE",
+      "unicode_literal_dependency_removed": true
+    }
+  ],
+  "protocol_integrity": {
+    "COV011_promoted": false,
+    "benchmark_executed_during_protocol_freeze": false,
+    "holdout_payload_opened_during_protocol_freeze": false,
+    "new_data_acquired": false,
+    "production_logic_changed": false,
+    "raw_payload_opened_during_protocol_freeze": false,
+    "synthetic_scale_workload_created": false
+  },
+  "record_type": "tracesoc-cov011-benchmark-protocol-v1",
+  "requirement": {
+    "coverage_requirement_id": "COV-011",
+    "coverage_status_before_execution": "PENDING_EXISTING_CORPUS_BENCHMARK",
+    "new_external_scale_acquisition_authorized": false,
+    "performance_requirement_id": "PRE-006",
+    "source_policy": "CURRENT_CORPUS_FIRST"
+  },
+  "result_artifact": {
+    "overwrite_allowed": false,
+    "path": "project-control/phase4j-cov011-benchmark-result-v1.json"
+  },
+  "schema_version": 1,
+  "source_resolution_precondition": {
+    "must_complete_before_payload_open": true,
+    "payload_access_before_resolution": "PROHIBITED",
+    "required_for_each_source": [
+      "unique_source_id_resolution",
+      "authoritative_registered_storage_path",
+      "registered_source_sha256",
+      "preexecution_source_sha256_match"
+    ],
+    "resolution_artifact_required": true
+  },
+  "workload": {
+    "inside_target_range": true,
+    "record_duplication_for_scale": false,
+    "records_per_run": 198463,
+    "sources": [
+      {
+        "accepted_records": 126,
+        "count_proof": "project-control/phase4d3b-real-format-raw-reader-validation.json",
+        "count_proof_sha256": "81b4f4b13b2743543fb06bdcdc065cd16bc6c457d081613b2ad5cc3a91b9c367",
+        "primary_role": "DEVELOPMENT",
+        "production_parser": "tracesoc.parsers.powershell.load_powershell_windows_event_xml",
+        "source_id": "TS-DEV-SPLUNK-PS-001",
+        "telemetry_family": "POWERSHELL"
+      },
+      {
+        "accepted_records": 11618,
+        "count_proof": "project-control/phase4d3b-real-format-raw-reader-validation.json",
+        "count_proof_sha256": "81b4f4b13b2743543fb06bdcdc065cd16bc6c457d081613b2ad5cc3a91b9c367",
+        "primary_role": "DEVELOPMENT",
+        "production_parser": "tracesoc.parsers.sysmon.load_sysmon_windows_event_xml",
+        "source_id": "TS-DEV-SPLUNK-SYSMON-001",
+        "telemetry_family": "SYSMON"
+      },
+      {
+        "accepted_records": 7116,
+        "count_proof": "project-control/phase4d3c-windows-security-raw-reader-validation.json",
+        "count_proof_sha256": "bdcbae302fbe73da628b95f3ac9051a2fb4b623eebb0b9801db302de0964861f",
+        "primary_role": "DEVELOPMENT",
+        "production_parser": "tracesoc.parsers.windows_security.load_windows_security_splunk",
+        "source_id": "TS-DEV-SPLUNK-SECURITY-001",
+        "telemetry_family": "WINDOWS_SECURITY"
+      },
+      {
+        "accepted_records": 23145,
+        "count_proof": "project-control/phase4d3b-real-format-raw-reader-validation.json",
+        "count_proof_sha256": "81b4f4b13b2743543fb06bdcdc065cd16bc6c457d081613b2ad5cc3a91b9c367",
+        "primary_role": "DEVELOPMENT",
+        "production_parser": "tracesoc.parsers.zeek.load_zeek_conn_ascii",
+        "source_id": "TS-DEV-IOT23-034-ZEEK",
+        "telemetry_family": "ZEEK"
+      },
+      {
+        "accepted_records": 156458,
+        "count_proof": "project-control/phase4d3u-first-holdout-evaluation-validation.json",
+        "count_proof_sha256": "8b8b29ba7b7af091d90fada3225b0a5d5602a433c7832c02505c6d521802bcc7",
+        "primary_role": "HOLDOUT",
+        "production_parser": "tracesoc.parsers.zeek.load_zeek_conn_ascii",
+        "source_id": "TS-HOLD-IOT23V2-003-ZEEK",
+        "telemetry_family": "ZEEK"
+      }
+    ],
+    "synthetic_scale_amplification": false,
+    "target_max_records": 250000,
+    "target_min_records": 100000
+  }
+}

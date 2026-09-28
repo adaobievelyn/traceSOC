@@ -1,0 +1,85 @@
+{
+  "anti_hardcoding": {
+    "case_specific_selector": false,
+    "delta_aware_gate": "PASS",
+    "expected_corpus_counts_used_as_production_selectors": false,
+    "source_semantic_event_id_4104_allowed": true
+  },
+  "evidence": {
+    "canonical_parent_events": 126,
+    "complete_groups": 5,
+    "expected_message_slots": 299,
+    "incomplete_groups": 6,
+    "missing_message_slots": 173,
+    "observed_message_slots": 126,
+    "scriptblock_groups": 11,
+    "sha256": "ce45d417d0bd66e05939f835935dd24cfe6f55b257d7b2bb968c726ae378c8c3",
+    "source_id": "TS-DEV-SPLUNK-PS-001"
+  },
+  "external_evidence_modified": false,
+  "generated_utc": "2026-09-15T13:45:55Z",
+  "holdout_accessed": false,
+  "implementation": {
+    "function": "reconstruct_powershell_scriptblocks",
+    "module": "src/tracesoc/normalization/powershell_scriptblock.py",
+    "module_sha256": "a71f6e92e9be5b7f99439b68cba09fe88b46ec48f720d0d2177bed527aeef501",
+    "test_module": "tests/unit/test_powershell_scriptblock_reconstruction.py",
+    "test_module_sha256": "facf7c31780338d687eb4efb0af3c684a5f54974a3ea4860ab5913e2b3883315"
+  },
+  "lineage_contract": {
+    "canonical_parent_event_references": 126,
+    "canonical_parent_set_equals_derived_parent_set": true,
+    "raw_lineage_retained_through_canonical_parent_ids": true,
+    "unique_parent_event_references": 126
+  },
+  "next": "PHASE_4D3J_ZEEK_REAL_CANONICAL_MAPPING",
+  "objective": "Derive bounded logical PowerShell ScriptBlock reconstructions from canonical Event ID 4104 source events while preserving exact parent-event lineage and refusing to assert complete script text when source fragments are missing.",
+  "parent_commit": "46a5c0bc3306bfff3b81f6334ffb932e3c03c573",
+  "phase": "PHASE-4D.3I",
+  "reconstruction_contract": {
+    "complete_script_text_groups": 5,
+    "complete_state": "complete",
+    "conflicting_duplicates_accepted": false,
+    "deterministic_reconstruction_identity": true,
+    "fabricated_fragments": 0,
+    "fragment_observations_preserved": "126/126",
+    "group_key": "ScriptBlockId",
+    "incomplete_script_text_assertions": 0,
+    "incomplete_state": "incomplete",
+    "input_order_deterministic": true,
+    "layer": "normalization",
+    "parent_event_lineage": "126/126",
+    "silently_dropped_fragments": 0,
+    "source_event_code": 4104
+  },
+  "record_type": "tracesoc-phase4d3i-powershell-scriptblock-reconstruction-validation",
+  "recovery_history": {
+    "initial_attempt_persisted": false,
+    "phase4d3h_baseline_remained_clean": true,
+    "recovery_census_confirmed_target_files_absent": true,
+    "recreated_from_clean_phase4d3h_baseline": true,
+    "stdout_pass_marker_dependency": false,
+    "validation_channel": "temporary-json-result-file"
+  },
+  "result": "PASS",
+  "scope_boundary": {
+    "canonical_event_model_modified": false,
+    "correlation_logic_added": false,
+    "detection_logic_added": false,
+    "incomplete_fragments_promoted_to_complete_script": false,
+    "maliciousness_inferred": false,
+    "parser_modified": false
+  },
+  "validation": {
+    "canonical_to_reconstruction_lineage": "126/126_PASS",
+    "complete_group_accounting": "5/5_PASS",
+    "fabricated_fragments": "0_PASS",
+    "focused_reconstruction_tests": "8/8_PASS",
+    "fragment_preservation": "126/126_PASS",
+    "full_unit_regression": "102/102_PASS",
+    "incomplete_group_accounting": "6/6_PASS",
+    "real_reconstruction": "PASS",
+    "repository_text_integrity": "PASS",
+    "silently_dropped_fragments": "0_PASS"
+  }
+}

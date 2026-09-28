@@ -1,0 +1,1 @@
+{"bytes_in":2048,"bytes_out":420,"dst_ip":"198.51.100.42","dst_port":8443,"event_type":"connection","expected_answer":"SYNTHETIC_METADATA_ONLY","fixture_id":"SYN-MS-001-ZEEK-001","host":"SYN-WKS-A7","log_type":"conn","proto":"tcp","service":"http","src_ip":"10.77.4.23","timestamp":"2026-02-03T10:15:20Z","uid":"SYNMS001ZEEK001"}

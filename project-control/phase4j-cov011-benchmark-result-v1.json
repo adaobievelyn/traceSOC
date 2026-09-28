@@ -1,0 +1,194 @@
+{
+  "acceptance": {
+    "accounting": "PASS",
+    "peak_working_set": "PASS",
+    "runtime": "MEASURED_NO_THRESHOLD"
+  },
+  "accounting": {
+    "accepted_records": 198463,
+    "expected_records": 198463,
+    "pass": true,
+    "quarantined_records": 0,
+    "semantic_events": 198463,
+    "silently_discarded_records": 0
+  },
+  "benchmark_process_started_utc": "2026-09-17T14:38:43.741205Z",
+  "benchmark_scope": "REAL_FORMAT_PARSER_TO_CANONICAL_ACCOUNTING_TO_SEMANTIC_CONVERSION",
+  "correlation": {
+    "real_cross_source_correlation_executed": false
+  },
+  "generated_utc": "2026-09-17T14:38:59.703027Z",
+  "holdout_boundary": {
+    "accuracy_claim": false,
+    "analytic_tuning_performed": false,
+    "primary_role": "HOLDOUT",
+    "publisher_labels_used": false,
+    "reclassified": false,
+    "secondary_use": "RESOURCE_MEASUREMENT_ONLY"
+  },
+  "integrity_preflight": {
+    "result": "PASS",
+    "runtime_seconds": 0.2800091,
+    "sources": [
+      {
+        "expected_byte_size": 2038252,
+        "expected_sha256": "ce45d417d0bd66e05939f835935dd24cfe6f55b257d7b2bb968c726ae378c8c3",
+        "integrity": "PASS",
+        "observed_byte_size": 2038252,
+        "observed_sha256": "ce45d417d0bd66e05939f835935dd24cfe6f55b257d7b2bb968c726ae378c8c3",
+        "source_id": "TS-DEV-SPLUNK-PS-001",
+        "storage_path": "D:\\TraceSOC-Evidence\\raw\\development\\splunk-attack-data\\T1087.002\\AD_discovery\\windows-powershell-xml.log"
+      },
+      {
+        "expected_byte_size": 20091826,
+        "expected_sha256": "8886e363b137555f5a0403783106e656b77e328fab2e503a645015f5e1cc3756",
+        "integrity": "PASS",
+        "observed_byte_size": 20091826,
+        "observed_sha256": "8886e363b137555f5a0403783106e656b77e328fab2e503a645015f5e1cc3756",
+        "source_id": "TS-DEV-SPLUNK-SYSMON-001",
+        "storage_path": "D:\\TraceSOC-Evidence\\raw\\development\\splunk-attack-data\\T1562.001\\win_app_defender_disabling\\windows-sysmon.log"
+      },
+      {
+        "expected_byte_size": 8490471,
+        "expected_sha256": "b55c57fd0256fa73f55116f9ad307de3b7403f1ba7536c10431b56426a09bd89",
+        "integrity": "PASS",
+        "observed_byte_size": 8490471,
+        "observed_sha256": "b55c57fd0256fa73f55116f9ad307de3b7403f1ba7536c10431b56426a09bd89",
+        "source_id": "TS-DEV-SPLUNK-SECURITY-001",
+        "storage_path": "D:\\TraceSOC-Evidence\\raw\\development\\splunk-attack-data\\T1562.001\\win_app_defender_disabling\\windows-security.log"
+      },
+      {
+        "expected_byte_size": 2926718,
+        "expected_sha256": "d69e49b2aae8c1bd33286936531658202dec47d989f0439bad3f8be180467a6e",
+        "integrity": "PASS",
+        "observed_byte_size": 2926718,
+        "observed_sha256": "d69e49b2aae8c1bd33286936531658202dec47d989f0439bad3f8be180467a6e",
+        "source_id": "TS-DEV-IOT23-034-ZEEK",
+        "storage_path": "D:\\TraceSOC-Evidence\\raw\\development\\iot23\\CTU-IoT-Malware-Capture-34-1\\bro\\conn.log.labeled"
+      },
+      {
+        "expected_byte_size": 17387889,
+        "expected_sha256": "1481a5c82b96ce3b902e383b7da7dbebc0466275af6a8bfaf1b453443bd2c7ba",
+        "integrity": "PASS",
+        "observed_byte_size": 17387889,
+        "observed_sha256": "1481a5c82b96ce3b902e383b7da7dbebc0466275af6a8bfaf1b453443bd2c7ba",
+        "source_id": "TS-HOLD-IOT23V2-003-ZEEK",
+        "storage_path": "D:\\TraceSOC-Evidence\\holdout\\sealed\\iot23-v2\\CTU-IoT-Malware-Capture-3-1\\conn.log"
+      }
+    ],
+    "verified_source_count": 5
+  },
+  "memory": {
+    "api": "Windows GetProcessMemoryInfo",
+    "final": {
+      "peak_working_set_bytes": 486924288,
+      "private_usage_bytes": 45142016,
+      "working_set_bytes": 53256192
+    },
+    "metric": "PeakWorkingSetSize",
+    "pass": true,
+    "start": {
+      "peak_working_set_bytes": 22851584,
+      "private_usage_bytes": 14376960,
+      "working_set_bytes": 22851584
+    },
+    "threshold_bytes": 4000000000
+  },
+  "phase": "PHASE-4J-E",
+  "protocol": {
+    "path": "project-control/phase4j-cov011-benchmark-protocol-v1.json",
+    "sha256": "bb646a390afe794fa631d8527cabe1f84cca4b3f9e9ab3fafdc8a4e1d3fcaa61"
+  },
+  "record_type": "tracesoc-cov011-benchmark-result-v1",
+  "result": "PASS",
+  "runtime": {
+    "end_to_end_seconds": 15.9617856,
+    "processing_seconds": 15.6762686,
+    "threshold_applied": false,
+    "threshold_seconds": null
+  },
+  "schema_version": 1,
+  "source_resolution": {
+    "path": "project-control/phase4j-cov011-source-resolution-v1.json",
+    "sha256": "d895c95f2eef964c11b65512b0021aa94983f319974bbb0e4433279cbd34e57a"
+  },
+  "source_results": [
+    {
+      "accepted_records": 126,
+      "process_memory_after_source": {
+        "peak_working_set_bytes": 39653376,
+        "private_usage_bytes": 16396288,
+        "working_set_bytes": 25440256
+      },
+      "processing_seconds": 0.0544105,
+      "quarantined_records": 0,
+      "role": "DEVELOPMENT",
+      "semantic_events": 126,
+      "source_id": "TS-DEV-SPLUNK-PS-001",
+      "telemetry_family": "POWERSHELL"
+    },
+    {
+      "accepted_records": 11618,
+      "process_memory_after_source": {
+        "peak_working_set_bytes": 78704640,
+        "private_usage_bytes": 51228672,
+        "working_set_bytes": 57950208
+      },
+      "processing_seconds": 4.2659207,
+      "quarantined_records": 0,
+      "role": "DEVELOPMENT",
+      "semantic_events": 11618,
+      "source_id": "TS-DEV-SPLUNK-SYSMON-001",
+      "telemetry_family": "SYSMON"
+    },
+    {
+      "accepted_records": 7116,
+      "process_memory_after_source": {
+        "peak_working_set_bytes": 116342784,
+        "private_usage_bytes": 88109056,
+        "working_set_bytes": 96755712
+      },
+      "processing_seconds": 0.7227131,
+      "quarantined_records": 0,
+      "role": "DEVELOPMENT",
+      "semantic_events": 7116,
+      "source_id": "TS-DEV-SPLUNK-SECURITY-001",
+      "telemetry_family": "WINDOWS_SECURITY"
+    },
+    {
+      "accepted_records": 23145,
+      "process_memory_after_source": {
+        "peak_working_set_bytes": 116342784,
+        "private_usage_bytes": 97546240,
+        "working_set_bytes": 104382464
+      },
+      "processing_seconds": 1.3000281,
+      "quarantined_records": 0,
+      "role": "DEVELOPMENT",
+      "semantic_events": 23145,
+      "source_id": "TS-DEV-IOT23-034-ZEEK",
+      "telemetry_family": "ZEEK"
+    },
+    {
+      "accepted_records": 156458,
+      "process_memory_after_source": {
+        "peak_working_set_bytes": 486924288,
+        "private_usage_bytes": 477138944,
+        "working_set_bytes": 484397056
+      },
+      "processing_seconds": 9.0928095,
+      "quarantined_records": 0,
+      "role": "HOLDOUT",
+      "semantic_events": 156458,
+      "source_id": "TS-HOLD-IOT23V2-003-ZEEK",
+      "telemetry_family": "ZEEK"
+    }
+  ],
+  "workload": {
+    "accepted_records": 198463,
+    "expected_records": 198463,
+    "quarantined_records": 0,
+    "semantic_events": 198463,
+    "source_count": 5
+  }
+}

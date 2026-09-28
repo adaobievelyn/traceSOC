@@ -1,0 +1,55 @@
+{
+    "record_type":  "tracesoc-phase4c7-sealed-holdout-acquisition-validation",
+    "generated_utc":  "2026-09-15T09:23:09.0287661Z",
+    "phase":  "4C.7",
+    "parent_commit":  "90cfc09fd1dc399f9ff962810e4c7ec37cd095a2",
+    "candidate":  {
+                      "candidate_id":  "CAND-011",
+                      "dataset":  "IoT-23-v2",
+                      "scenario":  "CTU-IoT-Malware-Capture-3-1",
+                      "malware":  "Muhstik",
+                      "role":  "HOLDOUT"
+                  },
+    "acquisition":  {
+                        "external_artifacts_acquired":  2,
+                        "provenance_metadata_source_id":  "TS-HOLD-IOT23V2-003-META",
+                        "sealed_payload_source_id":  "TS-HOLD-IOT23V2-003-ZEEK",
+                        "sealed_payload_bytes":  17387889,
+                        "sealed_payload_sha256":  "1481a5c82b96ce3b902e383b7da7dbebc0466275af6a8bfaf1b453443bd2c7ba"
+                    },
+    "contamination_control":  {
+                                  "semantic_holdout_access_events":  0,
+                                  "holdout_label_access_events":  0,
+                                  "semantic_payload_inspected":  false,
+                                  "fields_inspected":  false,
+                                  "rows_counted":  false,
+                                  "normalization":  false,
+                                  "detection":  false,
+                                  "correlation":  false
+                              },
+    "not_acquired":  [
+                         "PUBLISHER_LABELED_CONN_LOG",
+                         "LABELS_CONFIG",
+                         "PCAP"
+                     ],
+    "diversity":  {
+                      "development_network":  "CTU-IoT-Malware-Capture-34-1 / Mirai",
+                      "holdout_network":  "CTU-IoT-Malware-Capture-3-1 / Muhstik",
+                      "malware_family_differs":  true,
+                      "publisher_differs":  false,
+                      "cross_publisher_holdout_diversity":  "NOT_ESTABLISHED"
+                  },
+    "integrity":  {
+                      "registered_external_artifacts":  15,
+                      "all_external_hash_revalidation":  "15/15",
+                      "sealed_post_storage_hash":  "PASS"
+                  },
+    "analytic_freeze_required_before_semantic_use":  true,
+    "manifest":  {
+                     "path":  "D:\\TraceSOC-Evidence\\manifests\\phase4c7-cand011-sealed-holdout-acquisition.json",
+                     "sha256":  "13a0f5b26d50575cbe603ff32f25fe208243349ea06e48bd07a5c6dc29d6d027"
+                 },
+    "consolidated_test_record_changed":  false,
+    "final_corpus_complete":  false,
+    "next":  "PHASE_4C8_REMAINING_CORPUS_GAP_ADJUDICATION"
+}

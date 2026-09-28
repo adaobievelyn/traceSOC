@@ -1,0 +1,23 @@
+{
+    "record_type":  "tracesoc-bootstrap-validation",
+    "generated_utc":  "2026-09-14T10:47:10.1232497Z",
+    "phase":  "1.1",
+    "repository":  "C:\\Users\\Eve\\tracesoc",
+    "environment_audit_sha256":  "2a282efef30b595678162bd5d8988915f9c09492ea7c3ef0bc70afaeecb7fb67",
+    "core_environment_ready":  true,
+    "python":  "Python 3.13.14",
+    "sqlite_version":  "3.50.4",
+    "git":  "git version 2.55.0.windows.3",
+    "tshark_version":  "TShark (Wireshark) 4.6.8 (v4.6.8-0-ge677bf052328).",
+    "ram_gb":  7.85,
+    "free_system_disk_gb":  43.63,
+    "virtualization_firmware_enabled":  false,
+    "required_control_files":  16,
+    "required_control_files_present":  true,
+    "deterministic_line_ending_policy":  true,
+    "tracesoc_baseline_import":  true,
+    "python_validation_method":  "temporary_python_file",
+    "production_feature_code_written":  false,
+    "system_security_settings_changed":  false,
+    "formal_stage9b_contract_received":  false
+}

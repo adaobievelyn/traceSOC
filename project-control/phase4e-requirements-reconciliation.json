@@ -1,0 +1,80 @@
+{
+    "record_type":  "tracesoc-phase4e-requirements-reconciliation",
+    "schema_version":  1,
+    "phase":  "PHASE-4E",
+    "generated_utc":  "2026-09-16T13:43:09.0173029Z",
+    "result":  "PASS",
+    "parent_commit":  "6c72ea0687fbbe055ccdfd22038313b415ef9215",
+    "requirements":  [
+                         {
+                             "requirement_id":  "PRE-001",
+                             "state":  "PARTIAL",
+                             "interpretation":  "Provenance and explain machinery exist; final defense-ready real raw-to-result reproduction remains open."
+                         },
+                         {
+                             "requirement_id":  "PRE-002",
+                             "state":  "PARTIAL",
+                             "interpretation":  "Four-layer architecture exists; final material-finding propagation remains open."
+                         },
+                         {
+                             "requirement_id":  "PRE-003",
+                             "state":  "PARTIAL",
+                             "interpretation":  "Falsifier is part of the controlled model; complete material-claim coverage remains open."
+                         },
+                         {
+                             "requirement_id":  "PRE-004",
+                             "state":  "PARTIAL",
+                             "interpretation":  "Canonical ledger mechanism is operational and master-indexed; final completeness remains a continuing release gate."
+                         },
+                         {
+                             "requirement_id":  "PRE-005",
+                             "state":  "OPEN",
+                             "interpretation":  "Practical response-validation engine and tests are not implemented."
+                         },
+                         {
+                             "requirement_id":  "PRE-006",
+                             "state":  "OPEN",
+                             "interpretation":  "Resource benchmark is not implemented; COV-011 remains pending existing-corpus benchmark."
+                         }
+                     ],
+    "corpus_requirements":  {
+                                "COV_010":  "DERIVED_CORPUS_PENDING",
+                                "COV_011":  "PENDING_EXISTING_CORPUS_BENCHMARK",
+                                "COV_013":  "PLANNED"
+                            },
+    "analytic_surface":  {
+                             "source_detection_ids":  5,
+                             "source_correlation_ids":  1,
+                             "real_cross_source_correlation_surfaces":  0,
+                             "response_engine_implemented":  false,
+                             "benchmark_implemented":  false
+                         },
+    "holdout":  {
+                    "branch_status":  "CLOSED_NOT_ESTABLISHED",
+                    "original_result_preserved":  true,
+                    "comparison_preserved":  true,
+                    "structural_diagnostic_preserved":  true,
+                    "further_reverse_engineering_required":  false
+                },
+    "selected_next_target":  {
+                                 "requirement_id":  "PRE-005",
+                                 "title":  "Practical response validation",
+                                 "phase":  "PHASE_4F_RESPONSE_VALIDATION_SANDBOX",
+                                 "reason":  "It is a mandatory blueprint requirement, the current implementation surface is effectively empty, it directly addresses the Stage 9A response-validation gap, requires no new raw evidence, and can be implemented safely as a simulated local state machine with dry-run, verification, failure handling, and rollback."
+                             },
+    "sequencing":  [
+                       "PRE-005 response sandbox",
+                       "multi-source integration/correlation scenarios and remaining detection coverage",
+                       "PRE-001/PRE-002/PRE-003 claim/explain release closure",
+                       "COV-010 adversarial challenge corpus",
+                       "PRE-006/COV-011 benchmark",
+                       "clean-build determinism and reproduction",
+                       "COV-013 defense-ready evidence documentation",
+                       "final claim propagation and defense rehearsal"
+                   ],
+    "evidence_discarded":  false,
+    "raw_evidence_accessed":  false,
+    "holdout_accessed":  false,
+    "analytic_files_changed":  0,
+    "next":  "PHASE_4F_RESPONSE_VALIDATION_SANDBOX"
+}

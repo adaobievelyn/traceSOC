@@ -1,0 +1,263 @@
+{
+  "aggregate_conclusions": {
+    "corr002_30_second_boundary_inclusive": true,
+    "corr002_31_second_boundary_outside": true,
+    "corr002_boundary_pair": "30_MATCH_31_NO_MATCH",
+    "malformed_security_fail_closed": true,
+    "original_red_history_preserved": true,
+    "production_repair_required": false,
+    "replacement_corpus_repair_required": false,
+    "replacement_execution_complete": true,
+    "replacement_obligations_satisfied": [
+      7,
+      13,
+      14
+    ]
+  },
+  "coverage_state": {
+    "COV_010": "DERIVED_CORPUS_PENDING",
+    "coverage_matrix_promoted": false,
+    "ledger_promoted": false,
+    "master_promoted": false,
+    "technical_replacement_execution_obligation_satisfied": true
+  },
+  "execution_state": "COMPLETE",
+  "executions": [
+    {
+      "challenge_id": "CHAL-MAL-001-V2",
+      "frozen_contract_satisfied": true,
+      "input_bytes": 1874,
+      "input_path": "tests/fixtures/challenges/cov010-replacements-v1/CHAL-MAL-001-V2/windows-security.txt",
+      "input_sha256": "9a8214077c384f800072ede8aa9cf34baf7ec235fbe2db411dbe00f1ddfcf45d",
+      "manifest_path": "tests/fixtures/challenges/cov010-replacements-v1/CHAL-MAL-001-V2/challenge-manifest.json",
+      "manifest_sha256": "34d5b41a624817506538971cfe1b921f6e2f92759db2ae05b3c1aa397b7163c0",
+      "observations": {
+        "accepted_count": 0,
+        "canonical_event_fabricated": false,
+        "locator_byte_length": 1874,
+        "locator_byte_offset": 0,
+        "locator_raw_sha256": "9a8214077c384f800072ede8aa9cf34baf7ec235fbe2db411dbe00f1ddfcf45d",
+        "locator_record_index": 0,
+        "physical_accounting": "1/1",
+        "quarantine_detail": "real Windows Security field must be decimal integer: RecordNumber",
+        "quarantine_reason": "invalid_field",
+        "quarantined_count": 1,
+        "structural_invalidity": "RecordNumber=not-a-number"
+      },
+      "phase": "PHASE-4I-G7E3A",
+      "production_defect_established": false,
+      "replaces_original_row": 7,
+      "result": "PASS"
+    },
+    {
+      "boundary_conclusion": "CORR002_ACCEPTS_EXACTLY_30_SECONDS",
+      "challenge_id": "CHAL-TIME-002-V2",
+      "execution_history": [
+        {
+          "boundary_tested": false,
+          "cause": "Unsupported direct SemanticEvent.local_ip attribute assumption in observer harness.",
+          "classification": "HARNESS_EXECUTION_FAILURE",
+          "corr002_invoked": false,
+          "phase": "PHASE-4I-G7E3B",
+          "product_defect_established": false
+        },
+        {
+          "boundary_tested": true,
+          "classification": "VALID_REPLACEMENT_EXECUTION",
+          "corr002_invoked": true,
+          "phase": "PHASE-4I-G7E3BR",
+          "result": "PASS"
+        }
+      ],
+      "frozen_contract_satisfied": true,
+      "manifest_path": "tests/fixtures/challenges/cov010-replacements-v1/CHAL-TIME-002-V2/challenge-manifest.json",
+      "manifest_sha256": "33438d81d03bce8022ea8c24042b26d96e1b9fb0d27caf441e1fcb67f0f76faf",
+      "observations": {
+        "correlation_id": "TRC-CORR-002",
+        "correlation_matched": true,
+        "correlation_reason": "powershell_process_corroborated",
+        "detection_bound_to_supplied_event": true,
+        "detection_id": "TRC-DET-001",
+        "detection_matched": true,
+        "detection_reason": "powershell_web_retrieval_observed",
+        "directional_delta_seconds": 30.0,
+        "edge_delta_seconds": 30.0,
+        "edge_id": "edge_20a350296868b5433ca1d5f30b8892d842e0455578d4daded634b21eb6ad3b8d",
+        "edge_local_ip": "10.88.5.31",
+        "edge_present": true,
+        "edge_principal": "LAB\\response-user",
+        "host_aligned": true,
+        "matched_dimensions": [
+          "host",
+          "principal",
+          "local_ip",
+          "powershell_process_family",
+          "directional_time_window"
+        ],
+        "powershell_accepted_count": 1,
+        "powershell_event_id": "evt_4f8365809cce2af1e633cbbcc571577e82279c274e5314d9ea0a9a11c436f4ca",
+        "powershell_quarantined_count": 0,
+        "principal_aligned": true,
+        "sysmon_accepted_count": 1,
+        "sysmon_event_id": "evt_b5a47c15b46227d5ce62bddc77048aae68f12a4b08406580ec5e6e2b1759e6b4",
+        "sysmon_quarantined_count": 0
+      },
+      "powershell_input_path": "tests/fixtures/challenges/cov010-replacements-v1/CHAL-TIME-002-V2/powershell.jsonl",
+      "powershell_input_sha256": "31c59257440b32f96517ff814bc9df4eef5435af5e02f07f278bd1fbf1b93703",
+      "product_defect_established": false,
+      "replaces_original_row": 13,
+      "result": "PASS",
+      "sysmon_input_path": "tests/fixtures/challenges/cov010-replacements-v1/CHAL-TIME-002-V2/sysmon.jsonl",
+      "sysmon_input_sha256": "0e27ed1318cf90672a39e450b363ce0355fad400ff8c020f5c893d558200d488"
+    },
+    {
+      "boundary_conclusion": "CORR002_REJECTS_EXACTLY_31_SECONDS",
+      "challenge_id": "CHAL-TIME-003-V2",
+      "execution_history": [
+        {
+          "boundary_tested": false,
+          "cause": "Observer harness attempted to prove local-IP alignment from empty SemanticEvent.fields and stopped before invoking CORR002.",
+          "classification": "HARNESS_PRECONDITION_FAILURE",
+          "corr002_invoked": false,
+          "phase": "PHASE-4I-G7E3C",
+          "product_defect_established": false
+        },
+        {
+          "boundary_tested": true,
+          "classification": "VALID_REPLACEMENT_EXECUTION",
+          "corr002_invoked": true,
+          "phase": "PHASE-4I-G7E3CR",
+          "result": "PASS"
+        }
+      ],
+      "frozen_contract_satisfied": true,
+      "manifest_path": "tests/fixtures/challenges/cov010-replacements-v1/CHAL-TIME-003-V2/challenge-manifest.json",
+      "manifest_sha256": "5317f3b6d22e99a081a8767c20e18c7cbb3f0f965cf5966b1aeccd7acc953823",
+      "observations": {
+        "correlation_id": "TRC-CORR-002",
+        "correlation_matched": false,
+        "correlation_reason": "outside_time_window",
+        "detection_bound_to_supplied_event": true,
+        "detection_id": "TRC-DET-001",
+        "detection_matched": true,
+        "detection_reason": "powershell_web_retrieval_observed",
+        "directional_delta_seconds": 31.0,
+        "edge_present": false,
+        "host_aligned": true,
+        "powershell_accepted_count": 1,
+        "powershell_event_id": "evt_d2104368764205603215d96b60df4be1f54a9e800a0004eb63b9ab1c72cd0701",
+        "powershell_quarantined_count": 0,
+        "principal_aligned": true,
+        "sysmon_accepted_count": 1,
+        "sysmon_event_id": "evt_5d607a352035539cc268e85d0afbb958017a126f88f0e28b5167b945c2af3c22",
+        "sysmon_quarantined_count": 0
+      },
+      "powershell_input_path": "tests/fixtures/challenges/cov010-replacements-v1/CHAL-TIME-003-V2/powershell.jsonl",
+      "powershell_input_sha256": "69e2c0f16c137fa2c2ff8e097c4034d9de116439ab6c607a4ac07c1ca970c6ee",
+      "product_defect_established": false,
+      "replaces_original_row": 14,
+      "result": "PASS",
+      "sysmon_input_path": "tests/fixtures/challenges/cov010-replacements-v1/CHAL-TIME-003-V2/sysmon.jsonl",
+      "sysmon_input_sha256": "0e27ed1318cf90672a39e450b363ce0355fad400ff8c020f5c893d558200d488"
+    }
+  ],
+  "frozen_sources": {
+    "contract": {
+      "path": "project-control/phase4i-cov010-replacement-contracts-v1.json",
+      "sha256": "0fbc57c552b8fddea20a9aa2cdb271ecc8c352338964410389f02a6b8df0b900"
+    },
+    "generator": {
+      "path": "scripts/generate_cov010_replacements_v1.py",
+      "sha256": "f25e681ea1145d7c0132508c3f2519401c36ad62838a7d45ae585cc0af4a9eff"
+    },
+    "replacement_corpus_manifest": {
+      "path": "tests/fixtures/challenges/cov010-replacements-v1/corpus-manifest.json",
+      "sha256": "71c6ccf70ee16154abdcd475c3ff8e3c40fa7e90c3fff8bd9a7ce9c11c9fc6dd"
+    }
+  },
+  "harness_incident_accounting": {
+    "incident_count": 2,
+    "incidents": [
+      {
+        "classification": "HARNESS_EXECUTION_FAILURE",
+        "phase": "PHASE-4I-G7E3B",
+        "product_result": "NOT_ESTABLISHED"
+      },
+      {
+        "classification": "HARNESS_PRECONDITION_FAILURE",
+        "phase": "PHASE-4I-G7E3C",
+        "product_result": "NOT_ESTABLISHED"
+      }
+    ],
+    "incidents_preserved": true
+  },
+  "integrity": {
+    "holdout_opened": false,
+    "original_corpus_mutated": false,
+    "original_matrix_mutated": false,
+    "production_logic_changed": false,
+    "replacement_corpus_mutated_after_execution": false
+  },
+  "next": "PHASE_4I_G7E4B_COV010_PROMOTION_SURFACE_GROUNDING",
+  "original_frozen_run": {
+    "adjudicated_red_rows": [
+      7,
+      13,
+      14
+    ],
+    "corpus_manifest_path": "tests/fixtures/challenges/cov010/corpus-manifest.json",
+    "corpus_manifest_sha256": "3523e9c659e97f0d68641139c493461971ee44824cd2df55b777d7b0b60acc19",
+    "matrix_path": "project-control/phase4i-challenge-execution-matrix.json",
+    "matrix_sha256": "7545a2789072742cf9c62f9ae2e3980a790ec1b41f492009cdec65dd5c2c3070",
+    "observed_rows": 15,
+    "original_reds_erased": false,
+    "pass_rows": 12,
+    "replacement_results_reclassify_original_rows": false,
+    "row_denominator": 15
+  },
+  "original_red_adjudications": [
+    {
+      "classification": "CHALLENGE_OBSERVABILITY_FAILURE",
+      "path": "project-control/phase4i-cov010-row7-adjudication.json",
+      "product_defect_established": false,
+      "replacement_obligation_satisfied": true,
+      "replacement_required": true,
+      "row": 7,
+      "sha256": "1640189f4ec4a7b371d32927ef3abe4ea40e95e45c6d9bba9ddc220ee80867f8"
+    },
+    {
+      "classification": "CHALLENGE_PRECONDITION_CONSTRUCTION_FAILURE",
+      "path": "project-control/phase4i-cov010-row13-adjudication.json",
+      "product_defect_established": false,
+      "replacement_obligation_satisfied": true,
+      "replacement_required": true,
+      "row": 13,
+      "sha256": "2174a7f6f8231c91e388f0247d68de67f7b8e6b1a2dd49e3c2b08b1ab5e1b11a",
+      "subclassification": "DETECTION_CONTRACT_MISMATCH"
+    },
+    {
+      "classification": "CHALLENGE_PRECONDITION_CONSTRUCTION_FAILURE",
+      "path": "project-control/phase4i-cov010-row14-adjudication.json",
+      "product_defect_established": false,
+      "replacement_obligation_satisfied": true,
+      "replacement_required": true,
+      "row": 14,
+      "sha256": "698baaee66a8165d822fa274019d22d6df6d5d12504fc9d1df6bc6c646965ed2",
+      "subclassification": "DETECTION_CONTRACT_MISMATCH"
+    }
+  ],
+  "parent_commit": "75455c34ce7ad5253f87984fae02ff2938e92768",
+  "phase": "PHASE-4I-G7E4A",
+  "record_type": "tracesoc-cov010-replacement-execution-results-v1",
+  "replacement_set_id": "COV010-RPL-V1",
+  "requirement_id": "COV-010",
+  "result": "PASS",
+  "result_denominator": {
+    "observed": 3,
+    "pass": 3,
+    "red": 0,
+    "remaining": 0,
+    "replacement_challenges": 3
+  },
+  "schema_version": 1
+}

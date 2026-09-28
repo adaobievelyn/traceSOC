@@ -1,0 +1,94 @@
+{
+  "case_id": "case_6bfc43f87590a1f654df3473d9d15c08e17304ed5030d191b4248ee3f4ee2348",
+  "case_schema_id": "tracesoc-case-v0.4.5a",
+  "reconstruction_identity_version": 1,
+  "scriptblocks": [
+    {
+      "expected_message_total": 1,
+      "first_event_time_utc": "2026-09-24T12:15:00.652973Z",
+      "fragments": [
+        {
+          "event_time_utc": "2026-09-24T12:15:00.652973Z",
+          "message_number": 1,
+          "source_event_id": "evt_e7cebb1420deb21cba23706781a25c80e1f1a2cb7dc0bd08ee52b746ceb2ef79"
+        }
+      ],
+      "host": "SensationalEve",
+      "last_event_time_utc": "2026-09-24T12:15:00.652973Z",
+      "missing_message_numbers": [],
+      "observed_message_numbers": [
+        1
+      ],
+      "parent_event_ids": [
+        "evt_e7cebb1420deb21cba23706781a25c80e1f1a2cb7dc0bd08ee52b746ceb2ef79"
+      ],
+      "path": null,
+      "process_id": "7156",
+      "reconstruction_id": "psb_e45c5d0bac7d8e6f19f99fddd15909cd986bc802a744966a2d5a28a7feb9a0ef",
+      "script_block_id": "6ed03bee-898f-4e85-886e-5639b52391ce",
+      "script_text": "$global:?",
+      "script_text_sha256": "16045c1a8580f807b9e4e8d77252ad34c4a82540cab8fdb958c2c3ea5cd57f3c",
+      "security_user_id": "S-1-5-21-2367207782-2933974256-153965027-1001",
+      "state": "complete",
+      "thread_id": "7064"
+    },
+    {
+      "expected_message_total": 1,
+      "first_event_time_utc": "2026-09-24T12:15:00.648705Z",
+      "fragments": [
+        {
+          "event_time_utc": "2026-09-24T12:15:00.648705Z",
+          "message_number": 1,
+          "source_event_id": "evt_6fa801b52e1afe59b18239b7ac4967bfe105b8f7c0ab4b5e2be5c40677946dfb"
+        }
+      ],
+      "host": "SensationalEve",
+      "last_event_time_utc": "2026-09-24T12:15:00.648705Z",
+      "missing_message_numbers": [],
+      "observed_message_numbers": [
+        1
+      ],
+      "parent_event_ids": [
+        "evt_6fa801b52e1afe59b18239b7ac4967bfe105b8f7c0ab4b5e2be5c40677946dfb"
+      ],
+      "path": null,
+      "process_id": "7156",
+      "reconstruction_id": "psb_ad93e1a7efb07d84059b795e49b4611d26877b88cab6659b65d4a046b7d07fd0",
+      "script_block_id": "6f07b321-a1db-48bb-b2b5-cd9d98c771a1",
+      "script_text": "$global:TraceSOCReferenceResult = 1",
+      "script_text_sha256": "032940bafce46edecc367168b5a5dd093e225ae664994c8cad625a06f6979a26",
+      "security_user_id": "S-1-5-21-2367207782-2933974256-153965027-1001",
+      "state": "complete",
+      "thread_id": "7064"
+    },
+    {
+      "expected_message_total": 1,
+      "first_event_time_utc": "2026-09-24T12:14:54.302876Z",
+      "fragments": [
+        {
+          "event_time_utc": "2026-09-24T12:14:54.302876Z",
+          "message_number": 1,
+          "source_event_id": "evt_bf89c58d4a6d99539abb32b05e7d5e059e1698e7528071eb98cd1ed62929707f"
+        }
+      ],
+      "host": "SensationalEve",
+      "last_event_time_utc": "2026-09-24T12:14:54.302876Z",
+      "missing_message_numbers": [],
+      "observed_message_numbers": [
+        1
+      ],
+      "parent_event_ids": [
+        "evt_bf89c58d4a6d99539abb32b05e7d5e059e1698e7528071eb98cd1ed62929707f"
+      ],
+      "path": "C:\\TraceSOC-Reference-Case\\working\\reference-activity.ps1",
+      "process_id": "7156",
+      "reconstruction_id": "psb_b956684d3b668dd71c54ce7516de804d214df1504148544011ee56367f685cb9",
+      "script_block_id": "7a718c94-8229-4e79-a85e-920c8b77d2b3",
+      "script_text": "$ErrorActionPreference = \"Stop\"\n\n$TraceSOCUri = \"https://1.1.1.1/\"\n$TraceSOCIP = \"1.1.1.1\"\n$TraceSOCPort = 443\n\n$client = New-Object System.Net.Sockets.TcpClient\n\ntry {\n    $client.Connect(\n        $TraceSOCIP,\n        $TraceSOCPort\n    )\n\n    if (-not $client.Connected) {\n        throw \"Direct TCP connection was not established.\"\n    }\n\n    Start-Sleep -Milliseconds 750\n}\nfinally {\n    $client.Close()\n}\n\ntry {\n    Invoke-WebRequest `\n        -UseBasicParsing `\n        -Uri $TraceSOCUri `\n        -TimeoutSec 5 `\n        -ErrorAction Stop |\n        Out-Null\n}\ncatch {\n    Write-Output (\n        \"TRACESOC_INVOKE_WEBREQUEST_RESULT=\" +\n        $_.Exception.GetType().FullName\n    )\n}\n\nInvoke-Expression '$global:TraceSOCReferenceResult = 1'\n\nWrite-Output \"TRACESOC_REFERENCE_ACTIVITY_COMPLETE\"",
+      "script_text_sha256": "6066f53f947823eb0ae4f31aba0ff68179e702ecd6590d0848f667c924a66c56",
+      "security_user_id": "S-1-5-21-2367207782-2933974256-153965027-1001",
+      "state": "complete",
+      "thread_id": "7064"
+    }
+  ]
+}

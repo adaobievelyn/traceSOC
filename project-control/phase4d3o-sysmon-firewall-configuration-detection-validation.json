@@ -1,0 +1,73 @@
+{
+  "benign_control_limitation": {
+    "approved_benign_sysmon_event_population": 0,
+    "benign_event_data_established": false,
+    "benign_falsification_status": "NOT_ESTABLISHED",
+    "control_status": "VALID_EMPTY_INPUT",
+    "general_false_positive_rate_established": false,
+    "zero_benign_match_claim_made": false
+  },
+  "claim_boundary": {
+    "disablement_effect_established": false,
+    "established": "A Sysmon registry-set-value observation recorded DWORD zero for the Windows Firewall DomainProfile EnableFirewall value.",
+    "final_firewall_state_established": false,
+    "incident_membership_established": false,
+    "malicious_intent_established": false,
+    "motive_established": false,
+    "write_persistence_established": false
+  },
+  "continuity": {
+    "correlations_created": 0,
+    "holdout_accessed": false,
+    "sysmon_network_file_composite": "REJECTED_RELATIONSHIP_NOT_ESTABLISHED"
+  },
+  "detector": {
+    "detection_id": "TRC-DET-005",
+    "development_matches": 2,
+    "development_unique_event_ids": 2,
+    "input": "SemanticEvent",
+    "numeric_threshold_used": false,
+    "one_match_one_event_id": true,
+    "other_dword_zero_near_misses": 49,
+    "other_dword_zero_positives": 0,
+    "process_selector_used": false,
+    "required_event_type": "registry_set_value",
+    "required_recorded_value": "DWORD (0x00000000)",
+    "required_source_type": "SYSMON",
+    "required_target": "Windows Firewall DomainProfile EnableFirewall",
+    "title": "Sysmon Windows Firewall DomainProfile EnableFirewall zero write"
+  },
+  "generated_utc": "2026-09-16T09:25:24Z",
+  "implementation": {
+    "production_module": "src/tracesoc/detection/sysmon_firewall.py",
+    "production_sha256": "3bc6707502d0b8527297f77075745befd3f624bedfd679aafe2ad8241f79889a",
+    "test_module": "tests/unit/test_sysmon_firewall_configuration_detection.py",
+    "test_sha256": "ca44f35aa269a19cdea036021d716330759636e737944bc6f182c22677bd3205"
+  },
+  "next": "PHASE_4D3P_SECURITY_SYSMON_RELATIONSHIP_CENSUS",
+  "objective": "Freeze a bounded event-level Sysmon detector for a recorded Windows Firewall DomainProfile EnableFirewall DWORD-zero registry write while preserving the explicit absence of empirical benign Sysmon falsification.",
+  "parent_commit": "6ced4814b40fead1256f41e5a162bc7e02f27c0b",
+  "phase": "PHASE-4D.3O",
+  "record_type": "tracesoc-phase4d3o-sysmon-firewall-configuration-detection-validation",
+  "result": "PASS",
+  "selector_boundary": {
+    "event_id_selectors": 0,
+    "expected_outcome_selectors": 0,
+    "host_selectors": 0,
+    "numeric_thresholds": 0,
+    "process_selectors": 0,
+    "publisher_label_selectors": 0,
+    "source_context_used": false
+  },
+  "source_evidence": {
+    "benign_sysmon_evtx_sha256": "efbc4d4cd450eddf7665f5965b0f6cfe30088f8f69225886e1d433329fb950cb",
+    "development_sysmon_sha256": "8886e363b137555f5a0403783106e656b77e328fab2e503a645015f5e1cc3756",
+    "source_evidence_modified": false
+  },
+  "validation": {
+    "development_reproduction": "PASS",
+    "full_unit_regression": "157/157 PASS",
+    "repository_text_integrity": "PASS",
+    "targeted_tests": "12/12 PASS"
+  }
+}

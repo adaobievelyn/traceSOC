@@ -1,0 +1,43 @@
+{
+    "schema_version":  "1.0",
+    "record_type":  "tracesoc-finalist-one-command-reproduction-validation",
+    "status":  "PASS",
+    "recorded_utc":  "2026-09-28T19:48:42.8573508Z",
+    "technical_candidate":  {
+                                "commit":  "8751a679f36b4983cdd3d2b0b35f44e9a11c4f39",
+                                "tree":  "fc420ee3fd1988cf578c0cf309ee3aefcccf33b2"
+                            },
+    "entry_point":  {
+                        "path":  "finalist-reproduce.ps1",
+                        "sha256":  "5608d32accd57e20848d3c3263b56d647c1c89ade16abdde02edb4349382427e",
+                        "command":  "powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\\finalist-reproduce.ps1"
+                    },
+    "sequence":  [
+                     "clean.ps1",
+                     "provision.ps1",
+                     "build.ps1",
+                     "test.ps1"
+                 ],
+    "environment":  {
+                        "python":  "3.13.14",
+                        "pip":  "26.1.2",
+                        "setuptools":  "84.0.0",
+                        "tracesoc":  "0.1.0"
+                    },
+    "validation":  {
+                       "full_regression":  "524/524 PASS",
+                       "public_acceptance":  "4/4 PASS",
+                       "public_test_report":  "results/acceptance/public-test-results.json",
+                       "public_test_report_sha256":  "ed379e5d1672569e772df8b3f59fff98991ea298dc41e5ef51e78bae4716230a"
+                   },
+    "boundaries":  {
+                       "product_source_changed":  false,
+                       "test_source_changed":  false,
+                       "raw_holdout_accessed":  false,
+                       "stage_performed":  false,
+                       "commit_created":  false,
+                       "push_performed":  false
+                   },
+    "proves":  "The current finalist candidate reproducibly cleans, provisions, builds and passes the complete current regression and public acceptance suite through one documented entry command.",
+    "does_not_prove":  "This build/test proof does not establish detector accuracy, universal parsing, universal evidence compatibility or universal scalability."
+}

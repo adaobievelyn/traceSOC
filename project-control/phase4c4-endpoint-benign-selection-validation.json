@@ -1,0 +1,48 @@
+{
+    "record_type":  "tracesoc-phase4c4-endpoint-benign-selection-validation",
+    "generated_utc":  "2026-09-15T07:19:40.2965590Z",
+    "phase":  "4C.4",
+    "parent_commit":  "6946b645044fc095b6074f2c8049f3c729e15f21",
+    "candidate":  {
+                      "candidate_id":  "CAND-010",
+                      "publisher":  "Nextron Systems",
+                      "project":  "evtx-baseline",
+                      "release":  "v0.8.4",
+                      "asset":  "win10-client.tgz",
+                      "exact_url":  "https://github.com/NextronSystems/evtx-baseline/releases/download/v0.8.4/win10-client.tgz",
+                      "displayed_size":  "67.6 MB",
+                      "publisher_sha256":  "d48f1b328d48db6c6dfaa9b6e232dbb454d93e833c6e1248efc0faf690b6808e",
+                      "repository_license":  "Apache-2.0",
+                      "role":  "BENIGN_CONTROL",
+                      "decision":  "APPROVED"
+                  },
+    "acquisition":  {
+                        "performed":  false,
+                        "archive_must_be_preserved":  true,
+                        "publisher_hash_must_match":  true,
+                        "extraction_must_be_derived":  true,
+                        "selected_evtx_members_must_be_hashed":  true
+                    },
+    "expected_telemetry_to_verify_after_acquisition":  [
+                                                           "Microsoft-Windows-Sysmon/Operational",
+                                                           "Security",
+                                                           "Microsoft-Windows-PowerShell/Operational"
+                                                       ],
+    "evidence_readme":  {
+                            "required":  true,
+                            "planned_path":  "docs/EVIDENCE-README.md",
+                            "generation_point":  "AFTER_EVIDENCE_CORPUS_CLOSURE",
+                            "source_of_truth":  [
+                                                    "evidence-acquisition-register.csv",
+                                                    "evidence-source-reference.md",
+                                                    "evidence-coverage-matrix.csv",
+                                                    "external acquisition manifests",
+                                                    "tracesoc-master-record.json"
+                                                ]
+                        },
+    "current_registered_real_artifacts":  12,
+    "downloads_performed":  0,
+    "raw_evidence_modified":  false,
+    "consolidated_test_record_changed":  false,
+    "next":  "PHASE_4C5_ENDPOINT_BENIGN_EVIDENCE_ACQUISITION"
+}

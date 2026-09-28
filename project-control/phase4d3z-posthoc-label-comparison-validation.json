@@ -1,0 +1,138 @@
+{
+    "record_type":  "tracesoc-phase4d3z-posthoc-label-comparison-validation",
+    "schema_version":  1,
+    "phase":  "PHASE-4D.3Z",
+    "generated_utc":  "2026-09-16T12:58:24.7216089Z",
+    "result":  "ALIGNMENT_NOT_ESTABLISHED",
+    "parent_commit":  "fb3ba4b2997e33924429255dc92358118d6f822d",
+    "protocol":  {
+                     "path":  "project-control/phase4d3y-posthoc-label-comparison-protocol.json",
+                     "sha256":  "089cc0858523cfc17e8fcfa751af6d915a80d0c78d57e7b8b3fea805a8631c06",
+                     "commit":  "fb3ba4b2997e33924429255dc92358118d6f822d",
+                     "comparison_id":  "HOLDOUT-LABEL-COMPARE-0001"
+                 },
+    "frozen_first_use_result":  {
+                                    "path":  "results/holdout/HOLDOUT-EVAL-0001.json",
+                                    "sha256":  "35231e57f0eed7233e7ec2836cb1280766d72a485a4002191abcf4c033dc7143",
+                                    "evaluation_id":  "HOLDOUT-EVAL-0001",
+                                    "detector_id":  "TRC-DET-004",
+                                    "frozen_matches":  0,
+                                    "frozen_missing_service":  155720,
+                                    "frozen_service_not_irc":  738,
+                                    "modified":  false
+                                },
+    "posthoc_access":  {
+                           "log_path":  "project-control/holdout-access-log.jsonl",
+                           "event_id":  "HOLDOUT-EVENT-0010",
+                           "access_log_records":  10,
+                           "access_log_sha256":  "f215dcb413cfd2811a268b24700a3684118806fa11c7b1837d86c0eb557633d0",
+                           "labels_accessed":  true,
+                           "semantic_payload_accessed":  true,
+                           "first_posthoc_label_access_completed":  true
+                       },
+    "comparison_result":  {
+                              "path":  "results/holdout/HOLDOUT-LABEL-COMPARE-0001.json",
+                              "sha256":  "6ccdd6415a93f90ab311aa0b0161c4c4d1f0912ab978a8dd6b811982bf30ddac",
+                              "comparison_id":  "HOLDOUT-LABEL-COMPARE-0001",
+                              "alignment_status":  "ALIGNMENT_NOT_ESTABLISHED",
+                              "alignment_failure_reasons":  [
+                                                                "EXPECTED_EXACTLY_TWO_ADDITIONAL_PUBLISHER_FIELDS",
+                                                                "LABELED_BASE_FIELD_PREFIX_DIFFERS_FROM_PLAIN_FIELDS",
+                                                                "LABELED_DATA_ROW_COUNT_DIFFERS_FROM_FROZEN_VALIDATION_GATE",
+                                                                "PLAIN_LABELED_BASE_VECTOR_MULTISET_DIFFERS"
+                                                            ],
+                              "plain_data_rows":  156458,
+                              "labeled_data_rows":  156103,
+                              "aligned_rows":  0,
+                              "unaligned_plain_rows":  156458,
+                              "unaligned_labeled_rows":  156103,
+                              "plain_fields":  [
+                                                   "ts",
+                                                   "uid",
+                                                   "id.orig_h",
+                                                   "id.orig_p",
+                                                   "id.resp_h",
+                                                   "id.resp_p",
+                                                   "proto",
+                                                   "service",
+                                                   "duration",
+                                                   "orig_bytes",
+                                                   "resp_bytes",
+                                                   "conn_state",
+                                                   "local_orig",
+                                                   "local_resp",
+                                                   "missed_bytes",
+                                                   "history",
+                                                   "orig_pkts",
+                                                   "orig_ip_bytes",
+                                                   "resp_pkts",
+                                                   "resp_ip_bytes",
+                                                   "tunnel_parents"
+                                               ],
+                              "labeled_fields":  [
+                                                     "ts",
+                                                     "uid",
+                                                     "id.orig_h",
+                                                     "id.orig_p",
+                                                     "id.resp_h",
+                                                     "id.resp_p",
+                                                     "proto",
+                                                     "service",
+                                                     "duration",
+                                                     "orig_bytes",
+                                                     "resp_bytes",
+                                                     "conn_state",
+                                                     "local_orig",
+                                                     "local_resp",
+                                                     "missed_bytes",
+                                                     "history",
+                                                     "orig_pkts",
+                                                     "orig_ip_bytes",
+                                                     "resp_pkts",
+                                                     "resp_ip_bytes",
+                                                     "tunnel_parents   label   detailed-label"
+                                                 ],
+                              "publisher_label_fields":  [
+
+                                                         ],
+                              "service_missing_or_unset":  null,
+                              "service_nonempty_non_irc":  null,
+                              "service_irc":  null,
+                              "publisher_label_distribution":  [
+
+                                                               ],
+                              "service_irc_publisher_label_distribution":  [
+
+                                                                           ],
+                              "trc_det004_condition_consistency":  "NOT_ESTABLISHED",
+                              "generalization_success":  "NOT_ESTABLISHED",
+                              "generalization_failure":  "NOT_ESTABLISHED",
+                              "underlying_network_irc_presence":  "NOT_ESTABLISHED_FROM_ZEEK_LABEL_COMPARISON_ALONE",
+                              "underlying_network_irc_absence":  "NOT_ESTABLISHED_FROM_ZEEK_LABEL_COMPARISON_ALONE"
+                          },
+    "interpretation":  {
+                           "comparison_execution_completed":  true,
+                           "protocol_defined_alignment_passed":  false,
+                           "result_is_detector_failure":  false,
+                           "result_is_detector_success":  false,
+                           "trc_det004_false_negative":  "NOT_ESTABLISHED",
+                           "publisher_label_agreement":  "NOT_ESTABLISHED",
+                           "zero_aligned_rows_proves_no_common_flows":  false,
+                           "zero_aligned_rows_meaning":  "The protocol-defined base-field-vector alignment did not establish comparable rows under the observed structures.",
+                           "structural_or_provenance_root_cause":  "NOT_ESTABLISHED",
+                           "further_raw_content_access_required_for_root_cause":  "TO_BE_ADJUDICATED_SEPARATELY",
+                           "detector_rerun_required":  false,
+                           "rule_tuning_required":  false
+                       },
+    "preservation":  {
+                         "detector_executed":  false,
+                         "detector_rerun":  false,
+                         "rule_tuning_performed":  false,
+                         "analytic_files_changed":  0,
+                         "original_result_modified":  false,
+                         "comparison_result_overwritten":  false,
+                         "evidence_discarded":  false,
+                         "comparison_must_not_be_rerun":  true
+                     },
+    "next":  "PHASE_4D3ZC_POSTHOC_ALIGNMENT_FAILURE_ADJUDICATION"
+}

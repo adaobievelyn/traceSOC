@@ -1,0 +1,128 @@
+{
+  "benchmark_corpus_match": true,
+  "determinism": {
+    "comparison_sha256": "7f4b29fc055015e3d8d97c3b86ef18bedfafb3151c52645837205af2e29a2a3f",
+    "derived_inventory_sha256": "c53c3ebba6df4de113ab4f7ec218b9d0b492e636d14d92b72e493f8d19ce95f6",
+    "derived_path_byte_hash_match": true,
+    "public_acceptance_match": true,
+    "source_install_match": true,
+    "stable_case_result_match": true,
+    "validation_denominators_match": true
+  },
+  "final_case": {
+    "derived_file_count": 19,
+    "output_directory": "D:\\TraceSOC-Reproduction\\v04-final-case",
+    "stable_case_result": {
+      "all_registered_detectors_integrated": true,
+      "artifact_count": 6,
+      "canonical_event_count": 232148,
+      "case_id": "case_c1c4c7ed3a1e1a89d8ed0f5f0959aac6cf9d752349bd78fae2f89f16f54928a0",
+      "correlation_evaluation_count": 664405,
+      "deferred_scriptblock_detector_count": 0,
+      "detection_evaluation_count": 1392910,
+      "event_detection_evaluation_count": 1392888,
+      "event_detector_count": 6,
+      "finding_count": 0,
+      "hypothesis_count": 0,
+      "matched_correlation_count": 0,
+      "matched_detection_count": 1727,
+      "narrative_count": 0,
+      "raw_evidence_byte_count": 159866843,
+      "raw_evidence_embedded": true,
+      "raw_evidence_file_count": 6,
+      "raw_evidence_hashes_verified": 6,
+      "relationship_count": 0,
+      "response_count": 0,
+      "scriptblock_count": 11,
+      "scriptblock_detection_evaluation_count": 22,
+      "scriptblock_detector_count": 2,
+      "seal_sha256": "a0781bd750b239670c876dd231492861ba251ee2208c8149abdd452805492ad6",
+      "seal_verified": true
+    }
+  },
+  "implementation": {
+    "analytical_candidate_sha256": "8f4f3033683141744a6e5b35bc86a06cbe6337961af316e63ef0fdb3bfa49566",
+    "current_head": "af8ea21eccad94061c3b99ad3c18faafda42fb5a",
+    "freeze_record_sha256": "749ee97a19b4e7c3af11e34842667da2ab3c255303454cb6369ac4459d6c11a9",
+    "frozen_file_count": 174,
+    "source_commit": "af8ea21eccad94061c3b99ad3c18faafda42fb5a"
+  },
+  "packaging_boundary": {
+    "installed_product_byte_equivalence": true,
+    "note": "TraceSOC validates installed package content and deterministic analysis outputs. Wheel container byte reproducibility is not claimed.",
+    "wheel_container_byte_reproducibility": "not asserted"
+  },
+  "preserved_real_evidence_proof": {
+    "benchmark_case_id": "case_c1c4c7ed3a1e1a89d8ed0f5f0959aac6cf9d752349bd78fae2f89f16f54928a0",
+    "benchmark_comparison_sha256": "65ca39ff141727d564f3032e9b04b63ae0b5704a93cb9ee165d897ee423594ea",
+    "benchmark_raw_corpus_sha256": "ea3479609665bf818fff030e7f751ec21c01895f9791bb3f55c66c24951c32d2",
+    "record_sha256": "c90cf79bfc86102e78d53c8496407cb85b9f2fb78858e7fccbf6a6399d36ddb0"
+  },
+  "python": {
+    "executable": "C:\\Users\\Eve\\tracesoc\\.venv\\Scripts\\python.exe",
+    "version": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "raw_evidence": {
+    "corpus_sha256": "ea3479609665bf818fff030e7f751ec21c01895f9791bb3f55c66c24951c32d2",
+    "file_count": 6,
+    "files": [
+      {
+        "bytes": 126317980,
+        "path": "iot23/CTU-IoT-Malware-Capture-34-1/2018-12-21-15-50-14-192.168.1.195.pcap",
+        "sha256": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699"
+      },
+      {
+        "bytes": 2926718,
+        "path": "iot23/CTU-IoT-Malware-Capture-34-1/bro/conn.log.labeled",
+        "sha256": "d69e49b2aae8c1bd33286936531658202dec47d989f0439bad3f8be180467a6e"
+      },
+      {
+        "bytes": 1596,
+        "path": "iot23/CTU-IoT-Malware-Capture-34-1/README.md",
+        "sha256": "940e8778cba292b4c9d2f8b7e10d77976c8eccfc8b6b8bfa79faa53230203f7f"
+      },
+      {
+        "bytes": 2038252,
+        "path": "splunk-attack-data/T1087.002/AD_discovery/windows-powershell-xml.log",
+        "sha256": "ce45d417d0bd66e05939f835935dd24cfe6f55b257d7b2bb968c726ae378c8c3"
+      },
+      {
+        "bytes": 8490471,
+        "path": "splunk-attack-data/T1562.001/win_app_defender_disabling/windows-security.log",
+        "sha256": "b55c57fd0256fa73f55116f9ad307de3b7403f1ba7536c10431b56426a09bd89"
+      },
+      {
+        "bytes": 20091826,
+        "path": "splunk-attack-data/T1562.001/win_app_defender_disabling/windows-sysmon.log",
+        "sha256": "8886e363b137555f5a0403783106e656b77e328fab2e503a645015f5e1cc3756"
+      }
+    ],
+    "total_bytes": 159866843
+  },
+  "run_a": {
+    "case_manifest_sha256": "69d6a421b2d576f4ede880db9e7cefeba6e187ab6ed49cda5d96485bcc828812",
+    "integration_tests": 22,
+    "public_acceptance_classes": 4,
+    "public_regression_tests": 484,
+    "public_report_sha256": "7aa633b841be806d27657b630104bd84ef8da36a857d9e32ea00212b729987d8",
+    "source_install": {
+      "python_file_count": 60,
+      "source_install_fingerprint": "dfb63698d10db5dc06edf52fa477b86977df5597c75903568c6d0878f9d768db"
+    },
+    "unit_tests": 462
+  },
+  "run_b": {
+    "case_manifest_sha256": "69d6a421b2d576f4ede880db9e7cefeba6e187ab6ed49cda5d96485bcc828812",
+    "integration_tests": 22,
+    "public_acceptance_classes": 4,
+    "public_regression_tests": 484,
+    "public_report_sha256": "7aa633b841be806d27657b630104bd84ef8da36a857d9e32ea00212b729987d8",
+    "source_install": {
+      "python_file_count": 60,
+      "source_install_fingerprint": "dfb63698d10db5dc06edf52fa477b86977df5597c75903568c6d0878f9d768db"
+    },
+    "unit_tests": 462
+  },
+  "schema_version": "tracesoc-clean-reproduction-v1",
+  "status": "PASS"
+}

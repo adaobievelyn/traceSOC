@@ -1,0 +1,26 @@
+{
+    "record_type":  "tracesoc-stage9a-continuity-candidate-map",
+    "generated_utc":  "2026-09-14T11:10:55.2325910Z",
+    "phase":  "2B",
+    "tracesoc_head":  "be35be8d14215be488bf5abdc96380f5d9640b7a",
+    "stage9a_head":  "88522176181b0249c545e60c30f878510de8465f",
+    "stage9a_source_modified":  false,
+    "stage9a_source_copied_into_production":  false,
+    "continuity_decisions_made":  false,
+    "tracked_files":  229,
+    "implementation_files":  95,
+    "candidate_rows":  95,
+    "priority_counts":  {
+                            "HIGH_GENERIC_REVIEW":  27,
+                            "HIGH_CASE_COUPLING_REVIEW":  29,
+                            "ANTI_HARDCODING_REVIEW":  4,
+                            "NORMAL_REVIEW":  25,
+                            "LOW_SIGNAL":  10,
+                            "LOW_GENERATED":  0,
+                            "READ_FAILURE":  0
+                        },
+    "files_with_known_case_signals":  32,
+    "files_with_selector_risk_signals":  27,
+    "files_with_sha256_literals":  1,
+    "next_step":  "HUMAN_SOURCE_ADJUDICATION"
+}

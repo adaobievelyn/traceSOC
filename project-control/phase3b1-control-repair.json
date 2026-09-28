@@ -1,0 +1,19 @@
+{
+    "record_type":  "tracesoc-phase3b1-control-repair",
+    "generated_utc":  "2026-09-14T12:44:36.6504185Z",
+    "parent_commit":  "a93a02c8c62b0e9e3ad7cbf0c5267858120c1b9a",
+    "issue":  "Phase 3B console reported consolidated test ledger PASS but record count 0.",
+    "analytical_results_affected":  false,
+    "phase3b_unit_tests":  18,
+    "phase3b_failures":  0,
+    "phase3b_errors":  0,
+    "repair":  {
+                   "test_ledger_rebuilt_from_accepted_phase_proofs":  true,
+                   "test_ledger_records":  2,
+                   "test_ledger_sha256":  "05068b027a3498eea10cb4c902bab13946fba80a1bb1897c3ed72ee1c1ac67c2",
+                   "defense_readiness_checklist_created":  true,
+                   "defense_readiness_checklist_sha256":  "5d7d7ba9ae317ec9d2bd1375b757500876cb402ff1f84842e776de82d0376ff6",
+                   "mandatory_pre_phase4_gate_recorded":  true
+               },
+    "next":  "PHASE_3C_ONE_BEHAVIORAL_DETECTION"
+}

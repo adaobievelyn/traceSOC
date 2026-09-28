@@ -1,0 +1,213 @@
+{
+    "schema_version":  "1.0",
+    "record_type":  "tracesoc-finalist-stale-presentation-cleanup",
+    "technical_freeze":  {
+                             "commit":  "8751a679f36b4983cdd3d2b0b35f44e9a11c4f39",
+                             "tree":  "fc420ee3fd1988cf578c0cf309ee3aefcccf33b2"
+                         },
+    "dependency_census":  {
+                              "candidates":  21,
+                              "delete_ready":  21,
+                              "blocked_live_reference":  0,
+                              "already_absent":  0,
+                              "live_files_scanned":  158
+                          },
+    "deleted":  [
+                    {
+                        "path":  "docs/EVIDENCE-README.md",
+                        "kind":  "FILE",
+                        "tracked":  true,
+                        "bytes":  23612,
+                        "sha256":  "e11fe526a427b4170d7e8124b05230a1bdf10919d16d8fd57726c40f094dbc6a",
+                        "disposition":  "DELETED_AS_VERIFIED_STALE"
+                    },
+                    {
+                        "path":  "docs/incident-report.md",
+                        "kind":  "FILE",
+                        "tracked":  true,
+                        "bytes":  18425,
+                        "sha256":  "a355d558bc68019ad77de7dd34f7438557f5d8a44d62b81297f3586e0e74103a",
+                        "disposition":  "DELETED_AS_VERIFIED_STALE"
+                    },
+                    {
+                        "path":  "docs/incident-report.pdf",
+                        "kind":  "FILE",
+                        "tracked":  true,
+                        "bytes":  159106,
+                        "sha256":  "17ea1804470c421a82d0bc3faaef7f7483d7cf4fcd03434454fd89b4f1bf9006",
+                        "disposition":  "DELETED_AS_VERIFIED_STALE"
+                    },
+                    {
+                        "path":  "docs/executive-brief.md",
+                        "kind":  "FILE",
+                        "tracked":  true,
+                        "bytes":  3895,
+                        "sha256":  "62412233042fbac8100137c66393dd12773cecd2beb52daee1efde89ee6244aa",
+                        "disposition":  "DELETED_AS_VERIFIED_STALE"
+                    },
+                    {
+                        "path":  "docs/executive-brief.pdf",
+                        "kind":  "FILE",
+                        "tracked":  true,
+                        "bytes":  66121,
+                        "sha256":  "ff0db75870eda9bc0c85978a7d06c918d9c844916e460d40a4d08bf63edac08e",
+                        "disposition":  "DELETED_AS_VERIFIED_STALE"
+                    },
+                    {
+                        "path":  "results/submission-preview",
+                        "kind":  "DIRECTORY",
+                        "tracked":  false,
+                        "file_count":  9,
+                        "bytes":  26477,
+                        "disposition":  "DELETED_AS_VERIFIED_STALE"
+                    },
+                    {
+                        "path":  "results/submission-preview-v2",
+                        "kind":  "DIRECTORY",
+                        "tracked":  false,
+                        "file_count":  10,
+                        "bytes":  39530,
+                        "disposition":  "DELETED_AS_VERIFIED_STALE"
+                    },
+                    {
+                        "path":  "results/submission-preview-v4",
+                        "kind":  "DIRECTORY",
+                        "tracked":  false,
+                        "file_count":  10,
+                        "bytes":  39533,
+                        "disposition":  "DELETED_AS_VERIFIED_STALE"
+                    },
+                    {
+                        "path":  "results/submission-preview-v5r1",
+                        "kind":  "DIRECTORY",
+                        "tracked":  false,
+                        "file_count":  12,
+                        "bytes":  62669,
+                        "disposition":  "DELETED_AS_VERIFIED_STALE"
+                    },
+                    {
+                        "path":  "results/final-case",
+                        "kind":  "DIRECTORY",
+                        "tracked":  false,
+                        "file_count":  18,
+                        "bytes":  97481,
+                        "disposition":  "DELETED_AS_VERIFIED_STALE"
+                    },
+                    {
+                        "path":  "results/final-validation",
+                        "kind":  "DIRECTORY",
+                        "tracked":  false,
+                        "file_count":  2,
+                        "bytes":  22375,
+                        "disposition":  "DELETED_AS_VERIFIED_STALE"
+                    },
+                    {
+                        "path":  "results/findings",
+                        "kind":  "DIRECTORY",
+                        "tracked":  false,
+                        "file_count":  1,
+                        "bytes":  2950,
+                        "disposition":  "DELETED_AS_VERIFIED_STALE"
+                    },
+                    {
+                        "path":  "results/sc02",
+                        "kind":  "DIRECTORY",
+                        "tracked":  false,
+                        "file_count":  1,
+                        "bytes":  5269,
+                        "disposition":  "DELETED_AS_VERIFIED_STALE"
+                    },
+                    {
+                        "path":  "results/sc10",
+                        "kind":  "DIRECTORY",
+                        "tracked":  false,
+                        "file_count":  7,
+                        "bytes":  39323,
+                        "disposition":  "DELETED_AS_VERIFIED_STALE"
+                    },
+                    {
+                        "path":  "results/sc12",
+                        "kind":  "DIRECTORY",
+                        "tracked":  false,
+                        "file_count":  2,
+                        "bytes":  16468,
+                        "disposition":  "DELETED_AS_VERIFIED_STALE"
+                    },
+                    {
+                        "path":  "scripts/build_submission_views.py",
+                        "kind":  "FILE",
+                        "tracked":  true,
+                        "bytes":  44246,
+                        "sha256":  "507c0d9e1e48ba69be5fc24ce353153aa73e2c0b2841c74ddbb32045652a33f1",
+                        "disposition":  "DELETED_AS_VERIFIED_STALE"
+                    },
+                    {
+                        "path":  "scripts/build_submission_views_v2.py",
+                        "kind":  "FILE",
+                        "tracked":  true,
+                        "bytes":  57252,
+                        "sha256":  "014713afb643480ee616369db668741501dba31d0ac7268325254abde015012c",
+                        "disposition":  "DELETED_AS_VERIFIED_STALE"
+                    },
+                    {
+                        "path":  "scripts/build_submission_views_v3.py",
+                        "kind":  "FILE",
+                        "tracked":  true,
+                        "bytes":  57257,
+                        "sha256":  "5bff2bc2f823726cad95cf6ab9dfa9c5b8f7410d10ff50ed7a6bcce4eed115ec",
+                        "disposition":  "DELETED_AS_VERIFIED_STALE"
+                    },
+                    {
+                        "path":  "scripts/build_submission_views_v4.py",
+                        "kind":  "FILE",
+                        "tracked":  true,
+                        "bytes":  57257,
+                        "sha256":  "ed0ce8a4924a6970f66ed7723b6e4aef205174b71952902ba9ac9df85379b3c5",
+                        "disposition":  "DELETED_AS_VERIFIED_STALE"
+                    },
+                    {
+                        "path":  "scripts/build_submission_report_preview.py",
+                        "kind":  "FILE",
+                        "tracked":  true,
+                        "bytes":  34778,
+                        "sha256":  "469415fc2495575c63ead3ad0ba6c011f7ecd9ef350a5f6939050a8d36ef08f3",
+                        "disposition":  "DELETED_AS_VERIFIED_STALE"
+                    },
+                    {
+                        "path":  "scripts/build_submission_report_preview_v2.py",
+                        "kind":  "FILE",
+                        "tracked":  true,
+                        "bytes":  34967,
+                        "sha256":  "0aeddf423542605d682a7299ac172a83d57a2cc2dbaac94370d03197bfb2e143",
+                        "disposition":  "DELETED_AS_VERIFIED_STALE"
+                    }
+                ],
+    "counts":  {
+                   "deleted_candidates":  21,
+                   "tracked_candidates":  11,
+                   "untracked_or_ignored_candidates":  10
+               },
+    "retained_for_later_correction":  [
+                                          "README.md",
+                                          "integrity-attestation.md",
+                                          "project-control/tracesoc-master-record.json",
+                                          "project-control/requirements-matrix.csv",
+                                          "project-control/risk-register.csv",
+                                          "project-control/evidence-ledger.csv",
+                                          "project-control/defense-readiness-checklist.md",
+                                          "project-control/control-record-architecture.md",
+                                          "project-control/defense-notes.md",
+                                          "scripts/rebuild_root_indexes.py",
+                                          "scripts/rebuild_master_control_record.py"
+                                      ],
+    "boundaries":  {
+                       "product_source_mutated":  false,
+                       "test_source_mutated":  false,
+                       "holdout_rerun":  false,
+                       "protected_finalist_authorities_deleted":  false,
+                       "stage_performed":  false,
+                       "commit_created":  false,
+                       "push_performed":  false
+                   },
+    "final_status":  "PASS"
+}

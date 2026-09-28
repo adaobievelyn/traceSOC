@@ -1,0 +1,49 @@
+{
+  "adjudication": {
+    "classification": "NON_NORMALIZED_NON_IPV4_ETHERTYPE_FRAMES",
+    "malformed_packet_claimed": false,
+    "parser_failure_established": false,
+    "silent_evidence_loss_established": false,
+    "statement": "All 9672 PCAPNG packet locators are accounted. Exactly 5412 Ethernet frames classify as IPv4 TCP or UDP and exactly 5412 PCAP observations were normalized. The remaining 4260 frames classify into two non-IPv4 EtherType values (0xBC9B and 0xC297), exactly matching the artifact's 4260 processing issues. The artifact records no errors and preserves the complete raw capture. The evidence therefore supports classification of the 4260 records as accounted non-normalized packet classes under partial PCAP support, not silent evidence loss or a demonstrated parser failure.",
+    "status": "CLOSED_ACCOUNTED_SUPPORTED_PARTIAL",
+    "unsupported_protocol_identity_claimed": false
+  },
+  "created_utc": "2026-09-25T12:52:41Z",
+  "final_status": "PASS",
+  "frozen_candidate": {
+    "commit": "8751a679f36b4983cdd3d2b0b35f44e9a11c4f39",
+    "tree": "fc420ee3fd1988cf578c0cf309ee3aefcccf33b2"
+  },
+  "interpretive_boundary": {
+    "ethertype_0xbc9b_protocol_name_established": false,
+    "ethertype_0xc297_protocol_name_established": false,
+    "reason": "The census establishes numeric EtherType values only. No unsupported protocol name or higher-level semantic identity is inferred."
+  },
+  "mechanical_proof": {
+    "ipv4_tcp_plus_udp_equals_normalized_events": true,
+    "normalized_plus_issues_equals_all_packet_locators": true,
+    "pcapng_enhanced_packets_equal_evidence_locators": true,
+    "raw_source_preserved": true,
+    "recorded_parser_errors_absent": true,
+    "two_non_ipv4_ethertype_classes_equal_processing_issues": true
+  },
+  "packet_accounting": {
+    "ethertype_0xbc9b": 3552,
+    "ethertype_0xc297": 708,
+    "ipv4_tcp": 438,
+    "ipv4_udp": 4974,
+    "normalized_ipv4_packet_events": 5412,
+    "processing_issues": 4260,
+    "recorded_errors": 0,
+    "total_packet_locators": 9672
+  },
+  "product_modified": false,
+  "record_type": "tracesoc-r3-pcap-processing-issue-final-adjudication",
+  "schema_version": "1.0",
+  "source_measurement": {
+    "census_path": "C:\\TraceSOC-Reference-Case\\analysis\\r3-pcap-processing-issue-census.json",
+    "census_sha256": "51b5df8c79fdad3c197cf0fb6a2f9e1c88e796eb1a9fbb069c46f14949e7b0c3",
+    "pcap_sha256": "290491c9da90048a25c2d8613ffa4cdeb8d027ac7764451c06f7a3d5ccf205da"
+  },
+  "tracesoc_rerun": false
+}

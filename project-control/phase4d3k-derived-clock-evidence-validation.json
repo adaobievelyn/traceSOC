@@ -1,0 +1,281 @@
+{
+  "anti_hardcoding": {
+    "production_uses_expected_real_count_as_selector": false,
+    "production_uses_known_event_ids_as_selectors": false,
+    "production_uses_known_host_as_selector": false,
+    "production_uses_known_timestamps_as_selectors": false,
+    "production_uses_source_ids_as_selectors": false,
+    "publisher_label_selectors": false,
+    "real_count_is_validation_fact_only": true
+  },
+  "clock_evidence_contract": {
+    "ambiguous_identity_resolved_with_time": false,
+    "coordinate_offset_seconds": 0,
+    "derived_interval_is_observed_source_time": false,
+    "identity_created_with_time": false,
+    "interval_semantics": "UTC-coordinate interval corroborated by an independently identified observed-UTC Sysmon event",
+    "interval_width_seconds": 1,
+    "parent_canonical_event_mutated": false,
+    "source_timezone_established": false,
+    "target_clock_state_changed": false,
+    "target_event_time_utc_populated": false
+  },
+  "evidence": {
+    "sysmon": {
+      "accepted_records": 11618,
+      "canonical_clock_state": "observed",
+      "quarantined_records": 0,
+      "sha256": "8886e363b137555f5a0403783106e656b77e328fab2e503a645015f5e1cc3756",
+      "source_id": "TS-DEV-SPLUNK-SYSMON-001"
+    },
+    "windows_security": {
+      "accepted_records": 7116,
+      "canonical_clock_state": "unresolved",
+      "quarantined_records": 0,
+      "sha256": "b55c57fd0256fa73f55116f9ad307de3b7403f1ba7536c10431b56426a09bd89",
+      "source_id": "TS-DEV-SPLUNK-SECURITY-001"
+    }
+  },
+  "external_evidence_modified": false,
+  "generated_utc": "2026-09-15T15:27:21Z",
+  "holdout_accessed": false,
+  "implementation": {
+    "derived_object": "ClockEvidence",
+    "derived_object_state": "corroborated",
+    "identity_version": 1,
+    "module": "src/tracesoc/normalization/clock_evidence.py",
+    "module_sha256": "ef62e449bed8eb0a53c35e6b44229690463148fb92444f213c7e9429eb0e883f",
+    "test_module": "tests/unit/test_clock_evidence.py",
+    "test_sha256": "5975f26cda1e5994c5e89cdddce1edbcf252754ba1ded8549c814b7a20d755d5"
+  },
+  "next": "PHASE_4D3L_REAL_BEHAVIORAL_DETECTION_CENSUS",
+  "objective": "Represent bounded cross-source temporal corroboration for independently identified Windows Security process observations without mutating unresolved canonical timestamps or fabricating a source timezone.",
+  "parent_commit": "71a5f9a49c0444c20cdd1717fba5c66222c7553d",
+  "phase": "PHASE-4D.3K",
+  "record_type": "tracesoc-phase4d3k-derived-clock-evidence-validation",
+  "recovery_history": {
+    "prior_failed_attempt_mutated_repository": false,
+    "prior_wrapper_failure_class": "POWERSHELL_5_1_PARSE_FAILURE",
+    "prior_wrapper_parse_failure": true,
+    "repatch_required": false,
+    "rollback_required": false
+  },
+  "relationship_adjudication": {
+    "derived_clock_evidence_count": 8,
+    "derived_objects": [
+      {
+        "clock_evidence_id": "clk_090c89664238f244cfa5d4b596b39c0b7aa22545df6756c9385e6d2cffa1cf9f",
+        "coordinate_offset_seconds": 0,
+        "host": "win-dc-892.attackrange.local",
+        "identity_dimensions": [
+          "exact_host",
+          "process_name_casefold",
+          "numeric_process_id",
+          "parent_process_casefold",
+          "numeric_parent_process_id",
+          "exact_principal"
+        ],
+        "method": "windows_security_sysmon_process_same_second_zero_offset_v1",
+        "resolution_seconds": 1,
+        "state": "corroborated",
+        "supporting_event_ids": [
+          "evt_a04d9a063d8bf3ad62b7a2bfcef2b47a189563dcf4584344a87584a0d9fa297d"
+        ],
+        "target_event_id": "evt_3abd91ee5776b05f0292fa0cc2384e90ed24a3cf1fffd9fd364223955ede2c1c",
+        "target_event_time_raw": "03/31/2021 12:00:42 PM",
+        "utc_interval_end_exclusive": "2021-03-31T12:00:43+00:00",
+        "utc_interval_start": "2021-03-31T12:00:42+00:00"
+      },
+      {
+        "clock_evidence_id": "clk_1a501c08d13d86c6b042a886d672995c74bc8b0b1c3d80045f8e846b0b12d676",
+        "coordinate_offset_seconds": 0,
+        "host": "win-dc-892.attackrange.local",
+        "identity_dimensions": [
+          "exact_host",
+          "process_name_casefold",
+          "numeric_process_id",
+          "parent_process_casefold",
+          "numeric_parent_process_id",
+          "exact_principal"
+        ],
+        "method": "windows_security_sysmon_process_same_second_zero_offset_v1",
+        "resolution_seconds": 1,
+        "state": "corroborated",
+        "supporting_event_ids": [
+          "evt_3d6918928b0e3976bd66a268993234a891055c81d1f9145cbc011cae8ba14cf2"
+        ],
+        "target_event_id": "evt_5ba894a47691a466e266e5050194173744e11052dd8eef0b6305d680b1d4119d",
+        "target_event_time_raw": "03/31/2021 12:00:39 PM",
+        "utc_interval_end_exclusive": "2021-03-31T12:00:40+00:00",
+        "utc_interval_start": "2021-03-31T12:00:39+00:00"
+      },
+      {
+        "clock_evidence_id": "clk_2f9ecb16b882575f01f2bf5e8e055774e9c5d765abe7001a05a497f322d7ec73",
+        "coordinate_offset_seconds": 0,
+        "host": "win-dc-892.attackrange.local",
+        "identity_dimensions": [
+          "exact_host",
+          "process_name_casefold",
+          "numeric_process_id",
+          "parent_process_casefold",
+          "numeric_parent_process_id",
+          "exact_principal"
+        ],
+        "method": "windows_security_sysmon_process_same_second_zero_offset_v1",
+        "resolution_seconds": 1,
+        "state": "corroborated",
+        "supporting_event_ids": [
+          "evt_65d30a1f17ccdaf55f5d22b528848a1bb0f3acc739dd0a0e0e974e8d6a1f45dd"
+        ],
+        "target_event_id": "evt_20c834eaf2f367802f7df08c3a0d398b116a09fe18b4caab836edec0e05adb0f",
+        "target_event_time_raw": "03/31/2021 12:00:42 PM",
+        "utc_interval_end_exclusive": "2021-03-31T12:00:43+00:00",
+        "utc_interval_start": "2021-03-31T12:00:42+00:00"
+      },
+      {
+        "clock_evidence_id": "clk_3f852e6c92ffe533017f580dd1190dc8d87f3803cb81f017fdc1378130bb4d94",
+        "coordinate_offset_seconds": 0,
+        "host": "win-dc-892.attackrange.local",
+        "identity_dimensions": [
+          "exact_host",
+          "process_name_casefold",
+          "numeric_process_id",
+          "parent_process_casefold",
+          "numeric_parent_process_id",
+          "exact_principal"
+        ],
+        "method": "windows_security_sysmon_process_same_second_zero_offset_v1",
+        "resolution_seconds": 1,
+        "state": "corroborated",
+        "supporting_event_ids": [
+          "evt_59adc715045ebce2e17302138588c754a198b54e802335ae999d08469236c5ce"
+        ],
+        "target_event_id": "evt_9df14e64e13aa22564fe12f3325a013eb29afbafdddbaece230353b291d0fcc3",
+        "target_event_time_raw": "03/31/2021 12:00:41 PM",
+        "utc_interval_end_exclusive": "2021-03-31T12:00:42+00:00",
+        "utc_interval_start": "2021-03-31T12:00:41+00:00"
+      },
+      {
+        "clock_evidence_id": "clk_5b5f3ebad461cb020b380a4759db75afda579632d1890993639ceed1cd6d7aa7",
+        "coordinate_offset_seconds": 0,
+        "host": "win-dc-892.attackrange.local",
+        "identity_dimensions": [
+          "exact_host",
+          "process_name_casefold",
+          "numeric_process_id",
+          "parent_process_casefold",
+          "numeric_parent_process_id",
+          "exact_principal"
+        ],
+        "method": "windows_security_sysmon_process_same_second_zero_offset_v1",
+        "resolution_seconds": 1,
+        "state": "corroborated",
+        "supporting_event_ids": [
+          "evt_6bd021bb080c394c18e3dc260dbeb484e155d8899266b937e5c9c01f941c98fc"
+        ],
+        "target_event_id": "evt_aa8d34c8c2ffcaae8a5e87a8b249510c29ba70b754e9ac1cab41acba53408242",
+        "target_event_time_raw": "03/31/2021 12:00:42 PM",
+        "utc_interval_end_exclusive": "2021-03-31T12:00:43+00:00",
+        "utc_interval_start": "2021-03-31T12:00:42+00:00"
+      },
+      {
+        "clock_evidence_id": "clk_659c4e1ba2e7376e4ce9852efc01688290deed5e4c582abe5e59a0417ebc937b",
+        "coordinate_offset_seconds": 0,
+        "host": "win-dc-892.attackrange.local",
+        "identity_dimensions": [
+          "exact_host",
+          "process_name_casefold",
+          "numeric_process_id",
+          "parent_process_casefold",
+          "numeric_parent_process_id",
+          "exact_principal"
+        ],
+        "method": "windows_security_sysmon_process_same_second_zero_offset_v1",
+        "resolution_seconds": 1,
+        "state": "corroborated",
+        "supporting_event_ids": [
+          "evt_9786aedc45f0068bf144407a0aff0c5c642f781c1db7b4b12285e48f1566ca8f"
+        ],
+        "target_event_id": "evt_1030a705ea93a183f25bcb297950b121a05cb94af01693fdcc88594dca12af90",
+        "target_event_time_raw": "03/31/2021 12:00:42 PM",
+        "utc_interval_end_exclusive": "2021-03-31T12:00:43+00:00",
+        "utc_interval_start": "2021-03-31T12:00:42+00:00"
+      },
+      {
+        "clock_evidence_id": "clk_b12595098192beb3a5a4d073d5e2696689ad6f06137e312da4a94bf8fec86258",
+        "coordinate_offset_seconds": 0,
+        "host": "win-dc-892.attackrange.local",
+        "identity_dimensions": [
+          "exact_host",
+          "process_name_casefold",
+          "numeric_process_id",
+          "parent_process_casefold",
+          "numeric_parent_process_id",
+          "exact_principal"
+        ],
+        "method": "windows_security_sysmon_process_same_second_zero_offset_v1",
+        "resolution_seconds": 1,
+        "state": "corroborated",
+        "supporting_event_ids": [
+          "evt_eb56ce0c43b3c3d11613fff6e59be103acada7136a166413e6486642de21c71a"
+        ],
+        "target_event_id": "evt_c535cb40ce68f76129e1fcc81388b66428b4eedffd9aa66590c57d42d85faba4",
+        "target_event_time_raw": "03/31/2021 12:00:41 PM",
+        "utc_interval_end_exclusive": "2021-03-31T12:00:42+00:00",
+        "utc_interval_start": "2021-03-31T12:00:41+00:00"
+      },
+      {
+        "clock_evidence_id": "clk_d5973047b8de3c447310266521d549342365034683e92282907c98a4f468162c",
+        "coordinate_offset_seconds": 0,
+        "host": "win-dc-892.attackrange.local",
+        "identity_dimensions": [
+          "exact_host",
+          "process_name_casefold",
+          "numeric_process_id",
+          "parent_process_casefold",
+          "numeric_parent_process_id",
+          "exact_principal"
+        ],
+        "method": "windows_security_sysmon_process_same_second_zero_offset_v1",
+        "resolution_seconds": 1,
+        "state": "corroborated",
+        "supporting_event_ids": [
+          "evt_10d22ef96945e289c2d6420f3b55ff48f2df298fec25e559a78c723ef5447e92"
+        ],
+        "target_event_id": "evt_10e8d9c5135663460761e359129c26361d54208f14c8b09ee10bb384f9ec1f88",
+        "target_event_time_raw": "03/31/2021 12:00:42 PM",
+        "utc_interval_end_exclusive": "2021-03-31T12:00:43+00:00",
+        "utc_interval_start": "2021-03-31T12:00:42+00:00"
+      }
+    ],
+    "host_aliasing": false,
+    "identity_dimensions": [
+      "exact_host",
+      "process_name_casefold",
+      "numeric_process_id",
+      "parent_process_casefold",
+      "numeric_parent_process_id",
+      "exact_principal"
+    ],
+    "pid_source_value_rewriting": false,
+    "process_path_rewriting": false
+  },
+  "result": "PASS",
+  "scope_boundary": {
+    "all_security_events_clock_established": false,
+    "all_security_hosts_clock_established": false,
+    "canonical_windows_security_clock_contract_preserved": true,
+    "correlation_logic_changed": false,
+    "detection_logic_changed": false,
+    "holdout_accessed": false,
+    "whole_security_source_timezone_established": false
+  },
+  "validation": {
+    "full_unit_regression": "115/115 PASS",
+    "git_diff_check": "PENDING_FREEZE_SCOPE_CHECK",
+    "input_order_deterministic": true,
+    "real_derived_clock_evidence": "8/8 lineage-resolved",
+    "repository_text_integrity": "PASS",
+    "targeted_tests": "8/8 PASS"
+  }
+}

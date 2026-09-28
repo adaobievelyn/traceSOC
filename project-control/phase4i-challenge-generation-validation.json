@@ -1,0 +1,174 @@
+{
+  "authoritative_parent_selection": {
+    "path": "project-control/phase4i-challenge-exact-parent-selection.json",
+    "selected_parent_count": 7,
+    "selected_source_artifact_count": 5,
+    "selected_source_ids": [
+      "TS-BEN-IOT23V2-ECHO-ZEEK",
+      "TS-DEV-IOT23-034-ZEEK",
+      "TS-DEV-SPLUNK-PS-001",
+      "TS-DEV-SPLUNK-SECURITY-001",
+      "TS-DEV-SPLUNK-SYSMON-001"
+    ],
+    "sha256": "b9838e2d9c8c9d81a6f0a5220442ee6652a8c396d4a1411ff5a8754049efb53e",
+    "state": "FROZEN_UNCHANGED"
+  },
+  "challenge_plan": {
+    "path": "project-control/evidence-challenge-corpus-plan.md",
+    "sha256": "9a8d3b9fd1ce6b79df3441487bac57cf2533f80de0d31c16671411e72a65e23c"
+  },
+  "corpus": {
+    "challenge_classes": 15,
+    "challenge_manifests": 15,
+    "challenge_records": [
+      {
+        "challenge_id": "CHAL-CLOCK-001",
+        "generated_input_count": 1,
+        "manifest_path": "tests/fixtures/challenges/cov010/CHAL-CLOCK-001/challenge-manifest.json",
+        "manifest_sha256": "ad937c2926c3e139c13b683668d6df350d508b97a1565f6b3b4d59069af8a9a2"
+      },
+      {
+        "challenge_id": "CHAL-CORR-001",
+        "generated_input_count": 2,
+        "manifest_path": "tests/fixtures/challenges/cov010/CHAL-CORR-001/challenge-manifest.json",
+        "manifest_sha256": "48c28b3f48eed6a82f1403009539cb80d72cd9f8a05f843c7f531660f10e2c52"
+      },
+      {
+        "challenge_id": "CHAL-CORR-002",
+        "generated_input_count": 2,
+        "manifest_path": "tests/fixtures/challenges/cov010/CHAL-CORR-002/challenge-manifest.json",
+        "manifest_sha256": "1ea70e3a939757aee81521476f3f7d979d5a037e498986f2670ed83d0a70e6e7"
+      },
+      {
+        "challenge_id": "CHAL-DUP-001",
+        "generated_input_count": 1,
+        "manifest_path": "tests/fixtures/challenges/cov010/CHAL-DUP-001/challenge-manifest.json",
+        "manifest_sha256": "d73341ac1e3faf220476534d9f0bafe0620c1aa4a6665484d52009a1f9f6b376"
+      },
+      {
+        "challenge_id": "CHAL-DUP-002",
+        "generated_input_count": 1,
+        "manifest_path": "tests/fixtures/challenges/cov010/CHAL-DUP-002/challenge-manifest.json",
+        "manifest_sha256": "e593db19ad13f8181accb40f08459204d97949cbb7d43b6196c8601c2ece269a"
+      },
+      {
+        "challenge_id": "CHAL-LABEL-001",
+        "generated_input_count": 1,
+        "manifest_path": "tests/fixtures/challenges/cov010/CHAL-LABEL-001/challenge-manifest.json",
+        "manifest_sha256": "997f292ca76012ebc0f8eae8b50cb9a4d4393ac263fefac1d34492a4946bc9fb"
+      },
+      {
+        "challenge_id": "CHAL-MAL-001",
+        "generated_input_count": 1,
+        "manifest_path": "tests/fixtures/challenges/cov010/CHAL-MAL-001/challenge-manifest.json",
+        "manifest_sha256": "86092e28fb8b8e9958ad801fded45bf67e9c61e75674b1b41ecb9f681d6d8311"
+      },
+      {
+        "challenge_id": "CHAL-MAL-002",
+        "generated_input_count": 1,
+        "manifest_path": "tests/fixtures/challenges/cov010/CHAL-MAL-002/challenge-manifest.json",
+        "manifest_sha256": "091b3b8e11b1f6d125e30070c6f7e3c41523704166859f0f86169550139ca536"
+      },
+      {
+        "challenge_id": "CHAL-MISS-001",
+        "generated_input_count": 1,
+        "manifest_path": "tests/fixtures/challenges/cov010/CHAL-MISS-001/challenge-manifest.json",
+        "manifest_sha256": "a064bd4467dc5a9fdc9615804fb3460160c68267c412eac78966dda7da6f8ee6"
+      },
+      {
+        "challenge_id": "CHAL-MISS-002",
+        "generated_input_count": 1,
+        "manifest_path": "tests/fixtures/challenges/cov010/CHAL-MISS-002/challenge-manifest.json",
+        "manifest_sha256": "2274649f30208a1275ee7ceadf8211964888fda40214fb32f290ed8830d6da74"
+      },
+      {
+        "challenge_id": "CHAL-MIX-001",
+        "generated_input_count": 2,
+        "manifest_path": "tests/fixtures/challenges/cov010/CHAL-MIX-001/challenge-manifest.json",
+        "manifest_sha256": "e740c8c107fef8fb6b79ecb7454db1ad78c3bc677c7ece73b6ed14b403cda079"
+      },
+      {
+        "challenge_id": "CHAL-TIME-001",
+        "generated_input_count": 1,
+        "manifest_path": "tests/fixtures/challenges/cov010/CHAL-TIME-001/challenge-manifest.json",
+        "manifest_sha256": "c336219fd2444afe68326d4613f9b3d7eb269c12501512d2a7dffe129159a971"
+      },
+      {
+        "challenge_id": "CHAL-TIME-002",
+        "generated_input_count": 2,
+        "manifest_path": "tests/fixtures/challenges/cov010/CHAL-TIME-002/challenge-manifest.json",
+        "manifest_sha256": "2ea2f528d0e4de61303b8738a03172067299f8c9144968791c8c30485459ed3a"
+      },
+      {
+        "challenge_id": "CHAL-TIME-003",
+        "generated_input_count": 2,
+        "manifest_path": "tests/fixtures/challenges/cov010/CHAL-TIME-003/challenge-manifest.json",
+        "manifest_sha256": "f044a7a9eb4fd5584ab95c8cafee340831e554c3740d825b49852c716ff886b0"
+      },
+      {
+        "challenge_id": "CHAL-UNKNOWN-001",
+        "generated_input_count": 1,
+        "manifest_path": "tests/fixtures/challenges/cov010/CHAL-UNKNOWN-001/challenge-manifest.json",
+        "manifest_sha256": "165fce90f5be2a0fe96c35746775ae90fe04bf0fbd1e6bd5f634a7417dd25b19"
+      }
+    ],
+    "creation_timestamp_utc": "2026-09-17T10:13:44.7916301Z",
+    "derived_inputs": 20,
+    "holdout_sources_used": 0,
+    "manifest_path": "tests/fixtures/challenges/cov010/corpus-manifest.json",
+    "manifest_sha256": "3523e9c659e97f0d68641139c493461971ee44824cd2df55b777d7b0b60acc19",
+    "root": "tests/fixtures/challenges/cov010",
+    "selected_source_artifacts": 5,
+    "total_files": 36
+  },
+  "coverage_state": {
+    "COV_010": "DERIVED_CORPUS_PENDING",
+    "challenge_execution": "NOT_STARTED",
+    "challenge_generation": "15/15_COMPLETE",
+    "exact_parent_selection": "COMPLETE",
+    "reason": "Canonical generation is complete and independently byte-reproducible. Analytical challenge execution has not started."
+  },
+  "determinism": {
+    "byte_identity": "36/36_PASS",
+    "canonical_creation_timestamp_reused": true,
+    "canonical_parent_commit_reused": true,
+    "independent_regeneration": "PASS",
+    "path_identity": "36/36_PASS"
+  },
+  "generated_utc": "2026-09-17T10:18:25.451424+00:00",
+  "generator": {
+    "path": "scripts/generate_cov010_challenge_corpus.py",
+    "sha256": "24310b48f402a6368fcc9ec5b312f23e306a7f7d032325639eba1bd62f6408a2",
+    "version": "1.0.0"
+  },
+  "next": "PHASE_4I_CHALLENGE_EXECUTION",
+  "parent_commit": "69fc3d3aaef40d550e9319c4f5cd4d7d624c869d",
+  "phase": "PHASE-4I-G6BC",
+  "record_type": "tracesoc-cov010-generation-validation-v1",
+  "requirement": "COV-010",
+  "result": "PASS",
+  "schema_version": 1,
+  "semantic_isolation": {
+    "challenge_id_entered_generated_inputs": false,
+    "challenge_id_is_test_metadata": true,
+    "expected_answer_used_as_production_selector": false,
+    "publisher_label_used_as_production_selector": false,
+    "real_incident_claimed": false
+  },
+  "source_boundary": {
+    "holdout_sources_used": 0,
+    "non_selected_hue_witness_count": 1,
+    "non_selected_hue_witness_in_corpus": false,
+    "parent_selection_changed": false,
+    "raw_originals_modified": false
+  },
+  "tests": {
+    "challenge_classes": "15/15_PASS",
+    "challenge_manifests": "15/15_PASS",
+    "corpus_files": "36/36_PASS",
+    "derived_input_hashes": "20/20_PASS",
+    "deterministic_byte_regeneration": "36/36_PASS",
+    "frozen_parent_references": "7/7_PASS",
+    "selected_source_references": "5/5_PASS"
+  }
+}

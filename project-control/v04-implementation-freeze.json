@@ -1,0 +1,937 @@
+{
+  "accepted_validation": {
+    "grader_feedback_reconciliation": "PASS",
+    "integration_regression": {
+      "errors": 0,
+      "failed": 0,
+      "passed": 22,
+      "run": 22,
+      "skipped": 0
+    },
+    "isolated_distribution_source_equivalence": {
+      "byte_differences": 0,
+      "python_files": 60,
+      "status": "PASS"
+    },
+    "public_acceptance": {
+      "classes_passed": 4,
+      "classes_total": 4,
+      "final_report_sha256": "db1b721e538de9210266399cb7ffeb3971e6b8686860ca522275488f25ef78da",
+      "full_regression_passed": 484,
+      "full_regression_total": 484,
+      "two_run_determinism": "PASS"
+    },
+    "representation_completeness_repair": "CLOSED",
+    "sc23_representation_completeness": "PASS",
+    "sc24_representation_equivalence": "PASS",
+    "sc25_unknown_representation_safety": "PASS",
+    "unit_regression": {
+      "errors": 0,
+      "failed": 0,
+      "passed": 462,
+      "run": 462,
+      "skipped": 0
+    }
+  },
+  "analytical_candidate_sha256": "8f4f3033683141744a6e5b35bc86a06cbe6337961af316e63ef0fdb3bfa49566",
+  "canonical_commit_blob_fingerprint": {
+    "algorithm": "sha256(path|file_sha256 newline rows; ordinal path order)",
+    "file_count": 174,
+    "sha256": "5f166d992e61003d26cd874b50463bb90a0ce598acd13bc8b70d9739125fb610"
+  },
+  "freeze_id": "TRACESOC-V0.4.8-RC-IMPLEMENTATION-FREEZE",
+  "freeze_scope": "Git-tracked src/ and tests/ files; generated caches and *.egg-info excluded",
+  "freeze_status": "FROZEN",
+  "frozen_file_count": 174,
+  "frozen_files": [
+    {
+      "bytes": 0,
+      "path": "src/tracesoc/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 131,
+      "path": "src/tracesoc/__main__.py",
+      "sha256": "3b3539eac758ce7897b8129bb1af6e9f669ba87fe0678f391b13bd40afbb7e40"
+    },
+    {
+      "bytes": 0,
+      "path": "src/tracesoc/cli/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 105165,
+      "path": "src/tracesoc/cli/case.py",
+      "sha256": "0735eb24639f22896a566b34ae9203a3bda79d99a621d5985230885bcad1c0c4"
+    },
+    {
+      "bytes": 44291,
+      "path": "src/tracesoc/cli/explain.py",
+      "sha256": "a195f6ff522e48a3662bb5a89bb182b88d9439ec143fe3ae56813d436fb41241"
+    },
+    {
+      "bytes": 0,
+      "path": "src/tracesoc/correlation/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2177,
+      "path": "src/tracesoc/correlation/models.py",
+      "sha256": "8a1ac43a10fd1fe0feadb535fdac01d5b7280446b1ea739bffcdc4fe26d43fa5"
+    },
+    {
+      "bytes": 22095,
+      "path": "src/tracesoc/correlation/powershell_process.py",
+      "sha256": "ce3538fc0a067f5a77d44129b4167ea1397508edbde03e222ccb204d164ca6a8"
+    },
+    {
+      "bytes": 15266,
+      "path": "src/tracesoc/correlation/sysmon_pcap_network.py",
+      "sha256": "ee471787533673949c10f0124e768537aae75071c17e552322360d8a5e37167e"
+    },
+    {
+      "bytes": 17759,
+      "path": "src/tracesoc/correlation/web_retrieval_network.py",
+      "sha256": "edf2dcb28e26b2d2f623ccab0ae3fbcd3cf269a65147a5fd0ea1dbd3b64bb334"
+    },
+    {
+      "bytes": 0,
+      "path": "src/tracesoc/detection/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1711,
+      "path": "src/tracesoc/detection/models.py",
+      "sha256": "f4732cdab410e1037e2a4f15ec1a317e0492e748445fa83e648235f6fb66de87"
+    },
+    {
+      "bytes": 8700,
+      "path": "src/tracesoc/detection/powershell_reconstructed.py",
+      "sha256": "4bc8befa4e788da25c4a096639fd7b502596e5eefe216150b93957d1cdccada1"
+    },
+    {
+      "bytes": 3282,
+      "path": "src/tracesoc/detection/powershell_web_retrieval.py",
+      "sha256": "1744532a8e01bd163b51ea4e8914beeb6919694b9bac4babcc9a5c0b23573ea9"
+    },
+    {
+      "bytes": 8707,
+      "path": "src/tracesoc/detection/registry.py",
+      "sha256": "05930ad7fbb6728c15ec9855d7de45aa6f50ce1951f472c7025985887d011395"
+    },
+    {
+      "bytes": 4296,
+      "path": "src/tracesoc/detection/sysmon_firewall.py",
+      "sha256": "3bc6707502d0b8527297f77075745befd3f624bedfd679aafe2ad8241f79889a"
+    },
+    {
+      "bytes": 10984,
+      "path": "src/tracesoc/detection/sysmon_powershell_behavior.py",
+      "sha256": "b7ea7841fafe314041323fdaf162a4f2d304a6bc4550705e711776abbe48238f"
+    },
+    {
+      "bytes": 2451,
+      "path": "src/tracesoc/detection/zeek_irc.py",
+      "sha256": "4c7f438bd07a8134166b38073784f52148292e635528aa87fb53028ebb51f1cb"
+    },
+    {
+      "bytes": 0,
+      "path": "src/tracesoc/evidence/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 9425,
+      "path": "src/tracesoc/evidence/artifacts.py",
+      "sha256": "fad98ac077728281f5761c1267ca9d43d12575e7876e4a0e8b1dbe82e21b8b0e"
+    },
+    {
+      "bytes": 20412,
+      "path": "src/tracesoc/evidence/case_narrative.py",
+      "sha256": "442abf26505e7383cda335dd9eb2ca3000a7b6c653e5c6aa54a0b22e6205b950"
+    },
+    {
+      "bytes": 13176,
+      "path": "src/tracesoc/evidence/clock_explanation.py",
+      "sha256": "ea38b428000ee0d9139937a0ea4c7c608b1b2b1328101df34532bf1602af3a05"
+    },
+    {
+      "bytes": 47545,
+      "path": "src/tracesoc/evidence/correlation_bridge.py",
+      "sha256": "71a07dd85aa14d85dff28502b65e1c8376770dce3b4bdc103429b0db7727a099"
+    },
+    {
+      "bytes": 8820,
+      "path": "src/tracesoc/evidence/findings_v04.py",
+      "sha256": "819bbf75238199acb315d0e4d605724ad4cd40256ed93a9062a730f337f221d1"
+    },
+    {
+      "bytes": 23405,
+      "path": "src/tracesoc/evidence/graph.py",
+      "sha256": "f17d772032d63ac6dbf66e0903a5889f4ad823a83579b8ab2a54f447e67ebef7"
+    },
+    {
+      "bytes": 14827,
+      "path": "src/tracesoc/evidence/hypotheses.py",
+      "sha256": "e8ca5eb4b86b39ef6fcef9db441fc5d173c16d09de368f3b1a2a1f8c572bd7f6"
+    },
+    {
+      "bytes": 1491,
+      "path": "src/tracesoc/evidence/identity.py",
+      "sha256": "c512df0e48061aeef4b8f4a6c7c6518787e5a32c3da31355a880ce472896f389"
+    },
+    {
+      "bytes": 38253,
+      "path": "src/tracesoc/evidence/intake.py",
+      "sha256": "6f303c7e8036a3f9810cf960b7da00265217d639ef17efdcf87205c91fe744da"
+    },
+    {
+      "bytes": 9682,
+      "path": "src/tracesoc/evidence/locators.py",
+      "sha256": "2230ac90f50186dbe747e0cc9190df44a98c0a98dd5c62876dd3b611d9d94de6"
+    },
+    {
+      "bytes": 16354,
+      "path": "src/tracesoc/evidence/native_canonical.py",
+      "sha256": "ad7cf797f7fe42c8eededd11341361eea556edb04577d06933dea95ca5ae1bfd"
+    },
+    {
+      "bytes": 3755,
+      "path": "src/tracesoc/evidence/states.py",
+      "sha256": "696a566b7e6f2bd33bc4c6ce3f34f4bfc91aba24542d75a4457199f96c4ab676"
+    },
+    {
+      "bytes": 9554,
+      "path": "src/tracesoc/evidence/windows_event_bridge.py",
+      "sha256": "2ea2ec390e1ac26cdc22109ee2e263cc60fc0cb93ca92ca6ab4820fe739db37b"
+    },
+    {
+      "bytes": 0,
+      "path": "src/tracesoc/findings/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 4470,
+      "path": "src/tracesoc/findings/builders.py",
+      "sha256": "0a31fffc022eb23afcc9ddfa0edcf39ca5a46b15c8f71dc333c82ecc672afe6b"
+    },
+    {
+      "bytes": 4620,
+      "path": "src/tracesoc/findings/models.py",
+      "sha256": "b7abe2f9edb4a9ec3fcdeb5b9d1adce446c1255fe07f1addfe5c38c7b9560f10"
+    },
+    {
+      "bytes": 1229,
+      "path": "src/tracesoc/findings/serialization.py",
+      "sha256": "93cec309b13a4fd042d83c9a064b37092f44aa03ad2004d02435d35511a82732"
+    },
+    {
+      "bytes": 6016,
+      "path": "src/tracesoc/models.py",
+      "sha256": "bcf50bfffb003c654b654178b5fdf42d6f88b0c2e8bd38b4b2333bfc4743fe98"
+    },
+    {
+      "bytes": 11622,
+      "path": "src/tracesoc/multisource_scenario_002.py",
+      "sha256": "647f5413875864a306f6c0d8158a5ee4dc5e85aecc72e6c49799f90584d9cc75"
+    },
+    {
+      "bytes": 15197,
+      "path": "src/tracesoc/multisource_scenario_003.py",
+      "sha256": "508993e11a0ee50151b82bc2d1da443a21a8838b592e5709d8f2319a42b7b0e6"
+    },
+    {
+      "bytes": 11520,
+      "path": "src/tracesoc/multisource_scenarios.py",
+      "sha256": "5e10490b841b83ba59849d4b01ecd8d8de926ebe7f2c02ad645c10e6beee71ba"
+    },
+    {
+      "bytes": 0,
+      "path": "src/tracesoc/normalization/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 15318,
+      "path": "src/tracesoc/normalization/clock_evidence.py",
+      "sha256": "ef62e449bed8eb0a53c35e6b44229690463148fb92444f213c7e9429eb0e883f"
+    },
+    {
+      "bytes": 15577,
+      "path": "src/tracesoc/normalization/powershell_scriptblock.py",
+      "sha256": "a71f6e92e9be5b7f99439b68cba09fe88b46ec48f720d0d2177bed527aeef501"
+    },
+    {
+      "bytes": 4232,
+      "path": "src/tracesoc/normalization/schema.py",
+      "sha256": "caa93db0774eab92a42c07b965a2224d35ac13d889fd41524a8968e4a2a129c1"
+    },
+    {
+      "bytes": 0,
+      "path": "src/tracesoc/parsers/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 7635,
+      "path": "src/tracesoc/parsers/common.py",
+      "sha256": "f4d22e4b5fe94d59dd15a2ce546a814c675164f30bba2a88f022a0b1b27feff9"
+    },
+    {
+      "bytes": 13639,
+      "path": "src/tracesoc/parsers/eml.py",
+      "sha256": "721c1f2cc6813a81eb6524798290ae92be338c608bcdd3d10e47fa6a2aa815c4"
+    },
+    {
+      "bytes": 22005,
+      "path": "src/tracesoc/parsers/pcap.py",
+      "sha256": "d87bbb0377500ee087157801758112eee884c35892ff6a8c0cf86bd1b5b526d4"
+    },
+    {
+      "bytes": 28216,
+      "path": "src/tracesoc/parsers/pcapng.py",
+      "sha256": "dfdcf5c431e18f7d20627775cd4f2607bb30cbfca7a0b1b026e99d0b7deefdfd"
+    },
+    {
+      "bytes": 23099,
+      "path": "src/tracesoc/parsers/powershell.py",
+      "sha256": "202b46b7a7825abd0c3d78302947a39204571f91d29b1dc3ed94e49b4d7284aa"
+    },
+    {
+      "bytes": 22790,
+      "path": "src/tracesoc/parsers/real_records.py",
+      "sha256": "75407c877c4c0f2b431fc54ddf6688c66b064fa162b47f771cf008fa254c8cc0"
+    },
+    {
+      "bytes": 23514,
+      "path": "src/tracesoc/parsers/sysmon.py",
+      "sha256": "905bde1e451e46bf56e610cc8bc93f3b117f9e3f90d12eaaf1a05b0b5ad8606d"
+    },
+    {
+      "bytes": 14571,
+      "path": "src/tracesoc/parsers/windows_event_json.py",
+      "sha256": "b64c282be576d7fd2f2671c1752dea90ca6a28af77ad901c7790a384d314e4c3"
+    },
+    {
+      "bytes": 31503,
+      "path": "src/tracesoc/parsers/windows_security.py",
+      "sha256": "7e020be8e9036326ee73f7dbd7333e104d2b67c7852ee4551194c7f3aa22989d"
+    },
+    {
+      "bytes": 24953,
+      "path": "src/tracesoc/parsers/zeek.py",
+      "sha256": "8c545acd52b7601ec0cb0fbe9fc1acc951674be0da0c05fab27e494c5f30168e"
+    },
+    {
+      "bytes": 0,
+      "path": "src/tracesoc/response/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 16562,
+      "path": "src/tracesoc/response/case_response.py",
+      "sha256": "b185f7c0dc575efc2b3a90ea23ec08d7745db691b4344c7abfd16dabe86958ec"
+    },
+    {
+      "bytes": 15049,
+      "path": "src/tracesoc/response/sandbox.py",
+      "sha256": "4eecf410c4db8c6700bf4dcbc77f1ea41a425410ffde39001a5c9f69b4ee36d4"
+    },
+    {
+      "bytes": 10766,
+      "path": "src/tracesoc/response/validation.py",
+      "sha256": "a09f8f66238c3f5cbc668dac0ecf41d121b3639429d18ba437a5a99c2d9c258d"
+    },
+    {
+      "bytes": 2603,
+      "path": "src/tracesoc/vertical_slice.py",
+      "sha256": "7b4a5883f3264178f38cc0aa724678cf0ff45982481fde221a6a6781a946580a"
+    },
+    {
+      "bytes": 4149,
+      "path": "tests/fixtures/challenges/cov010-replacements-v1/CHAL-MAL-001-V2/challenge-manifest.json",
+      "sha256": "34d5b41a624817506538971cfe1b921f6e2f92759db2ae05b3c1aa397b7163c0"
+    },
+    {
+      "bytes": 1874,
+      "path": "tests/fixtures/challenges/cov010-replacements-v1/CHAL-MAL-001-V2/windows-security.txt",
+      "sha256": "9a8214077c384f800072ede8aa9cf34baf7ec235fbe2db411dbe00f1ddfcf45d"
+    },
+    {
+      "bytes": 4242,
+      "path": "tests/fixtures/challenges/cov010-replacements-v1/CHAL-TIME-002-V2/challenge-manifest.json",
+      "sha256": "33438d81d03bce8022ea8c24042b26d96e1b9fb0d27caf441e1fcb67f0f76faf"
+    },
+    {
+      "bytes": 436,
+      "path": "tests/fixtures/challenges/cov010-replacements-v1/CHAL-TIME-002-V2/powershell.jsonl",
+      "sha256": "31c59257440b32f96517ff814bc9df4eef5435af5e02f07f278bd1fbf1b93703"
+    },
+    {
+      "bytes": 456,
+      "path": "tests/fixtures/challenges/cov010-replacements-v1/CHAL-TIME-002-V2/sysmon.jsonl",
+      "sha256": "0e27ed1318cf90672a39e450b363ce0355fad400ff8c020f5c893d558200d488"
+    },
+    {
+      "bytes": 4110,
+      "path": "tests/fixtures/challenges/cov010-replacements-v1/CHAL-TIME-003-V2/challenge-manifest.json",
+      "sha256": "5317f3b6d22e99a081a8767c20e18c7cbb3f0f965cf5966b1aeccd7acc953823"
+    },
+    {
+      "bytes": 436,
+      "path": "tests/fixtures/challenges/cov010-replacements-v1/CHAL-TIME-003-V2/powershell.jsonl",
+      "sha256": "69e2c0f16c137fa2c2ff8e097c4034d9de116439ab6c607a4ac07c1ca970c6ee"
+    },
+    {
+      "bytes": 456,
+      "path": "tests/fixtures/challenges/cov010-replacements-v1/CHAL-TIME-003-V2/sysmon.jsonl",
+      "sha256": "0e27ed1318cf90672a39e450b363ce0355fad400ff8c020f5c893d558200d488"
+    },
+    {
+      "bytes": 3898,
+      "path": "tests/fixtures/challenges/cov010-replacements-v1/corpus-manifest.json",
+      "sha256": "71c6ccf70ee16154abdcd475c3ff8e3c40fa7e90c3fff8bd9a7ce9c11c9fc6dd"
+    },
+    {
+      "bytes": 1850,
+      "path": "tests/fixtures/challenges/cov010/CHAL-CLOCK-001/challenge-manifest.json",
+      "sha256": "ad937c2926c3e139c13b683668d6df350d508b97a1565f6b3b4d59069af8a9a2"
+    },
+    {
+      "bytes": 1866,
+      "path": "tests/fixtures/challenges/cov010/CHAL-CLOCK-001/windows-security.txt",
+      "sha256": "5b305393279f39bcec5efe76be05c102e2eda6009eb9d631e20389594f651051"
+    },
+    {
+      "bytes": 2713,
+      "path": "tests/fixtures/challenges/cov010/CHAL-CORR-001/challenge-manifest.json",
+      "sha256": "48c28b3f48eed6a82f1403009539cb80d72cd9f8a05f843c7f531660f10e2c52"
+    },
+    {
+      "bytes": 730,
+      "path": "tests/fixtures/challenges/cov010/CHAL-CORR-001/powershell.jsonl",
+      "sha256": "9b6e595416647b8a944bed23701c92fdbb8aee392922b3e15ee87e5ac27d76c5"
+    },
+    {
+      "bytes": 344,
+      "path": "tests/fixtures/challenges/cov010/CHAL-CORR-001/zeek.jsonl",
+      "sha256": "ef780322e603b1718bad9b4f09fc912ed4e65a220360c6ffc3b76fa30d845b8e"
+    },
+    {
+      "bytes": 2686,
+      "path": "tests/fixtures/challenges/cov010/CHAL-CORR-002/challenge-manifest.json",
+      "sha256": "1ea70e3a939757aee81521476f3f7d979d5a037e498986f2670ed83d0a70e6e7"
+    },
+    {
+      "bytes": 728,
+      "path": "tests/fixtures/challenges/cov010/CHAL-CORR-002/powershell.jsonl",
+      "sha256": "a9d7a5faede390b70492e3f0c596259f4bd8eff80ce4de28b081540d6018f072"
+    },
+    {
+      "bytes": 342,
+      "path": "tests/fixtures/challenges/cov010/CHAL-CORR-002/zeek.jsonl",
+      "sha256": "3bfb321c35ae2712b0e3452a2cb6a915dd4439011f792beea1f44bcb37db36a8"
+    },
+    {
+      "bytes": 1610,
+      "path": "tests/fixtures/challenges/cov010/CHAL-DUP-001/challenge-manifest.json",
+      "sha256": "d73341ac1e3faf220476534d9f0bafe0620c1aa4a6665484d52009a1f9f6b376"
+    },
+    {
+      "bytes": 2478,
+      "path": "tests/fixtures/challenges/cov010/CHAL-DUP-001/powershell.xml",
+      "sha256": "1dba8b86e16134e1c58dc806efcfcfc6ab7be49b7b1b363ef3ef1da1230c020a"
+    },
+    {
+      "bytes": 1725,
+      "path": "tests/fixtures/challenges/cov010/CHAL-DUP-002/challenge-manifest.json",
+      "sha256": "e593db19ad13f8181accb40f08459204d97949cbb7d43b6196c8601c2ece269a"
+    },
+    {
+      "bytes": 2193,
+      "path": "tests/fixtures/challenges/cov010/CHAL-DUP-002/sysmon.xml",
+      "sha256": "22c0057f5fdab73c3a816702aa63d059b08a1a770d7f2fb260c8bbef6864d760"
+    },
+    {
+      "bytes": 1744,
+      "path": "tests/fixtures/challenges/cov010/CHAL-LABEL-001/challenge-manifest.json",
+      "sha256": "997f292ca76012ebc0f8eae8b50cb9a4d4393ac263fefac1d34492a4946bc9fb"
+    },
+    {
+      "bytes": 630,
+      "path": "tests/fixtures/challenges/cov010/CHAL-LABEL-001/zeek.log",
+      "sha256": "f3cc130f48f36e78dc34df00ddb20cd7ecf2adde12131de3d1c085cf2041d876"
+    },
+    {
+      "bytes": 1687,
+      "path": "tests/fixtures/challenges/cov010/CHAL-MAL-001/challenge-manifest.json",
+      "sha256": "86092e28fb8b8e9958ad801fded45bf67e9c61e75674b1b41ecb9f681d6d8311"
+    },
+    {
+      "bytes": 934,
+      "path": "tests/fixtures/challenges/cov010/CHAL-MAL-001/windows-security.txt",
+      "sha256": "31f62f256a62bffc953f44bf4fb4ebfc8521299bbf7936163046acb776eae1b3"
+    },
+    {
+      "bytes": 1655,
+      "path": "tests/fixtures/challenges/cov010/CHAL-MAL-002/challenge-manifest.json",
+      "sha256": "091b3b8e11b1f6d125e30070c6f7e3c41523704166859f0f86169550139ca536"
+    },
+    {
+      "bytes": 7477,
+      "path": "tests/fixtures/challenges/cov010/CHAL-MAL-002/sysmon.xml",
+      "sha256": "3fdb5d0f8488fb6b988e7ded56c307f63f1b9429a0c207f55b3eaba45691401e"
+    },
+    {
+      "bytes": 1645,
+      "path": "tests/fixtures/challenges/cov010/CHAL-MISS-001/challenge-manifest.json",
+      "sha256": "a064bd4467dc5a9fdc9615804fb3460160c68267c412eac78966dda7da6f8ee6"
+    },
+    {
+      "bytes": 621,
+      "path": "tests/fixtures/challenges/cov010/CHAL-MISS-001/zeek.log",
+      "sha256": "ff21ac12b66760f4047d82f0f1f04074419e85e33f53964b7f2b6f62b3cbee64"
+    },
+    {
+      "bytes": 1659,
+      "path": "tests/fixtures/challenges/cov010/CHAL-MISS-002/challenge-manifest.json",
+      "sha256": "2274649f30208a1275ee7ceadf8211964888fda40214fb32f290ed8830d6da74"
+    },
+    {
+      "bytes": 895,
+      "path": "tests/fixtures/challenges/cov010/CHAL-MISS-002/powershell.xml",
+      "sha256": "b6cdc386312fb2c2e585c45b5bbec4af78f51a636f7ea1bcf01aaa008f477c17"
+    },
+    {
+      "bytes": 630,
+      "path": "tests/fixtures/challenges/cov010/CHAL-MIX-001/benign-zeek.log",
+      "sha256": "f3cc130f48f36e78dc34df00ddb20cd7ecf2adde12131de3d1c085cf2041d876"
+    },
+    {
+      "bytes": 2487,
+      "path": "tests/fixtures/challenges/cov010/CHAL-MIX-001/challenge-manifest.json",
+      "sha256": "e740c8c107fef8fb6b79ecb7454db1ad78c3bc677c7ece73b6ed14b403cda079"
+    },
+    {
+      "bytes": 637,
+      "path": "tests/fixtures/challenges/cov010/CHAL-MIX-001/development-zeek.log",
+      "sha256": "b1739e6c3b63437aaff2b61fdb6e9d78142d8a8afb98c7ab202f874bf374c239"
+    },
+    {
+      "bytes": 2288,
+      "path": "tests/fixtures/challenges/cov010/CHAL-TIME-001/challenge-manifest.json",
+      "sha256": "c336219fd2444afe68326d4613f9b3d7eb269c12501512d2a7dffe129159a971"
+    },
+    {
+      "bytes": 2180,
+      "path": "tests/fixtures/challenges/cov010/CHAL-TIME-001/sysmon.xml",
+      "sha256": "e463305d5cf2c516b9ed1f3073f8325091c2518493a58c8f2431a0210be3a0a5"
+    },
+    {
+      "bytes": 2669,
+      "path": "tests/fixtures/challenges/cov010/CHAL-TIME-002/challenge-manifest.json",
+      "sha256": "2ea2f528d0e4de61303b8738a03172067299f8c9144968791c8c30485459ed3a"
+    },
+    {
+      "bytes": 674,
+      "path": "tests/fixtures/challenges/cov010/CHAL-TIME-002/powershell.jsonl",
+      "sha256": "9922537e0f53097134812cf8fd700993528fdc67872078c475dab28d742f89b2"
+    },
+    {
+      "bytes": 463,
+      "path": "tests/fixtures/challenges/cov010/CHAL-TIME-002/sysmon.jsonl",
+      "sha256": "bc6051ace1c83ac4b9c19506e34d80e6479ffad284def3f4e70a2821e7b76fe4"
+    },
+    {
+      "bytes": 2682,
+      "path": "tests/fixtures/challenges/cov010/CHAL-TIME-003/challenge-manifest.json",
+      "sha256": "f044a7a9eb4fd5584ab95c8cafee340831e554c3740d825b49852c716ff886b0"
+    },
+    {
+      "bytes": 674,
+      "path": "tests/fixtures/challenges/cov010/CHAL-TIME-003/powershell.jsonl",
+      "sha256": "3043317d556a4b2fd1f62e8e62afc43c79736da560513cccd879dacbfe01f615"
+    },
+    {
+      "bytes": 463,
+      "path": "tests/fixtures/challenges/cov010/CHAL-TIME-003/sysmon.jsonl",
+      "sha256": "d74ff261b7d709ca88ee0b8ae231db324cac9cd6985527dab89aa54071d23ff7"
+    },
+    {
+      "bytes": 1737,
+      "path": "tests/fixtures/challenges/cov010/CHAL-UNKNOWN-001/challenge-manifest.json",
+      "sha256": "165fce90f5be2a0fe96c35746775ae90fe04bf0fbd1e6bd5f634a7417dd25b19"
+    },
+    {
+      "bytes": 1240,
+      "path": "tests/fixtures/challenges/cov010/CHAL-UNKNOWN-001/powershell.xml",
+      "sha256": "20c5ff8471b046678553c9bf78ef4e383e972719015f994eaa99e5fae812a24a"
+    },
+    {
+      "bytes": 3208,
+      "path": "tests/fixtures/challenges/cov010/corpus-manifest.json",
+      "sha256": "3523e9c659e97f0d68641139c493461971ee44824cd2df55b777d7b0b60acc19"
+    },
+    {
+      "bytes": 436,
+      "path": "tests/fixtures/scenarios/multisource-powershell-process-002/powershell.jsonl",
+      "sha256": "a2fbc7d78017b09f21440ab64c3de682ecf7d178f72f5a3dea8f65e4a088d00d"
+    },
+    {
+      "bytes": 2349,
+      "path": "tests/fixtures/scenarios/multisource-powershell-process-002/scenario-manifest.json",
+      "sha256": "a94f7690432e3d66dc1e5c2abfe12ed8ff8c3f0bdce6a176c511029f316d3dce"
+    },
+    {
+      "bytes": 456,
+      "path": "tests/fixtures/scenarios/multisource-powershell-process-002/sysmon.jsonl",
+      "sha256": "0e27ed1318cf90672a39e450b363ce0355fad400ff8c020f5c893d558200d488"
+    },
+    {
+      "bytes": 435,
+      "path": "tests/fixtures/scenarios/multisource-three-source-chain-003/powershell.jsonl",
+      "sha256": "ef8f7e19864a52da5ebd4adb54f07b04932bdf4c3c9c71a180b97cad20e2e25e"
+    },
+    {
+      "bytes": 2312,
+      "path": "tests/fixtures/scenarios/multisource-three-source-chain-003/scenario-manifest.json",
+      "sha256": "a1383132a96a4279b6242e461a001bdab6cbf67e3bdb6e5b0ea3b56af7c5b4b0"
+    },
+    {
+      "bytes": 454,
+      "path": "tests/fixtures/scenarios/multisource-three-source-chain-003/sysmon.jsonl",
+      "sha256": "e1d673e5712fc7f106b7d91e1e9488af2552265a925987badb86ea3de076ffc4"
+    },
+    {
+      "bytes": 331,
+      "path": "tests/fixtures/scenarios/multisource-three-source-chain-003/zeek.jsonl",
+      "sha256": "2122ae9fab400474a35401e9d7f36770a395ecb1c0431500eda66153abf28667"
+    },
+    {
+      "bytes": 430,
+      "path": "tests/fixtures/scenarios/multisource-web-retrieval-001/powershell.jsonl",
+      "sha256": "feab81c6562b1f297fac59ffce207e24478fea1d4b635bdb665809d0eba864e2"
+    },
+    {
+      "bytes": 1983,
+      "path": "tests/fixtures/scenarios/multisource-web-retrieval-001/scenario-manifest.json",
+      "sha256": "92a3d333649da13719998537779a9937dff793ddb0875fb90f8b02d57823889d"
+    },
+    {
+      "bytes": 330,
+      "path": "tests/fixtures/scenarios/multisource-web-retrieval-001/zeek.jsonl",
+      "sha256": "489fef4da7d7cf8e59837ba064d7ec05fd8534acdb2304119dbe6ea595a04103"
+    },
+    {
+      "bytes": 1498,
+      "path": "tests/fixtures/tiny/powershell.jsonl",
+      "sha256": "fd3a8972b229c1103cfa0e962c7ae1ed118208a9e1ce7844a0ec9b8c47fc5b8d"
+    },
+    {
+      "bytes": 1365,
+      "path": "tests/fixtures/tiny/sysmon.jsonl",
+      "sha256": "7548549443890118980fc6a7b08cd4a2cd5317dd39052596b20d8c8ec88e7963"
+    },
+    {
+      "bytes": 1247,
+      "path": "tests/fixtures/tiny/windows-security.jsonl",
+      "sha256": "be76e89236f43cc726ca55dec526f6af1cbc15bd5bb0d758613c983e81839cb6"
+    },
+    {
+      "bytes": 918,
+      "path": "tests/fixtures/tiny/zeek.jsonl",
+      "sha256": "2e9f9c60d619b07ba81ae7f605b700c428f22d4d8a442bee2830e6d709b40a88"
+    },
+    {
+      "bytes": 4690,
+      "path": "tests/integration/test_multisource_scenario_001.py",
+      "sha256": "0abce9fb2a8a6cee3cbdec51320b9f3d45f2e3f907c7d6cfdd8edfb76595d09c"
+    },
+    {
+      "bytes": 8786,
+      "path": "tests/integration/test_multisource_scenario_002.py",
+      "sha256": "eeeca503fd6a6556d08f81bb5feb6c4827351e668e80567df60ba70763c1fe0c"
+    },
+    {
+      "bytes": 6222,
+      "path": "tests/integration/test_multisource_scenario_003.py",
+      "sha256": "6c24e8d1c750c66b90dbabc5ece791d2d76b36df0a0605e6463bacb64ade1a23"
+    },
+    {
+      "bytes": 4445,
+      "path": "tests/integration/test_response_validation_integration.py",
+      "sha256": "9f533588e14e2328d405552f8100292a1572ceec44f193aaaecf4b1ea41d35b4"
+    },
+    {
+      "bytes": 11322,
+      "path": "tests/unit/test_artifact_contract.py",
+      "sha256": "520f0d0954be31c49e45524d3bb501aef78d171e7bf86b9216c621efb5516fe9"
+    },
+    {
+      "bytes": 6320,
+      "path": "tests/unit/test_case_finding_v04.py",
+      "sha256": "1d1f57582284e0a9c47772054decc2c0a2ad05eec2dad52a56e77a32185551b0"
+    },
+    {
+      "bytes": 14347,
+      "path": "tests/unit/test_case_locator_contract.py",
+      "sha256": "a41549cfc5b7c11b05c28fcf885aca13b155a1a122af0047018d1556ed0d56b2"
+    },
+    {
+      "bytes": 9831,
+      "path": "tests/unit/test_case_narrative_v04.py",
+      "sha256": "1ddd60661dac886c8306146c921f62be9a660ae3c4ba9e22c2394bf60f3ceca9"
+    },
+    {
+      "bytes": 3165,
+      "path": "tests/unit/test_case_output_determinism_v04.py",
+      "sha256": "34ac4c952940e50ab7833d4e60e52d1d6454bf985eb2f703f4413df183eed2f0"
+    },
+    {
+      "bytes": 8225,
+      "path": "tests/unit/test_case_response_v04.py",
+      "sha256": "eaffe2f7780be29a422ac0c8749453f6d641f08f3c545c1f56577b8315183b1e"
+    },
+    {
+      "bytes": 125409,
+      "path": "tests/unit/test_case_runner_v04.py",
+      "sha256": "c6054891ee3cb52d8c7427ff5b95ec237c1fca922b57b9c9813df6b7b969fc34"
+    },
+    {
+      "bytes": 14138,
+      "path": "tests/unit/test_clock_evidence.py",
+      "sha256": "5975f26cda1e5994c5e89cdddce1edbcf252754ba1ded8549c814b7a20d755d5"
+    },
+    {
+      "bytes": 17116,
+      "path": "tests/unit/test_clock_evidence_explanation.py",
+      "sha256": "95b8ad4abbe235c6e9b2daf7ed2d5fc88985e9ff58bf9241d614d0d6700722c7"
+    },
+    {
+      "bytes": 18142,
+      "path": "tests/unit/test_correlation_relationship_bridge_v04.py",
+      "sha256": "7aca81d55dcda6883363b016a2aefbe463b1fa824656da8ce3ec50f93c3af32e"
+    },
+    {
+      "bytes": 10523,
+      "path": "tests/unit/test_detector_registry_v04.py",
+      "sha256": "9a7a4dda95831607b1307b257bea801b55f19a08d82e29372973b608d9702848"
+    },
+    {
+      "bytes": 11778,
+      "path": "tests/unit/test_eml_adapter_v04.py",
+      "sha256": "201c82f1f5f2dabbb4807efc732cf3bb55edd0abf8f7d4fc3302199296fbfb92"
+    },
+    {
+      "bytes": 7243,
+      "path": "tests/unit/test_evidence_contract.py",
+      "sha256": "e340724471bda6846021134700994208dc4f966b6be58ed52484412c74f62285"
+    },
+    {
+      "bytes": 24532,
+      "path": "tests/unit/test_evidence_directory_intake_v04.py",
+      "sha256": "154c16472fb7584571a90594d9fb3f7ba9651093338a8e0fd81df422d397699d"
+    },
+    {
+      "bytes": 18621,
+      "path": "tests/unit/test_evidence_graph_contract_v04.py",
+      "sha256": "46a077f24618b33b2b69cb5e76e986c3bb94f351922bda80ac8da2fa3e0037a2"
+    },
+    {
+      "bytes": 8740,
+      "path": "tests/unit/test_evidence_state_contract.py",
+      "sha256": "efb494089c1954d389b541a0917db2e106d0e7b60dbcfa93c2cd94d63c2c2d12"
+    },
+    {
+      "bytes": 6523,
+      "path": "tests/unit/test_explain_finding.py",
+      "sha256": "2c18fc7bddd6faa685ce782b9635092b252826912f5500a96f2e55b16b7bd70b"
+    },
+    {
+      "bytes": 2387,
+      "path": "tests/unit/test_finding_serialization.py",
+      "sha256": "021e7438d7fb05b6341515e70e9f95e3b463d0d512de2e29d7174eee0cd244b9"
+    },
+    {
+      "bytes": 5060,
+      "path": "tests/unit/test_first_behavioral_detection.py",
+      "sha256": "6cce16adf426588d61447fd18d37ab74f5bb0371af950845ffb4bd588ca6aa67"
+    },
+    {
+      "bytes": 9426,
+      "path": "tests/unit/test_first_bounded_correlation.py",
+      "sha256": "50b1ee785f51e28d3918c55930ed01da043025eee3b74626ceb43d71c5602a40"
+    },
+    {
+      "bytes": 7841,
+      "path": "tests/unit/test_four_source_adapters.py",
+      "sha256": "9b66866280cc8c988dc347aef1e209a53162ca6fadcf2a29ab7a0448d6fdc90d"
+    },
+    {
+      "bytes": 18329,
+      "path": "tests/unit/test_hypothesis_aggregation_v04.py",
+      "sha256": "d322eaf4858c108b84d66b38989440813afaeb3bcc086b8ec9d05bbd2a7ecdcf"
+    },
+    {
+      "bytes": 22386,
+      "path": "tests/unit/test_native_canonical_v04.py",
+      "sha256": "1a86359266286f6925d06b45bb40e9c151258a8d87e0aebc69527babc10003a7"
+    },
+    {
+      "bytes": 4327,
+      "path": "tests/unit/test_normalization_schema_contract.py",
+      "sha256": "dc8b626a8f7b1d73d8683c12c8fd6a4e45b0bc857434e564b886d665e4440536"
+    },
+    {
+      "bytes": 17340,
+      "path": "tests/unit/test_pcap_adapter_v04.py",
+      "sha256": "ad6c1cda5a4d26ded32e9c461150955d0973740df6c277c236d0262f767e0f9b"
+    },
+    {
+      "bytes": 25006,
+      "path": "tests/unit/test_pcapng_adapter_v04.py",
+      "sha256": "6510d16895ad9be165874e0605158a5af3e2a19b0eea4d35b65efcc02c3a0017"
+    },
+    {
+      "bytes": 5678,
+      "path": "tests/unit/test_powershell_4104_quarantine_v04.py",
+      "sha256": "93a5602d0725dde4a69eeaa77292e8f7d7316d89c8d217b09e12e7adb5036c45"
+    },
+    {
+      "bytes": 6841,
+      "path": "tests/unit/test_powershell_real_mapping.py",
+      "sha256": "8e7e47db76040cf9b3c0bbb7d3061635b3f0ffecb2cc57391fb60936215c95fe"
+    },
+    {
+      "bytes": 10313,
+      "path": "tests/unit/test_powershell_scriptblock_reconstruction.py",
+      "sha256": "facf7c31780338d687eb4efb0af3c684a5f54974a3ea4860ab5913e2b3883315"
+    },
+    {
+      "bytes": 17932,
+      "path": "tests/unit/test_real_format_raw_readers.py",
+      "sha256": "21564a9bf7b3676c744277d47660d861d414fb8d9efad8355cbe9d5ccdb28595"
+    },
+    {
+      "bytes": 7704,
+      "path": "tests/unit/test_real_powershell_behavioral_detections.py",
+      "sha256": "0fae341d3bb35fbb61dfa395e1ed2325e789003d4e9bee182a911973c2994dc5"
+    },
+    {
+      "bytes": 4857,
+      "path": "tests/unit/test_repo_text_integrity.py",
+      "sha256": "b8d8158c6c904cc1188b73e28c19168815237260ef93da374bd2df5b54d62335"
+    },
+    {
+      "bytes": 9032,
+      "path": "tests/unit/test_response_sandbox.py",
+      "sha256": "4da71786315d0dacb6a3201e09438f20472adeefcaf494443c61e8474ca2d9ee"
+    },
+    {
+      "bytes": 8565,
+      "path": "tests/unit/test_root_indexes.py",
+      "sha256": "4ec682f40c3ae3d54ba961877a79b898ac8dc51fb4dabcf6921715ff18622a80"
+    },
+    {
+      "bytes": 12292,
+      "path": "tests/unit/test_source_native_contradiction_v04.py",
+      "sha256": "4004cec7da0f0f3de90e48405107df93a068b3d7f5f2b7993473bdff4f995b30"
+    },
+    {
+      "bytes": 1879,
+      "path": "tests/unit/test_source_type_v04_contract.py",
+      "sha256": "0014d33862acb829a3e73f857520450a568e71911713408507dc0af47e795058"
+    },
+    {
+      "bytes": 15384,
+      "path": "tests/unit/test_sysmon_behavioral_promotions.py",
+      "sha256": "2d6e6dd167e45463ae11cc7a43c6108275b5224740de0550c29e616e52104bae"
+    },
+    {
+      "bytes": 7870,
+      "path": "tests/unit/test_sysmon_event1_promotion.py",
+      "sha256": "a603f8db5f79f8aa4c9ab2651c0e3ac2450572041550658aeae9b3ed2df3a889"
+    },
+    {
+      "bytes": 9274,
+      "path": "tests/unit/test_sysmon_firewall_configuration_detection.py",
+      "sha256": "ca44f35aa269a19cdea036021d716330759636e737944bc6f182c22677bd3205"
+    },
+    {
+      "bytes": 11039,
+      "path": "tests/unit/test_sysmon_pcap_network_correlation_v04.py",
+      "sha256": "5a5536296dab2c6ba93d2bdc9518da69bf7454c7bd45de274c771644180964e8"
+    },
+    {
+      "bytes": 7207,
+      "path": "tests/unit/test_sysmon_powershell_behavior_detection.py",
+      "sha256": "cc418e1f7067200c90d4dcc83dce4e35d120cd05bbc0dad6528aa2486a4e9b73"
+    },
+    {
+      "bytes": 7552,
+      "path": "tests/unit/test_sysmon_real_mapping.py",
+      "sha256": "28951f5d8d995130ba6ab673a13b781bed7fd723922b90d6c9e7c7ab831a8f91"
+    },
+    {
+      "bytes": 19767,
+      "path": "tests/unit/test_windows_event_artifact_bridge_v04.py",
+      "sha256": "93106d8eefc2dc3da96c117e4d384dbc1438b78482e66efcf29778995bd7f221"
+    },
+    {
+      "bytes": 13246,
+      "path": "tests/unit/test_windows_event_json_powershell_v04.py",
+      "sha256": "c3f9c4705172ef2137334c74af3cb0a3263bd6cbb9a88be52e08998faa7515ae"
+    },
+    {
+      "bytes": 13797,
+      "path": "tests/unit/test_windows_event_json_sysmon_v04.py",
+      "sha256": "8a61f9062dbf1ebf75746772c5893bb3352b959169a19d662f4214fe82bce3ca"
+    },
+    {
+      "bytes": 7251,
+      "path": "tests/unit/test_windows_security_4688_promotion.py",
+      "sha256": "688c73341b0306218ce45f090bb88e723a565a5c1ad81033f81693fc925d6014"
+    },
+    {
+      "bytes": 9424,
+      "path": "tests/unit/test_windows_security_real_mapping.py",
+      "sha256": "5fff9f9423c12d6f3554af9a91cd424ac00c65f84db235eba6e1427f885b1c3e"
+    },
+    {
+      "bytes": 22664,
+      "path": "tests/unit/test_windows_security_windows_event_v04.py",
+      "sha256": "be5aee26e252382fa0b2d9a3743165978333e6a6ace3c49dc05a3b2ab827a1e8"
+    },
+    {
+      "bytes": 5176,
+      "path": "tests/unit/test_zeek_irc_contextual_detection.py",
+      "sha256": "49bbe1041ac651b6a70b9c8f8f76d67a7198640fa1ab125842b99648e71dfc83"
+    },
+    {
+      "bytes": 18558,
+      "path": "tests/unit/test_zeek_native_json_v04.py",
+      "sha256": "b8cb4cefcb48dd760a2c3f52c01da24dc2aa3b0f86c39eb6555a8e988d04b2e3"
+    },
+    {
+      "bytes": 7904,
+      "path": "tests/unit/test_zeek_real_mapping.py",
+      "sha256": "031116f528bb88cccd3a36560ec96800294035a468482adb54ba6a2b43fe98a6"
+    }
+  ],
+  "noncanonical_historical_fingerprints": {
+    "archive_difference_classification": "four Zeek fixture files; EOL transformation only",
+    "archive_non_eol_difference_count": 0,
+    "git_archive_eol_transformed_aggregate": "02fde961cd53d1f5e89c19c230b814fa990e7dad2e853b84b3f20201ec4926b7",
+    "windows_powershell_worktree_aggregate": "8d18403eca3492c2d7e6483ccdc02f8d036d4be9ee5ac66a48e3ef19b5fd71ca"
+  },
+  "post_freeze_obligations": [
+    "rebuild consolidated final validation record",
+    "recheck README and clean reproduction commands",
+    "reverify 8 GB workstation/resource evidence",
+    "regenerate final real/raw-evidence outputs from this frozen implementation",
+    "run historical Stage9A compatibility replay without tuning the frozen implementation",
+    "rebuild final report with raw-to-result claim reconciliation",
+    "perform human walkthrough and submission acceptance"
+  ],
+  "schema_version": "tracesoc-analytical-freeze-v1",
+  "source_commit": "af8ea21eccad94061c3b99ad3c18faafda42fb5a",
+  "stage9a_accessed_during_freeze_creation": false,
+  "stage9a_design_dependency": false
+}

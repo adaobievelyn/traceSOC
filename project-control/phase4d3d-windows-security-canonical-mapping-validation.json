@@ -1,0 +1,64 @@
+{
+  "anti_hardcoding": {
+    "delta_aware_gate": "PASS",
+    "false_positive_basis": "pre-existing Stage-3 JSONL source_context keys fixture_id and expected_answer",
+    "new_production_delta_forbidden_hits": 0,
+    "original_whole_file_gate_false_positive": true
+  },
+  "canonical_contract": {
+    "clock_state": "unresolved",
+    "clock_state_count": 7116,
+    "deterministic_event_identity": true,
+    "event_time_utc": null,
+    "event_type": "windows_security_event",
+    "event_type_count": 7116,
+    "exact_raw_provenance_preserved": true,
+    "principal_fabricated": false,
+    "principal_present": 0,
+    "raw_timestamp_preserved": true,
+    "semantic_source_context_separation": true,
+    "source_type": "windows_security",
+    "utc_time_fabricated": false
+  },
+  "evidence": {
+    "canonical_events": 7116,
+    "canonical_quarantined": 0,
+    "observed_hosts": 4,
+    "raw_records": 7116,
+    "sha256": "b55c57fd0256fa73f55116f9ad307de3b7403f1ba7536c10431b56426a09bd89",
+    "source_id": "TS-DEV-SPLUNK-SECURITY-001"
+  },
+  "external_evidence_modified": false,
+  "generated_utc": "2026-09-15T12:19:38Z",
+  "holdout_accessed": false,
+  "implementation": {
+    "mapper": "load_windows_security_splunk",
+    "module": "src/tracesoc/parsers/windows_security.py",
+    "module_sha256": "9e7dd995464b25a2b83a42d0e1efc80652d7b2a924e2f0497dd985a429c9913f",
+    "test_module": "tests/unit/test_windows_security_real_mapping.py",
+    "test_module_sha256": "5fff9f9423c12d6f3554af9a91cd424ac00c65f84db235eba6e1427f885b1c3e"
+  },
+  "next": "PHASE_4D3E_WINDOWS_SECURITY_SEMANTIC_PROMOTION",
+  "objective": "Map every validated real Windows Security raw record into the TraceSOC CanonicalEvent contract without fabricating timezone, UTC time, principal identity, event-specific semantics, or detector conclusions.",
+  "parent_commit": "3412ca17d74c462c8d8c4def0e43ebc3b6a186d3",
+  "phase": "PHASE-4D.3D",
+  "record_type": "tracesoc-phase4d3d-windows-security-canonical-mapping-validation",
+  "result": "PASS",
+  "scope_boundary": {
+    "clock_correction_performed": false,
+    "correlation_logic_added": false,
+    "detection_logic_added": false,
+    "event_specific_semantic_promotion_performed": false,
+    "maliciousness_inferred": false
+  },
+  "validation": {
+    "deterministic_event_identity": "7116/7116_PASS",
+    "focused_real_mapping_tests": "5/5_PASS",
+    "full_unit_regression": "70/70_PASS",
+    "raw_provenance_preservation": "7116/7116_PASS",
+    "real_canonical_accounting": "7116/7116_PASS",
+    "repository_text_integrity": "PASS",
+    "two_run_canonical_identity": "PASS",
+    "unresolved_clock_state": "7116/7116_PASS"
+  }
+}

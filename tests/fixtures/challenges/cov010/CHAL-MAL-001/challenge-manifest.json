@@ -1,0 +1,49 @@
+{
+  "base_parents": [
+    {
+      "exact_locator": {
+        "byte_length": 1868,
+        "byte_offset": 0,
+        "line_number": 1,
+        "record_index": 0
+      },
+      "parent_id": "PARENT-SECURITY-CLOCK-001",
+      "record_sha256": "9fe042d221a0bde814024b48498e3ee17ebf7fe58cb8975eba0e6ddb0fb97816",
+      "semantic_role": "WINDOWS_SECURITY_UNRESOLVED_CLOCK_RECORD",
+      "source_id": "TS-DEV-SPLUNK-SECURITY-001",
+      "source_sha256": "b55c57fd0256fa73f55116f9ad307de3b7403f1ba7536c10431b56426a09bd89",
+      "telemetry_family": "WINDOWS_SECURITY"
+    }
+  ],
+  "challenge_id": "CHAL-MAL-001",
+  "challenge_id_embedded_in_input": false,
+  "challenge_id_is_test_metadata": true,
+  "creation_timestamp_utc": "2026-09-17T10:13:44.7916301Z",
+  "execution_status": "NOT_EXECUTED",
+  "expected_analytical_boundary": "Malformed input must be rejected/quarantined or otherwise explicitly accounted for.",
+  "expected_answer_is_production_selector": false,
+  "expected_structural_effect": "The Security export ends mid-record.",
+  "generated_artifacts": [
+    {
+      "parent_ids": [
+        "PARENT-SECURITY-CLOCK-001"
+      ],
+      "path": "CHAL-MAL-001/windows-security.txt",
+      "sha256": "31f62f256a62bffc953f44bf4fb4ebfc8521299bbf7936163046acb776eae1b3"
+    }
+  ],
+  "mutation": {
+    "operator": "TRUNCATE_RECORD",
+    "parameters": {
+      "original_length": 1868,
+      "retained_length": 934
+    }
+  },
+  "publisher_label_is_production_selector": false,
+  "purpose": "Truncated record.",
+  "raw_original_modified": false,
+  "real_incident_claim": false,
+  "record_type": "tracesoc-derived-challenge-v1",
+  "serialization_templates": [],
+  "tool_script_version": "1.0.0"
+}

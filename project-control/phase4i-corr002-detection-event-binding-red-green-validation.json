@@ -1,0 +1,81 @@
+{
+    "record_type":  "tracesoc-correlation-red-green-repair-validation",
+    "schema_version":  1,
+    "phase":  "PHASE-4I-F2E",
+    "generated_utc":  "2026-09-16T18:40:39.8985387Z",
+    "result":  "PASS",
+    "finding":  {
+                    "identifier":  "CORR002-DETECTION-EVENT-BINDING",
+                    "correlation_id":  "TRC-CORR-002",
+                    "classification":  "PROVENANCE_BINDING_DEFECT",
+                    "status":  "CLOSED_REPAIRED",
+                    "observed_pre_repair_behavior":  "MATCH_WHEN_SUPPLIED_POWERSHELL_EVENT_IS_NOT_A_DETECTION_CONTRIBUTOR",
+                    "required_behavior":  "NO_MATCH_WHEN_SUPPLIED_POWERSHELL_EVENT_IS_NOT_A_DETECTION_CONTRIBUTOR",
+                    "repaired_reason_code":  "detection_event_mismatch"
+                },
+    "red_state":  {
+                      "commit":  "c5d14da8830fe71cb824ed62834c2ecbf070ad3c",
+                      "parent_commit":  "0bfe2785389dd16a158d447fd81d797339674878",
+                      "changed_paths":  [
+                                            "tests/integration/test_multisource_scenario_002.py"
+                                        ],
+                      "regression_test":  "tests/integration/test_multisource_scenario_002.py",
+                      "regression_test_name":  "test_detection_event_mismatch_falsifies_correlation",
+                      "regression_test_sha256":  "eeeca503fd6a6556d08f81bb5feb6c4827351e668e80567df60ba70763c1fe0c",
+                      "production_path":  "src/tracesoc/correlation/powershell_process.py",
+                      "production_sha256":  "cb039132424df07e5e64944b65a8f05ead0ee041f24b342b7eee8e1533a9e46c",
+                      "test_result":  "EXPECTED_FAILURE_CONFIRMED",
+                      "tests_run":  1,
+                      "failures":  1,
+                      "errors":  0,
+                      "failure_marker":  "CORR002_BINDING_FALSIFIER_EXPECTED_NO_MATCH",
+                      "isolated_git_archive_reproduction":  "PASS"
+                  },
+    "repair_state":  {
+                         "commit":  "29818236b2ba98699ccf90fdec5debf82398e7d5",
+                         "parent_commit":  "c5d14da8830fe71cb824ed62834c2ecbf070ad3c",
+                         "changed_paths":  [
+                                               "src/tracesoc/correlation/powershell_process.py"
+                                           ],
+                         "production_sha256_before":  "cb039132424df07e5e64944b65a8f05ead0ee041f24b342b7eee8e1533a9e46c",
+                         "production_sha256_after":  "ad12ee90032d6c9aa4884ce8fecb2a2925d26147fdc4dfbb3eea5d869eb98c0e",
+                         "repair":  "Require powershell_event.event_id membership in detection.contributing_event_ids before relational correlation.",
+                         "no_match_reason":  "detection_event_mismatch",
+                         "regression_test_changed":  false,
+                         "detection_model_changed":  false
+                     },
+    "green_state":  {
+                        "targeted_test":  "PASS",
+                        "targeted_tests_run":  1,
+                        "targeted_failures":  0,
+                        "targeted_errors":  0,
+                        "full_unit_tests":  182,
+                        "full_integration_tests":  22,
+                        "full_tests":  204,
+                        "full_failures":  0,
+                        "full_errors":  0,
+                        "full_regression":  "204/204_PASS"
+                    },
+    "evidence_boundary":  {
+                              "raw_semantic_parent_inspection_performed":  false,
+                              "holdout_semantic_access_performed":  false,
+                              "COV010_parent_selection_performed":  false,
+                              "challenge_generation_performed":  false,
+                              "challenge_coverage_status_promoted":  false,
+                              "real_incident_claim_created":  false
+                          },
+    "scientific_interpretation":  {
+                                      "proven":  "Before repair, TRC-CORR-002 could return MATCH for a supplied PowerShell event that was not a contributing event of the supplied matched DetectionResult, provided its other correlation dimensions matched.",
+                                      "not_proven":  "This falsifier does not establish that any historical real-world finding was falsely correlated, does not join independent real corpora into one incident, and does not establish malicious intent or causality.",
+                                      "repair_scope":  "One production correlation file; regression test and DetectionResult model unchanged."
+                                  },
+    "interrupted_work":  {
+                             "requirement":  "COV-010",
+                             "state":  "DERIVED_CORPUS_PENDING",
+                             "frozen_classes":  15,
+                             "exact_parent_selection":  "NOT_COMPLETED",
+                             "challenge_generation":  "NOT_STARTED",
+                             "resume_phase":  "PHASE_4I_CHALLENGE_EXACT_PARENT_SELECTION"
+                         },
+    "next":  "PHASE_4I_CHALLENGE_EXACT_PARENT_SELECTION"
+}

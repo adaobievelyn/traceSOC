@@ -1,0 +1,99 @@
+{
+    "schema_version":  "1.0",
+    "record_type":  "tracesoc-finalist-living-control-refresh",
+    "technical_freeze":  {
+                             "commit":  "8751a679f36b4983cdd3d2b0b35f44e9a11c4f39",
+                             "tree":  "fc420ee3fd1988cf578c0cf309ee3aefcccf33b2"
+                         },
+    "prerequisite":  {
+                         "rebuild_root_indexes_guard_sha256":  "5eb2b711a8158c09e42517d7c254b6ac11025536bfe369d84147c0dc238db3fa",
+                         "rebuild_master_control_record_guard_sha256":  "fadd9fb00b8d1eb3f80422045ba1b6ddd1cc8c966b28730b0f3371f2c852f0cc",
+                         "safeguard_status":  "PASS"
+                     },
+    "superseded_controls":  [
+                                {
+                                    "path":  "project-control/tracesoc-master-record.json",
+                                    "sha256":  "e4dbc3b1a2078e1d7bd6cf9653134eda8f7c22b0363ee6122ac00165b0a63035"
+                                },
+                                {
+                                    "path":  "project-control/requirements-matrix.csv",
+                                    "sha256":  "d8e69918639f47cc35fc175c24a8e96c90c4a9848e35944c4551dd76805f3b26"
+                                },
+                                {
+                                    "path":  "project-control/risk-register.csv",
+                                    "sha256":  "57378ad0408ff10b94e38143081ec12b71f59051ad91ae38f4809c270a5ba828"
+                                },
+                                {
+                                    "path":  "project-control/evidence-ledger.csv",
+                                    "sha256":  "0b541c0f9758fdbbc89fa3dd9b24f57b8ac658399534daa391b0c53a88926e95"
+                                },
+                                {
+                                    "path":  "project-control/defense-readiness-checklist.md",
+                                    "sha256":  "3e0b833ca38d446c47fcb80ce34526ea43bda867d07c3f4a68424149202410ca"
+                                },
+                                {
+                                    "path":  "project-control/control-record-architecture.md",
+                                    "sha256":  "ad62ade2965ee52f5589976316593bf97700a4f545a0ab0b901db8e11fe8779b"
+                                },
+                                {
+                                    "path":  "project-control/defense-notes.md",
+                                    "sha256":  "6932ac11fbadb1d84d75debf4a374ba91550f91fe5087c88fcaf8ace856fbda6"
+                                }
+                            ],
+    "refreshed_controls":  [
+                               {
+                                   "path":  "project-control/tracesoc-master-record.json",
+                                   "sha256":  "5615c951c591840c9e669c85e91a9a8f28bff5096e9f5e644497fa4faef86fb1"
+                               },
+                               {
+                                   "path":  "project-control/requirements-matrix.csv",
+                                   "sha256":  "99759135309d0edf5ca882f6ecca31d3a2feb57884732924df710a12450896a7"
+                               },
+                               {
+                                   "path":  "project-control/risk-register.csv",
+                                   "sha256":  "00578d5019514c790d180933bf751b693d9fbe63b1778d4411fb47e8d5c5ac00"
+                               },
+                               {
+                                   "path":  "project-control/evidence-ledger.csv",
+                                   "sha256":  "c2dcb9bf73ec86e4384bf0b778e9b363f11e677bfa3988f01d7fd3fe23e1b02f"
+                               },
+                               {
+                                   "path":  "project-control/defense-readiness-checklist.md",
+                                   "sha256":  "968a3340a2936bb08f6998ebd041b764e83620b847d095bb6d9b3c5999377496"
+                               },
+                               {
+                                   "path":  "project-control/control-record-architecture.md",
+                                   "sha256":  "ad316e25735cf27f31981adec81c592604a95f1fc52da1925e8b902014ebc367"
+                               },
+                               {
+                                   "path":  "project-control/defense-notes.md",
+                                   "sha256":  "68c0849d04e0efc0a683fcb4f5401bc94638846c872c93016e84a48ef797b5a7"
+                               }
+                           ],
+    "current_state":  {
+                          "regression":  "524/524 PASS",
+                          "public_acceptance":  "4/4 PASS",
+                          "holdout_accuracy":  "UNADJUDICATED",
+                          "stale_presentation_layer_cleaned":  true,
+                          "business_impact_layer":  "PASS",
+                          "continuity":  "PASS"
+                      },
+    "remaining_packaging":  [
+                                "README.md",
+                                "defense-runbook.md",
+                                "executive-brief.pdf",
+                                "incident-report.pdf",
+                                "integrity-attestation.md",
+                                "final package audit",
+                                "manifest.sha256"
+                            ],
+    "boundaries":  {
+                       "product_source_mutated":  false,
+                       "test_source_mutated":  false,
+                       "holdout_rerun":  false,
+                       "stage_performed":  false,
+                       "commit_created":  false,
+                       "push_performed":  false
+                   },
+    "final_status":  "PASS"
+}

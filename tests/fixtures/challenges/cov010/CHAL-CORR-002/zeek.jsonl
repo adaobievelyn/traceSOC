@@ -1,0 +1,1 @@
+{"bytes_in":2048,"bytes_out":420,"dst_ip":"10.250.20.20","dst_port":8443,"event_type":"connection","expected_answer":"SYNTHETIC_TEST_METADATA_ONLY","fixture_id":"COV010_DERIVED_FIXTURE","host":"SYN-COV10-C2","log_type":"conn","proto":"tcp","service":"irc","src_ip":"198.51.100.221","timestamp":"2026-01-11T10:00:20Z","uid":"SYNMS001ZEEK001"}

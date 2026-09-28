@@ -1,0 +1,75 @@
+{
+  "base_parents": [
+    {
+      "exact_locator": {
+        "byte_length": 1238,
+        "byte_offset": 328537,
+        "line_number": 8314,
+        "record_index": 22
+      },
+      "parent_id": "PARENT-PS-DET002-001",
+      "record_sha256": "41f5b4b00ee630ab850ce3a4a313334f5a542c3480de15432190600f42c758a8",
+      "semantic_role": "DET002_MATCHED_POWERSHELL_EVENT",
+      "source_id": "TS-DEV-SPLUNK-PS-001",
+      "source_sha256": "ce45d417d0bd66e05939f835935dd24cfe6f55b257d7b2bb968c726ae378c8c3",
+      "telemetry_family": "POWERSHELL"
+    },
+    {
+      "exact_locator": {
+        "byte_length": 145,
+        "byte_offset": 15950,
+        "line_number": 131,
+        "record_index": 122
+      },
+      "parent_id": "PARENT-ZEEK-DEV-IRC-001",
+      "record_sha256": "a3e082937a06bfebdc1be555d7a3a92badc35c8b2435f7386f491a4974410640",
+      "semantic_role": "DEVELOPMENT_ZEEK_IRC_CONNECTION",
+      "source_id": "TS-DEV-IOT23-034-ZEEK",
+      "source_sha256": "d69e49b2aae8c1bd33286936531658202dec47d989f0439bad3f8be180467a6e",
+      "telemetry_family": "ZEEK"
+    }
+  ],
+  "challenge_id": "CHAL-CORR-001",
+  "challenge_id_embedded_in_input": false,
+  "challenge_id_is_test_metadata": true,
+  "creation_timestamp_utc": "2026-09-17T10:13:44.7916301Z",
+  "execution_status": "NOT_EXECUTED",
+  "expected_analytical_boundary": "Destination/time adjacency alone must not create TRC-CORR-001.",
+  "expected_answer_is_production_selector": false,
+  "expected_structural_effect": "Derived PowerShell and Zeek inputs share destination/time but not host/source identity.",
+  "generated_artifacts": [
+    {
+      "parent_ids": [
+        "PARENT-PS-DET002-001"
+      ],
+      "path": "CHAL-CORR-001/powershell.jsonl",
+      "sha256": "9b6e595416647b8a944bed23701c92fdbb8aee392922b3e15ee87e5ac27d76c5"
+    },
+    {
+      "parent_ids": [
+        "PARENT-ZEEK-DEV-IRC-001"
+      ],
+      "path": "CHAL-CORR-001/zeek.jsonl",
+      "sha256": "ef780322e603b1718bad9b4f09fc912ed4e65a220360c6ffc3b76fa30d845b8e"
+    }
+  ],
+  "mutation": {
+    "operator": "SYNTHESIZE_CORR001_SAME_DESTINATION_WRONG_IDENTITY",
+    "parameters": {
+      "delta_seconds": 20,
+      "same_destination": true,
+      "same_host": false,
+      "same_source_identity": false
+    }
+  },
+  "publisher_label_is_production_selector": false,
+  "purpose": "Same derived destination with wrong host or source identity.",
+  "raw_original_modified": false,
+  "real_incident_claim": false,
+  "record_type": "tracesoc-derived-challenge-v1",
+  "serialization_templates": [
+    "tests/fixtures/scenarios/multisource-web-retrieval-001/powershell.jsonl",
+    "tests/fixtures/scenarios/multisource-web-retrieval-001/zeek.jsonl"
+  ],
+  "tool_script_version": "1.0.0"
+}

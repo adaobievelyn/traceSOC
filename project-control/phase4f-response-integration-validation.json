@@ -1,0 +1,71 @@
+{
+    "record_type":  "tracesoc-phase4f-response-integration-validation",
+    "schema_version":  1,
+    "phase":  "PHASE-4F-B",
+    "generated_utc":  "2026-09-16T13:54:46.2366634Z",
+    "result":  "PASS",
+    "parent_commit":  "61b81f454da5a085952a17ec7b950d297c240b3e",
+    "requirement":  {
+                        "requirement_id":  "PRE-005",
+                        "start_state":  "PARTIAL",
+                        "end_state":  "PASS",
+                        "scope":  "CURRENT_DEFINED_TRACESOC_RESPONSE_SURFACE"
+                    },
+    "implementation":  {
+                           "sandbox_path":  "src/tracesoc/response/sandbox.py",
+                           "sandbox_sha256":  "4eecf410c4db8c6700bf4dcbc77f1ea41a425410ffde39001a5c9f69b4ee36d4",
+                           "integration_runner_path":  "src/tracesoc/response/validation.py",
+                           "integration_runner_sha256":  "a09f8f66238c3f5cbc668dac0ecf41d121b3639429d18ba437a5a99c2d9c258d",
+                           "integration_test_path":  "tests/integration/test_response_validation_integration.py",
+                           "integration_test_sha256":  "9f533588e14e2328d405552f8100292a1572ceec44f193aaaecf4b1ea41d35b4"
+                       },
+    "machine_result":  {
+                           "path":  "results/response/RESPONSE-VALIDATION-0001.json",
+                           "sha256":  "69d14f3dde9f4ad327b2f9504b99baff508db8f5e9fa67ec888a8de8e14d2791",
+                           "scenario_id":  "RESPONSE-VALIDATION-0001",
+                           "validation_status":  "PASS",
+                           "execution_mode":  "SIMULATED_LOCAL_STATE"
+                       },
+    "lifecycle_evidence":  {
+                               "evidence_preservation_precondition":  "VALIDATED",
+                               "dry_run":  "VALIDATED",
+                               "controlled_action":  "VALIDATED",
+                               "measured_verification":  "VALIDATED",
+                               "explicit_verification_failure":  "VALIDATED",
+                               "failure_handling":  "VALIDATED",
+                               "rollback":  "VALIDATED",
+                               "rollback_verification":  "VALIDATED",
+                               "exact_pre_action_state_restoration":  "VALIDATED",
+                               "business_tradeoff":  "PRESENT",
+                               "recovery_objective":  "PRESENT"
+                           },
+    "executions":  {
+                       "nominal":  "COMPLETED_AND_ROLLED_BACK",
+                       "evidence_not_preserved":  "PRECONDITION_FAILED_WITHOUT_MUTATION",
+                       "verification_failure":  "OBSERVED",
+                       "verification_failure_recovery":  "ROLLED_BACK_AFTER_VERIFICATION_FAILURE"
+                   },
+    "test_evidence":  {
+                          "unit_tests":  177,
+                          "unit_failures":  0,
+                          "response_integration_tests":  3,
+                          "response_integration_failures":  0,
+                          "total_tests_this_phase":  180
+                      },
+    "safety_boundary":  {
+                            "real_host_containment":  false,
+                            "operating_system_firewall_changes":  false,
+                            "account_changes":  false,
+                            "external_network_changes":  false,
+                            "malware_execution":  false,
+                            "raw_evidence_access":  false,
+                            "holdout_access":  false
+                        },
+    "interpretation":  {
+                           "production_grade_remediation_claimed":  false,
+                           "practical_simulated_response_validation_established":  true,
+                           "additional_response_actions_currently_required":  false,
+                           "future_response_actions_must_revalidate_contract":  true
+                       },
+    "next":  "PHASE_4G_MULTISOURCE_INTEGRATION"
+}

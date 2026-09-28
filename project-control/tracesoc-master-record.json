@@ -1,0 +1,144 @@
+{
+    "schema_version":  "1.0",
+    "record_type":  "tracesoc-finalist-master-control",
+    "state":  "FINALIST_PACKAGING_IN_PROGRESS",
+    "authority_rule":  {
+                           "specialized_records_remain_authoritative":  true,
+                           "historical_development_records_remain_historical":  true,
+                           "current_acceptance_record":  "results/acceptance/public-test-results.json",
+                           "current_finalist_ledger":  "finalist-evidence-ledger.json",
+                           "current_evidence_index":  "evidence-index.csv"
+                       },
+    "technical_candidate":  {
+                                "commit":  "8751a679f36b4983cdd3d2b0b35f44e9a11c4f39",
+                                "tree":  "fc420ee3fd1988cf578c0cf309ee3aefcccf33b2",
+                                "frozen_before_holdout":  true
+                            },
+    "assignment":  {
+                       "project_id":  "SOC-A5",
+                       "variant":  "V3",
+                       "candidate_binding":  "UBI-2026-0091",
+                       "evidence_marker":  "UBI-A9-4BC183701F3C",
+                       "assigned_pack":  "soc-analysis-stage-9-shared-b1.tar.gz",
+                       "assigned_pack_sha256":  "df8fb093a6a69ca885a0f22518f842cf6a470232a6df821fb759a507389f2022"
+                   },
+    "current_validation":  {
+                               "public_acceptance":  {
+                                                         "report":  "results/acceptance/public-test-results.json",
+                                                         "sha256":  "ed379e5d1672569e772df8b3f59fff98991ea298dc41e5ef51e78bae4716230a",
+                                                         "tests":  "524/524 PASS",
+                                                         "acceptance_classes":  "4/4 PASS"
+                                                     },
+                               "reference_case":  {
+                                                      "evidence_families":  6,
+                                                      "canonical_observations":  5442,
+                                                      "raw_locator_coverage":  "5442/5442",
+                                                      "detector_evaluations":  32658,
+                                                      "matched_detections":  5,
+                                                      "hypotheses":  6,
+                                                      "findings":  6,
+                                                      "narratives":  6,
+                                                      "responses":  6,
+                                                      "incident_status":  "NOT_ESTABLISHED"
+                                                  },
+                               "external_real_evidence":  {
+                                                              "representation":  "ZEEK_ASCII_CONN_LOG",
+                                                              "source_rows":  23145,
+                                                              "canonical_observations":  23145,
+                                                              "source_difference":  0
+                                                          },
+                               "postfreeze_holdout":  {
+                                                          "source_rows":  156458,
+                                                          "canonical_observations":  156458,
+                                                          "detector_evaluations":  938748,
+                                                          "matched_detections":  0,
+                                                          "findings":  0,
+                                                          "ingestion_provenance_generalization":  "CLOSED",
+                                                          "detection_accuracy":  "UNADJUDICATED",
+                                                          "product_tuned_after_freeze":  false
+                                                      },
+                               "clean_reproduction":  {
+                                                          "fresh_runs":  2,
+                                                          "deterministic_core_outputs":  11,
+                                                          "byte_identical_to_reference":  true,
+                                                          "runtime_seconds":  [
+                                                                                  3.438,
+                                                                                  3.393
+                                                                              ]
+                                                      },
+                               "scale_benchmark":  {
+                                                       "expected_records":  198463,
+                                                       "accepted_records":  198463,
+                                                       "quarantined_records":  0,
+                                                       "runtime_seconds":  15.9617856,
+                                                       "peak_working_set_bytes":  486924288,
+                                                       "frozen_ceiling_bytes":  4000000000
+                                                   },
+                               "finalist_one_command_build_test":  {
+                                                                       "status":  "PASS",
+                                                                       "entry_point":  "finalist-reproduce.ps1",
+                                                                       "entry_point_sha256":  "5608d32accd57e20848d3c3263b56d647c1c89ade16abdde02edb4349382427e",
+                                                                       "proof":  "project-control/finalist-one-command-reproduction-validation.json",
+                                                                       "proof_sha256":  "a272680acd30a663dd714b294f4d1e401381233d2162d19f9f38e1a9a0c239d7",
+                                                                       "regression":  "524/524 PASS",
+                                                                       "public_acceptance":  "4/4 PASS",
+                                                                       "acceptance_report_sha256":  "ed379e5d1672569e772df8b3f59fff98991ea298dc41e5ef51e78bae4716230a",
+                                                                       "product_source_changed":  false,
+                                                                       "test_source_changed":  false,
+                                                                       "raw_holdout_accessed":  false
+                                                                   }
+                           },
+    "supported_representation_boundary":  [
+                                              "EML_MIME",
+                                              "PCAP",
+                                              "PCAPNG",
+                                              "ZEEK_ASCII_CONN_LOG",
+                                              "ZEEK_JSON_JSONL",
+                                              "SYSMON_WINDOWS_EVENT_XML",
+                                              "SYSMON_RECOGNIZED_WINDOWS_EVENT_JSON_JSONL",
+                                              "POWERSHELL_OPERATIONAL_WINDOWS_EVENT_XML",
+                                              "POWERSHELL_RECOGNIZED_WINDOWS_EVENT_JSON_JSONL",
+                                              "WINDOWS_SECURITY_WINDOWS_EVENT_XML",
+                                              "WINDOWS_SECURITY_RECOGNIZED_WINDOWS_EVENT_JSON_JSONL",
+                                              "WINDOWS_SECURITY_SUPPORTED_SPLUNK_STYLE_TEXT"
+                                          ],
+    "current_submission_artifacts":  {
+                                         "assessment_manifest":  "assessment-manifest.json",
+                                         "evidence_index":  "evidence-index.csv",
+                                         "timeline":  "timeline.csv",
+                                         "ioc_set":  "ioc-set.csv",
+                                         "finalist_evidence_ledger":  "finalist-evidence-ledger.json",
+                                         "continuity_record":  "continuity-record.md",
+                                         "business_defense_source":  "evidence/finalist-problem-impact-proof-defense.md",
+                                         "executive_brief":  "executive-brief.pdf",
+                                         "technical_report":  "incident-report.pdf",
+                                         "defense_runbook":  "defense-runbook.md",
+                                         "finalist_one_command_reproduction_proof":  "project-control/finalist-one-command-reproduction-validation.json"
+                                     },
+    "known_boundaries":  [
+                             "Controlled six-source reference activity is not malicious ground truth.",
+                             "Correlation does not independently establish causality or maliciousness.",
+                             "Post-freeze holdout detection accuracy is UNADJUDICATED.",
+                             "Cross-publisher network holdout diversity is not established.",
+                             "No confirmed malicious IOC is asserted from the finalist reference evidence.",
+                             "Response records do not claim live response execution.",
+                             "Resource measurements are measured-case evidence, not universal scalability claims."
+                         ],
+    "packaging_state":  {
+                            "stale_presentation_layer_cleaned":  true,
+                            "rebuild_utilities_safeguarded":  true,
+                            "machine_readable_core_promoted":  true,
+                            "continuity_finalized":  true,
+                            "business_impact_layer_finalized":  true,
+                            "living_controls_current":  true,
+                            "readme_finalized":  true,
+                            "defense_runbook_finalized":  true,
+                            "executive_brief_pdf_generated":  true,
+                            "technical_report_pdf_generated":  true,
+                            "integrity_attestation_finalized":  true,
+                            "manifest_sha256_generated":  false,
+                            "readme_content_current":  true,
+                            "repository_remote_configured":  true,
+                            "finalist_one_command_reproduction_validated":  true
+                        }
+}

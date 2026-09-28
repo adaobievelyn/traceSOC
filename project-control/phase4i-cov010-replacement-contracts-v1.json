@@ -1,0 +1,241 @@
+{
+  "closure_policy": {
+    "cov010_may_close_before_all_replacements_execute": false,
+    "cov010_may_close_before_replacement_generation": false,
+    "original_reds_may_be_deleted_or_rewritten": false,
+    "production_repair_rule": "Production logic may change only if a valid frozen replacement reaches its intended production boundary and then demonstrates a genuine production RED.",
+    "replacement_green_erases_original_red": false,
+    "reporting_denominators": {
+      "original_frozen_run": "15 rows",
+      "replacement_set": "3 challenges / 5 generated inputs"
+    }
+  },
+  "grounding": {
+    "corr002_source_grounding_phase": "PHASE-4I-G7E1A",
+    "original_parent_selection": {
+      "path": "project-control/phase4i-challenge-exact-parent-selection.json",
+      "sha256": "b9838e2d9c8c9d81a6f0a5220442ee6652a8c396d4a1411ff5a8754049efb53e"
+    },
+    "scenario002_positive_source": {
+      "integration_test_path": "tests/integration/test_multisource_scenario_002.py",
+      "integration_test_sha256": "eeeca503fd6a6556d08f81bb5feb6c4827351e668e80567df60ba70763c1fe0c",
+      "selection_rule": "Use the existing Scenario 002 positive TRC-DET-001 to TRC-CORR-002 pair. Do not use PARENT-PS-DET002-001 as evidence of event-level TRC-DET-001 positivity.",
+      "source_path": "src/tracesoc/multisource_scenario_002.py",
+      "source_sha256": "647f5413875864a306f6c0d8158a5ee4dc5e85aecc72e6c49799f90584d9cc75"
+    },
+    "security_mapping_test": {
+      "expected_accepted_count": 0,
+      "expected_quarantined_count": 1,
+      "expected_reason_code": "invalid_field",
+      "path": "tests/unit/test_windows_security_real_mapping.py",
+      "production_adapter": "load_windows_security_splunk",
+      "sha256": "5fff9f9423c12d6f3554af9a91cd424ac00c65f84db235eba6e1427f885b1c3e",
+      "test_function": "test_real_mapping_quarantines_invalid_required_numeric_metadata",
+      "tested_mutation_argument": "record_number",
+      "tested_mutation_value": "not-a-number"
+    },
+    "security_raw_reader_test": {
+      "path": "tests/unit/test_real_format_raw_readers.py",
+      "relevant_test": "test_windows_security_splunk_quarantines_malformed_header_without_merging",
+      "sha256": "21564a9bf7b3676c744277d47660d861d414fb8d9efad8355cbe9d5ccdb28595"
+    },
+    "security_recovery_phase": "PHASE-4I-G7E1BR"
+  },
+  "integrity": {
+    "holdout_opened": false,
+    "original_corpus_changed": false,
+    "original_matrix_changed": false,
+    "production_logic_changed": false,
+    "replacement_challenges_executed": false,
+    "replacement_inputs_generated": false
+  },
+  "next": "PHASE_4I_G7E2_IMPLEMENT_COV010_RPL_V1_GENERATOR",
+  "original_corpus": {
+    "challenge_count": 15,
+    "corpus_manifest_path": "tests/fixtures/challenges/cov010/corpus-manifest.json",
+    "corpus_manifest_sha256": "3523e9c659e97f0d68641139c493461971ee44824cd2df55b777d7b0b60acc19",
+    "file_count": 36,
+    "generated_input_count": 20,
+    "generator_path": "scripts/generate_cov010_challenge_corpus.py",
+    "generator_sha256": "24310b48f402a6368fcc9ec5b312f23e306a7f7d032325639eba1bd62f6408a2",
+    "may_be_mutated_for_replacement_work": false
+  },
+  "original_frozen_run": {
+    "frozen_row_denominator": 15,
+    "historical_record_must_remain_immutable": true,
+    "matrix_path": "project-control/phase4i-challenge-execution-matrix.json",
+    "matrix_sha256": "7545a2789072742cf9c62f9ae2e3980a790ec1b41f492009cdec65dd5c2c3070",
+    "observed_pass_rows": 12,
+    "observed_rows": 15,
+    "preserved_adjudicated_red_rows": [
+      7,
+      13,
+      14
+    ],
+    "rows_remaining": 0
+  },
+  "parent_commit": "8840db373485851dc88fcd0381351af59b2b73fa",
+  "phase": "PHASE-4I-G7E1C",
+  "record_type": "tracesoc-cov010-replacement-contract-freeze-v1",
+  "replacement_set": {
+    "challenge_count": 3,
+    "challenge_manifest_count": 3,
+    "execution_order": [
+      "CHAL-MAL-001-V2",
+      "CHAL-TIME-002-V2",
+      "CHAL-TIME-003-V2"
+    ],
+    "expected_generated_file_count": 9,
+    "first_red_policy": "STOP_AND_PRESERVE_BEFORE_DIAGNOSIS_OR_REPAIR",
+    "future_generator_path": "scripts/generate_cov010_replacements_v1.py",
+    "generated_input_count": 5,
+    "replacement_results_may_rewrite_original_reds": false,
+    "replacement_set_id": "COV010-RPL-V1",
+    "root": "tests/fixtures/challenges/cov010-replacements-v1",
+    "root_manifest_count": 1,
+    "separate_denominator_from_original_15_rows": true
+  },
+  "replacements": [
+    {
+      "frozen_genuine_red_if": [
+        "The malformed replacement record disappears from accounting.",
+        "The malformed replacement record is accepted as canonical.",
+        "The invalid RecordNumber is silently coerced to valid numeric metadata.",
+        "Malformed record boundaries are silently merged with another record."
+      ],
+      "frozen_pass_invariants": [
+        "Exactly one physical replacement record is accounted for.",
+        "Accepted canonical event count is zero.",
+        "Quarantined record count is exactly one.",
+        "Quarantine reason is invalid_field.",
+        "The quarantine locator remains bound to the full derived replacement record.",
+        "No canonical event is fabricated from the malformed record."
+      ],
+      "generation_contract": {
+        "all_other_bytes": "PRESERVE_EXACTLY",
+        "field": "RecordNumber",
+        "forbidden_mutation_logic": [
+          "Do not truncate by byte percentage.",
+          "Do not depend on original record length as a production signal.",
+          "Do not depend on missing final newline.",
+          "Do not depend on publisher prose completeness.",
+          "Do not depend on expected hash/count selectors."
+        ],
+        "mutation_operator": "REPLACE_REQUIRED_NUMERIC_RECORDNUMBER_WITH_NON_NUMERIC_LITERAL",
+        "replacement_count": 1,
+        "replacement_value": "not-a-number",
+        "source_lineage": "SAME_FROZEN_SECURITY_PARENT_AS_ORIGINAL_CHAL_MAL_001",
+        "source_precondition": "Exactly one top-level RecordNumber field must exist in the selected parent and its value must be an ASCII decimal integer.",
+        "structural_observability": "Malformed state is observable from the replacement bytes themselves because required numeric RecordNumber is non-numeric."
+      },
+      "original_adjudication_path": "project-control/phase4i-cov010-row7-adjudication.json",
+      "original_adjudication_sha256": "1640189f4ec4a7b371d32927ef3abe4ea40e95e45c6d9bba9ddc220ee80867f8",
+      "original_parent_ids": [
+        "PARENT-SECURITY-CLOCK-001"
+      ],
+      "original_red_must_remain_preserved": true,
+      "production_call_chain": [
+        "read_windows_security_splunk_records",
+        "load_windows_security_splunk"
+      ],
+      "production_defect_previously_established": false,
+      "repair_target": "CHALLENGE_OBSERVABILITY_FAILURE",
+      "replacement_id": "CHAL-MAL-001-V2",
+      "replaces_original_challenge_id": "CHAL-MAL-001",
+      "replaces_original_matrix_row": 7
+    },
+    {
+      "frozen_genuine_red_if": [
+        "TRC-DET-001 fails to match or bind the generated PowerShell event.",
+        "The generated directional delta is not exactly 30.0 seconds.",
+        "CORR002 rejects an otherwise qualifying pair at exactly 30.0 seconds.",
+        "CORR002 matches without detection-event binding.",
+        "CORR002 matches without required identity alignment.",
+        "A matched CORR002 result has no edge."
+      ],
+      "frozen_pass_invariants": [
+        "PowerShell input is accepted exactly once.",
+        "Sysmon input is accepted exactly once.",
+        "TRC-DET-001 MATCHES the supplied PowerShell event.",
+        "TRC-DET-001 contributing_event_ids contains that PowerShell event.",
+        "Directional PowerShell-minus-Sysmon delta is exactly 30.0 seconds.",
+        "Required CORR002 identity dimensions align.",
+        "TRC-CORR-002 MATCHES at exactly 30.0 seconds.",
+        "A non-null CORR002 edge is returned."
+      ],
+      "generation_contract": {
+        "all_non_timestamp_semantic_fields": "PRESERVE_FROM_GROUNDED_SCENARIO_002_PAIR",
+        "correlation": "TRC-CORR-002",
+        "directional_delta_seconds": 30.0,
+        "forbidden_source": "PARENT-PS-DET002-001",
+        "max_seconds": 30.0,
+        "powershell_detector": "TRC-DET-001",
+        "preserve_detector_positive_behavior": true,
+        "preserve_identity_dimensions": true,
+        "source": "GROUNDED_MULTISOURCE_SCENARIO_002_POSITIVE_PAIR",
+        "timestamp_rule": "Preserve the Scenario 002 Sysmon timestamp as the anchor. Set only the PowerShell timestamp to anchor plus exactly 30 seconds."
+      },
+      "original_adjudication_path": "project-control/phase4i-cov010-row13-adjudication.json",
+      "original_adjudication_sha256": "2174a7f6f8231c91e388f0247d68de67f7b8e6b1a2dd49e3c2b08b1ab5e1b11a",
+      "original_red_must_remain_preserved": true,
+      "production_call_chain": [
+        "load_powershell_jsonl",
+        "load_sysmon_jsonl",
+        "detect_powershell_web_retrieval",
+        "correlate_powershell_detection_with_sysmon_process"
+      ],
+      "production_defect_previously_established": false,
+      "repair_target": "CHALLENGE_PRECONDITION_CONSTRUCTION_FAILURE",
+      "replacement_id": "CHAL-TIME-002-V2",
+      "replaces_original_challenge_id": "CHAL-TIME-002",
+      "replaces_original_matrix_row": 13
+    },
+    {
+      "frozen_genuine_red_if": [
+        "TRC-DET-001 fails to match or bind the generated PowerShell event.",
+        "The generated directional delta is not exactly 31.0 seconds.",
+        "CORR002 MATCHES at exactly 31.0 seconds.",
+        "A CORR002 edge is returned at exactly 31.0 seconds."
+      ],
+      "frozen_pass_invariants": [
+        "PowerShell input is accepted exactly once.",
+        "Sysmon input is accepted exactly once.",
+        "TRC-DET-001 MATCHES the supplied PowerShell event.",
+        "TRC-DET-001 contributing_event_ids contains that PowerShell event.",
+        "Directional PowerShell-minus-Sysmon delta is exactly 31.0 seconds.",
+        "Required CORR002 identity dimensions align.",
+        "TRC-CORR-002 does NOT MATCH at exactly 31.0 seconds.",
+        "No CORR002 edge is returned."
+      ],
+      "generation_contract": {
+        "all_non_timestamp_semantic_fields": "PRESERVE_FROM_GROUNDED_SCENARIO_002_PAIR",
+        "correlation": "TRC-CORR-002",
+        "directional_delta_seconds": 31.0,
+        "forbidden_source": "PARENT-PS-DET002-001",
+        "max_seconds": 30.0,
+        "powershell_detector": "TRC-DET-001",
+        "preserve_detector_positive_behavior": true,
+        "preserve_identity_dimensions": true,
+        "source": "GROUNDED_MULTISOURCE_SCENARIO_002_POSITIVE_PAIR",
+        "timestamp_rule": "Preserve the Scenario 002 Sysmon timestamp as the anchor. Set only the PowerShell timestamp to anchor plus exactly 31 seconds."
+      },
+      "original_adjudication_path": "project-control/phase4i-cov010-row14-adjudication.json",
+      "original_adjudication_sha256": "698baaee66a8165d822fa274019d22d6df6d5d12504fc9d1df6bc6c646965ed2",
+      "original_red_must_remain_preserved": true,
+      "production_call_chain": [
+        "load_powershell_jsonl",
+        "load_sysmon_jsonl",
+        "detect_powershell_web_retrieval",
+        "correlate_powershell_detection_with_sysmon_process"
+      ],
+      "production_defect_previously_established": false,
+      "repair_target": "CHALLENGE_PRECONDITION_CONSTRUCTION_FAILURE",
+      "replacement_id": "CHAL-TIME-003-V2",
+      "replaces_original_challenge_id": "CHAL-TIME-003",
+      "replaces_original_matrix_row": 14
+    }
+  ],
+  "requirement_id": "COV-010",
+  "schema_version": 1,
+  "state": "FROZEN_BEFORE_REPLACEMENT_GENERATION"
+}

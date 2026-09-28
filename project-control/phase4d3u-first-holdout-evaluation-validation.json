@@ -1,0 +1,100 @@
+{
+    "record_type":  "tracesoc-phase4d3u-first-holdout-evaluation-validation",
+    "schema_version":  1,
+    "phase":  "PHASE-4D.3U",
+    "generated_utc":  "2026-09-16T11:42:23Z",
+    "result":  "PASS",
+    "parent_commit":  "ce4871caceca56f332acf4e1f493a7e11307d1e9",
+    "objective":  "Freeze the first one-way semantic evaluation of the sealed Zeek holdout under the previously committed analytic and recording-protocol state, preserving exact result accounting and access lineage before any label comparison, interpretation-driven repair, or tuning.",
+    "analytic_identity":  {
+                              "frozen_analytic_commit":  "4f12ebf2783096e3f0cbf65e0e4e1b44519ff04f",
+                              "analytic_freeze_commit":  "2183ad3f331786c8ca9bb62342890a475742a390",
+                              "analytic_freeze_proof":  "project-control/phase4d3s-analytic-freeze-proof.json",
+                              "analytic_freeze_proof_sha256":  "aaebb493aaa927fce48f7cb6cb8ca33e699028722d6a3f7caecd59415c373bf5",
+                              "recording_protocol_commit":  "ce4871caceca56f332acf4e1f493a7e11307d1e9",
+                              "recording_protocol":  "project-control/phase4d3t-first-use-recording-protocol.json",
+                              "recording_protocol_sha256":  "1e1a5ac568981e0ec2bebf8deb2132903af4990f5bdb16f60fcb9eb08d1d9ad4"
+                          },
+    "source_lineage":  {
+                           "source_id":  "TS-HOLD-IOT23V2-003-ZEEK",
+                           "source_sha256":  "1481a5c82b96ce3b902e383b7da7dbebc0466275af6a8bfaf1b453443bd2c7ba",
+                           "source_filename":  "conn.log",
+                           "raw_holdout_modified":  false,
+                           "raw_holdout_replaced":  false
+                       },
+    "semantic_access":  {
+                            "access_event_id":  "HOLDOUT-EVENT-0007",
+                            "access_class":  "SEMANTIC_EVALUATION_ACCESS",
+                            "access_log":  "project-control/holdout-access-log.jsonl",
+                            "pre_access_log_sha256":  "6cbd57e1d7e4d7ade94e9912c5370a65cadfaa0668f383fda81cd95940bee630",
+                            "post_access_log_sha256":  "220153660894ad60b02100354c012d48f2fc0bc9a86d932d4cd667873469f243",
+                            "prior_six_records_unchanged":  true,
+                            "semantic_payload_accessed":  true,
+                            "labels_accessed":  false,
+                            "holdout_remains_unseen_for_frozen_version":  false
+                        },
+    "evaluation_result":  {
+                              "evaluation_id":  "HOLDOUT-EVAL-0001",
+                              "path":  "results/holdout/HOLDOUT-EVAL-0001.json",
+                              "sha256":  "35231e57f0eed7233e7ec2836cb1280766d72a485a4002191abcf4c033dc7143",
+                              "result_storage_policy":  {
+                                                            "repository_results_rule":  ".gitignore:14:results/*",
+                                                            "result_intentionally_ignored_before_freeze":  true,
+                                                            "freeze_method":  "EXPLICIT_GIT_FORCE_ADD",
+                                                            "overwrite_allowed":  false
+                                                        },
+                              "parser_entrypoint":  "tracesoc.parsers.zeek.load_zeek_conn_ascii",
+                              "detection_id":  "TRC-DET-004",
+                              "detection_version":  "1.0.0",
+                              "total_records":  156458,
+                              "accepted_records":  156458,
+                              "quarantined_records":  0,
+                              "evaluated_semantic_events":  156458,
+                              "matched_events":  0,
+                              "nonmatched_events":  156458,
+                              "reason_code_counts":  {
+                                                         "missing_service":  155720,
+                                                         "service_not_irc":  738
+                                                     },
+                              "matched_results_with_lineage":  0,
+                              "quarantine_details_materialized":  0,
+                              "labels_accessed":  false,
+                              "source_context_used_for_detection":  false,
+                              "publisher_assessment_used_for_detection":  false,
+                              "real_correlations_executed":  0,
+                              "rule_tuning_performed":  false
+                          },
+    "accounting":  {
+                       "total_equals_accepted_plus_quarantined":  true,
+                       "evaluated_equals_accepted":  true,
+                       "match_plus_nonmatch_equals_evaluated":  true,
+                       "reason_codes_cover_all_evaluated_events":  true,
+                       "all_quarantined_records_materialized":  true,
+                       "all_matches_have_lineage":  true
+                   },
+    "interpretation_boundary":  {
+                                    "observed":  [
+                                                     "TRC-DET-004 produced 0 matches on 156458 accepted semantic events.",
+                                                     "155720 nonmatches had reason_code missing_service.",
+                                                     "738 nonmatches had reason_code service_not_irc.",
+                                                     "0 records were quarantined."
+                                                 ],
+                                    "not_established":  [
+                                                            "Absence of IRC traffic in underlying reality.",
+                                                            "Detector generalization success.",
+                                                            "Detector generalization failure.",
+                                                            "Publisher-label agreement.",
+                                                            "Benign or malicious classification."
+                                                        ],
+                                    "label_comparison_performed":  false,
+                                    "tuning_performed":  false
+                                },
+    "validation":  {
+                       "result_sha256_verified":  true,
+                       "access_log_append_only_verified":  true,
+                       "result_schema_verified":  true,
+                       "result_accounting_verified":  true,
+                       "full_unit_regression":  "171/171 PASS"
+                   },
+    "next":  "PHASE_4D3V_HOLDOUT_RESULT_ADJUDICATION"
+}

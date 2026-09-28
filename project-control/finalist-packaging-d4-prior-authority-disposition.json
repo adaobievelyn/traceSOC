@@ -1,0 +1,45 @@
+{
+    "schema_version":  "1.0",
+    "record_type":  "tracesoc-finalist-packaging-attempt-disposition",
+    "phase":  "FINALIST_PACKAGING_PHASE_D4_ATTEMPT_1",
+    "classification":  "PRIOR_STAGE_AUTHORITY_SELECTION_DEFECT",
+    "product_defect":  false,
+    "evidence_defect":  false,
+    "continuity_defect":  false,
+    "technical_freeze":  {
+                             "tracesoc_commit":  "8751a679f36b4983cdd3d2b0b35f44e9a11c4f39",
+                             "tracesoc_tree":  "fc420ee3fd1988cf578c0cf309ee3aefcccf33b2"
+                         },
+    "failed_assumption":  "The initial D4 controller incorrectly required the present-day working-tree assessment-manifest.json in the historical Stage 9 repository to retain the earlier technical forensic freeze.",
+    "present_day_stage9_state":  {
+                                     "head":  "88522176181b0249c545e60c30f878510de8465f",
+                                     "assessment_manifest_commit_field":  "d4d156abc5798d189171743ddac555b33c6ede13",
+                                     "authoritative_for_technical_freeze_binding":  false
+                                 },
+    "corrected_authority_model":  {
+                                      "prior_technical_freeze_commit":  "53b7e35a65203d31b348317dc11fbdba7b919a49",
+                                      "prior_technical_freeze_tree":  "f4b9670a10a6c3b0c8c0399eef7395abec875da6",
+                                      "technical_freeze_binding_evidence":  [
+                                                                                {
+                                                                                    "container_commit":  "ca2e634b235ee9bfa73a975a2a93ac01cf23bd35",
+                                                                                    "assessment_blob":  "7296aeda6d6d3ba2f69b22cf1d09d74d1c95f442",
+                                                                                    "manifest_commit_field":  "53b7e35a65203d31b348317dc11fbdba7b919a49"
+                                                                                },
+                                                                                {
+                                                                                    "container_commit":  "26c4f0d75ae49074bec9a6a3b2e03b094e02a4c2",
+                                                                                    "assessment_blob":  "443545d0b28951251d808e4b4b8eb08a3c84b50b",
+                                                                                    "manifest_commit_field":  "53b7e35a65203d31b348317dc11fbdba7b919a49"
+                                                                                }
+                                                                            ],
+                                      "carry_forward_assessment_authority":  {
+                                                                                 "authority":  "SUBMITTED_STAGE9A_PACKAGE",
+                                                                                 "archive_filename":  "UBI-2026-0091-STAGE_9-20260911T160346Z-1-001.zip",
+                                                                                 "archive_sha256":  "83ae8b71ead89033f9ae0aa58eee96b8af437860d6f270202664c27c551da0b6"
+                                                                             },
+                                      "distinction":  "The historical Git finalization manifests establish which technical commit was frozen. The assessed submission archive is the authority for what Stage 9A actually handed forward. These are related but separate provenance claims."
+                                  },
+    "initial_d4_mutated_continuity":  false,
+    "initial_d4_validation_record_created":  false,
+    "holdout_rerun":  false,
+    "final_status":  "CLOSED_AUTHORITY_SELECTION_DEFECT"
+}

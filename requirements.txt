@@ -1,0 +1,1 @@
+# Third-party dependencies will be admitted only after explicit need and compatibility review.

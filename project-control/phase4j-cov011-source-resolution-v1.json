@@ -1,0 +1,177 @@
+{
+  "benchmark_protocol": {
+    "path": "project-control/phase4j-cov011-benchmark-protocol-v1.json",
+    "sha256": "bb646a390afe794fa631d8527cabe1f84cca4b3f9e9ab3fafdc8a4e1d3fcaa61"
+  },
+  "execution_preconditions": {
+    "all_source_byte_sizes_must_match": true,
+    "all_source_paths_must_exist": true,
+    "all_source_sha256_values_must_match": true,
+    "production_source_hash_match_required": true,
+    "protocol_identity_match": true,
+    "resolution_identity_match_required": true,
+    "result_path_must_not_exist": true
+  },
+  "execution_scope": {
+    "cross_source_correlation": false,
+    "detector_execution": false,
+    "integrity_preflight": "VERIFY_SIZE_AND_SHA256_FOR_ALL_FIVE_SOURCES",
+    "processing": "REAL_FORMAT_PARSER_TO_CANONICAL_ACCOUNTING_TO_SEMANTIC_CONVERSION",
+    "reason": "Runner scope follows the already-frozen COV011 production_execution contract exactly; no additional analytic stage is silently introduced after protocol freeze."
+  },
+  "integrity": {
+    "COV011_promoted": false,
+    "benchmark_executed": false,
+    "holdout_payload_opened": false,
+    "parser_executed": false,
+    "production_logic_changed": false,
+    "source_file_hashing_performed": false,
+    "source_payload_opened": false
+  },
+  "measurement_contract": {
+    "memory_api": "Windows GetProcessMemoryInfo",
+    "memory_metric": "PeakWorkingSetSize",
+    "memory_threshold_bytes": 4000000000,
+    "runtime_metrics": [
+      "integrity_preflight_seconds",
+      "processing_runtime_seconds",
+      "end_to_end_runtime_seconds"
+    ],
+    "runtime_pass_fail_threshold": null
+  },
+  "next": "PHASE_4J_E_PREEXECUTION_INTEGRITY_AND_BENCHMARK_EXECUTION",
+  "parent_commit": "160e8a03b0ba17f9c7175ebb9eadbd7e61b94c02",
+  "phase": "PHASE-4J-DB",
+  "prior_harness_incidents": [
+    {
+      "classification": "GROUNDING_HARNESS_PATH_ASSUMPTION",
+      "phase": "PHASE-4J-B",
+      "product_defect": false
+    },
+    {
+      "classification": "PROTOCOL_FREEZE_UNICODE_LITERAL_HARNESS_FAILURE",
+      "phase": "PHASE-4J-C",
+      "product_defect": false
+    },
+    {
+      "classification": "GROUNDING_HARNESS_IMPORT_RESOLUTION_FAILURE",
+      "phase": "PHASE-4J-DA",
+      "product_defect": false
+    }
+  ],
+  "production_code": [
+    {
+      "api": "tracesoc.parsers.powershell.load_powershell_windows_event_xml",
+      "module_prefix": "tracesoc.parsers.powershell",
+      "signature": "(path: 'Path', *, logical_source: 'str') -> 'AdapterBatch'",
+      "source_path": "src/tracesoc/parsers/powershell.py",
+      "source_sha256": "d50ebbc87feff0b12b1915a4c5c560f840e1e75cd5d2b1bc892f815365b4c9ec"
+    },
+    {
+      "api": "tracesoc.parsers.sysmon.load_sysmon_windows_event_xml",
+      "module_prefix": "tracesoc.parsers.sysmon",
+      "signature": "(path: 'Path', *, logical_source: 'str') -> 'AdapterBatch'",
+      "source_path": "src/tracesoc/parsers/sysmon.py",
+      "source_sha256": "1ad6b2381f0fd0af3c510e32f901723f97d84db69b5c3037fa512e2fdf12472c"
+    },
+    {
+      "api": "tracesoc.parsers.windows_security.load_windows_security_splunk",
+      "module_prefix": "tracesoc.parsers.windows_security",
+      "signature": "(path: 'Path', *, logical_source: 'str') -> 'AdapterBatch'",
+      "source_path": "src/tracesoc/parsers/windows_security.py",
+      "source_sha256": "0a7f42af315603be62fbe6e6cc268d9797a4a28eab33c1aa3060dc8794f64a11"
+    },
+    {
+      "api": "tracesoc.parsers.zeek.load_zeek_conn_ascii",
+      "module_prefix": "tracesoc.parsers.zeek",
+      "signature": "(path: 'Path', *, logical_source: 'str') -> 'AdapterBatch'",
+      "source_path": "src/tracesoc/parsers/zeek.py",
+      "source_sha256": "1751bda4a6c4cfc51799529695de7577644a3168a07e6b7a4340015132be9ddc"
+    },
+    {
+      "api": "tracesoc.models.SemanticEvent.from_canonical",
+      "module_prefix": "tracesoc.models",
+      "signature": "(event: 'CanonicalEvent') -> \"'SemanticEvent'\"",
+      "source_path": "src/tracesoc/models.py",
+      "source_sha256": "31e6ee887ef7573f76ba971e94961da9f3f0bee302479999c97d20a0a3bde8ad"
+    }
+  ],
+  "record_type": "tracesoc-cov011-source-resolution-v1",
+  "resolution_basis": {
+    "acquisition_register_path": "project-control/evidence-acquisition-register.csv",
+    "acquisition_register_sha256": "e5661a816d208d53211c70d10fe99e2c33528840ec8eae20e52e440771e14b49",
+    "master_record_path": "project-control/tracesoc-master-record.json",
+    "master_record_sha256": "41905b77aee3d9e09e06045cc3019aefc90c2d27496e382064660a65d5445fb8",
+    "master_rows_unique": true,
+    "register_master_path_hash_consensus": true,
+    "register_rows_unique": true,
+    "source_ids_selected_from_frozen_protocol": true
+  },
+  "schema_version": 1,
+  "workload": {
+    "accepted_records": 198463,
+    "source_count": 5,
+    "sources": [
+      {
+        "accepted_records": 126,
+        "parser": "tracesoc.parsers.powershell.load_powershell_windows_event_xml",
+        "register_integrity_status": "VERIFIED",
+        "register_status": "INTEGRITY_VERIFIED",
+        "registered_byte_size": 2038252,
+        "registered_sha256": "ce45d417d0bd66e05939f835935dd24cfe6f55b257d7b2bb968c726ae378c8c3",
+        "role": "DEVELOPMENT",
+        "source_id": "TS-DEV-SPLUNK-PS-001",
+        "storage_path": "D:\\TraceSOC-Evidence\\raw\\development\\splunk-attack-data\\T1087.002\\AD_discovery\\windows-powershell-xml.log",
+        "telemetry_family": "POWERSHELL"
+      },
+      {
+        "accepted_records": 11618,
+        "parser": "tracesoc.parsers.sysmon.load_sysmon_windows_event_xml",
+        "register_integrity_status": "VERIFIED",
+        "register_status": "INTEGRITY_VERIFIED",
+        "registered_byte_size": 20091826,
+        "registered_sha256": "8886e363b137555f5a0403783106e656b77e328fab2e503a645015f5e1cc3756",
+        "role": "DEVELOPMENT",
+        "source_id": "TS-DEV-SPLUNK-SYSMON-001",
+        "storage_path": "D:\\TraceSOC-Evidence\\raw\\development\\splunk-attack-data\\T1562.001\\win_app_defender_disabling\\windows-sysmon.log",
+        "telemetry_family": "SYSMON"
+      },
+      {
+        "accepted_records": 7116,
+        "parser": "tracesoc.parsers.windows_security.load_windows_security_splunk",
+        "register_integrity_status": "VERIFIED",
+        "register_status": "INTEGRITY_VERIFIED",
+        "registered_byte_size": 8490471,
+        "registered_sha256": "b55c57fd0256fa73f55116f9ad307de3b7403f1ba7536c10431b56426a09bd89",
+        "role": "DEVELOPMENT",
+        "source_id": "TS-DEV-SPLUNK-SECURITY-001",
+        "storage_path": "D:\\TraceSOC-Evidence\\raw\\development\\splunk-attack-data\\T1562.001\\win_app_defender_disabling\\windows-security.log",
+        "telemetry_family": "WINDOWS_SECURITY"
+      },
+      {
+        "accepted_records": 23145,
+        "parser": "tracesoc.parsers.zeek.load_zeek_conn_ascii",
+        "register_integrity_status": "VERIFIED",
+        "register_status": "INTEGRITY_VERIFIED",
+        "registered_byte_size": 2926718,
+        "registered_sha256": "d69e49b2aae8c1bd33286936531658202dec47d989f0439bad3f8be180467a6e",
+        "role": "DEVELOPMENT",
+        "source_id": "TS-DEV-IOT23-034-ZEEK",
+        "storage_path": "D:\\TraceSOC-Evidence\\raw\\development\\iot23\\CTU-IoT-Malware-Capture-34-1\\bro\\conn.log.labeled",
+        "telemetry_family": "ZEEK"
+      },
+      {
+        "accepted_records": 156458,
+        "parser": "tracesoc.parsers.zeek.load_zeek_conn_ascii",
+        "register_integrity_status": "VERIFIED",
+        "register_status": "SEALED_INTEGRITY_VERIFIED",
+        "registered_byte_size": 17387889,
+        "registered_sha256": "1481a5c82b96ce3b902e383b7da7dbebc0466275af6a8bfaf1b453443bd2c7ba",
+        "role": "HOLDOUT",
+        "source_id": "TS-HOLD-IOT23V2-003-ZEEK",
+        "storage_path": "D:\\TraceSOC-Evidence\\holdout\\sealed\\iot23-v2\\CTU-IoT-Malware-Capture-3-1\\conn.log",
+        "telemetry_family": "ZEEK"
+      }
+    ]
+  }
+}

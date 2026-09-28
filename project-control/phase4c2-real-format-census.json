@@ -1,0 +1,79 @@
+{
+    "record_type":  "tracesoc-real-evidence-format-census",
+    "generated_utc":  "2026-09-14T14:20:41.9012081Z",
+    "phase":  "4C.2",
+    "analytical_semantics_adjudicated":  false,
+    "detector_tuning_performed":  false,
+    "tshark_path":  "C:\\Program Files\\Wireshark\\tshark.exe",
+    "powershell":  {
+                       "source_id":  "TS-DEV-SPLUNK-PS-001",
+                       "byte_size":  2038252,
+                       "sha256":  "ce45d417d0bd66e05939f835935dd24cfe6f55b257d7b2bb968c726ae378c8c3",
+                       "line_count":  52189,
+                       "xml_event_start_count":  126,
+                       "event_id_tag_count":  126,
+                       "provider_tag_count":  126,
+                       "observed_format_class":  "XML_EVENT_STREAM"
+                   },
+    "zeek":  {
+                 "source_id":  "TS-DEV-IOT23-034-ZEEK",
+                 "byte_size":  2926718,
+                 "sha256":  "d69e49b2aae8c1bd33286936531658202dec47d989f0439bad3f8be180467a6e",
+                 "field_count":  23,
+                 "fields":  [
+                                "ts",
+                                "uid",
+                                "id.orig_h",
+                                "id.orig_p",
+                                "id.resp_h",
+                                "id.resp_p",
+                                "proto",
+                                "service",
+                                "duration",
+                                "orig_bytes",
+                                "resp_bytes",
+                                "conn_state",
+                                "local_orig",
+                                "local_resp",
+                                "missed_bytes",
+                                "history",
+                                "orig_pkts",
+                                "orig_ip_bytes",
+                                "resp_pkts",
+                                "resp_ip_bytes",
+                                "tunnel_parents",
+                                "label",
+                                "det_label"
+                            ],
+                 "data_rows":  23145,
+                 "publisher_labels_present_as_schema":  true
+             },
+    "pcap":  {
+                 "source_id":  "TS-DEV-IOT23-034-PCAP",
+                 "byte_size":  126317980,
+                 "sha256":  "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+                 "first_bytes_hex":  "d4c3b2a102000400",
+                 "tshark_first_packet_read":  true,
+                 "first_packet_probe":  "1\t1545403816.870900000"
+             },
+    "sysmon":  {
+                   "source_id":  "TS-DEV-SPLUNK-SYSMON-001",
+                   "byte_size":  20091826,
+                   "sha256":  "8886e363b137555f5a0403783106e656b77e328fab2e503a645015f5e1cc3756",
+                   "line_count":  11618,
+                   "xml_event_start_count":  11618,
+                   "event_id_tag_count":  11618,
+                   "provider_tag_count":  11618,
+                   "observed_format_class":  "XML_EVENT_STREAM"
+               },
+    "windows_security":  {
+                             "source_id":  "TS-DEV-SPLUNK-SECURITY-001",
+                             "byte_size":  8490471,
+                             "sha256":  "b55c57fd0256fa73f55116f9ad307de3b7403f1ba7536c10431b56426a09bd89",
+                             "line_count":  273253,
+                             "xml_event_start_count":  0,
+                             "event_id_tag_count":  0,
+                             "provider_tag_count":  0,
+                             "observed_format_class":  "TEXT_EVENT_EXPORT"
+                         }
+}

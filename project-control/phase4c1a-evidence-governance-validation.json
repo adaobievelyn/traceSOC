@@ -1,0 +1,50 @@
+{
+    "record_type":  "tracesoc-phase4c1a-evidence-governance-validation",
+    "generated_utc":  "2026-09-14T13:55:20.4373699Z",
+    "phase":  "4C.1A",
+    "parent_commit":  "2fe9e89f94cc70cf39d14d99caa804c96d562392",
+    "current_real_artifacts":  4,
+    "core_telemetry_families":  {
+                                    "required":  [
+                                                     "SYSMON",
+                                                     "WINDOWS_SECURITY",
+                                                     "POWERSHELL",
+                                                     "ZEEK"
+                                                 ],
+                                    "acquired":  [
+                                                     "POWERSHELL",
+                                                     "ZEEK"
+                                                 ],
+                                    "missing":  [
+                                                    "SYSMON",
+                                                    "WINDOWS_SECURITY"
+                                                ]
+                                },
+    "current_origin_contexts":  [
+                                    "Splunk Inc.",
+                                    "Stratosphere Laboratory / CTU"
+                                ],
+    "corpus_complete":  false,
+    "reference_catalogue_created":  true,
+    "source_citation_control_created":  true,
+    "challenge_corpus_plan_created":  true,
+    "immutable_original_mutation_allowed":  false,
+    "challenge_artifacts_must_be_derived":  true,
+    "gaps":  [
+                 "REAL_SYSMON",
+                 "REAL_WINDOWS_SECURITY",
+                 "NETWORK_BENIGN_CONTROLS",
+                 "ENDPOINT_BENIGN_CONTROL",
+                 "NETWORK_HOLDOUT",
+                 "ADDITIONAL_SUSPICIOUS_SCENARIO_VARIETY",
+                 "DERIVED_CHALLENGE_CORPUS",
+                 "SCALE_CORPUS"
+             ],
+    "files":  {
+                  "project-control/evidence-source-reference.md":  "396f5c3dc1c6f785e26f82d493160290552311516a367206fbcf72d27f10472f",
+                  "project-control/evidence-coverage-matrix.csv":  "5ee65b02e0b98bf04e9209f3a4ee7a36111a82a429998eafb9b7b2e740e2e667",
+                  "project-control/evidence-challenge-corpus-plan.md":  "9a8d3b9fd1ce6b79df3441487bac57cf2533f80de0d31c16671411e72a65e23c"
+              },
+    "downloads_performed":  0,
+    "next":  "PHASE_4C2_REAL_FORMAT_CENSUS_THEN_FILL_TELEMETRY_GAPS"
+}

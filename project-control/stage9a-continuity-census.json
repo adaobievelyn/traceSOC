@@ -1,0 +1,39 @@
+{
+    "record_type":  "tracesoc-stage9a-continuity-census",
+    "generated_utc":  "2026-09-14T11:04:29.6845362Z",
+    "phase":  "2A",
+    "stage9a_repository":  "C:\\Users\\Eve\\soc-stage9",
+    "stage9a_head":  "88522176181b0249c545e60c30f878510de8465f",
+    "stage9a_branch":  "master",
+    "stage9a_working_tree_clean":  true,
+    "stage9a_tracked_files":  229,
+    "inventoried_files":  229,
+    "tracesoc_head_before_census":  "be35be8d14215be488bf5abdc96380f5d9640b7a",
+    "source_repository_modified":  false,
+    "source_code_copied":  false,
+    "continuity_decisions_made":  false,
+    "discovery_family_counts":  {
+                                    "PARSING_NORMALIZATION":  9,
+                                    "TIMELINE_CLOCK":  128,
+                                    "PROVENANCE_INTEGRITY":  73,
+                                    "DETECTION":  62,
+                                    "TESTING":  86,
+                                    "REPRODUCIBILITY":  128,
+                                    "RESPONSE":  12,
+                                    "INVESTIGATION_QUERY":  13,
+                                    "COMMUNICATION":  11
+                                },
+    "extension_counts":  {
+                             "python":  93,
+                             "powershell":  1,
+                             "yaml":  1,
+                             "json":  63
+                         },
+    "decision_vocabulary":  [
+                                "REUSE",
+                                "ADAPT",
+                                "RETIRE",
+                                "CASE_SPECIFIC"
+                            ],
+    "next_step":  "MANUAL_CONTINUITY_ADJUDICATION"
+}

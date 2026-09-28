@@ -1,0 +1,99 @@
+{
+    "record_type":  "tracesoc-phase4d3w-posthoc-label-acquisition-authorization",
+    "schema_version":  1,
+    "phase":  "PHASE-4D.3W",
+    "generated_utc":  "2026-09-16T12:16:44Z",
+    "result":  "AUTHORIZED",
+    "parent_commit":  "f37579224bcc79ff65be13c64debb7b80beb2380",
+    "purpose":  "Authorize narrowly scoped acquisition of the publisher-labeled Zeek conn.log only after the original holdout prediction and complete README metadata capture were independently frozen.",
+    "scientific_basis":  {
+                             "frozen_first_use_evaluation":  {
+                                                                 "evaluation_id":  "HOLDOUT-EVAL-0001",
+                                                                 "result_path":  "results/holdout/HOLDOUT-EVAL-0001.json",
+                                                                 "result_sha256":  "35231e57f0eed7233e7ec2836cb1280766d72a485a4002191abcf4c033dc7143",
+                                                                 "detection_id":  "TRC-DET-004",
+                                                                 "accepted_events":  156458,
+                                                                 "matched_events":  0,
+                                                                 "nonmatched_events":  156458
+                                                             },
+                             "frozen_posthoc_readme_capture":  {
+                                                                   "comparison_id":  "HOLDOUT-COMPARE-0001",
+                                                                   "path":  "results/holdout/HOLDOUT-COMPARE-0001.json",
+                                                                   "sha256":  "e87fa358359a87b25460be0e58cf0ff6412556b7809a859a64323607cccd2524",
+                                                                   "proof":  "project-control/phase4d3v-posthoc-metadata-capture-validation.json",
+                                                                   "proof_sha256":  "01c0cb0b29f7e87ca4feb679fd901b1f3f195578bc9cdf996cc0963ba1c149a2",
+                                                                   "readme_establishes_irc_presence":  false,
+                                                                   "readme_establishes_irc_absence":  false
+                                                               },
+                             "pre_registered_positive_trc_det004_expectation":  "NOT_ESTABLISHED",
+                             "pre_registered_expected_match_count":  "NOT_ESTABLISHED",
+                             "unresolved_question":  "Whether publisher ground-truth flow assessment provides evidence relevant to adjudicating the frozen zero-match TRC-DET-004 result.",
+                             "ground_truth_gap":  "ESTABLISHED",
+                             "justification":  "The frozen README establishes that separate expert-labeled Zeek flow evidence exists, but does not establish IRC presence or absence. The frozen policy explicitly permits publisher-label use only after independent result production for post-hoc evaluation/accounting."
+                         },
+    "policy_authorization":  {
+                                 "policy_path":  "project-control/holdout-isolation-policy.md",
+                                 "independent_result_already_produced":  true,
+                                 "independent_result_already_frozen":  true,
+                                 "posthoc_label_accounting_permitted":  true,
+                                 "labels_may_become_detector_selectors":  false,
+                                 "same_holdout_remains_unseen":  false,
+                                 "repair_of_original_frozen_version_authorized":  false
+                             },
+    "authorized_acquisition":  {
+                                   "artifact":  "PUBLISHER_LABELED_ZEEK_CONN_LOG",
+                                   "publisher_url":  "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset-v2/CTU-IoT-Malware-Capture-3-1/2018-05-19-20-57-19-192.168.2.5-zeek-conn-log.labeled",
+                                   "publisher_filename":  "2018-05-19-20-57-19-192.168.2.5-zeek-conn-log.labeled",
+                                   "planned_storage_namespace":  "POSTHOC_HOLDOUT_EVIDENCE",
+                                   "planned_directory":  "D:\\TraceSOC-Evidence\\holdout\\posthoc\\iot23-v2\\CTU-IoT-Malware-Capture-3-1",
+                                   "planned_final_path":  "D:\\TraceSOC-Evidence\\holdout\\posthoc\\iot23-v2\\CTU-IoT-Malware-Capture-3-1\\2018-05-19-20-57-19-192.168.2.5-zeek-conn-log.labeled",
+                                   "acquisition_access_class":  "TRANSPORT_AND_INTEGRITY_ONLY",
+                                   "semantic_payload_inspection_during_acquisition":  false,
+                                   "label_inspection_during_acquisition":  false,
+                                   "row_counting_during_acquisition":  false,
+                                   "field_inspection_during_acquisition":  false,
+                                   "detector_execution_during_acquisition":  false,
+                                   "comparison_during_acquisition":  false,
+                                   "rule_tuning_during_acquisition":  false,
+                                   "expected_sha256":  "NOT_ESTABLISHED_BEFORE_ACQUISITION",
+                                   "expected_byte_size":  "NOT_ESTABLISHED_BEFORE_ACQUISITION",
+                                   "require_download_to_temporary_path":  true,
+                                   "require_sha256_after_transport":  true,
+                                   "require_byte_size_after_transport":  true,
+                                   "require_read_only_final_artifact":  true,
+                                   "require_registration_before_content_access":  true,
+                                   "require_access_log_event":  true,
+                                   "require_separate_comparison_protocol_before_label_inspection":  true
+                               },
+    "explicitly_not_authorized":  {
+                                      "labels_config_acquisition":  false,
+                                      "pcap_acquisition":  false,
+                                      "publisher_label_inspection_in_this_phase":  false,
+                                      "publisher_label_inspection_during_transport_phase":  false,
+                                      "original_plain_connlog_rerun":  false,
+                                      "original_holdout_evaluation_rerun":  false,
+                                      "detector_rule_change":  false,
+                                      "normalization_change":  false,
+                                      "parser_change":  false,
+                                      "correlation_change":  false,
+                                      "analytic_tuning":  false
+                                  },
+    "evidence_preservation":  {
+                                  "original_plain_connlog_remains_registered":  true,
+                                  "original_plain_connlog_replaced":  false,
+                                  "original_readme_remains_registered":  true,
+                                  "frozen_first_use_result_remains_immutable":  true,
+                                  "frozen_posthoc_readme_capture_remains_immutable":  true,
+                                  "new_label_bearing_artifact_is_additional_evidence":  true,
+                                  "no_existing_evidence_is_discarded":  true
+                              },
+    "failure_rules":  {
+                          "transport_failure":  "PRESERVE_FAILURE_AND_PARTIAL-TRANSFER ACCOUNTING; DO NOT CLAIM LABEL ACCESS",
+                          "integrity_failure":  "QUARANTINE_OR_RETAIN AS FAILED ACQUISITION EVIDENCE; DO NOT PARSE",
+                          "final_path_already_exists":  "STOP_NO_OVERWRITE",
+                          "unexpected_redirect_or_source_change":  "STOP_AND_ADJUDICATE",
+                          "label_payload_read_before_comparison_protocol":  "PROHIBITED",
+                          "tuning_from_label_evidence_into_original_frozen_version":  "PROHIBITED"
+                      },
+    "next":  "PHASE_4D3X_POSTHOC_LABELED_CONNLOG_ACQUISITION"
+}

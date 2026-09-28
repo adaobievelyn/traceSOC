@@ -1,0 +1,63 @@
+{
+    "record_type":  "tracesoc-phase3e-explain-validation",
+    "generated_utc":  "2026-09-14T13:24:52.6132607Z",
+    "phase":  "3E",
+    "parent_commit":  "a75fd502bb54988c1b3558275d191be2070ed0f2",
+    "command":  "python -m tracesoc explain FINDING-001",
+    "serialization":  {
+                          "serialization_id":  "tracesoc-finding-json-v1",
+                          "authority":  "project-control/phase3d1-finding-serialization-repair.json",
+                          "canonical_finding_sha256":  "fbb56699bb3f1dd5f75f5ccf153d10f0956be3940ed55a9edf3c9667e89e3c90",
+                          "historical_phase3d_sha256":  "c57f110ed7b3f27aed59f8e93f6908e39997aa30e91ba181c5030f0e093dc964",
+                          "historical_hash_superseded_for_reproducibility":  true
+                      },
+    "vertical_slice":  {
+                           "raw_to_result_path_complete":  true,
+                           "path":  [
+                                        "raw_record",
+                                        "RawLocator",
+                                        "CanonicalEvent",
+                                        "SemanticEvent",
+                                        "TRC-DET-001",
+                                        "TRC-CORR-001",
+                                        "FINDING-001",
+                                        "canonical_serialization",
+                                        "explain",
+                                        "raw_record_reverification"
+                                    ],
+                           "production_detector_count":  1,
+                           "production_correlation_count":  1
+                       },
+    "finding":  {
+                    "finding_id":  "FINDING-001",
+                    "canonical_sha256":  "fbb56699bb3f1dd5f75f5ccf153d10f0956be3940ed55a9edf3c9667e89e3c90",
+                    "hash_verified":  true,
+                    "malicious_intent_established":  false,
+                    "synthetic_fixture":  true
+                },
+    "evidence":  {
+                     "reference_count":  2,
+                     "raw_hashes_verified":  2,
+                     "line_and_byte_locator_consistency":  "PASS",
+                     "path_escape_rejection_tested":  true,
+                     "tamper_detection_tested":  true
+                 },
+    "validation":  {
+                       "python_compile":  "PASS",
+                       "tests_run":  48,
+                       "failures":  0,
+                       "errors":  0,
+                       "new_phase_tests":  8,
+                       "explain_two_run_identity":  "PASS",
+                       "explain_json_sha256":  "6ec35e5ea3d57c482cf3c9871c13976df25408c570b7c934e00d12574e3e2623"
+                   },
+    "implementation_files":  {
+                                 "src/tracesoc/__main__.py":  "3b3539eac758ce7897b8129bb1af6e9f669ba87fe0678f391b13bd40afbb7e40",
+                                 "src/tracesoc/cli/explain.py":  "295e234a1013ec49496a025011dcd815697ba176852ba366d1f1a5210aa67587",
+                                 "tests/unit/test_explain_finding.py":  "2c18fc7bddd6faa685ce782b9635092b252826912f5500a96f2e55b16b7bd70b",
+                                 "docs/explain-finding.md":  "4c11c7b7ccc0361b125c48dfa8947c0ea0b7efe0e3c7fb3ef206909dc8aabe65"
+                             },
+    "real_evidence_acquired":  false,
+    "second_detector_allowed":  false,
+    "next":  "PRE_PHASE4_DEFENSE_READINESS_GATE"
+}

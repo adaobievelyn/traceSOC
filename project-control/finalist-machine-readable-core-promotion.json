@@ -1,0 +1,97 @@
+{
+    "schema_version":  "1.0",
+    "record_type":  "tracesoc-finalist-machine-readable-core-promotion",
+    "technical_freeze":  {
+                             "commit":  "8751a679f36b4983cdd3d2b0b35f44e9a11c4f39",
+                             "tree":  "fc420ee3fd1988cf578c0cf309ee3aefcccf33b2"
+                         },
+    "source_generation":  {
+                              "record_path":  "project-control/finalist-package-core-dryrun-generation.json",
+                              "sha256":  "f59e0335eb1b8aa695fcbe761f894608cf17093e7db4e5b0dcf1c4fc19b327c2",
+                              "final_status":  "PASS",
+                              "strict_template_compliance":  true
+                          },
+    "supplied_template_authority":  {
+                                        "assessment_manifest":  "evidence/submission-templates/assessment-manifest-template.json",
+                                        "evidence_index":  "evidence/submission-templates/evidence-index-template.csv",
+                                        "timeline":  "evidence/submission-templates/timeline-template.csv",
+                                        "ioc_set":  "evidence/submission-templates/ioc-set-template.csv"
+                                    },
+    "superseded_root_artifacts":  [
+                                      {
+                                          "path":  "assessment-manifest.json",
+                                          "bytes":  2187,
+                                          "sha256":  "6603b6eaccc95ae593ca0bfbc77eb85ba19e3717e415fd78a7b68a280c1b04e3",
+                                          "disposition":  "SUPERSEDED_BY_TEMPLATE_COMPLIANT_FINALIST_CORE"
+                                      },
+                                      {
+                                          "path":  "evidence-index.csv",
+                                          "bytes":  23083,
+                                          "sha256":  "44d3ac8851482e4ec8b5f11596e0cb6d239625f0c312337ace0cea30b059b739",
+                                          "disposition":  "SUPERSEDED_BY_TEMPLATE_COMPLIANT_FINALIST_CORE"
+                                      },
+                                      {
+                                          "path":  "ioc-set.csv",
+                                          "bytes":  153,
+                                          "sha256":  "ba46259fae599800dbddc327beac3bc82cbdeeb70aa3939a9c658a6f6ed187de",
+                                          "disposition":  "SUPERSEDED_BY_TEMPLATE_COMPLIANT_FINALIST_CORE"
+                                      },
+                                      {
+                                          "path":  "timeline.csv",
+                                          "bytes":  6732,
+                                          "sha256":  "0acead58e62d4e6a6db192bf01bea7a844bd1853c49d78a2a346bc8c47565059",
+                                          "disposition":  "SUPERSEDED_BY_TEMPLATE_COMPLIANT_FINALIST_CORE"
+                                      }
+                                  ],
+    "promoted_root_artifacts":  [
+                                    {
+                                        "path":  "assessment-manifest.json",
+                                        "bytes":  4637,
+                                        "sha256":  "833dfce9304262c3ae23e2951eb4c25ba05e7dbcb66e7f441c149ef2252a7ade"
+                                    },
+                                    {
+                                        "path":  "evidence-index.csv",
+                                        "bytes":  9927,
+                                        "sha256":  "c595986b5538cac972cc2e4aa8c306fb5a16bfd09cbfabe9ef72de69153a37b7"
+                                    },
+                                    {
+                                        "path":  "finalist-evidence-ledger.json",
+                                        "bytes":  37764,
+                                        "sha256":  "2712a26b628a3e40d641d83dc2ba5b194cd1c14afad3b84d84047d18bd658ec0"
+                                    },
+                                    {
+                                        "path":  "ioc-set.csv",
+                                        "bytes":  153,
+                                        "sha256":  "ba46259fae599800dbddc327beac3bc82cbdeeb70aa3939a9c658a6f6ed187de"
+                                    },
+                                    {
+                                        "path":  "timeline.csv",
+                                        "bytes":  3855240,
+                                        "sha256":  "7761048806d90a9b6809a5b83f72c245fc01d39339809e92bd93a9d22cc585be"
+                                    }
+                                ],
+    "validation":  {
+                       "evidence_index_rows":  16,
+                       "timeline_rows":  5442,
+                       "timeline_blank_exact_locators":  0,
+                       "timeline_blank_artifact_paths":  0,
+                       "confirmed_malicious_ioc_rows":  0,
+                       "regression_tests_passed":  524,
+                       "regression_tests_failed":  0,
+                       "assessment_template_compliant":  true,
+                       "evidence_index_template_compliant":  true,
+                       "timeline_template_compliant":  true,
+                       "ioc_template_compliant":  true
+                   },
+    "boundaries":  {
+                       "product_source_mutated":  false,
+                       "holdout_rerun":  false,
+                       "stale_reports_deleted":  false,
+                       "stale_generators_deleted":  false,
+                       "continuity_record_finalized":  false,
+                       "integrity_attestation_finalized":  false,
+                       "final_reports_generated":  false,
+                       "manifest_sha256_generated":  false
+                   },
+    "final_status":  "PASS"
+}

@@ -1,0 +1,48 @@
+{
+    "record_type":  "tracesoc-phase4a-acquisition-design-validation",
+    "generated_utc":  "2026-09-14T13:32:16.2798818Z",
+    "phase":  "4A",
+    "parent_commit":  "5e14ef0f573926a2709555ad18c534e787fd1df0",
+    "purpose":  "DEFINE_REAL_EVIDENCE_ACQUISITION_CONTROL_PLANE",
+    "source_families":  [
+                            "SYSMON",
+                            "WINDOWS_SECURITY",
+                            "POWERSHELL",
+                            "ZEEK"
+                        ],
+    "roles":  [
+                  "DEVELOPMENT",
+                  "BENIGN_CONTROL",
+                  "HOLDOUT",
+                  "SCALE_TEST"
+              ],
+    "acquisition_contract":  {
+                                 "provenance_required":  true,
+                                 "license_or_terms_required":  true,
+                                 "sha256_required":  true,
+                                 "byte_size_required":  true,
+                                 "immutable_original_required":  true,
+                                 "pre_parse_accounting_required":  true,
+                                 "post_storage_hash_revalidation_required":  true,
+                                 "holdout_isolation_required":  true,
+                                 "source_selection_required_before_download":  true,
+                                 "source_labels_allowed_as_detector_selectors":  false
+                             },
+    "storage":  {
+                    "preferred_bulk_root":  "D:\\TraceSOC-Evidence",
+                    "mandatory_runtime_dependency":  false,
+                    "large_evidence_in_git_by_default":  false
+                },
+    "files":  {
+                  "project-control/evidence-acquisition-plan.md":  "cd4753e4e4b7cf46cf6e14c0a68682351079a4e24691790347c7ce0b78ca7e75",
+                  "project-control/evidence-acquisition-register.csv":  "9ab701bd09afe46219c6a30d6795608fbf8608f10348fce0bafddef7ad5675fa",
+                  "project-control/evidence-role-policy.md":  "e4ccdb94bacf0a47d99e6b82b40aecf8e44c0737bfcc7f02efc86c870ee6140b",
+                  "project-control/evidence-manifest-schema.json":  "ac97d81c947b2d9687350be351a6ba818a50d7ddd7d79a8547cbf64ea56f2ab1"
+              },
+    "register_rows":  0,
+    "real_evidence_acquired":  false,
+    "source_candidates_approved":  false,
+    "evidence_download_authorized":  false,
+    "control_plane_defined":  true,
+    "next":  "PHASE_4B_EVIDENCE_SOURCE_DISCOVERY_AND_ADJUDICATION"
+}

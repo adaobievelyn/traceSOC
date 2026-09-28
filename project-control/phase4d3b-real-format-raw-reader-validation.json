@@ -1,0 +1,69 @@
+{
+    "record_type":  "tracesoc-phase4d3b-real-format-raw-reader-validation",
+    "generated_utc":  "2026-09-15T10:07:37.2432847Z",
+    "phase":  "4D.3B",
+    "parent_commit":  "d4e38eb42ffd5e39af574ba826637f0e75c89f55",
+    "implementation":  {
+                           "xml_event_raw_reader":  "IMPLEMENTED",
+                           "zeek_ascii_raw_reader":  "IMPLEMENTED",
+                           "reader_sha256":  "cc4a606b417a29d8ca45867c37c7a1c2f5d63fdc79d649d9e29e9af89c34902a",
+                           "test_sha256":  "12219554bc8de310eb8be430afe4cb5d7c2d4192f535b0bc4675a4333734c684"
+                       },
+    "real_development_validation":  {
+                                        "powershell_xml":  {
+                                                               "accepted":  126,
+                                                               "byte_size":  2038252,
+                                                               "independent_record_count":  126,
+                                                               "locator_integrity_failures":  0,
+                                                               "logical_source":  "TS-DEV-SPLUNK-PS-001",
+                                                               "quarantined":  0,
+                                                               "total":  126
+                                                           },
+                                        "sysmon_xml":  {
+                                                           "accepted":  11618,
+                                                           "byte_size":  20091826,
+                                                           "independent_record_count":  11618,
+                                                           "locator_integrity_failures":  0,
+                                                           "logical_source":  "TS-DEV-SPLUNK-SYSMON-001",
+                                                           "quarantined":  0,
+                                                           "total":  11618
+                                                       },
+                                        "zeek_ascii":  {
+                                                           "accepted":  23145,
+                                                           "byte_size":  2926718,
+                                                           "independent_record_count":  23145,
+                                                           "locator_integrity_failures":  0,
+                                                           "logical_source":  "TS-DEV-IOT23-034-ZEEK",
+                                                           "publisher_label_columns_observed":  true,
+                                                           "quarantined":  0,
+                                                           "total":  23145
+                                                       }
+                                    },
+    "test_results":  {
+                         "pre_change":  "48/48_PASS",
+                         "targeted":  "5/5_PASS",
+                         "post_change":  "53/53_PASS"
+                     },
+    "evidence_contract":  {
+                              "exact_raw_byte_locator_validation":  "PASS",
+                              "locator_integrity_failures":  0,
+                              "unexpected_real_source_quarantine":  0,
+                              "case_specific_selector_hits":  0
+                          },
+    "unchanged":  {
+                      "canonical_model":  true,
+                      "existing_jsonl_adapters":  true,
+                      "detector_code":  true,
+                      "correlation_code":  true
+                  },
+    "holdout":  {
+                    "semantic_access":  false,
+                    "label_access":  false
+                },
+    "explicitly_not_complete":  [
+                                    "WINDOWS_SECURITY_TEXT_READER",
+                                    "FAMILY_SEMANTIC_MAPPING",
+                                    "EVTX_EXTRACTION_BOUNDARY"
+                                ],
+    "next":  "PHASE_4D3C_WINDOWS_SECURITY_TEXT_READER"
+}

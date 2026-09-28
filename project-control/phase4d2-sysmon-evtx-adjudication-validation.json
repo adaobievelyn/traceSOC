@@ -1,0 +1,44 @@
+{
+    "record_type":  "tracesoc-phase4d2-sysmon-evtx-adjudication-validation",
+    "generated_utc":  "2026-09-15T09:43:18.4057221Z",
+    "phase":  "4D.2",
+    "parent_commit":  "196abb93371eef972ae56252826dd443ec57e871",
+    "artifact":  {
+                     "filename":  "Microsoft-Windows-Sysmon%4Operational.evtx",
+                     "byte_size":  799084544,
+                     "sha256":  "efbc4d4cd450eddf7665f5965b0f6cfe30088f8f69225886e1d433329fb950cb",
+                     "archive_member_size_match":  true,
+                     "regular_archive_member":  true,
+                     "file_magic_valid":  true,
+                     "chunk_structure_observed":  true
+                 },
+    "windows_offline_record_counts":  {
+                                          "powershell_control":  121,
+                                          "security_control":  3448,
+                                          "sysmon_target":  0
+                                      },
+    "reader_results":  {
+                           "sysmon_get_winevent":  "NO_EVENTS",
+                           "sysmon_dotnet_eventlogreader":  "NO_EVENT",
+                           "sysmon_wevtutil_query":  "NO_EVENT",
+                           "sysmon_wevtutil_log_info":  "NUMBER_OF_LOG_RECORDS_ZERO"
+                       },
+    "adjudication":  "CONFIRMED_ZERO_RECORD_LOG",
+    "corruption_claimed":  false,
+    "extraction_failure_claimed":  false,
+    "parser_failure_claimed":  false,
+    "endpoint_benign_control":  "ACQUIRED",
+    "benign_powershell_events":  "ESTABLISHED",
+    "benign_security_events":  "ESTABLISHED",
+    "benign_sysmon_events":  "NOT_ESTABLISHED",
+    "external_acquisition_reopened":  false,
+    "adapter_requirement":  "ZERO_RECORD_EVTX_MUST_PRODUCE_VALID_EMPTY_INPUT",
+    "holdout":  {
+                    "semantic_access_events":  0,
+                    "label_access_events":  0
+                },
+    "parser_code_changed":  false,
+    "detector_code_changed":  false,
+    "consolidated_test_record_changed":  false,
+    "next":  "PHASE_4D3_REAL_FORMAT_INGESTION_IMPLEMENTATION"
+}

@@ -1,0 +1,75 @@
+{
+    "record_type":  "tracesoc-phase4d3v-posthoc-metadata-capture-validation",
+    "schema_version":  1,
+    "phase":  "PHASE-4D.3V",
+    "generated_utc":  "2026-09-16T12:09:34Z",
+    "result":  "PASS",
+    "parent_commit":  "91c3212aeb7dcd96fea009dce95b00cc9a23558a",
+    "objective":  "Freeze the complete registered publisher README captured only after HOLDOUT-EVAL-0001 was frozen, preserving post-hoc provenance and interpretation boundaries before any further holdout-result adjudication.",
+    "frozen_first_use_result":  {
+                                    "evaluation_id":  "HOLDOUT-EVAL-0001",
+                                    "path":  "results/holdout/HOLDOUT-EVAL-0001.json",
+                                    "sha256":  "35231e57f0eed7233e7ec2836cb1280766d72a485a4002191abcf4c033dc7143",
+                                    "detection_id":  "TRC-DET-004",
+                                    "matched_events":  0,
+                                    "nonmatched_events":  156458,
+                                    "original_result_modified":  false,
+                                    "original_evaluation_rerun":  false
+                                },
+    "pre_registered_expectation":  {
+                                       "cand011_trc_det004_positive_expectation":  "NOT_ESTABLISHED",
+                                       "expected_match_count":  "NOT_ESTABLISHED",
+                                       "holdout_objective":  "UNSEEN_NETWORK_GENERALIZATION"
+                                   },
+    "metadata_source":  {
+                            "source_id":  "TS-HOLD-IOT23V2-003-META",
+                            "filename":  "README.md",
+                            "sha256":  "7d82a173d60a19cbf7296cf58bdb828a10c536dced852d77cbde22b771265d37",
+                            "byte_size":  2649,
+                            "line_count":  49,
+                            "access_event_id":  "HOLDOUT-EVENT-0008",
+                            "access_class":  "PROVENANCE_METADATA_ACCESS",
+                            "complete_text_captured":  true,
+                            "selective_keyword_sampling":  false
+                        },
+    "metadata_capture":  {
+                             "comparison_id":  "HOLDOUT-COMPARE-0001",
+                             "path":  "results/holdout/HOLDOUT-COMPARE-0001.json",
+                             "sha256":  "e87fa358359a87b25460be0e58cf0ff6412556b7809a859a64323607cccd2524",
+                             "interpretation_performed":  false
+                         },
+    "access_log":  {
+                       "path":  "project-control/holdout-access-log.jsonl",
+                       "pre_comparison_sha256":  "220153660894ad60b02100354c012d48f2fc0bc9a86d932d4cd667873469f243",
+                       "post_comparison_sha256":  "99c39cd9f383596ba905c48348c20cd73a9d6feda53908273450adc800b25c71",
+                       "prior_seven_records_unchanged":  true,
+                       "records_after_capture":  8
+                   },
+    "literal_metadata_census":  {
+                                    "readme_identifies_capture_type_as_malware":  true,
+                                    "readme_identifies_name_as_muhstik":  true,
+                                    "readme_describes_separate_expert_labeled_zeek_artifact":  true,
+                                    "readme_describes_labels_config":  true,
+                                    "readme_irc_token_occurrences":  0,
+                                    "readme_trc_det004_token_occurrences":  0,
+                                    "note":  "Literal metadata properties only; no conclusion about whether IRC exists in the underlying traffic."
+                                },
+    "boundaries":  {
+                       "sealed_conn_log_reopened":  false,
+                       "label_bearing_holdout_artifact_opened":  false,
+                       "labels_accessed":  false,
+                       "rule_tuning_performed":  false,
+                       "analytic_code_modified":  false,
+                       "generalization_success":  "NOT_ESTABLISHED",
+                       "generalization_failure":  "NOT_ESTABLISHED",
+                       "underlying_irc_presence":  "NOT_ESTABLISHED",
+                       "underlying_irc_absence":  "NOT_ESTABLISHED"
+                   },
+    "validation":  {
+                       "access_log_append_only_verified":  true,
+                       "metadata_capture_sha256_verified":  true,
+                       "complete_metadata_lineage_verified":  true,
+                       "full_unit_regression":  "171/171 PASS"
+                   },
+    "next":  "PHASE_4D3W_HOLDOUT_METADATA_ADJUDICATION"
+}

@@ -1,0 +1,117 @@
+{
+  "adjudication": {
+    "classification": "CHALLENGE_PRECONDITION_CONSTRUCTION_FAILURE",
+    "corr002_30_second_boundary_tested": false,
+    "corr002_product_defect": "NOT_ESTABLISHED",
+    "product_defect": "NOT_ESTABLISHED",
+    "production_repair_required": false,
+    "reasoning": [
+      "The frozen Row-13 experiment requires the event-level detect_powershell_web_retrieval detector to MATCH and bind the supplied PowerShell event before CORR002.",
+      "The selected PowerShell parent for CHAL-TIME-002 is PARENT-PS-DET002-001 and its recorded evidence basis includes TRC-DET-002.",
+      "TRC-DET-002 reconstructed-script-block qualification does not establish that every contributing parent event is individually positive for the event-level TRC-DET-001 detector.",
+      "The generated Row-13 PowerShell event was accepted but TRC-DET-001 returned no_retrieval_primitive with no contributing event.",
+      "Because the detector prerequisite failed, correlate_powershell_detection_with_sysmon_process was not invoked and the inclusive 30-second CORR002 boundary was not tested.",
+      "Changing CORR002 or the PowerShell detector to make this challenge pass would therefore be unsupported by the observed failure."
+    ],
+    "subclassification": "DETECTION_CONTRACT_MISMATCH",
+    "unsafe_repairs_rejected": [
+      "Do not weaken the PowerShell detector so a non-qualifying event matches merely to reach CORR002.",
+      "Do not bypass detection-event contributor binding.",
+      "Do not alter the frozen matrix or original Row-13 input to retroactively turn the preserved RED into PASS.",
+      "Do not treat a TRC-DET-002-positive reconstructed group as proof that an individual parent event must satisfy TRC-DET-001."
+    ]
+  },
+  "challenge_id": "CHAL-TIME-002",
+  "challenge_inputs": {
+    "manifest_path": "tests/fixtures/challenges/cov010/CHAL-TIME-002/challenge-manifest.json",
+    "manifest_sha256": "2ea2f528d0e4de61303b8738a03172067299f8c9144968791c8c30485459ed3a",
+    "powershell_path": "tests/fixtures/challenges/cov010/CHAL-TIME-002/powershell.jsonl",
+    "powershell_sha256": "9922537e0f53097134812cf8fd700993528fdc67872078c475dab28d742f89b2",
+    "sysmon_path": "tests/fixtures/challenges/cov010/CHAL-TIME-002/sysmon.jsonl",
+    "sysmon_sha256": "bc6051ace1c83ac4b9c19506e34d80e6479ffad284def3f4e70a2821e7b76fe4"
+  },
+  "continuation": {
+    "cov010_may_close_now": false,
+    "row13_replacement_required_before_cov010_closure": true,
+    "row14_is_adjudicated_by_this_artifact": false,
+    "row14_shared_parent_precondition_risk": true,
+    "row_13": "RED_ADJUDICATED_CHALLENGE_PRECONDITION_CONSTRUCTION_FAILURE",
+    "row_14": "NOT_EXECUTED",
+    "row_15": "NOT_EXECUTED",
+    "row_7": "RED_ADJUDICATED_CHALLENGE_OBSERVABILITY_FAILURE",
+    "rows_1_through_6": "PASS",
+    "rows_8_through_12": "PASS"
+  },
+  "frozen_matrix": {
+    "execution_kind": "CORR002_EXACT_BOUNDARY",
+    "genuine_red_if": [
+      "Exactly 30 seconds is rejected as outside the established boundary.",
+      "The correlation matches without detection-event binding.",
+      "The correlation matches without the required identity dimensions."
+    ],
+    "pass_invariants": [
+      "PowerShell adapter accepts exactly one relevant event.",
+      "Sysmon adapter accepts exactly one relevant process_create event.",
+      "The PowerShell detector MATCHES and binds the supplied PowerShell event.",
+      "The observed directional delta is exactly 30 seconds.",
+      "TRC-CORR-002 MATCHES at the inclusive 30-second boundary.",
+      "A non-null correlation edge is returned."
+    ],
+    "path": "project-control/phase4i-challenge-execution-matrix.json",
+    "production_call_chain": [
+      "load_powershell_jsonl",
+      "load_sysmon_jsonl",
+      "detect_powershell_web_retrieval",
+      "correlate_powershell_detection_with_sysmon_process(max_seconds=30.0)"
+    ],
+    "sha256": "7545a2789072742cf9c62f9ae2e3980a790ec1b41f492009cdec65dd5c2c3070"
+  },
+  "integrity": {
+    "corpus_mutated": false,
+    "frozen_red_preserved": true,
+    "holdout_opened_for_adjudication": false,
+    "matrix_changed": false,
+    "production_logic_changed": false,
+    "raw_evidence_opened_for_adjudication": false
+  },
+  "matrix_ordinal": 13,
+  "parent_commit": "2b092aceb5a87f768a11c4322730fe8f2d7eed2b",
+  "parent_selection": {
+    "path": "project-control/phase4i-challenge-exact-parent-selection.json",
+    "powershell_parent": "PARENT-PS-DET002-001",
+    "powershell_parent_evidence_basis": [
+      "PHASE_4I-G3",
+      "TRC-DET-002"
+    ],
+    "row13_frozen_detector": "detect_powershell_web_retrieval",
+    "row13_frozen_detector_id_observed": "TRC-DET-001",
+    "row14_execution_state": "NOT_EXECUTED",
+    "row14_uses_same_powershell_parent": true,
+    "sha256": "b9838e2d9c8c9d81a6f0a5220442ee6652a8c396d4a1411ff5a8754049efb53e",
+    "time002_parents": [
+      "PARENT-SYSMON-POWERSHELL-PROCESS-001",
+      "PARENT-PS-DET002-001"
+    ]
+  },
+  "phase": "PHASE-4I-G7D13C",
+  "preserved_execution_observation": {
+    "corr002_boundary_result": "NOT_OBSERVED",
+    "corr002_invoked": false,
+    "directional_delta_seconds": 30.0,
+    "genuine_red_candidate_reason": "powershell_detection_did_not_match_frozen_boundary_input",
+    "observation_preserved": true,
+    "powershell_accepted_count": 1,
+    "powershell_detection_contributing_event_ids": [],
+    "powershell_detection_id": "TRC-DET-001",
+    "powershell_detection_matched": false,
+    "powershell_detection_reason": "no_retrieval_primitive",
+    "powershell_quarantined_count": 0,
+    "retroactively_reclassified_as_pass": false,
+    "state": "RED",
+    "sysmon_accepted_count": 1,
+    "sysmon_quarantined_count": 0
+  },
+  "record_type": "tracesoc-cov010-challenge-adjudication-v1",
+  "requirement_id": "COV-010",
+  "schema_version": 1
+}

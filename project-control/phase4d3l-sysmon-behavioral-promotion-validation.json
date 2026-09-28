@@ -1,0 +1,107 @@
+{
+  "behavioral_promotion": {
+    "canonical_event_identity_changes_expected_for_newly_promoted_families": true,
+    "event_identity_reason": "Canonical event identity includes event_type; evidence-adjudicated semantic promotion therefore deterministically changes canonical IDs for the newly promoted families while preserving raw locator and raw hash lineage.",
+    "event_type_counts": {
+      "dns_query": 89,
+      "file_create": 164,
+      "file_delete": 1389,
+      "named_pipe_connect": 12,
+      "named_pipe_create": 58,
+      "network_connection": 627,
+      "process_access": 8362,
+      "process_create": 349,
+      "registry_delete": 49,
+      "registry_set_value": 491,
+      "sysmon_event": 28
+    },
+    "newly_promoted_from_prior_generic": 11241,
+    "observed_clock_contract_preserved": true,
+    "prior_generic_events": 11269,
+    "promoted_source_event_ids": [
+      3,
+      10,
+      11,
+      12,
+      13,
+      17,
+      18,
+      22,
+      23
+    ],
+    "raw_events_discarded": 0,
+    "raw_lineage_preserved": true,
+    "remaining_generic_events": 28,
+    "remaining_generic_source_event_ids": {
+      "16": 1,
+      "25": 1,
+      "4": 2,
+      "5": 1,
+      "6": 8,
+      "7": 15
+    },
+    "structured_behavioral_events": 11590
+  },
+  "continuity": {
+    "clock_evidence_changed": false,
+    "correlations_created": false,
+    "detections_created": false,
+    "frozen_phase4d3k_clock_evidence": 8
+  },
+  "external_evidence_modified": false,
+  "generated_utc": "2026-09-15T16:16:25Z",
+  "holdout_accessed": false,
+  "implementation": {
+    "behavioral_test": "tests/unit/test_sysmon_behavioral_promotions.py",
+    "behavioral_test_sha256": "2d6e6dd167e45463ae11cc7a43c6108275b5224740de0550c29e616e52104bae",
+    "event1_test": "tests/unit/test_sysmon_event1_promotion.py",
+    "event1_test_sha256": "a603f8db5f79f8aa4c9ab2651c0e3ac2450572041550658aeae9b3ed2df3a889",
+    "parser": "src/tracesoc/parsers/sysmon.py",
+    "parser_sha256": "1ad6b2381f0fd0af3c510e32f901723f97d84db69b5c3037fa512e2fdf12472c",
+    "real_mapping_test": "tests/unit/test_sysmon_real_mapping.py",
+    "real_mapping_test_sha256": "28951f5d8d995130ba6ab673a13b781bed7fd723922b90d6c9e7c7ab831a8f91"
+  },
+  "next": "PHASE_4D3M_REAL_BEHAVIORAL_DETECTION_CANDIDATE_CENSUS",
+  "objective": "Promote the minimum evidence-supported real Sysmon behavioral telemetry families required for later generic detection and reconstruction while preserving raw lineage, observed clocks, semantic isolation, and unadjudicated families.",
+  "parent_commit": "4a73a277381c8375cf4e72b2c1e7f29df4b3715f",
+  "phase": "PHASE-4D.3L",
+  "record_type": "tracesoc-phase4d3l-sysmon-behavioral-promotion-validation",
+  "recovery_history": {
+    "boundary_gate_false_positive": true,
+    "boundary_gate_production_bug_established": false,
+    "production_repatch_required_for_stale_test": false,
+    "production_rollback_required": false,
+    "stale_historical_test_contract": true,
+    "stale_test_fixture_old_event_id": 3,
+    "stale_test_fixture_replacement_event_id": 25
+  },
+  "result": "PASS",
+  "semantic_boundary": {
+    "corpus_specific_production_selectors": false,
+    "expected_outcome_selectors": false,
+    "forbidden_semantic_leaks": 0,
+    "publisher_label_selectors": false,
+    "semantic_source_context_leaks": 0,
+    "source_event_ids_used_as_family_identifiers": true,
+    "source_event_ids_used_as_maliciousness_selectors": false
+  },
+  "source_evidence": {
+    "security_clock_crosscheck": {
+      "sha256": "b55c57fd0256fa73f55116f9ad307de3b7403f1ba7536c10431b56426a09bd89",
+      "source_id": "TS-DEV-SPLUNK-SECURITY-001"
+    },
+    "sysmon": {
+      "accepted_records": 11618,
+      "quarantined_records": 0,
+      "sha256": "8886e363b137555f5a0403783106e656b77e328fab2e503a645015f5e1cc3756",
+      "source_id": "TS-DEV-SPLUNK-SYSMON-001"
+    }
+  },
+  "validation": {
+    "full_unit_regression": "123/123 PASS",
+    "git_diff_check": "PENDING_FREEZE_SCOPE_CHECK",
+    "real_corpus_validation": "PASS",
+    "repository_text_integrity": "PASS",
+    "targeted_sysmon_contracts": "20/20 PASS"
+  }
+}

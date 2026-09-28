@@ -1,0 +1,37 @@
+{
+    "record_type":  "tracesoc-phase3a-contract-validation",
+    "generated_utc":  "2026-09-14T12:05:46.8344008Z",
+    "phase":  "3A",
+    "parent_commit":  "0ce9aca3a10a0e53702c7022a8f6f6010cfd07f6",
+    "continuity_authority":  "SUBMITTED_STAGE9A_PACKAGE",
+    "production_source_copied_from_stage9a":  false,
+    "implementation_origin":  "TRACESOC_NATIVE",
+    "contract":  {
+                     "raw_locator":  true,
+                     "canonical_event":  true,
+                     "semantic_event":  true,
+                     "deterministic_event_identity":  true,
+                     "detector_provenance_separation":  true
+                 },
+    "validation":  {
+                       "python_compile":  "PASS",
+                       "unittest_exit_code":  0,
+                       "unit_tests_run":  8,
+                       "unit_tests_passed":  8,
+                       "unit_tests_failed":  0
+                   },
+    "files":  {
+                  "src/tracesoc/models.py":  "31e6ee887ef7573f76ba971e94961da9f3f0bee302479999c97d20a0a3bde8ad",
+                  "src/tracesoc/evidence/identity.py":  "c512df0e48061aeef4b8f4a6c7c6518787e5a32c3da31355a880ce472896f389",
+                  "tests/unit/test_evidence_contract.py":  "e340724471bda6846021134700994208dc4f966b6be58ed52484412c74f62285",
+                  "docs/evidence-contract.md":  "2dcb1e8f90573ccf09c6c98b389c1186ae1a4f996a7076bcb96d62da2775a509"
+              },
+    "not_implemented_yet":  [
+                                "source_adapters",
+                                "detections",
+                                "correlation",
+                                "findings",
+                                "explain_cli",
+                                "response_validation"
+                            ]
+}

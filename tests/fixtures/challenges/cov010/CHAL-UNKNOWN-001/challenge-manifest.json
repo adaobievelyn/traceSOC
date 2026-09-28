@@ -1,0 +1,49 @@
+{
+  "base_parents": [
+    {
+      "exact_locator": {
+        "byte_length": 1238,
+        "byte_offset": 328537,
+        "line_number": 8314,
+        "record_index": 22
+      },
+      "parent_id": "PARENT-PS-DET002-001",
+      "record_sha256": "41f5b4b00ee630ab850ce3a4a313334f5a542c3480de15432190600f42c758a8",
+      "semantic_role": "DET002_MATCHED_POWERSHELL_EVENT",
+      "source_id": "TS-DEV-SPLUNK-PS-001",
+      "source_sha256": "ce45d417d0bd66e05939f835935dd24cfe6f55b257d7b2bb968c726ae378c8c3",
+      "telemetry_family": "POWERSHELL"
+    }
+  ],
+  "challenge_id": "CHAL-UNKNOWN-001",
+  "challenge_id_embedded_in_input": false,
+  "challenge_id_is_test_metadata": true,
+  "creation_timestamp_utc": "2026-09-17T10:13:44.7916301Z",
+  "execution_status": "NOT_EXECUTED",
+  "expected_analytical_boundary": "Unsupported input must not be coerced into a supported event family.",
+  "expected_answer_is_production_selector": false,
+  "expected_structural_effect": "XML remains well formed but identifies an unsupported provider/event.",
+  "generated_artifacts": [
+    {
+      "parent_ids": [
+        "PARENT-PS-DET002-001"
+      ],
+      "path": "CHAL-UNKNOWN-001/powershell.xml",
+      "sha256": "20c5ff8471b046678553c9bf78ef4e383e972719015f994eaa99e5fae812a24a"
+    }
+  ],
+  "mutation": {
+    "operator": "REPLACE_PROVIDER_AND_EVENT_ID",
+    "parameters": {
+      "event_id": 9999,
+      "provider": "TraceSOC-Unsupported-Provider"
+    }
+  },
+  "publisher_label_is_production_selector": false,
+  "purpose": "Unsupported provider, event, or log type.",
+  "raw_original_modified": false,
+  "real_incident_claim": false,
+  "record_type": "tracesoc-derived-challenge-v1",
+  "serialization_templates": [],
+  "tool_script_version": "1.0.0"
+}

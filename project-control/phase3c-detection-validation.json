@@ -1,0 +1,47 @@
+{
+    "record_type":  "tracesoc-phase3c-detection-validation",
+    "generated_utc":  "2026-09-14T12:52:40.0263264Z",
+    "phase":  "3C",
+    "parent_commit":  "78f9be52cd4b8c48a40165cd452d96a27b2e6221",
+    "detector":  {
+                     "detection_id":  "TRC-DET-001",
+                     "version":  "1.0.0",
+                     "title":  "PowerShell web-retrieval behavior",
+                     "production_detector_count":  1,
+                     "input_contract":  "SemanticEvent",
+                     "establishes":  "PowerShell web-retrieval behavior observed",
+                     "does_not_establish":  [
+                                                "malicious_intent",
+                                                "compromise",
+                                                "malware",
+                                                "initial_access",
+                                                "successful_payload_execution",
+                                                "business_impact"
+                                            ]
+                 },
+    "anti_hardcoding":  {
+                            "fixture_id_selector":  false,
+                            "expected_answer_selector":  false,
+                            "command_family_selector":  false,
+                            "known_ip_selector":  false,
+                            "stage9a_case_selector":  false,
+                            "forbidden_selector_hits":  0
+                        },
+    "validation":  {
+                       "python_compile":  "PASS",
+                       "unit_tests_run":  26,
+                       "failures":  0,
+                       "errors":  0,
+                       "new_detection_tests":  8
+                   },
+    "real_evidence_acquired":  false,
+    "correlation_implemented":  false,
+    "second_detector_allowed":  false,
+    "files":  {
+                  "src/tracesoc/detection/models.py":  "f4732cdab410e1037e2a4f15ec1a317e0492e748445fa83e648235f6fb66de87",
+                  "src/tracesoc/detection/powershell_web_retrieval.py":  "1744532a8e01bd163b51ea4e8914beeb6919694b9bac4babcc9a5c0b23573ea9",
+                  "tests/unit/test_first_behavioral_detection.py":  "6cce16adf426588d61447fd18d37ab74f5bb0371af950845ffb4bd588ca6aa67",
+                  "docs/first-behavioral-detection.md":  "7b1b5e8f08bfb5bc7faf79e428849da8070bf135a9aae3768b70f34514a36f2f"
+              },
+    "next":  "PHASE_3D_ONE_BOUNDED_CORRELATION_AND_FINDING_001"
+}

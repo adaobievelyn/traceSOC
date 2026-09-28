@@ -1,0 +1,36 @@
+{
+  "analytical_results_affected": false,
+  "controls": {
+    "abnormal_text_size_detection": true,
+    "giant_line_detection": true,
+    "invalid_utf8_detection": true,
+    "mojibake_detection": true,
+    "nul_byte_detection": true,
+    "structured_csv_validation": true,
+    "structured_json_validation": true,
+    "structured_jsonl_validation": true
+  },
+  "external_evidence_modified": false,
+  "generated_utc": "2026-09-15T11:20:52Z",
+  "holdout_accessed": false,
+  "implementation": {
+    "tests": "tests/unit/test_repo_text_integrity.py",
+    "tests_sha256": "b8d8158c6c904cc1188b73e28c19168815237260ef93da374bd2df5b54d62335",
+    "validator": "scripts/validate_repo_text_integrity.py",
+    "validator_sha256": "febee1aa9c019d8a45b48da9a668ca95351cda2b5e55e2c4b3475fc0ed194eca",
+    "validator_source_ascii_only": true,
+    "validator_test_source_ascii_only": true
+  },
+  "next": "FOUNDATION_FINAL_RECONSTRUCTION_AND_FREEZE",
+  "parent_commit": "d4e38eb42ffd5e39af574ba826637f0e75c89f55",
+  "phase": "FOUNDATION-A6",
+  "purpose": "Prevent recurrence of tracked text corruption including invalid UTF-8, mojibake, abnormal text growth, giant lines, NUL bytes and malformed structured control files.",
+  "record_type": "tracesoc-foundation-a6-text-integrity-validation",
+  "root_cause_addressed": "Repeated encoding-sensitive text rewrites caused historical defense-readiness checklist growth; the recovered checklist is retained and a repository validator now detects that corruption class.",
+  "validation": {
+    "focused_guard_tests": "6/6_PASS",
+    "full_unit_regression": "59/59_PASS",
+    "live_repository_text_integrity": "PASS",
+    "repository_integrity_issues": 0
+  }
+}

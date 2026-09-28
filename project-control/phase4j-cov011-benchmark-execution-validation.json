@@ -1,0 +1,60 @@
+{
+  "acceptance_boundary": {
+    "memory_threshold_bytes": 4000000000,
+    "result_must_be_adjudicated_before_COV011_promotion": true,
+    "runtime_threshold": null
+  },
+  "benchmark_execution": {
+    "rerun_performed": false,
+    "result_state": "PASS",
+    "runner_exit_code": 0,
+    "runner_invocations": 1
+  },
+  "execution_boundary": {
+    "COV011_promoted": false,
+    "benchmark_processing_attempted": true,
+    "detector_tuning_performed": false,
+    "five_source_integrity_preflight_attempted": true,
+    "new_data_acquired": false,
+    "production_logic_changed": false,
+    "real_cross_source_correlation_executed": false
+  },
+  "frozen_inputs": {
+    "protocol": {
+      "path": "project-control/phase4j-cov011-benchmark-protocol-v1.json",
+      "sha256": "bb646a390afe794fa631d8527cabe1f84cca4b3f9e9ab3fafdc8a4e1d3fcaa61"
+    },
+    "runner": {
+      "path": "scripts/run_cov011_benchmark_v1.py",
+      "sha256": "45b994a0f2b80fca70fb1c5e368f5219f9993c3867fe61bc0a602b76f1962cc8"
+    },
+    "source_resolution": {
+      "path": "project-control/phase4j-cov011-source-resolution-v1.json",
+      "sha256": "d895c95f2eef964c11b65512b0021aa94983f319974bbb0e4433279cbd34e57a"
+    }
+  },
+  "observed_complete_benchmark": {
+    "accepted_records": 198463,
+    "accounting_gate": "PASS",
+    "end_to_end_runtime_seconds": 15.9617856,
+    "integrity_preflight_seconds": 0.2800091,
+    "memory_gate": "PASS",
+    "peak_working_set_bytes": 486924288,
+    "processing_runtime_seconds": 15.6762686,
+    "quarantined_records": 0,
+    "semantic_events": 198463
+  },
+  "parent_commit": "6a3d67ffec692c6664c28c0ab2b111655274fc4d",
+  "phase": "PHASE-4J-E",
+  "record_type": "tracesoc-cov011-benchmark-execution-validation-v1",
+  "result_artifact": {
+    "path": "project-control/phase4j-cov011-benchmark-result-v1.json",
+    "result": "PASS",
+    "sha256": "33d05b38159fa4b67e9ec377028e4f6427c9466c58b47ab2e9a4c8facc35cc33"
+  },
+  "schema_version": 1,
+  "workload": {
+    "frozen_expected_records": 198463,
+    "source_count": 5
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "base_parents": [
+    {
+      "exact_locator": {
+        "byte_length": 145,
+        "byte_offset": 15950,
+        "line_number": 131,
+        "record_index": 122
+      },
+      "parent_id": "PARENT-ZEEK-DEV-IRC-001",
+      "record_sha256": "a3e082937a06bfebdc1be555d7a3a92badc35c8b2435f7386f491a4974410640",
+      "semantic_role": "DEVELOPMENT_ZEEK_IRC_CONNECTION",
+      "source_id": "TS-DEV-IOT23-034-ZEEK",
+      "source_sha256": "d69e49b2aae8c1bd33286936531658202dec47d989f0439bad3f8be180467a6e",
+      "telemetry_family": "ZEEK"
+    },
+    {
+      "exact_locator": {
+        "byte_length": 125,
+        "byte_offset": 504,
+        "line_number": 9,
+        "record_index": 0
+      },
+      "parent_id": "PARENT-ZEEK-BENIGN-ECHO-001",
+      "record_sha256": "3ae0e2fd02d2e93deda640166c775c6dcd7a29f44b72d94f4ed44b03371e1972",
+      "semantic_role": "BENIGN_ZEEK_CONNECTION",
+      "source_id": "TS-BEN-IOT23V2-ECHO-ZEEK",
+      "source_sha256": "f36db06e7d6ba7364e932a5b003f75835e004b320d70019e8a2f0ba8685d9262",
+      "telemetry_family": "ZEEK"
+    }
+  ],
+  "challenge_id": "CHAL-MIX-001",
+  "challenge_id_embedded_in_input": false,
+  "challenge_id_is_test_metadata": true,
+  "creation_timestamp_utc": "2026-09-17T10:13:44.7916301Z",
+  "execution_status": "NOT_EXECUTED",
+  "expected_analytical_boundary": "Processing in one test run must not leak source/label context between events.",
+  "expected_answer_is_production_selector": false,
+  "expected_structural_effect": "Development and benign Zeek records remain in separate schema-preserving inputs.",
+  "generated_artifacts": [
+    {
+      "parent_ids": [
+        "PARENT-ZEEK-DEV-IRC-001"
+      ],
+      "path": "CHAL-MIX-001/development-zeek.log",
+      "sha256": "b1739e6c3b63437aaff2b61fdb6e9d78142d8a8afb98c7ab202f874bf374c239"
+    },
+    {
+      "parent_ids": [
+        "PARENT-ZEEK-BENIGN-ECHO-001"
+      ],
+      "path": "CHAL-MIX-001/benign-zeek.log",
+      "sha256": "f3cc130f48f36e78dc34df00ddb20cd7ecf2adde12131de3d1c085cf2041d876"
+    }
+  ],
+  "mutation": {
+    "operator": "BUNDLE_DISTINCT_ZEEK_INPUTS",
+    "parameters": {
+      "physical_inputs": 2,
+      "single_merged_log": false
+    }
+  },
+  "publisher_label_is_production_selector": false,
+  "purpose": "Suspicious-context and benign Zeek records in one derived run.",
+  "raw_original_modified": false,
+  "real_incident_claim": false,
+  "record_type": "tracesoc-derived-challenge-v1",
+  "serialization_templates": [],
+  "tool_script_version": "1.0.0"
+}

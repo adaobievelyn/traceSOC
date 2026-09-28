@@ -1,0 +1,46 @@
+{
+    "record_type":  "tracesoc-phase4c6b-holdout-readjudication-validation",
+    "generated_utc":  "2026-09-15T08:59:11.8928883Z",
+    "phase":  "4C.6B",
+    "parent_commit":  "ada8e46f12cc5bc4bfb08fd457fca9541ec79ebf",
+    "aborted_candidate":  {
+                              "candidate_id":  "CAND-005",
+                              "scenario":  "CTU-IoT-Malware-Capture-9-1",
+                              "malware":  "Linux.Hajime",
+                              "partial_transfer_bytes":  47871986,
+                              "sealed_storage_written":  false,
+                              "register_changed":  false,
+                              "semantic_access":  false,
+                              "label_access":  false,
+                              "partial_files_retained":  false
+                          },
+    "replacement_candidate":  {
+                                  "candidate_id":  "CAND-011",
+                                  "scenario":  "CTU-IoT-Malware-Capture-3-1",
+                                  "malware":  "Muhstik",
+                                  "duration_hours":  36.12,
+                                  "packets":  496959,
+                                  "publisher_pcap_size":  "56 MB",
+                                  "plain_conn_log_size":  "17 MB",
+                                  "plain_conn_url":  "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset-v2/CTU-IoT-Malware-Capture-3-1/zeek-labeled/conn.log",
+                                  "role":  "HOLDOUT",
+                                  "decision":  "APPROVED"
+                              },
+    "diversity":  {
+                      "development_network_scenario":  "CTU-IoT-Malware-Capture-34-1 / Mirai",
+                      "holdout_scenario":  "CTU-IoT-Malware-Capture-3-1 / Muhstik",
+                      "malware_family_differs":  true,
+                      "publisher_differs":  false,
+                      "cross_publisher_holdout_diversity":  "NOT_ESTABLISHED"
+                  },
+    "isolation":  {
+                      "semantic_holdout_access_events":  0,
+                      "holdout_label_access_events":  0,
+                      "analytic_freeze_required":  true
+                  },
+    "registered_external_raw_artifacts":  13,
+    "raw_evidence_revalidation":  "13/13",
+    "downloads_performed":  0,
+    "consolidated_test_record_changed":  false,
+    "next":  "PHASE_4C7_SEALED_HOLDOUT_ACQUISITION_CAND011"
+}

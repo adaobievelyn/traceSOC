@@ -1,0 +1,140 @@
+{
+    "record_type":  "tracesoc-phase4h-real-event-level-release-evidence-validation",
+    "schema_version":  1,
+    "phase":  "PHASE-4H-C7",
+    "generated_utc":  "2026-09-16T15:25:18.3940208Z",
+    "result":  "PASS",
+    "parent_commit":  "55f07e23a7655919f63691d6f28ffcb1d10e2fb8",
+    "objective":  "Persist deterministic event-level real release evidence for frozen DET003 and DET005 while preserving frozen analytics, historical proofs, and control boundaries.",
+    "red_diagnosis_repair_green":  [
+                                       {
+                                           "stage":  "4H-C",
+                                           "observed_failure":  "DETECTION_EVIDENCE_IDS_MISSING",
+                                           "diagnosis":  "RELEASE_HARNESS_DETECTIONRESULT_LINEAGE_FIELD_ASSUMPTION",
+                                           "incorrect_assumption":  "DetectionResult.evidence_ids",
+                                           "grounded_contract":  "DetectionResult.contributing_event_ids",
+                                           "production_defect":  false
+                                       },
+                                       {
+                                           "stage":  "4H-C2",
+                                           "observed_failure":  "PROVENANCE_RAW_SHA_MISMATCH",
+                                           "diagnosis":  "RELEASE_HARNESS_PROVENANCE_HASH_SEMANTICS_ASSUMPTION",
+                                           "incorrect_assumption":  "Canonical provenance raw_sha256 equals registered whole-artifact SHA256",
+                                           "grounded_contract":  "Canonical provenance raw_sha256 hashes exact located record bytes; acquisition-register SHA256 identifies whole source artifact",
+                                           "production_defect":  false
+                                       },
+                                       {
+                                           "stage":  "4H-C4",
+                                           "observed_failure":  "OLD_PROVENANCE_CALL_SITES=1",
+                                           "diagnosis":  "RELEASE_HARNESS_TEXTUAL_CALLSITE_SHAPE_ASSUMPTION",
+                                           "incorrect_assumption":  "Both semantic call sites have identical textual indentation/layout",
+                                           "grounded_contract":  "Two AST call nodes exist: evaluate_powershell and evaluate_sysmon",
+                                           "production_defect":  false
+                                       },
+                                       {
+                                           "stage":  "4H-C6",
+                                           "repair":  "AST-bounded provenance_reference function and two-call repair",
+                                           "green_result_sha256":  "3b8c71f48e5ccaa69d616e2e0c637d7c67faf963bb786073d78defc79bef7214",
+                                           "deterministic_passes":  2,
+                                           "det003":  "5/5",
+                                           "det005":  "2/2",
+                                           "full_regression":  "198/198"
+                                       }
+                                   ],
+    "script_history":  {
+                           "original_abort_sha256":  "ab40e57e281f328b2c8ec6178f7c717a6a784d99422ffb34296932e8da4b1666",
+                           "contributing_event_ids_repair_sha256":  "972eec59c6c044cb5fb5a4b7507d734da11e3385e4930c7cc0ff72b3addfdfd6",
+                           "final_ast_repair_sha256":  "b36c4bb953f10d6632b47f57e44e083aa89155c8fca6092babf131d8b05c0b02"
+                       },
+    "event_level_result":  {
+                               "path":  "results/release/real-event-level-release-evidence.json",
+                               "sha256":  "3b8c71f48e5ccaa69d616e2e0c637d7c67faf963bb786073d78defc79bef7214",
+                               "deterministic_passes":  2,
+                               "registered_real_sources":  2,
+                               "det003_historical_matches":  5,
+                               "det003_reevaluated_matches":  5,
+                               "det003_unique_parent_event_ids":  5,
+                               "det003_raw_references":  5,
+                               "det005_historical_matches":  2,
+                               "det005_reevaluated_matches":  2,
+                               "det005_unique_event_ids":  2,
+                               "det005_raw_references":  2
+                           },
+    "lineage_contract":  {
+                             "detection_field":  "contributing_event_ids",
+                             "canonical_event_id_persisted":  true,
+                             "registered_artifact_sha256_persisted":  true,
+                             "exact_record_raw_sha256_persisted":  true,
+                             "byte_offset_persisted":  true,
+                             "byte_length_persisted":  true,
+                             "registered_artifact_sha256_verified_during_C6":  true,
+                             "exact_record_raw_sha256_verified_during_C6":  true
+                         },
+    "analytic_continuity":  {
+                                "analytic_freeze":  {
+                                                        "path":  "project-control/phase4d3s-analytic-freeze-proof.json",
+                                                        "sha256":  "aaebb493aaa927fce48f7cb6cb8ca33e699028722d6a3f7caecd59415c373bf5",
+                                                        "unchanged":  true
+                                                    },
+                                "det003_historical_proof":  {
+                                                                "path":  "project-control/phase4d3m-real-powershell-behavioral-detections-validation.json",
+                                                                "sha256":  "97426b62e04f6c49c48e17ad87495fd55de3825e8de5ea80b863cccd72a4a515",
+                                                                "unchanged":  true
+                                                            },
+                                "det005_historical_proof":  {
+                                                                "path":  "project-control/phase4d3o-sysmon-firewall-configuration-detection-validation.json",
+                                                                "sha256":  "53123ec14a704efdd1532ece4dc2ff52d98c77d378ab4a977bec00331f2fc66d",
+                                                                "unchanged":  true
+                                                            },
+                                "det003_rule":  {
+                                                    "path":  "src/tracesoc/detection/powershell_reconstructed.py",
+                                                    "sha256":  "4bc8befa4e788da25c4a096639fd7b502596e5eefe216150b93957d1cdccada1",
+                                                    "unchanged":  true
+                                                },
+                                "det005_rule":  {
+                                                    "path":  "src/tracesoc/detection/sysmon_firewall.py",
+                                                    "sha256":  "3bc6707502d0b8527297f77075745befd3f624bedfd679aafe2ad8241f79889a",
+                                                    "unchanged":  true
+                                                },
+                                "detection_models":  {
+                                                         "path":  "src/tracesoc/detection/models.py",
+                                                         "sha256":  "f4732cdab410e1037e2a4f15ec1a317e0492e748445fa83e648235f6fb66de87",
+                                                         "unchanged":  true
+                                                     },
+                                "detector_tuning":  false,
+                                "historical_proof_rewrite":  false
+                            },
+    "evidence_boundary":  {
+                              "raw_analytic_reevaluation_this_C7_phase":  false,
+                              "C6_raw_access_scope":  "EXACTLY_TWO_REGISTERED_REAL_ARTIFACTS",
+                              "C6_raw_access_mode":  "READ_ONLY_ANALYTIC_REEVALUATION",
+                              "raw_mutation":  false,
+                              "holdout_access":  false
+                          },
+    "science_boundary":  {
+                             "unrelated_real_corpora_joined":  false,
+                             "malicious_intent_newly_established":  false,
+                             "real_cross_source_correlation_claimed":  false,
+                             "inference_promoted_to_observation":  false
+                         },
+    "control_boundary":  {
+                             "claim_register_rows":  0,
+                             "claim_register_changed":  false,
+                             "requirements_changed":  false,
+                             "PRE_001":  "PARTIAL",
+                             "PRE_002":  "PARTIAL",
+                             "PRE_003":  "PARTIAL",
+                             "reason":  "This phase persists the event-level evidence layer. Authoritative material-claim registration and requirement adjudication remain the next bounded phase."
+                         },
+    "validation":  {
+                       "unit_tests":  177,
+                       "integration_tests":  21,
+                       "total_tests":  198,
+                       "failures":  0
+                   },
+    "implementation":  {
+                           "script_path":  "scripts/build_real_release_event_evidence.py",
+                           "script_sha256":  "b36c4bb953f10d6632b47f57e44e083aa89155c8fca6092babf131d8b05c0b02"
+                       },
+    "next":  "PHASE_4H_RELEASE_CLAIM_FINALIZATION"
+}

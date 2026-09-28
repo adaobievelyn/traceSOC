@@ -1,0 +1,104 @@
+{
+    "record_type":  "tracesoc-phase4d3q-real-correlation-coverage-adjudication",
+    "phase":  "PHASE-4D.3Q",
+    "generated_utc":  "2026-09-16T10:25:02Z",
+    "result":  "PASS",
+    "parent_commit":  "80ae1d4940d894f502bf10d3e6475744b911ee90",
+    "objective":  "Freeze the evidence-based conclusion that the current acquired and frozen development analytic surface contains four real detectors but zero open and zero justified real cross-source correlation surfaces, without manufacturing a correlation to satisfy coverage expectations.",
+    "detector_inventory":  {
+                               "real_detector_count":  4,
+                               "real_detector_ids":  [
+                                                         "TRC-DET-002",
+                                                         "TRC-DET-003",
+                                                         "TRC-DET-004",
+                                                         "TRC-DET-005"
+                                                     ],
+                               "synthetic_reference_detection_id":  "TRC-DET-001",
+                               "production_detector_inventory_changed":  false
+                           },
+    "production_correlation_surface":  {
+                                           "correlation_ids":  [
+                                                                   "TRC-CORR-001"
+                                                               ],
+                                           "real_development_correlations_justified":  0,
+                                           "open_real_correlation_surfaces":  0,
+                                           "correlation_creation_required_by_current_evidence":  false,
+                                           "zero_real_correlation_result_acceptable":  true,
+                                           "future_correlation_impossibility_claimed":  false
+                                       },
+    "development_scenario_coverage":  {
+                                          "powershell_ad_discovery_telemetry_families":  [
+                                                                                             "POWERSHELL"
+                                                                                         ],
+                                          "security_sysmon_defender_disabling_telemetry_families":  [
+                                                                                                        "SYSMON",
+                                                                                                        "WINDOWS_SECURITY"
+                                                                                                    ],
+                                          "zeek_iot23_capture_34_telemetry_families":  [
+                                                                                           "ZEEK"
+                                                                                       ],
+                                          "provenance_grouping_used_as_production_selector":  false
+                                      },
+    "eligibility":  {
+                        "TRC-DET-002":  {
+                                            "source_family":  "POWERSHELL",
+                                            "status":  "NOT_ESTABLISHED",
+                                            "basis":  "No second registered telemetry family is established in the same acquired PowerShell development scenario."
+                                        },
+                        "TRC-DET-003":  {
+                                            "source_family":  "POWERSHELL",
+                                            "status":  "NOT_ESTABLISHED",
+                                            "basis":  "No second registered telemetry family is established in the same acquired PowerShell development scenario."
+                                        },
+                        "TRC-DET-004":  {
+                                            "source_family":  "ZEEK",
+                                            "status":  "NOT_ESTABLISHED",
+                                            "basis":  "README, PCAP, and connection-log companion artifacts remain one registered ZEEK telemetry family; a second independent canonical telemetry family is not established."
+                                        },
+                        "TRC-DET-005":  {
+                                            "source_family":  "SYSMON",
+                                            "candidate_other_family":  "WINDOWS_SECURITY",
+                                            "status":  "CLOSED_NOT_ESTABLISHED",
+                                            "basis":  "The same acquired scenario contains Windows Security and Sysmon, but the tested DET005 ProcessGuid owner and Windows Security identity chain were not established."
+                                        }
+                    },
+    "det005_relationship_closure":  {
+                                        "sysmon_process_create_owner":  "NOT_ESTABLISHED",
+                                        "windows_security_identity_chain":  "NOT_ESTABLISHED",
+                                        "security_correlation_justified":  false,
+                                        "established_security_sysmon_clock_evidence_anchors":  8,
+                                        "boot_process_anchors_promoted_to_detections":  false,
+                                        "duplicate_boot_process_correlation_edges_created":  0
+                                    },
+    "prior_probe_repairs":  {
+                                "initial_q_a_failure":  "ID walker inspected dictionary values but omitted dictionary keys.",
+                                "q_a1_failure":  "Probe unnecessarily required unit-test source to repeat literal detection ID strings.",
+                                "production_defect_established":  false,
+                                "detector_inventory_changed":  false,
+                                "repository_mutated_by_failed_probes":  false
+                            },
+    "claim_boundary":  {
+                           "current_real_cross_source_correlations_justified":  0,
+                           "current_open_real_correlation_surfaces":  0,
+                           "no_future_correlation_possible":  false,
+                           "synthetic_reference_correlation_proves_real_development_correlation":  false,
+                           "absence_of_current_real_correlation_is_not_evidence_loss":  true
+                       },
+    "analytic_boundary":  {
+                              "detections_created":  0,
+                              "correlations_created":  0,
+                              "findings_created":  0,
+                              "time_based_cross_source_join_created":  false,
+                              "security_clock_mutated":  false,
+                              "publisher_label_selectors":  0,
+                              "expected_answer_selectors":  0,
+                              "holdout_accessed":  false
+                          },
+    "validation":  {
+                       "repaired_detector_inventory":  "PASS",
+                       "correlation_coverage_reproduction":  "PASS",
+                       "full_unit_regression":  "168/168 PASS",
+                       "repository_text_integrity":  "PASS"
+                   },
+    "next":  "PHASE_4D3R_ANALYTIC_FREEZE_READINESS_CENSUS"
+}

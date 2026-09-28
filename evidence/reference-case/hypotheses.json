@@ -1,0 +1,246 @@
+{
+  "case_id": "case_6bfc43f87590a1f654df3473d9d15c08e17304ed5030d191b4248ee3f4ee2348",
+  "case_schema_id": "tracesoc-case-v0.4.5a",
+  "hypotheses": [
+    {
+      "alternative_or_falsifier": "A mismatch in host, exact process ID, PowerShell process family, event direction, or the bounded time predicate falsifies this relationship.",
+      "contradicting_relationship_ids": [],
+      "detection_result_ids": [
+        "detres_64cc608aaddaeebd801dc7d228bcd32eb5196c9547e5d91945e8684510b16966"
+      ],
+      "evidence_state": "CORROBORATED",
+      "hypothesis_id": "hyp_0c9d4f716f1409455574fd0f1d3b76da9abd236cb9d81ca1da946763e328f74a",
+      "hypothesis_key": "powershell-process-corroboration:evt_bf89c58d4a6d99539abb32b05e7d5e059e1698e7528071eb98cd1ed62929707f:evt_97afd387a33264b4c849809b0c2fac06ff4ad494f6b6134db6ceb924b8ca9c94",
+      "observation_ids": [
+        "evt_97afd387a33264b4c849809b0c2fac06ff4ad494f6b6134db6ceb924b8ca9c94",
+        "evt_bf89c58d4a6d99539abb32b05e7d5e059e1698e7528071eb98cd1ed62929707f"
+      ],
+      "rationale": "TRC-CORR-002 v2 matched source-native reconstructed PowerShell and Sysmon evidence on host, exact process ID, PowerShell process family, direction, and bounded time. No local-IP or principal equivalence is invented.",
+      "statement": "Observed PowerShell behavior is corroborated by a bounded Sysmon PowerShell process-creation observation.",
+      "supporting_relationship_ids": [
+        "rel_1913dfbf139a1f0f10c677fb6835529891a0bb9f8d42a18148f917e58e410944"
+      ]
+    },
+    {
+      "alternative_or_falsifier": "A mismatch in source IP, source port, destination IP, destination port, transport protocol, or the bounded timestamp tolerance falsifies this cross-source correlation.",
+      "contradicting_relationship_ids": [],
+      "detection_result_ids": [
+        "detres_eaf458f96c5830a29bc31576a8b70ae6df946fc230080d774be8da4213d3d6da"
+      ],
+      "evidence_state": "CORROBORATED",
+      "hypothesis_id": "hyp_6c57a9669643ff23533f14953c83d12998fc4ef1f64f578eae50ea1798e4fc1b",
+      "hypothesis_key": "sysmon-pcap-network-corroboration:evt_6e07f62c27070c0689cdb0b940db706708fe121f9115f714aa5c1ee48a8c93c6",
+      "observation_ids": [
+        "evt_05a01f0589c99c050bde04ac07ac66c9ba409bac9a1b1c3e80e28c2b055efdc6",
+        "evt_0b05ff0f379ef0c8ac809a4f6748e83f9b999ba090b2affb3b77463383274542",
+        "evt_15d8252410e37d32d0bc50cccb9ce4fdb5a37121182f182301d32a2dde48bdfe",
+        "evt_17fb863b185a04b3715d64a503ade8e9bf6ff44e7c46ea8357b17381d5cbe497",
+        "evt_214706e52777a69a3ad5d03739492a98c4d570c6265e24badbd936c3ee1f27c6",
+        "evt_2e337addd5e96d7c151a7cd5b894d3e0fed9df88db3f2353d20420ac07a85a4e",
+        "evt_48347e4940ef015c03b14a6aac4febe10ec04f8df25478b0d6bb0b89d76173b5",
+        "evt_4e73ed14afab2b1f0aa9b278ee4b3ff4cd6bffb53da71c0159dddf4e821f67e8",
+        "evt_5be317a1466dce0af38c89ec8b370143b68a4056c6581f6aa73d10ff57abe0d7",
+        "evt_6321b11a4d8e8d81c1197e1c9a3f32bfb4597ca6aded940b4b2257184ffd2761",
+        "evt_6e07f62c27070c0689cdb0b940db706708fe121f9115f714aa5c1ee48a8c93c6",
+        "evt_776053ea226a66a3f844e326d79f28e53cd471fe36073b5f6cac76badddde2c8",
+        "evt_8896231d25b40d0d3bc87bcd75b62f017b6271d52f7b4f022989fa57465f7d7c",
+        "evt_a0aa57855e9383a1c400a2126ec65aa80840843a14fffdd966913e9fcfb27f78",
+        "evt_a3f75253cd991620c0f7a084ffb9757a4556bf66f99a44739ff2d8fbddc35523",
+        "evt_ebbc5522e994dbff583a9cd9c36a565e712cc17a0fb550952c703fa02970115e",
+        "evt_ef329f35d8c927a72b819546578446eec0c372dc5b55efdc65b44880c9076616",
+        "evt_f369e65eba934aac0ec2875bdbc53c74bbada036735819b9d01626be3aea468a",
+        "evt_f780488b9ebe39da1128f8aadefb255e6bc1b517958ed2bf017280fdc10b5dfc"
+      ],
+      "rationale": "TRC-CORR-003 matched 18 preserved PCAP packet observations to one Sysmon network observation on source IP, source port, destination IP, destination port, transport protocol, and bounded-time support. Every packet-level relationship and raw locator remains preserved, but capture multiplicity is not promoted into multiple analytical conclusions. No packet-to-process causality, malicious intent, or incident membership is asserted.",
+      "statement": "Observed Sysmon PowerShell-initiated network activity is corroborated by one or more preserved PCAP packet observations with the same network 5-tuple within bounded time.",
+      "supporting_relationship_ids": [
+        "rel_015a188e476ec8a685bab6433dfdff3b3048f3edacf8ec92b8812bb9d09e5106",
+        "rel_0bc734cc355206774beb4433776d5d6894dcc399f6954ec685cc12dc446ec241",
+        "rel_0c74b1977ef3255739c58b52955c1d3ef19937cce25d5b1dcf9da9466f9fceea",
+        "rel_14022a62e518fac8c970d31f4c409714e035b4c59603ed795e71eb03437550f8",
+        "rel_40dc74e7f484acea9208ee919c2482cd5796f257d54941f64687df2b2ecd9ff1",
+        "rel_46feb3a9d67166af08ebe6ac879022c1c0ab6877693a6c12503e4ce131bd40bb",
+        "rel_4eb4014d3363c740459d6252c20fb7f6b578269eaf1da4ace22222011c10d666",
+        "rel_5165bb715c3954a30c6c76a5a5b8765260b1319653d41b047bba4d6b3c9add6f",
+        "rel_6f345fb03ae302af32182a7114e31a62d1ef7bd9895e86fc345c75e49faa4add",
+        "rel_6f5a3ef4fada7dbaa38f4b6a7ef44c423f328d82ff2312f98a526e5323b87b05",
+        "rel_7d0e7aa3fca76e38808dc072227b4f4fabe35bea9af4593c12f7a198c9d02a0c",
+        "rel_81108e897f84e902c3cbe6759cf247b76f2f3d7352c1859e948d07daa8b9ca76",
+        "rel_87d644c3297ae29f96b4807ef9f05163d8fa0789a98e9506c88c37065257c297",
+        "rel_9e0a76ce501d2d303e9d7e16621fde958cf66c5662e45410ec5ab2eb220846b8",
+        "rel_a327f650d1d1c48ca2214cf893360de0b305a7efaf2beea5e416f7fa9ab52ac7",
+        "rel_fa02a595dde642be9f11b79e5aaaca7a501568760b197115a2096c2d3ed2273a",
+        "rel_fd04fa279f98471088e701eabf8fbd1a43f00e8742c552f8bcea3d585876a7ce",
+        "rel_feab06f2a94aea063623f25a19ae44246ddd2ba951cf1931c77e5e46b9de0afa"
+      ]
+    },
+    {
+      "alternative_or_falsifier": "A mismatch in the script-observed destination IP, destination port, event direction, or bounded time predicate falsifies this relationship. Source-host attribution remains explicitly unestablished by Zeek.",
+      "contradicting_relationship_ids": [],
+      "detection_result_ids": [
+        "detres_64cc608aaddaeebd801dc7d228bcd32eb5196c9547e5d91945e8684510b16966"
+      ],
+      "evidence_state": "CORROBORATED",
+      "hypothesis_id": "hyp_b152d1fdda2c3db9d324c85409d133b580bc5600bb48a05f4129e8a150e1004c",
+      "hypothesis_key": "powershell-web-retrieval-network:evt_bf89c58d4a6d99539abb32b05e7d5e059e1698e7528071eb98cd1ed62929707f:evt_a3127343f908e9d868dbd09d88fc796da821719f7daca7b2ea9ffa1583a96ce9",
+      "observation_ids": [
+        "evt_a3127343f908e9d868dbd09d88fc796da821719f7daca7b2ea9ffa1583a96ce9",
+        "evt_bf89c58d4a6d99539abb32b05e7d5e059e1698e7528071eb98cd1ed62929707f"
+      ],
+      "rationale": "TRC-CORR-001 v2 matched source-native reconstructed PowerShell and Zeek evidence on script-observed destination IP, destination port, direction, and bounded time. No Zeek host attribution or PowerShell local-IP equivalence is invented.",
+      "statement": "Observed PowerShell web-retrieval behavior is corroborated by bounded network telemetry.",
+      "supporting_relationship_ids": [
+        "rel_448228bbde980e17a396eec9ae857fefbffc240e24b76e84ead3b791c56111dd"
+      ]
+    },
+    {
+      "alternative_or_falsifier": "A mismatch in source IP, source port, destination IP, destination port, transport protocol, or the bounded timestamp tolerance falsifies this cross-source correlation.",
+      "contradicting_relationship_ids": [],
+      "detection_result_ids": [
+        "detres_7fe30aac44b4bbd88dc5f64b5fdc5a21ed758fd2d9a2eae90fce8add4c761f97"
+      ],
+      "evidence_state": "CORROBORATED",
+      "hypothesis_id": "hyp_b8d2bb74844cddf13f733df91f8676830f62932909370e58dc0d4ee8c8a47025",
+      "hypothesis_key": "sysmon-pcap-network-corroboration:evt_455c44f6bda3e2bd93a42c56f79975e78ac4e0fc1c5431966926960b6fef877b",
+      "observation_ids": [
+        "evt_014d7f21c64dc7aea3a57c8df7b6d9a32a50b472ff95772aef0d2620998428bd",
+        "evt_037b03d82b96cce6663c45c1e8be0870f07b2b877bfe4d0d94873d33a28f1242",
+        "evt_0c43179e78c9d4dfa315cacfbe086ac529ecb45b6bbdef923fd3da0f0dda3e2b",
+        "evt_1749acc8d88f0b8fbb9a0faeef320fc09c392325095af1479011e8324af2be8d",
+        "evt_1bc045126689c5da06175fbb6b0c245f4e56d4c4dc91c33e697c5e48c0652b3f",
+        "evt_310689761a69ba5d168b2017acb104c9e6cd744b0e0c7b8a0cbde8cfa31e1567",
+        "evt_335f515c42610cd6e8f90ba32b68e6d656d094a60d7388cac5852dcb250351a1",
+        "evt_3a25f7363413dd85fc418661282d6e8d9151177037bbd758601b43d8c5f3539e",
+        "evt_3d97b0cc553aef946d41b942547c49c71d2cadacb4032c031792c3fcff24d9af",
+        "evt_3e378246f8917956bf6aea7af41fd2082f1e673852c9b16b6928a3cdccb2f43e",
+        "evt_3eee3dc9c36dc230c1f0ba20aa9e086683c8ff08f6e77abb7367dee611b3e32b",
+        "evt_3f4eff139ad31afe12e30abd2413e4874294d83a03f0f37796be80a592edf866",
+        "evt_455c44f6bda3e2bd93a42c56f79975e78ac4e0fc1c5431966926960b6fef877b",
+        "evt_4778e507c8c5a51faa76da2890b28c7819cfc67bc928f1eeb08a97730f789380",
+        "evt_50d0439e515b9457bb62dd3cfa877d9643b4bc4bec383d68164146e13eeaf7ce",
+        "evt_58d5614bb02386f177c9d630fd23d7d4d44ba0730fade52397132ee74c246af1",
+        "evt_5cc9f3b58c3ca4a0ec7415a531fe7a56b7d70c94ab7e6188c3625664552480be",
+        "evt_6052dbd84cb988e598e801b75b9cfe9b0edcf1c72e10bb5d7845b4d9b4013a1e",
+        "evt_63227b5e6aaccd1ee8c3de5cb9ac9944d2d787fd624a191c50854435197056c0",
+        "evt_6727485b9aae5abb3abb18860af14a0fcde14d4bf3eddc248f3a8eb170401a59",
+        "evt_6ca04145e5428149e85e7c1c153f62667bbce5b3f859f09a457fbc1e4f65bd5b",
+        "evt_706a720e0c6b401cedda0f9a242c11348980787f30e0c711ce019f0733777f8e",
+        "evt_72d3392f95bd7024be369b81483b8f96b41d5ed75a8f9bbc5446873f8b4649f3",
+        "evt_7ad629a0c75add81766c0426e1565b80c1a5f1aa1a5881ebe7efa03ffcf29629",
+        "evt_89876bda089b87f782caa77249530492943ba2ff9d00a01e8d6d77edacd86c21",
+        "evt_9ae73798e14ef34ea9444cde4e8bb354f4c161675870f82ce075a886bf137e23",
+        "evt_9ba3518a11c21bae5b386720abc501f41553517fa07f5308f6dd17cfd1c20d75",
+        "evt_9bca574dffbe40f64bd76c4b9642bbe14f5c9ff132f6435e48dc153925835cc5",
+        "evt_a1f6d2b164fc2ace4bd1e59a278ab5628b8ff46c9368ebd41c5a93dc77ef5ca9",
+        "evt_a2ca6f9cd46a2a49fbf5d2a7e95a0d3fa2ff7662ba1543a689c094df5a6e9a6e",
+        "evt_a7162cd45a5edce4fd2e596d95095e5cbc0acaa1a8f3227fa82471666a048e60",
+        "evt_a931c7c8eb7606531f705004f086d54c7b57549ae246214e033559959c113de3",
+        "evt_aaca13380c755f721decc923f8233bf2d974247505fb71a0f3f746b27564fe2b",
+        "evt_b7aa67b95e8b71610f65619be752ae8fee7be1c62e924c631ec1dde103144e85",
+        "evt_b866024bcc5ae87dd633ca2a6e6daf9d6abb2576db2f0fc485a52084b5b72cbf",
+        "evt_ce45cc39a7c6068711ffd5170a408b9995370ac22d9811ab7e9752a3f54e13bf",
+        "evt_d0a521b47b1756ee64667ab6a9463428712ade0c10809297c02dd69c01b831cd",
+        "evt_d56fb6d216cb37303cb0d4031cb0e4721cdbd7538ed0c15509f2e70201cd381f",
+        "evt_db31b9dc67cc5cb6c2053978352bfc810e8be21ddb5dc185f690d617fcb434a5",
+        "evt_ea82806289e70ab6178e232233962a13c14d528147e9e490f729c020290ab290",
+        "evt_ee82abf14d4f50cb26240c633d15b5d72040538a9da1821ed05b6fe0ea53f5c9",
+        "evt_f26be3bc51d247afe265037310c46c503aee2621d304da7d162aabfaeb79ed35",
+        "evt_f8fffaf180f1d658e4b75bc750d2a6e1bb06186ca936b7e7f1f2a2bb57a1f8b8"
+      ],
+      "rationale": "TRC-CORR-003 matched 42 preserved PCAP packet observations to one Sysmon network observation on source IP, source port, destination IP, destination port, transport protocol, and bounded-time support. Every packet-level relationship and raw locator remains preserved, but capture multiplicity is not promoted into multiple analytical conclusions. No packet-to-process causality, malicious intent, or incident membership is asserted.",
+      "statement": "Observed Sysmon PowerShell-initiated network activity is corroborated by one or more preserved PCAP packet observations with the same network 5-tuple within bounded time.",
+      "supporting_relationship_ids": [
+        "rel_0606ec896b7b7eaf708f489eb019a39f9591e1d2aea3e35e5389efb3da211216",
+        "rel_0b3736552576ce96a71f852f3d93898d700472db590256a382abfc8f78c7102a",
+        "rel_140bab5cabc39ad361957ea7410f9c6c9894cba4c4a45d9ec9577db22f8c25ba",
+        "rel_189352e4ddab4eb7235faded33ed66119295795a13df664db7bd96cc85d6dff5",
+        "rel_1c200a732991d38efed2e90cdd43d413fbc947123867b7c58d9002fc7c01f54c",
+        "rel_280b0a7bef144bc33afa5eb2cea891ff84ed4bac3e337b51e03fa24c2786d25e",
+        "rel_2e4d0be30ebad2cc96b71fceabda443cc3448d74cf137ebe4d4cc90466374d0a",
+        "rel_33d183560374991f959d00e69d2814ebef4ec565704e5488d457661256b83c9a",
+        "rel_3ba6de19893fd875dc66104b945e81f43498f8784635e441bbb247e88618e16e",
+        "rel_3e5d7add1cabf7b9be14e9e3c692d7bd2f7b26c7dcdb2cfa7307ac8986eef437",
+        "rel_412799b57b3391485ad59bc9f997fe61ed9a3befaf83b609501760a99007fdaa",
+        "rel_423dc315ad72bb7f1fd510a7f45904a472868725ffd377c9c10241616ee10297",
+        "rel_46abc016c41e41273e4cba2a489632a301ee639e0f35303c3e1e5217a7eea480",
+        "rel_58de10dc42872313ed3e508e08aafdd2addc1b97d1c3aef883a25f930e00d05a",
+        "rel_64de6c58d6740b8c47309e849a59eb9186079d85c9a56b23c2622ef7abe59df6",
+        "rel_66a8fed2843823bbb5fe081637990a131297a3b5ac8fac65f29bf5df64980b65",
+        "rel_7daca7f9a45e031dd93afcd2354bf7434540eb08a61ba6fb170cca63e2931be7",
+        "rel_86107e6e227076382a9a537cb83b5487d22fee9266e782cb1f4fe6fb0b284e25",
+        "rel_8c0845802cc20a5f5163686392e668ec0b146f3da197a16ac4cc37bb9bb0ec49",
+        "rel_9230b882bb1268a9ab76030c94b8ae849cea57ea764a72e56d35e2b742947ecf",
+        "rel_a2b4b95f7956f328b3cea1571fd16abac161935b3400969e22dc493d8dc8cd09",
+        "rel_a2b84b54089fdd4497f8084f21ccca4ff4a1444399e5295e420e8bcc811ad23e",
+        "rel_a5dc490569ed68a913452d993520d0f9bed28ca9b555569adbec12a8659670e3",
+        "rel_a7770bb953481590659e45d1ae66395ab77259094451d64a23b2838f60f01a00",
+        "rel_a82f55be93a841de5e392773fe8d0ddd99e9b86b0f3fd9a8efcd71c00ed0c108",
+        "rel_ad3d2d88cc9509da2fe4ed5bcdfc77d301da4ab1894127e787ee5de2df410355",
+        "rel_b1403337c73bbcbe2aacfa547f9e26ac53fdb428f36be2d615573b8848c69726",
+        "rel_b768a98c2372ad737fc0bb19867b142d8111cd92d358ae013ec2079995f05e4c",
+        "rel_b8f87257d47366ab3fbf5f96e2f75a45d999793323442b7f0fc0db9df8d54e56",
+        "rel_bd794e61757e74be6db50288bd505afb5138dcb7669b9b9b9038ab6332e5d932",
+        "rel_c17a3ec39843a3083a6162397ada0741f08bebed14ad41524e7fedff2ab073e5",
+        "rel_c237025d1e975abfaba4d2232b0e4511aac19c82119870ee5cf952b279ab8018",
+        "rel_d26c9cb123219fca48067741b354d1394b014a84ec108eec467e987ca27587ac",
+        "rel_e1e9222125d10648889de9cc59ad576574e3ebcd9a6acee27ce3bc3c64baf252",
+        "rel_e44bbef4d4a432c6a5e42eb1e142b1af9b24d166e7180f47163911e8e41ef6e0",
+        "rel_ea3eba1e038e682a36a2b9e31fa65a6d1d159df1d2302c9c0bebfef6c35941bf",
+        "rel_ee0ddc2047c89854adee483607bbcbf3213827d0ad95b57c1d87b2279e1ee176",
+        "rel_f0c60e84d2f9a68368cf8c8fe8467ec4fb06acca32b94cacfd3f6419ee496bfc",
+        "rel_f309ce1a5e15642757f846a6e37a91a7e406509c0364bf88daa4231fe29e9404",
+        "rel_f7f42ed359224991fc9a2df74e548f30a6bcfb53e4c857ca4501e86ffecd1aac",
+        "rel_f91909acf654db7a44cc81847a3ae4e2f784db3932b79d2c07a610cb85eb9d56",
+        "rel_fbbb1e9216f2b8f1ae0aaf8e3872a51d22b6329f500b12c44e18e3755f3e5dcc"
+      ]
+    },
+    {
+      "alternative_or_falsifier": "A mismatch in the script-observed destination IP, destination port, event direction, or bounded time predicate falsifies this relationship. Source-host attribution remains explicitly unestablished by Zeek.",
+      "contradicting_relationship_ids": [],
+      "detection_result_ids": [
+        "detres_64cc608aaddaeebd801dc7d228bcd32eb5196c9547e5d91945e8684510b16966"
+      ],
+      "evidence_state": "CORROBORATED",
+      "hypothesis_id": "hyp_bd19571f5a07fcbeb32348336835b63bc7ddb10c365c02bea7ec4f040919b6b3",
+      "hypothesis_key": "powershell-web-retrieval-network:evt_bf89c58d4a6d99539abb32b05e7d5e059e1698e7528071eb98cd1ed62929707f:evt_a46d3d5665a733976ede49443e3069b3a1116941a2a9dbb8443a2a88b5422cc4",
+      "observation_ids": [
+        "evt_a46d3d5665a733976ede49443e3069b3a1116941a2a9dbb8443a2a88b5422cc4",
+        "evt_bf89c58d4a6d99539abb32b05e7d5e059e1698e7528071eb98cd1ed62929707f"
+      ],
+      "rationale": "TRC-CORR-001 v2 matched source-native reconstructed PowerShell and Zeek evidence on script-observed destination IP, destination port, direction, and bounded time. No Zeek host attribution or PowerShell local-IP equivalence is invented.",
+      "statement": "Observed PowerShell web-retrieval behavior is corroborated by bounded network telemetry.",
+      "supporting_relationship_ids": [
+        "rel_f7e7890af7e1a8e33f67866b46ee25094426397ca44b3caacb1dc5a6e02c4918"
+      ]
+    },
+    {
+      "alternative_or_falsifier": "A mismatch in source IP, source port, destination IP, destination port, transport protocol, or the bounded timestamp tolerance falsifies this cross-source correlation.",
+      "contradicting_relationship_ids": [],
+      "detection_result_ids": [
+        "detres_4915104c04c3396544a8562031e7c8e00f59334a24f9832f5168dd2c28edc3f4"
+      ],
+      "evidence_state": "CORROBORATED",
+      "hypothesis_id": "hyp_ff3866d5c4ee3e87ff7a38c118816255f7fa53762396391fe259f3947efbdf4b",
+      "hypothesis_key": "sysmon-pcap-network-corroboration:evt_11a057f9bee74745291e54c8e1c7b31760d26655cd3b9a7750fbde3d2711191e",
+      "observation_ids": [
+        "evt_11a057f9bee74745291e54c8e1c7b31760d26655cd3b9a7750fbde3d2711191e",
+        "evt_267e33c1ff7f3757489c0d89583a9599165521fe72633934cf2add9267f0d216",
+        "evt_6c6271511370aceb0c0b2134d23d25cbb7d9128cde0dd07faa4816d073ae9d81",
+        "evt_701b27634a3efe32e896e99f7650a5dffef866f5f6f0d9dd9024157c14207a09",
+        "evt_b297dcaa27cfb05d9007ead1870c5100effda8385e3704b6aa412eddea2399a5",
+        "evt_b8a7329ed767b00b7b6ae699ef59e5cea7ec7e0204d8f49fb020df45232391ba",
+        "evt_dc325eff709cd71dc94c04cfef8d16ea9391d6e4ce477cce657022e7bec58f10"
+      ],
+      "rationale": "TRC-CORR-003 matched 6 preserved PCAP packet observations to one Sysmon network observation on source IP, source port, destination IP, destination port, transport protocol, and bounded-time support. Every packet-level relationship and raw locator remains preserved, but capture multiplicity is not promoted into multiple analytical conclusions. No packet-to-process causality, malicious intent, or incident membership is asserted.",
+      "statement": "Observed Sysmon PowerShell-initiated network activity is corroborated by one or more preserved PCAP packet observations with the same network 5-tuple within bounded time.",
+      "supporting_relationship_ids": [
+        "rel_1217db76db31f4ff9af91b0c4af80d9a5dc53718a9ce22d8a214786e691bf074",
+        "rel_1f2b506cfb627901d31d5f4d70e2b03221e6e44eaddb63671804cfce1b883093",
+        "rel_53ec1ff829ea49885c27158e728615b0228d48b66df15c7a41373589b82bfdfd",
+        "rel_99c1ff7915d3fb291ecdbe6d51d64ed057dfb4597ab22212e0e68abb6011121a",
+        "rel_b3a0b22896fa3d257254800a531a4ccda3707847d64d4c469a2a126ee1ea8678",
+        "rel_d15c9806e1544a2910a1ed6a0328b10aa11dd6b1366fcb32ebeb7b0148c4f923"
+      ]
+    }
+  ]
+}

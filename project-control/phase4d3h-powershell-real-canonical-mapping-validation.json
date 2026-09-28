@@ -1,0 +1,97 @@
+{
+  "anti_hardcoding": {
+    "delta_aware_gate": "PASS",
+    "forbidden_production_delta_hits": 0
+  },
+  "canonical_contract": {
+    "deterministic_event_identity": true,
+    "event_type": "powershell_event",
+    "event_type_count": 126,
+    "exact_raw_provenance_preserved": true,
+    "principal_fabricated": false,
+    "semantic_fields_empty_count": 126,
+    "source_context_semantic_separation": true,
+    "source_type": "powershell"
+  },
+  "clock_contract": {
+    "clock_correction_performed": false,
+    "clock_state": "observed",
+    "explicit_utc_z_count": 126,
+    "observed_utc_count": 126,
+    "source_field": "System/TimeCreated@SystemTime",
+    "timezone_fabricated": false
+  },
+  "evidence": {
+    "canonical_events": 126,
+    "canonical_quarantined": 0,
+    "event_id": 4104,
+    "event_id_4104_records": 126,
+    "raw_records": 126,
+    "sha256": "ce45d417d0bd66e05939f835935dd24cfe6f55b257d7b2bb968c726ae378c8c3",
+    "source_id": "TS-DEV-SPLUNK-PS-001",
+    "unique_script_block_ids": 11
+  },
+  "external_evidence_modified": false,
+  "fragment_contract": {
+    "execution_process_id_coverage": "126/126",
+    "execution_thread_id_coverage": "126/126",
+    "fragment_metadata_location": "source_context",
+    "message_number_coverage": "126/126",
+    "message_total_coverage": "126/126",
+    "path_field_present": "126/126",
+    "path_nonempty": "0/126",
+    "script_block_id_coverage": "126/126",
+    "script_block_text_fragment_coverage": "126/126",
+    "script_text_promoted_to_semantic_fields": false,
+    "security_user_id_coverage": "126/126",
+    "unique_script_block_ids": 11
+  },
+  "generated_utc": "2026-09-15T13:20:32Z",
+  "holdout_accessed": false,
+  "implementation": {
+    "mapper": "load_powershell_windows_event_xml",
+    "production_module": "src/tracesoc/parsers/powershell.py",
+    "production_module_sha256": "d50ebbc87feff0b12b1915a4c5c560f840e1e75cd5d2b1bc892f815365b4c9ec",
+    "test_module": "tests/unit/test_powershell_real_mapping.py",
+    "test_module_sha256": "8e7e47db76040cf9b3c0bbb7d3061635b3f0ffecb2cc57391fb60936215c95fe"
+  },
+  "next": "PHASE_4D3I_POWERSHELL_SCRIPTBLOCK_RECONSTRUCTION",
+  "objective": "Map all validated real PowerShell Event 4104 XML records into a bounded generic canonical layer without premature ScriptBlock reassembly or script_execution semantic promotion.",
+  "parent_commit": "9b3ce0db499b1dded9bc082d99ccae07d05eabb2",
+  "phase": "PHASE-4D.3H",
+  "previous_grouping_census": {
+    "complete_scriptblock_groups_observed": 5,
+    "conflicting_duplicate_groups": 0,
+    "consistent_message_total_groups": 11,
+    "incomplete_scriptblock_groups_observed": 6,
+    "interpretive_boundary": "The canonical mapping preserves source fragments. Complete and incomplete logical ScriptBlock reconstruction is deferred to a separate phase.",
+    "reassembly_performed_in_this_phase": false
+  },
+  "record_type": "tracesoc-phase4d3h-powershell-real-canonical-mapping-validation",
+  "result": "PASS",
+  "scope_boundary": {
+    "correlation_logic_added": false,
+    "detection_logic_added": false,
+    "maliciousness_inferred": false,
+    "script_execution_promotion": false,
+    "scriptblock_reassembly": false
+  },
+  "synthetic_contract_boundary": {
+    "existing_synthetic_event_type": "script_execution",
+    "real_generic_event_type": "powershell_event",
+    "reason_not_reused_directly": "The existing synthetic script_execution contract requires semantic fields not established by this real fragmented 4104 source, including engine, command_family, and local_ip."
+  },
+  "validation": {
+    "canonical_accounting": "126/126_PASS",
+    "deterministic_event_identity": "PASS",
+    "focused_real_mapping_tests": "6/6_PASS",
+    "fragment_metadata_preservation": "126/126_PASS",
+    "full_unit_regression": "94/94_PASS",
+    "generic_powershell_events": "126/126_PASS",
+    "observed_utc_clock": "126/126_PASS",
+    "raw_provenance_preservation": "PASS",
+    "repository_text_integrity": "PASS",
+    "scriptblock_id_accounting": "11_PASS",
+    "semantic_separation": "PASS"
+  }
+}

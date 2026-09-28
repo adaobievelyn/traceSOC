@@ -1,0 +1,35 @@
+* text=auto
+
+*.py     text eol=lf
+*.md     text eol=lf
+*.txt    text eol=lf
+*.csv    text eol=lf
+*.json   text eol=lf
+*.jsonl  text eol=lf
+*.toml   text eol=lf
+*.yml    text eol=lf
+*.yaml   text eol=lf
+*.xml    text eol=lf
+*.ps1    text eol=lf
+*.sh     text eol=lf
+
+*.bat    text eol=crlf
+*.cmd    text eol=crlf
+
+*.pcap   binary
+*.pcapng binary
+*.zip    binary
+*.gz     binary
+*.7z     binary
+*.evtx   binary
+*.db     binary
+*.sqlite binary
+*.sqlite3 binary
+*.pdf    binary
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+# Preserve exact bytes for COV010 Windows Security derived evidence fixtures.
+tests/fixtures/challenges/cov010/CHAL-CLOCK-001/windows-security.txt -text !eol
+tests/fixtures/challenges/cov010/CHAL-MAL-001/windows-security.txt -text !eol
+tests/fixtures/challenges/cov010-replacements-v1/CHAL-MAL-001-V2/windows-security.txt -text !eol

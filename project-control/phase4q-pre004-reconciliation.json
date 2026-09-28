@@ -1,0 +1,64 @@
+{
+  "analytical_logic_changed": false,
+  "canonical_ledger": "project-control/test-ledger.jsonl",
+  "conclusion": "PRE004_READY_FOR_PASS",
+  "external_raw_evidence_access": false,
+  "generated_utc": "2026-09-18T12:09:26.582615Z",
+  "holdout_access": false,
+  "ledger_records_after_expected": 52,
+  "ledger_records_before": 51,
+  "master_record": "project-control/tracesoc-master-record.json",
+  "reconciled_layers": {
+    "SC02": {
+      "all_outputs_identical": true,
+      "compared_output_count": 11,
+      "fresh_build_count": 2,
+      "proof": "results/sc02/two-fresh-build-determinism.json",
+      "proof_sha256": "030e39c28f67bc0e8166765dc2ef9cbca2f8fc8b0ab413620d961543559248cd",
+      "status": "CLOSED_IN_DEVELOPMENT"
+    },
+    "SC10": {
+      "authoritative_regression": "213/213",
+      "entry_point": "reproduce.ps1",
+      "proof": "results/sc10/sc10-reproduction.json",
+      "proof_sha256": "3c17dd4d2b7c5a5f353170e97cdc741dda073c03a4b0fc8f568acd70c97219ab",
+      "required_chain": "install->ingest->detect->correlate->explain->test->regenerate",
+      "status": "CLOSED_IN_DEVELOPMENT"
+    },
+    "SC12": {
+      "live_path_count": 2,
+      "live_result": "results/sc12/live-real-release-event-evidence.json",
+      "live_result_sha256": "3b8c71f48e5ccaa69d616e2e0c637d7c67faf963bb786073d78defc79bef7214",
+      "raw_lineage": "7/7_PASS",
+      "shared_elapsed_seconds": 7.446412,
+      "status": "CLOSED_IN_DEVELOPMENT",
+      "threshold_seconds": 300.0,
+      "timing_proof": "results/sc12/two-live-raw-to-result-timing.json",
+      "timing_proof_sha256": "bd8430d10c9a79bab4ad6ca157b3f26ce3483f24465ea5a5786ff780ecd5a23a"
+    },
+    "detector_expansion": {
+      "authoritative_regression": "213/213_PASS",
+      "detector_source": "src/tracesoc/detection/sysmon_powershell_behavior.py",
+      "detector_source_sha256": "b7ea7841fafe314041323fdaf162a4f2d304a6bc4550705e711776abbe48238f",
+      "detector_test": "tests/unit/test_sysmon_powershell_behavior_detection.py",
+      "detector_test_sha256": "cc418e1f7067200c90d4dcc83dce4e35d120cd05bbc0dad6528aa2486a4e9b73",
+      "new_detector_ids": [
+        "TRC-DET-006",
+        "TRC-DET-007",
+        "TRC-DET-008"
+      ],
+      "production_detector_count": 8
+    },
+    "public_acceptance": {
+      "full_regression": "213/213",
+      "proof": "results/acceptance/public-test-results.json",
+      "proof_sha256": "87e2189a8cc08157c145b211e001e31301a8a6d44e84b6139c11ee6b380835e6",
+      "public_acceptance_classes": 4,
+      "result": "PASS"
+    }
+  },
+  "requirement_id": "PRE-004",
+  "schema_version": "tracesoc-pre004-reconciliation-v1",
+  "source_commit": "21f34c98ba5fbb56bb03f4a43b64dd45c55a3c59",
+  "stage9a_access": false
+}

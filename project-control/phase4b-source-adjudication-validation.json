@@ -1,0 +1,61 @@
+{
+    "record_type":  "tracesoc-phase4b-source-adjudication-validation",
+    "generated_utc":  "2026-09-14T13:37:47.1216829Z",
+    "phase":  "4B",
+    "parent_commit":  "0dd278deeda82a0e270bace0c44cec6a93bc4d15",
+    "source_candidates":  9,
+    "decisions":  {
+                      "approved":  5,
+                      "deferred":  3,
+                      "rejected":  1
+                  },
+    "approved_roles":  {
+                           "development":  2,
+                           "benign_control":  2,
+                           "holdout":  1,
+                           "scale_test":  0
+                       },
+    "approved_candidate_ids":  [
+                                   "CAND-001",
+                                   "CAND-002",
+                                   "CAND-003",
+                                   "CAND-004",
+                                   "CAND-005"
+                               ],
+    "deferred_candidate_ids":  [
+                                   "CAND-006",
+                                   "CAND-007",
+                                   "CAND-009"
+                               ],
+    "rejected_candidate_ids":  [
+                                   "CAND-008"
+                               ],
+    "safety":  {
+                   "malware_execution":  false,
+                   "malware_binary_acquisition_authorized":  false,
+                   "password_protected_malware_archive_authorized":  false,
+                   "network_evidence_only_for_iot23":  true
+               },
+    "holdout":  {
+                    "candidate_id":  "CAND-005",
+                    "analytic_inspection_before_freeze_allowed":  false,
+                    "tuning_allowed":  false
+                },
+    "source_terms":  {
+                         "splunk_attack_data":  "Apache-2.0",
+                         "iot23":  "Use permitted with appropriate citation per publisher FAQ",
+                         "ctu13":  "CC-BY",
+                         "otrf_apt29":  "DEFERRED_LICENSE_METADATA_CONFLICT",
+                         "amides":  "GPL-3.0",
+                         "socbed_eval":  "MIT"
+                     },
+    "files":  {
+                  "project-control/evidence-source-candidates.csv":  "332ab7aacf61f8fbd2a6f04d32cbf7be00650b5f16059204f66df21898a4c573",
+                  "project-control/phase4b-source-adjudication.md":  "0eb882850e3570831c5cab1a1fc95002e9bde3f515f184606e2559bb6e743322"
+              },
+    "downloads_performed":  0,
+    "real_evidence_acquired":  false,
+    "source_candidates_approved":  true,
+    "evidence_download_authorized":  "APPROVED_CANDIDATES_AND_ARTIFACT_SCOPES_ONLY",
+    "next":  "PHASE_4C_CONTROLLED_EVIDENCE_ACQUISITION"
+}

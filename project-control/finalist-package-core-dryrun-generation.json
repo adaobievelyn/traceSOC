@@ -1,0 +1,38 @@
+{
+  "assessment_manifest_template_exact_top_level_schema": true,
+  "confirmed_malicious_ioc_rows": 0,
+  "continuity_contract_verified": true,
+  "continuity_record_generated": false,
+  "evidence_index_rows": 16,
+  "final_status": "PASS",
+  "integrity_attestation_generated": false,
+  "integrity_attestation_template_verified": true,
+  "output_sha256": {
+    "assessment-manifest.json": "833dfce9304262c3ae23e2951eb4c25ba05e7dbcb66e7f441c149ef2252a7ade",
+    "evidence-index.csv": "c595986b5538cac972cc2e4aa8c306fb5a16bfd09cbfabe9ef72de69153a37b7",
+    "finalist-evidence-ledger.json": "2712a26b628a3e40d641d83dc2ba5b194cd1c14afad3b84d84047d18bd658ec0",
+    "ioc-set.csv": "ba46259fae599800dbddc327beac3bc82cbdeeb70aa3939a9c658a6f6ed187de",
+    "timeline.csv": "7761048806d90a9b6809a5b83f72c245fc01d39339809e92bd93a9d22cc585be"
+  },
+  "record_type": "tracesoc-finalist-template-compliant-core-generation",
+  "reference_case_id": "case_6bfc43f87590a1f654df3473d9d15c08e17304ed5030d191b4248ee3f4ee2348",
+  "required_templates_verified": true,
+  "root_artifacts_promoted": false,
+  "schema_version": "1.0",
+  "technical_freeze": {
+    "commit": "8751a679f36b4983cdd3d2b0b35f44e9a11c4f39",
+    "tree": "fc420ee3fd1988cf578c0cf309ee3aefcccf33b2"
+  },
+  "template_sha256": {
+    "assessment-manifest-template.json": "41c93f5d164b2a69a8e99ed3a9ff74dfa1a4ac372c0375b1f16b2560ccb5175f",
+    "evidence-index-template.csv": "835f9c3fb4183dfa1e4743a760ece0243d40edf3f777e47ae002a2c58d342073",
+    "integrity-attestation-template.md": "94b46c5a21af7ef11ffb3a2793a39fbe9552b60c08cf9a80733b8817da893c6c",
+    "ioc-set-template.csv": "47dac2cc4842a5cad7a43e88e898ffba0e65d7d474fce9a8c1dcbdd730558809",
+    "portfolio-continuity.md": "c41a8917d3e312550987d8f53b32d29d5e7a827e015de91c9a2adf29ff567426",
+    "timeline-template.csv": "f8fcc55e0543ee2f7a48f93ac46207e25eebec0eafa13d6db828401f066ef898"
+  },
+  "timeline_blank_locator_rows": 0,
+  "timeline_primary_rows": 73,
+  "timeline_rows": 5442,
+  "timeline_supporting_rows": 5369
+}

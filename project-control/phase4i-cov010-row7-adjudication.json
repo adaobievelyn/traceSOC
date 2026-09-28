@@ -1,0 +1,79 @@
+{
+  "adjudication": {
+    "challenge_expectation_supported_by_observable_bytes": false,
+    "classification": "CHALLENGE_OBSERVABILITY_FAILURE",
+    "product_defect": "NOT_ESTABLISHED",
+    "production_repair_required": false,
+    "reasoning": [
+      "The generator establishes truncation using information external to production: it knows the original record length was 1868 bytes and retains only the first 934.",
+      "The retained fragment still contains the required Windows Security top-level header structure and enough observed Event 4688 process fields for the existing evidence-supported process semantic promotion.",
+      "The grounded Windows Security format contract establishes a structural start-of-record boundary, but no explicit end-of-record sentinel for the multiline Message body was established.",
+      "Existing parser tests establish rejection/quarantine for malformed or truncated top-level headers. They do not establish a generic way to infer arbitrary body truncation when the final record reaches EOF after valid required structure.",
+      "A missing trailing newline is not, by itself, sufficient evidence that a final text record is incomplete.",
+      "Rejecting this record solely because challenge metadata knows the original length, because expected publisher prose is missing, or because EOF lacks a newline would introduce an unsupported assumption or challenge-specific selector."
+    ],
+    "unsafe_repairs_rejected": [
+      "Do not use challenge ID, expected answer, original length, retained length, source hash, or fixture metadata in production parsing.",
+      "Do not require an inferred publisher-specific full Message template merely to make CHAL-MAL-001 pass.",
+      "Do not reject every final Windows Security record solely because the file lacks a trailing newline.",
+      "Do not weaken provenance or discard the accepted bytes."
+    ]
+  },
+  "challenge_id": "CHAL-MAL-001",
+  "challenge_input": {
+    "input_bytes": 934,
+    "input_path": "tests/fixtures/challenges/cov010/CHAL-MAL-001/windows-security.txt",
+    "input_sha256": "31f62f256a62bffc953f44bf4fb4ebfc8521299bbf7936163046acb776eae1b3",
+    "manifest_path": "tests/fixtures/challenges/cov010/CHAL-MAL-001/challenge-manifest.json",
+    "manifest_sha256": "86092e28fb8b8e9958ad801fded45bf67e9c61e75674b1b41ecb9f681d6d8311",
+    "mutation_operator": "TRUNCATE_RECORD",
+    "original_length": 1868,
+    "retained_length": 934
+  },
+  "continuation": {
+    "cov010_may_close_now": false,
+    "replacement_required_before_cov010_closure": true,
+    "replacement_rule": "A versioned replacement malformed-Security challenge must use an evidence-supported structural invalidity observable from the supplied bytes themselves. The original frozen row-7 result and artifact must remain preserved.",
+    "row_7": "RED_ADJUDICATED_CHALLENGE_OBSERVABILITY_FAILURE",
+    "row_8_may_execute_after_this_adjudication_is_persisted": true,
+    "rows_1_through_6": "PASS",
+    "rows_8_through_15": "NOT_EXECUTED"
+  },
+  "frozen_matrix": {
+    "execution_kind": "MALFORMED_WINDOWS_SECURITY_ACCOUNTING",
+    "expected_analytical_boundary": "Malformed input must be rejected/quarantined or otherwise explicitly accounted for.",
+    "genuine_red_if": [
+      "The truncated record disappears from accounting.",
+      "The truncated bytes become an apparently complete canonical event with no explicit malformed/incomplete disposition.",
+      "Malformed record boundaries are silently merged into another record."
+    ],
+    "path": "project-control/phase4i-challenge-execution-matrix.json",
+    "sha256": "7545a2789072742cf9c62f9ae2e3980a790ec1b41f492009cdec65dd5c2c3070"
+  },
+  "integrity": {
+    "corpus_mutated": false,
+    "frozen_red_preserved": true,
+    "holdout_opened_for_adjudication": false,
+    "matrix_changed": false,
+    "production_logic_changed": false,
+    "raw_evidence_opened_for_adjudication": false
+  },
+  "matrix_ordinal": 7,
+  "parent_commit": "499e2b0a4d13c29ed76b35432b16e3b753fe65a1",
+  "phase": "PHASE-4I-G7D7B",
+  "preserved_execution_observation": {
+    "accepted_count": 1,
+    "accepted_event_time_utc": null,
+    "accepted_event_type": "process_create",
+    "accepted_raw_sha256": "31f62f256a62bffc953f44bf4fb4ebfc8521299bbf7936163046acb776eae1b3",
+    "accounted_count": 1,
+    "genuine_red_reason": "truncated_security_record_promoted_to_complete_canonical_event",
+    "observation_preserved": true,
+    "quarantined_count": 0,
+    "retroactively_reclassified_as_pass": false,
+    "state": "RED"
+  },
+  "record_type": "tracesoc-cov010-challenge-adjudication-v1",
+  "requirement_id": "COV-010",
+  "schema_version": 1
+}

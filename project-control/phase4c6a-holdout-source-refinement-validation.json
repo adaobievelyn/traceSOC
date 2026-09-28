@@ -1,0 +1,37 @@
+{
+    "record_type":  "tracesoc-phase4c6a-holdout-source-refinement-validation",
+    "generated_utc":  "2026-09-15T08:01:42.6285509Z",
+    "phase":  "4C.6A",
+    "parent_commit":  "4f3ef6e197a29ccbe10f0d9ce7f354f62d5b3bb5",
+    "candidate_id":  "CAND-005",
+    "prior_design":  {
+                         "planned_payload":  "2018-07-25-10-53-16-192.168.100.111-zeek-conn-log.labeled",
+                         "approximate_size":  "947 MB",
+                         "status":  "SUPERSEDED_BEFORE_ACQUISITION"
+                     },
+    "refined_design":  {
+                           "planned_payload":  "conn.log",
+                           "exact_url":  "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset-v2/CTU-IoT-Malware-Capture-9-1/zeek-labeled/conn.log",
+                           "approximate_publisher_size":  "668 MB",
+                           "access_before_freeze":  "INTEGRITY_ONLY_ACCESS",
+                           "semantic_access_before_freeze":  false
+                       },
+    "scoring_artifacts_deferred":  {
+                                       "labeled_conn_log":  "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset-v2/CTU-IoT-Malware-Capture-9-1/2018-07-25-10-53-16-192.168.100.111-zeek-conn-log.labeled",
+                                       "labels_config":  "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset-v2/CTU-IoT-Malware-Capture-9-1/2018-07-25-10-53-16-192.168.100.111-labels.config"
+                                   },
+    "pcap":  {
+                 "url":  "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset-v2/CTU-IoT-Malware-Capture-9-1/pcap/2018-07-25-10-53-16-192.168.100.111.pcap",
+                 "status":  "DEFERRED_NOT_REQUIRED"
+             },
+    "contamination_state":  {
+                                "holdout_downloaded":  false,
+                                "semantic_payload_accessed":  false,
+                                "labels_accessed":  false
+                            },
+    "current_external_raw_artifacts":  13,
+    "raw_evidence_revalidation":  "13/13",
+    "downloads_performed":  0,
+    "consolidated_test_record_changed":  false,
+    "next":  "PHASE_4C7_SEALED_HOLDOUT_ACQUISITION"
+}

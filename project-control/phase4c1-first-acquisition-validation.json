@@ -1,0 +1,75 @@
+{
+    "record_type":  "tracesoc-phase4c1-first-real-evidence-acquisition",
+    "generated_utc":  "2026-09-14T13:49:10.1103686Z",
+    "phase":  "4C.1",
+    "parent_commit":  "e3b145564e476f4a17de5eabae36fcac1683830c",
+    "acquisition_id":  "phase4c1-a2727e3fa064468e9325d2a0400987e5",
+    "approved_candidate_ids":  [
+                                   "CAND-001",
+                                   "CAND-002"
+                               ],
+    "role":  "DEVELOPMENT",
+    "artifacts_acquired":  4,
+    "telemetry_families":  [
+                               "POWERSHELL",
+                               "ZEEK"
+                           ],
+    "source_revision":  {
+                            "splunk_attack_data_commit":  "be1980668e58497d23ba77ba25769996c4d1efaa"
+                        },
+    "artifacts":  [
+                      {
+                          "source_id":  "TS-DEV-SPLUNK-PS-001",
+                          "byte_size":  2038252,
+                          "sha256":  "ce45d417d0bd66e05939f835935dd24cfe6f55b257d7b2bb968c726ae378c8c3",
+                          "integrity":  "VERIFIED"
+                      },
+                      {
+                          "source_id":  "TS-DEV-IOT23-034-META",
+                          "byte_size":  1596,
+                          "sha256":  "940e8778cba292b4c9d2f8b7e10d77976c8eccfc8b6b8bfa79faa53230203f7f",
+                          "integrity":  "VERIFIED"
+                      },
+                      {
+                          "source_id":  "TS-DEV-IOT23-034-PCAP",
+                          "byte_size":  126317980,
+                          "sha256":  "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+                          "integrity":  "VERIFIED"
+                      },
+                      {
+                          "source_id":  "TS-DEV-IOT23-034-ZEEK",
+                          "byte_size":  2926718,
+                          "sha256":  "d69e49b2aae8c1bd33286936531658202dec47d989f0439bad3f8be180467a6e",
+                          "integrity":  "VERIFIED"
+                      }
+                  ],
+    "register":  {
+                     "path":  "project-control/evidence-acquisition-register.csv",
+                     "rows":  4,
+                     "sha256":  "aee13edd516b7278c9e27952a7c5d0e60b8302f00a4f78406f3229c81a9daa3c"
+                 },
+    "external_manifest":  {
+                              "path":  "D:\\TraceSOC-Evidence\\manifests\\phase4c1-first-real-evidence-acquisition.json",
+                              "sha256":  "4fc1b75eca089aeb39fc6affd628cae98d2f668b57cf6d71066a43c8c4ff9ca9"
+                          },
+    "integrity":  {
+                      "pre_storage_hashes_computed":  true,
+                      "post_storage_hashes_verified":  4,
+                      "final_revalidation_verified":  4,
+                      "immutable_attribute_applied":  4
+                  },
+    "safety":  {
+                   "malware_binary_acquired":  false,
+                   "malware_executed":  false,
+                   "holdout_acquired":  false,
+                   "holdout_inspected":  false
+               },
+    "analysis":  {
+                     "parsing_performed":  false,
+                     "normalization_performed":  false,
+                     "detector_tuning_performed":  false,
+                     "labels_used_as_selectors":  false
+                 },
+    "real_evidence_acquired":  true,
+    "next":  "PHASE_4C2_FIRST_REAL_EVIDENCE_CENSUS_AND_FORMAT_PROBE"
+}

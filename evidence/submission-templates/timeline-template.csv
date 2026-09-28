@@ -1,0 +1,2 @@
+event_id,utc_time,original_time,source_timezone,host,user,activity,artifact_path,exact_locator,attack_technique,confidence,primary_or_supporting,alternative_interpretation,notes
+EV-001,,,,,,,,,,,primary,,

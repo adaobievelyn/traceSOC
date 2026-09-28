@@ -1,0 +1,2 @@
+ioc_id,type,value,first_seen_utc,last_seen_utc,host_or_context,artifact_path,exact_locator,confidence,handling,expiry_or_review_date,false_positive_risk
+IOC-001,,,,,,,,high,,,

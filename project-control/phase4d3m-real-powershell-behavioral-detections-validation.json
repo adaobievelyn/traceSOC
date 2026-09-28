@@ -1,0 +1,72 @@
+{
+  "continuity": {
+    "TRC-DET-001_changed": false,
+    "correlations_created": 0,
+    "holdout_accessed": false,
+    "production_thresholds_frozen": 0,
+    "sysmon_detectors_created": 0,
+    "zeek_detectors_created": 0
+  },
+  "detectors": {
+    "TRC-DET-002": {
+      "approved_benign_complete_scriptblocks": 42,
+      "approved_benign_matches": 0,
+      "bounded_claim": "Establishes retrieval and dynamic-execution primitives in the same complete reconstructed script; does not establish retrieval success, downloaded-content identity, execution consequence, or malicious intent.",
+      "development_matches": 4,
+      "general_false_positive_rate_established": false,
+      "input": "complete reconstructed PowerShell ScriptBlock",
+      "title": "PowerShell web retrieval with dynamic execution"
+    },
+    "TRC-DET-003": {
+      "approved_benign_complete_scriptblocks": 42,
+      "approved_benign_matches": 0,
+      "bounded_claim": "Establishes a domain-user query combined with PreauthNotRequired selection; does not establish that any account matched, credentials were obtained, or malicious intent.",
+      "development_matches": 5,
+      "general_false_positive_rate_established": false,
+      "input": "complete reconstructed PowerShell ScriptBlock",
+      "title": "PowerShell domain-user preauthentication discovery"
+    }
+  },
+  "generated_utc": "2026-09-16T08:49:07Z",
+  "implementation": {
+    "production_module": "src/tracesoc/detection/powershell_reconstructed.py",
+    "production_sha256": "4bc8befa4e788da25c4a096639fd7b502596e5eefe216150b93957d1cdccada1",
+    "test_module": "tests/unit/test_real_powershell_behavioral_detections.py",
+    "test_sha256": "0fae341d3bb35fbb61dfa395e1ed2325e789003d4e9bee182a911973c2994dc5"
+  },
+  "next": "PHASE_4D3N_REAL_DETECTION_EXPANSION_CENSUS",
+  "objective": "Freeze the first real TraceSOC behavioral detectors operating on complete lineage-preserving reconstructed PowerShell ScriptBlocks.",
+  "parent_commit": "1a29f0c6fccf7cff9171b7c1d50abccf8555fbc1",
+  "phase": "PHASE-4D.3M",
+  "reconstruction_contract": {
+    "contributing_event_ids_equal_parent_event_ids": true,
+    "development_complete_groups": 5,
+    "development_incomplete_groups": 6,
+    "development_parent_events": 126,
+    "development_scriptblock_groups": 11,
+    "incomplete_positive_detections": 0,
+    "raw_to_detection_lineage_preserved": true
+  },
+  "record_type": "tracesoc-phase4d3m-real-powershell-behavioral-detections-validation",
+  "result": "PASS",
+  "selector_boundary": {
+    "development_source_id_selectors": 0,
+    "expected_answer_selectors": 0,
+    "fixture_selectors": 0,
+    "publisher_label_selectors": 0,
+    "script_hash_selectors": 0,
+    "url_or_domain_selectors": 0
+  },
+  "source_evidence": {
+    "benign_powershell_evtx_sha256": "fc95504793682c73aece8e89c7d799545a5b607119afe3466c3e879ca8db1464",
+    "development_powershell_sha256": "ce45d417d0bd66e05939f835935dd24cfe6f55b257d7b2bb968c726ae378c8c3",
+    "source_evidence_modified": false
+  },
+  "validation": {
+    "full_unit_regression": "135/135 PASS",
+    "git_diff_check": "PENDING_FREEZE_SCOPE_CHECK",
+    "real_benign_reproduction": "PASS",
+    "repository_text_integrity": "PASS",
+    "targeted_real_detector_tests": "12/12 PASS"
+  }
+}

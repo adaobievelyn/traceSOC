@@ -1,0 +1,49 @@
+{
+  "boundary_contract": {
+    "blank_line_delimiter": false,
+    "event_code_hardcoded": false,
+    "publisher_name_hardcoded": false,
+    "record_end": "exact byte immediately before the next structural record candidate, or EOF",
+    "record_start": "standalone timestamp immediately followed by LogName=Security, non-empty SourceName, and numeric EventCode"
+  },
+  "canonical_mapping_performed": false,
+  "clock_normalization_performed": false,
+  "evidence": {
+    "accepted_records": 7116,
+    "event_code_1100_records": 5,
+    "observed_bytes": 8490471,
+    "quarantined_records": 0,
+    "sha256": "b55c57fd0256fa73f55116f9ad307de3b7403f1ba7536c10431b56426a09bd89",
+    "source_id": "TS-DEV-SPLUNK-SECURITY-001",
+    "source_name_variants": 2
+  },
+  "external_evidence_modified": false,
+  "generated_utc": "2026-09-15T11:53:17Z",
+  "holdout_accessed": false,
+  "implementation": {
+    "module": "src/tracesoc/parsers/real_records.py",
+    "module_sha256": "75407c877c4c0f2b431fc54ddf6688c66b064fa162b47f771cf008fa254c8cc0",
+    "production_function": "read_windows_security_splunk_records",
+    "tests": "tests/unit/test_real_format_raw_readers.py",
+    "tests_sha256": "21564a9bf7b3676c744277d47660d861d414fb8d9efad8355cbe9d5ccdb28595"
+  },
+  "next": "PHASE_4D3D_WINDOWS_SECURITY_CANONICAL_MAPPING",
+  "objective": "Split the acquired Splunk Windows Security multiline development evidence into exact provenance-preserving raw records without interpreting event meaning.",
+  "parent_commit": "5466b2dec8ac4fd298af9402a8771fc20ea44cad",
+  "phase": "PHASE-4D.3C",
+  "provenance_validation": {
+    "exact_source_reconstruction": true,
+    "locator_byte_continuity": true,
+    "locator_sha256_verified": "7116/7116",
+    "mixed_source_line_endings_preserved": true
+  },
+  "record_type": "tracesoc-phase4d3c-windows-security-raw-reader-validation",
+  "result": "PASS",
+  "semantic_interpretation_performed": false,
+  "validation": {
+    "anti_hardcoding_gate": "PASS",
+    "focused_raw_reader_tests": "11/11_PASS",
+    "full_unit_regression": "65/65_PASS",
+    "repository_text_integrity": "PASS"
+  }
+}

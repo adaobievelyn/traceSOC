@@ -1,0 +1,388 @@
+{
+    "record_type":  "tracesoc-analytic-freeze-proof-v1",
+    "phase":  "PHASE-4D.3S",
+    "generated_utc":  "2026-09-16T11:02:15Z",
+    "result":  "PASS",
+    "frozen_analytic_git_commit":  "4f12ebf2783096e3f0cbf65e0e4e1b44519ff04f",
+    "freeze_semantics":  {
+                             "scope":  "DEVELOPMENT_ANALYTICS",
+                             "freezes_existing_analytic_behavior":  true,
+                             "declares_final_project_completion":  false,
+                             "closes_open_pre_requirements":  false,
+                             "closes_open_risks":  false,
+                             "closes_remaining_mandatory_coverage":  false,
+                             "authorizes_tuning_from_holdout":  false,
+                             "holdout_payload_accessed_during_freeze":  false,
+                             "holdout_labels_accessed_during_freeze":  false
+                         },
+    "holdout_policy_minimum":  {
+                                   "required_fields":  12,
+                                   "resolved_fields":  12,
+                                   "unresolved_fields":  [
+
+                                                         ]
+                               },
+    "parser_adapter_identities":  [
+                                      {
+                                          "path":  "src/tracesoc/parsers/common.py",
+                                          "sha256":  "c61f34a2b06ed65ddee873eae8d87779c9cc54badf9622598e03234d65e12a7d"
+                                      },
+                                      {
+                                          "path":  "src/tracesoc/parsers/powershell.py",
+                                          "sha256":  "d50ebbc87feff0b12b1915a4c5c560f840e1e75cd5d2b1bc892f815365b4c9ec"
+                                      },
+                                      {
+                                          "path":  "src/tracesoc/parsers/real_records.py",
+                                          "sha256":  "75407c877c4c0f2b431fc54ddf6688c66b064fa162b47f771cf008fa254c8cc0"
+                                      },
+                                      {
+                                          "path":  "src/tracesoc/parsers/sysmon.py",
+                                          "sha256":  "1ad6b2381f0fd0af3c510e32f901723f97d84db69b5c3037fa512e2fdf12472c"
+                                      },
+                                      {
+                                          "path":  "src/tracesoc/parsers/windows_security.py",
+                                          "sha256":  "0a7f42af315603be62fbe6e6cc268d9797a4a28eab33c1aa3060dc8794f64a11"
+                                      },
+                                      {
+                                          "path":  "src/tracesoc/parsers/zeek.py",
+                                          "sha256":  "1751bda4a6c4cfc51799529695de7577644a3168a07e6b7a4340015132be9ddc"
+                                      }
+                                  ],
+    "normalization_schema":  {
+                                 "name":  "tracesoc-canonical-normalization",
+                                 "version":  "1",
+                                 "implementation_path":  "src/tracesoc/normalization/schema.py",
+                                 "implementation_sha256":  "caa93db0774eab92a42c07b965a2224d35ac13d889fd41524a8968e4a2a129c1",
+                                 "manifest_sha256":  "1fbdec2f6cf43997b5ab7af0e228ec21c9b9fe28877c2d5aed9c87534e781e75",
+                                 "parser_input_schema_version_equivalence_claimed":  false
+                             },
+    "detector_inventory":  {
+                               "all_production_ids":  [
+                                                          "TRC-DET-001",
+                                                          "TRC-DET-002",
+                                                          "TRC-DET-003",
+                                                          "TRC-DET-004",
+                                                          "TRC-DET-005"
+                                                      ],
+                               "real_development_ids":  [
+                                                            "TRC-DET-002",
+                                                            "TRC-DET-003",
+                                                            "TRC-DET-004",
+                                                            "TRC-DET-005"
+                                                        ],
+                               "synthetic_reference_ids":  [
+                                                               "TRC-DET-001"
+                                                           ],
+                               "rule_identities":  [
+                                                       {
+                                                           "detection_ids":  [
+                                                                                 "TRC-DET-002",
+                                                                                 "TRC-DET-003"
+                                                                             ],
+                                                           "role":  "REAL_DEVELOPMENT",
+                                                           "path":  "src/tracesoc/detection/powershell_reconstructed.py",
+                                                           "sha256":  "4bc8befa4e788da25c4a096639fd7b502596e5eefe216150b93957d1cdccada1"
+                                                       },
+                                                       {
+                                                           "detection_ids":  [
+                                                                                 "TRC-DET-001"
+                                                                             ],
+                                                           "role":  "SYNTHETIC_REFERENCE",
+                                                           "path":  "src/tracesoc/detection/powershell_web_retrieval.py",
+                                                           "sha256":  "1744532a8e01bd163b51ea4e8914beeb6919694b9bac4babcc9a5c0b23573ea9"
+                                                       },
+                                                       {
+                                                           "detection_ids":  [
+                                                                                 "TRC-DET-005"
+                                                                             ],
+                                                           "role":  "REAL_DEVELOPMENT",
+                                                           "path":  "src/tracesoc/detection/sysmon_firewall.py",
+                                                           "sha256":  "3bc6707502d0b8527297f77075745befd3f624bedfd679aafe2ad8241f79889a"
+                                                       },
+                                                       {
+                                                           "detection_ids":  [
+                                                                                 "TRC-DET-004"
+                                                                             ],
+                                                           "role":  "REAL_DEVELOPMENT",
+                                                           "path":  "src/tracesoc/detection/zeek_irc.py",
+                                                           "sha256":  "4c7f438bd07a8134166b38073784f52148292e635528aa87fb53028ebb51f1cb"
+                                                       }
+                                                   ]
+                           },
+    "correlation_inventory":  {
+                                  "all_production_ids":  [
+                                                             "TRC-CORR-001"
+                                                         ],
+                                  "real_development_correlations_justified":  0,
+                                  "open_real_correlation_surfaces":  0,
+                                  "reference_correlations":  [
+                                                                 "TRC-CORR-001"
+                                                             ],
+                                  "rule_identities":  [
+                                                          {
+                                                              "correlation_ids":  [
+                                                                                      "TRC-CORR-001"
+                                                                                  ],
+                                                              "role":  "SYNTHETIC_REFERENCE_ONLY",
+                                                              "path":  "src/tracesoc/correlation/web_retrieval_network.py",
+                                                              "sha256":  "839c24216ba6957a1261f05156e43af373226a4987d212cf8a3a82d98c72964d"
+                                                          }
+                                                      ]
+                              },
+    "thresholds_and_windows":  {
+                                   "detector_numeric_function_defaults":  [
+
+                                                                          ],
+                                   "synthetic_reference_correlation":  {
+                                                                           "correlation_id":  "TRC-CORR-001",
+                                                                           "directional":  true,
+                                                                           "default_max_seconds":  60
+                                                                       },
+                                   "real_correlation_window_applied":  false
+                               },
+    "consolidated_test_ledger":  {
+                                     "records":  24,
+                                     "sha256":  "6ab4a42bd59356d6c9d3beeaf5cbfc11b27d7eb057224dee89a92a44154698d7",
+                                     "non_pass_records":  0,
+                                     "full_unit_regression":  "171/171 PASS"
+                                 },
+    "development_and_benign_validation":  {
+                                              "powershell":  {
+                                                                 "TRC_DET_002":  {
+                                                                                     "approved_benign_complete_scriptblocks":  42,
+                                                                                     "approved_benign_matches":  0,
+                                                                                     "bounded_claim":  "Establishes retrieval and dynamic-execution primitives in the same complete reconstructed script; does not establish retrieval success, downloaded-content identity, execution consequence, or malicious intent.",
+                                                                                     "development_matches":  4,
+                                                                                     "general_false_positive_rate_established":  false,
+                                                                                     "input":  "complete reconstructed PowerShell ScriptBlock",
+                                                                                     "title":  "PowerShell web retrieval with dynamic execution"
+                                                                                 },
+                                                                 "TRC_DET_003":  {
+                                                                                     "approved_benign_complete_scriptblocks":  42,
+                                                                                     "approved_benign_matches":  0,
+                                                                                     "bounded_claim":  "Establishes a domain-user query combined with PreauthNotRequired selection; does not establish that any account matched, credentials were obtained, or malicious intent.",
+                                                                                     "development_matches":  5,
+                                                                                     "general_false_positive_rate_established":  false,
+                                                                                     "input":  "complete reconstructed PowerShell ScriptBlock",
+                                                                                     "title":  "PowerShell domain-user preauthentication discovery"
+                                                                                 }
+                                                             },
+                                              "zeek":  {
+                                                           "phase":  "PHASE-4D.3N",
+                                                           "validation":  {
+                                                                              "full_unit_regression":  "145/145 PASS",
+                                                                              "real_control_reproduction":  "PASS",
+                                                                              "repository_text_integrity":  "PASS",
+                                                                              "targeted_tests":  "10/10 PASS"
+                                                                          }
+                                                       },
+                                              "sysmon":  {
+                                                             "phase":  "PHASE-4D.3O",
+                                                             "validation":  {
+                                                                                "development_reproduction":  "PASS",
+                                                                                "full_unit_regression":  "157/157 PASS",
+                                                                                "repository_text_integrity":  "PASS",
+                                                                                "targeted_tests":  "12/12 PASS"
+                                                                            },
+                                                             "benign_control_limitation":  {
+                                                                                               "approved_benign_sysmon_event_population":  0,
+                                                                                               "benign_event_data_established":  false,
+                                                                                               "benign_falsification_status":  "NOT_ESTABLISHED",
+                                                                                               "control_status":  "VALID_EMPTY_INPUT",
+                                                                                               "general_false_positive_rate_established":  false,
+                                                                                               "zero_benign_match_claim_made":  false
+                                                                                           }
+                                                         }
+                                          },
+    "challenge_test_state_then_available":  [
+                                                {
+                                                    "category":  "CHALLENGE_CORPUS",
+                                                    "family":  "MULTI",
+                                                    "requirement":  "Duplicate malformed missing-field reordered timing-boundary variants",
+                                                    "requirement_id":  "COV-010",
+                                                    "status":  "DERIVED_CORPUS_PENDING"
+                                                }
+                                            ],
+    "known_limitations":  {
+                              "windows_security_clock":  {
+                                                             "canonical_utc_established":  false,
+                                                             "global_timezone_established":  false,
+                                                             "bounded_derived_clock_evidence_objects":  8
+                                                         },
+                              "powershell_reconstruction":  {
+                                                                "development_complete_groups":  5,
+                                                                "development_incomplete_groups":  6,
+                                                                "incomplete_text_promoted":  false
+                                                            },
+                              "sysmon_benign_falsification":  {
+                                                                  "approved_benign_sysmon_event_population":  0,
+                                                                  "benign_event_data_established":  false,
+                                                                  "benign_falsification_status":  "NOT_ESTABLISHED",
+                                                                  "control_status":  "VALID_EMPTY_INPUT",
+                                                                  "general_false_positive_rate_established":  false,
+                                                                  "zero_benign_match_claim_made":  false
+                                                              },
+                              "correlation_coverage":  {
+                                                           "open_real_correlation_surfaces":  0,
+                                                           "currently_justified_real_correlations":  0,
+                                                           "future_correlation_impossibility_claimed":  false
+                                                       },
+                              "remaining_mandatory_coverage":  [
+                                                                   {
+                                                                       "category":  "CHALLENGE_CORPUS",
+                                                                       "family":  "MULTI",
+                                                                       "requirement":  "Duplicate malformed missing-field reordered timing-boundary variants",
+                                                                       "requirement_id":  "COV-010",
+                                                                       "status":  "DERIVED_CORPUS_PENDING"
+                                                                   },
+                                                                   {
+                                                                       "category":  "SCALE",
+                                                                       "family":  "MULTI",
+                                                                       "requirement":  "Larger-volume runtime and memory corpus",
+                                                                       "requirement_id":  "COV-011",
+                                                                       "status":  "PENDING_EXISTING_CORPUS_BENCHMARK"
+                                                                   },
+                                                                   {
+                                                                       "category":  "EVIDENCE_DOCUMENTATION",
+                                                                       "family":  "MULTI",
+                                                                       "requirement":  "Defense-ready evidence README explaining all sources, exact provenance, citations, hashes, storage, roles, lineage, limitations and reproduction",
+                                                                       "requirement_id":  "COV-013",
+                                                                       "status":  "PLANNED"
+                                                                   }
+                                                               ],
+                              "open_pre_requirements":  [
+                                                            {
+                                                                "requirement_id":  "PRE-001",
+                                                                "source":  "TraceSOC blueprint",
+                                                                "requirement":  "Preserve raw-to-result provenance",
+                                                                "implementation":  "",
+                                                                "proof_artifact":  "",
+                                                                "status":  "OPEN",
+                                                                "notes":  ""
+                                                            },
+                                                            {
+                                                                "requirement_id":  "PRE-002",
+                                                                "source":  "TraceSOC blueprint",
+                                                                "requirement":  "Separate observed fact inference residual risk and business impact",
+                                                                "implementation":  "",
+                                                                "proof_artifact":  "",
+                                                                "status":  "OPEN",
+                                                                "notes":  ""
+                                                            },
+                                                            {
+                                                                "requirement_id":  "PRE-003",
+                                                                "source":  "TraceSOC blueprint",
+                                                                "requirement":  "Provide explicit falsifier for every material conclusion",
+                                                                "implementation":  "",
+                                                                "proof_artifact":  "",
+                                                                "status":  "OPEN",
+                                                                "notes":  ""
+                                                            },
+                                                            {
+                                                                "requirement_id":  "PRE-004",
+                                                                "source":  "TraceSOC blueprint",
+                                                                "requirement":  "Maintain one consolidated machine-readable test record",
+                                                                "implementation":  "",
+                                                                "proof_artifact":  "",
+                                                                "status":  "OPEN",
+                                                                "notes":  ""
+                                                            },
+                                                            {
+                                                                "requirement_id":  "PRE-005",
+                                                                "source":  "TraceSOC blueprint",
+                                                                "requirement":  "Validate response actions with verification and rollback",
+                                                                "implementation":  "",
+                                                                "proof_artifact":  "",
+                                                                "status":  "OPEN",
+                                                                "notes":  ""
+                                                            },
+                                                            {
+                                                                "requirement_id":  "PRE-006",
+                                                                "source":  "TraceSOC blueprint",
+                                                                "requirement":  "Run within 8 GB workstation constraints",
+                                                                "implementation":  "",
+                                                                "proof_artifact":  "",
+                                                                "status":  "OPEN",
+                                                                "notes":  ""
+                                                            }
+                                                        ],
+                              "open_risks":  [
+                                                 {
+                                                     "risk_id":  "R-001",
+                                                     "risk":  "Scope expands into mini-SIEM",
+                                                     "likelihood":  "HIGH",
+                                                     "impact":  "HIGH",
+                                                     "mitigation":  "Apply anti-drift scope gate",
+                                                     "trigger":  "New feature outside proof requirements",
+                                                     "status":  "OPEN"
+                                                 },
+                                                 {
+                                                     "risk_id":  "R-002",
+                                                     "risk":  "8 GB workstation resource pressure",
+                                                     "likelihood":  "MEDIUM",
+                                                     "impact":  "HIGH",
+                                                     "mitigation":  "Streaming + SQLite + benchmarking",
+                                                     "trigger":  "Peak memory exceeds target",
+                                                     "status":  "OPEN"
+                                                 },
+                                                 {
+                                                     "risk_id":  "R-003",
+                                                     "risk":  "Detection overfitting",
+                                                     "likelihood":  "MEDIUM",
+                                                     "impact":  "HIGH",
+                                                     "mitigation":  "Negative fixtures + mutations + holdout",
+                                                     "trigger":  "Rule depends on fixture-specific values",
+                                                     "status":  "OPEN"
+                                                 },
+                                                 {
+                                                     "risk_id":  "R-004",
+                                                     "risk":  "Correlation mistakes adjacency for causality",
+                                                     "likelihood":  "MEDIUM",
+                                                     "impact":  "HIGH",
+                                                     "mitigation":  "Require explicit edge reason",
+                                                     "trigger":  "Relationship lacks source-native support",
+                                                     "status":  "OPEN"
+                                                 },
+                                                 {
+                                                     "risk_id":  "R-005",
+                                                     "risk":  "Response controls remain theoretical",
+                                                     "likelihood":  "MEDIUM",
+                                                     "impact":  "HIGH",
+                                                     "mitigation":  "Dry-run + state verification + rollback",
+                                                     "trigger":  "Response lacks practical evidence",
+                                                     "status":  "OPEN"
+                                                 },
+                                                 {
+                                                     "risk_id":  "R-006",
+                                                     "risk":  "Formal UBI brief conflicts with provisional plan",
+                                                     "likelihood":  "MEDIUM",
+                                                     "impact":  "HIGH",
+                                                     "mitigation":  "Requirements reconciliation before core implementation",
+                                                     "trigger":  "Brief arrives",
+                                                     "status":  "OPEN"
+                                                 }
+                                             ]
+                          },
+    "evidence_and_holdout_boundary":  {
+                                          "registered_real_artifacts":  15,
+                                          "registered_artifact_hashes_verified":  "15/15",
+                                          "raw_external_evidence_immutable":  true,
+                                          "pre_freeze_semantic_holdout_access":  false,
+                                          "pre_freeze_holdout_label_access":  false,
+                                          "holdout_access_log_sha256_before_freeze":  "6cbd57e1d7e4d7ade94e9912c5370a65cadfaa0668f383fda81cd95940bee630"
+                                      },
+    "prior_frozen_proofs":  {
+                                "normalization_schema_contract":  "project-control/phase4d3r-normalization-schema-version-contract-validation.json",
+                                "correlation_coverage":  "project-control/phase4d3q-real-correlation-coverage-adjudication.json",
+                                "powershell_detections":  "project-control/phase4d3m-real-powershell-behavioral-detections-validation.json",
+                                "zeek_detection":  "project-control/phase4d3n-zeek-irc-contextual-detection-validation.json",
+                                "sysmon_detection":  "project-control/phase4d3o-sysmon-firewall-configuration-detection-validation.json"
+                            },
+    "post_freeze_rule":  {
+                             "first_semantic_holdout_evaluation_must_be_one_way":  true,
+                             "tuning_from_first_holdout_result_for_same_frozen_version":  false,
+                             "repair_after_holdout_failure_requires_new_analytic_version":  true,
+                             "same_holdout_remains_unseen_for_repaired_version":  false
+                         },
+    "next":  "PHASE_4D3T_SEALED_HOLDOUT_EVALUATION_PREFLIGHT"
+}

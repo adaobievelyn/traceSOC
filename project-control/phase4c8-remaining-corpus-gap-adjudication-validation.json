@@ -1,0 +1,59 @@
+{
+    "record_type":  "tracesoc-phase4c8-remaining-corpus-gap-adjudication-validation",
+    "generated_utc":  "2026-09-15T09:26:04.3391886Z",
+    "phase":  "4C.8",
+    "parent_commit":  "b925451d6b74683a0348d4cf844033774d3be1d2",
+    "external_evidence":  {
+                              "registered_artifacts":  15,
+                              "hash_revalidation":  "15/15",
+                              "new_downloads":  0
+                          },
+    "suspicious_development_scenarios":  [
+                                             {
+                                                 "scenario":  "POWERSHELL_AD_DISCOVERY",
+                                                 "sources":  [
+                                                                 "TS-DEV-SPLUNK-PS-001"
+                                                             ]
+                                             },
+                                             {
+                                                 "scenario":  "DEFENDER_DISABLING",
+                                                 "sources":  [
+                                                                 "TS-DEV-SPLUNK-SYSMON-001",
+                                                                 "TS-DEV-SPLUNK-SECURITY-001"
+                                                             ]
+                                             },
+                                             {
+                                                 "scenario":  "IOT23_CAPTURE_34_1_MIRAI",
+                                                 "sources":  [
+                                                                 "TS-DEV-IOT23-034-ZEEK"
+                                                             ]
+                                             }
+                                         ],
+    "scenario_count":  3,
+    "scenario_availability_closed":  true,
+    "analytic_success_claimed":  false,
+    "source_diversity":  {
+                             "splunk":  true,
+                             "stratosphere_ctu":  true,
+                             "nextron":  true,
+                             "broad_publisher_diversity":  true,
+                             "cross_publisher_network_holdout_diversity":  false
+                         },
+    "holdout":  {
+                    "acquired":  true,
+                    "candidate":  "CAND-011",
+                    "semantic_access":  false,
+                    "label_access":  false,
+                    "analytic_freeze_required":  true
+                },
+    "remaining_mandatory":  {
+                                "challenge_corpus":  "DERIVED_CORPUS_PENDING",
+                                "scale":  "PENDING_EXISTING_CORPUS_BENCHMARK",
+                                "evidence_readme":  "PLANNED"
+                            },
+    "external_acquisition_decision":  "NO_NEW_EXTERNAL_DATASET_AUTHORIZED",
+    "reason":  "Current corpus contains all required telemetry families, benign controls, three distinct suspicious development scenarios and a sealed network holdout. Remaining challenge and scale work should first use current immutable evidence.",
+    "consolidated_test_record_changed":  false,
+    "final_corpus_complete":  false,
+    "next":  "PHASE_4D_REAL_FORMAT_ADAPTER_COMPATIBILITY"
+}

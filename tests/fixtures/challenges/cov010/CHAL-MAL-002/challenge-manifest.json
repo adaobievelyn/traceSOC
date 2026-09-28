@@ -1,0 +1,48 @@
+{
+  "base_parents": [
+    {
+      "exact_locator": {
+        "byte_length": 7485,
+        "byte_offset": 94166,
+        "line_number": 55,
+        "record_index": 54
+      },
+      "parent_id": "PARENT-SYSMON-POWERSHELL-PROCESS-001",
+      "record_sha256": "bf2952c93ba49be2c4901477051447de3eadf334d58f7df14a47cb84d0bc79d7",
+      "semantic_role": "POWERSHELL_PROCESS_CREATE",
+      "source_id": "TS-DEV-SPLUNK-SYSMON-001",
+      "source_sha256": "8886e363b137555f5a0403783106e656b77e328fab2e503a645015f5e1cc3756",
+      "telemetry_family": "SYSMON"
+    }
+  ],
+  "challenge_id": "CHAL-MAL-002",
+  "challenge_id_embedded_in_input": false,
+  "challenge_id_is_test_metadata": true,
+  "creation_timestamp_utc": "2026-09-17T10:13:44.7916301Z",
+  "execution_status": "NOT_EXECUTED",
+  "expected_analytical_boundary": "Malformed XML must not be silently coerced into a valid event.",
+  "expected_answer_is_production_selector": false,
+  "expected_structural_effect": "The derived Sysmon XML is not well formed.",
+  "generated_artifacts": [
+    {
+      "parent_ids": [
+        "PARENT-SYSMON-POWERSHELL-PROCESS-001"
+      ],
+      "path": "CHAL-MAL-002/sysmon.xml",
+      "sha256": "3fdb5d0f8488fb6b988e7ded56c307f63f1b9429a0c207f55b3eaba45691401e"
+    }
+  ],
+  "mutation": {
+    "operator": "REMOVE_XML_EVENT_CLOSING_TAG",
+    "parameters": {
+      "removed": "</Event>"
+    }
+  },
+  "publisher_label_is_production_selector": false,
+  "purpose": "Malformed structured record.",
+  "raw_original_modified": false,
+  "real_incident_claim": false,
+  "record_type": "tracesoc-derived-challenge-v1",
+  "serialization_templates": [],
+  "tool_script_version": "1.0.0"
+}

@@ -1,0 +1,92 @@
+{
+    "record_type":  "tracesoc-phase4d3x-posthoc-labeled-connlog-acquisition-validation",
+    "schema_version":  1,
+    "phase":  "PHASE-4D.3X",
+    "generated_utc":  "2026-09-16T12:38:00.2560696Z",
+    "result":  "PASS_WITH_RECOVERED_REGISTRATION_HARNESS_FAILURE",
+    "parent_commit":  "83aec50e9165d747ef488dc2f4b1e5165b19a7bc",
+    "authorization":  {
+                          "path":  "project-control/phase4d3w-posthoc-label-acquisition-authorization.json",
+                          "sha256":  "11a11dbb76f12ab05c9107f5e340e38702e33a267a202dad7563e280787629ea",
+                          "authorized_artifact":  "PUBLISHER_LABELED_ZEEK_CONN_LOG"
+                      },
+    "acquisition":  {
+                        "acquisition_id":  "phase4d3x-posthoc-a3485df46e7d402da98f725507960db3",
+                        "acquisition_completed_utc":  "2026-09-16T12:27:15.4876825Z",
+                        "manifest_path":  "D:\\TraceSOC-Evidence\\manifests\\phase4d3x-posthoc-labeled-connlog-acquisition.json",
+                        "manifest_sha256":  "b80fbfadb1510b3d0ee815f8e8cc02c7122f8ed4b825bc16c915924f84afedb0",
+                        "original_transport_phase":  "PHASE-4D.3X-C",
+                        "recovery_phase":  "PHASE-4D.3X-C2",
+                        "transport_result":  "PASS",
+                        "initial_registration_harness_result":  "STOPPED_AFTER_REGISTER_ROW_APPEND",
+                        "harness_failure_class":  "REGISTRATION_HARNESS_NEWLINE_ASSUMPTION",
+                        "evidence_acquisition_failure":  false,
+                        "evidence_integrity_failure":  false
+                    },
+    "artifact":  {
+                     "source_id":  "TS-HOLD-IOT23V2-003-ZEEK-LABELED",
+                     "role":  "HOLDOUT",
+                     "telemetry_family":  "ZEEK",
+                     "source_url":  "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset-v2/CTU-IoT-Malware-Capture-3-1/2018-05-19-20-57-19-192.168.2.5-zeek-conn-log.labeled",
+                     "filename":  "2018-05-19-20-57-19-192.168.2.5-zeek-conn-log.labeled",
+                     "storage_path":  "D:\\TraceSOC-Evidence\\holdout\\posthoc\\iot23-v2\\CTU-IoT-Malware-Capture-3-1\\2018-05-19-20-57-19-192.168.2.5-zeek-conn-log.labeled",
+                     "byte_size":  24383537,
+                     "sha256":  "9851009bbca03e15089fa1a356dd4b5eee4a98161a51703626058a0b507f50d0",
+                     "publisher_checksum_status":  "NOT_ESTABLISHED",
+                     "local_transport_to_final_sha256_identity":  true,
+                     "local_transport_to_final_byte_identity":  true,
+                     "readonly":  true
+                 },
+    "registration":  {
+                         "acquisition_register":  "project-control/evidence-acquisition-register.csv",
+                         "register_rows_after":  16,
+                         "register_row_appended_in_initial_xc":  true,
+                         "register_row_rewritten_during_recovery":  false,
+                         "evidence_source_reference":  "project-control/evidence-source-reference.md",
+                         "source_reference_preexisting_bytes_preserved":  true,
+                         "source_reference_entry_appended_during_recovery":  true,
+                         "source_reference_post_sha256":  "b09784b625a7b8be6995ca5bdc94eb8c9f1b482bbf0e7f9e144595410c9f2a94",
+                         "original_plain_holdout_source_id":  "TS-HOLD-IOT23V2-003-ZEEK",
+                         "original_plain_holdout_replaced":  false,
+                         "new_artifact_is_additional_evidence":  true
+                     },
+    "access_event":  {
+                         "log":  "project-control/holdout-access-log.jsonl",
+                         "event_id":  "HOLDOUT-EVENT-0009",
+                         "records_after":  9,
+                         "access_class":  "INTEGRITY_ONLY_ACCESS",
+                         "recording_utc":  "2026-09-16T12:38:00.2079505Z",
+                         "acquisition_completed_utc":  "2026-09-16T12:27:15.4876825Z",
+                         "semantic_payload_accessed":  false,
+                         "labels_accessed":  false,
+                         "access_log_sha256":  "4f0a43df6b434683f0fb592b6b8e46b23533078cf569b1a344212cd7021e288e"
+                     },
+    "contamination_boundary":  {
+                                   "label_inspection":  false,
+                                   "row_counting":  false,
+                                   "field_inspection":  false,
+                                   "parser_execution":  false,
+                                   "normalization":  false,
+                                   "detector_execution":  false,
+                                   "correlation":  false,
+                                   "comparison":  false,
+                                   "rule_tuning":  false
+                               },
+    "integrity_scope":  {
+                            "publisher_checksum_verified":  false,
+                            "publisher_checksum_status":  "NOT_ESTABLISHED",
+                            "local_sha256_captured":  true,
+                            "final_copy_verified_against_transport_hash":  true,
+                            "master_hash_verification_is_local_registered_hash_verification":  true,
+                            "independent_publisher_checksum_verification":  false
+                        },
+    "preservation":  {
+                         "redownload_performed_during_recovery":  false,
+                         "acquired_artifact_deleted":  false,
+                         "acquisition_manifest_recreated":  false,
+                         "register_row_deleted":  false,
+                         "register_row_rewritten":  false,
+                         "existing_evidence_discarded":  false
+                     },
+    "next":  "PHASE_4D3Y_POSTHOC_LABEL_COMPARISON_PROTOCOL"
+}

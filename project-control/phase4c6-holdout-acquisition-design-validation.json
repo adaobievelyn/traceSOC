@@ -1,0 +1,57 @@
+{
+    "record_type":  "tracesoc-phase4c6-holdout-acquisition-design-validation",
+    "generated_utc":  "2026-09-15T07:57:05.8529584Z",
+    "phase":  "4C.6",
+    "parent_commit":  "aaa3c1979fc29392a30cf5fae30c174c39887af1",
+    "candidate":  {
+                      "candidate_id":  "CAND-005",
+                      "role":  "HOLDOUT",
+                      "decision":  "APPROVED",
+                      "dataset":  "IoT-23-v2",
+                      "scenario":  "CTU-IoT-Malware-Capture-9-1",
+                      "publisher_name":  "Linux.Hajime"
+                  },
+    "initial_acquisition_scope":  {
+                                      "readme":  {
+                                                     "url":  "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset-v2/CTU-IoT-Malware-Capture-9-1/README.md",
+                                                     "allowed_access":  "PROVENANCE_METADATA_ACCESS"
+                                                 },
+                                      "zeek":  {
+                                                   "filename":  "2018-07-25-10-53-16-192.168.100.111-zeek-conn-log.labeled",
+                                                   "url":  "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset-v2/CTU-IoT-Malware-Capture-9-1/2018-07-25-10-53-16-192.168.100.111-zeek-conn-log.labeled",
+                                                   "allowed_access_before_freeze":  "INTEGRITY_ONLY_ACCESS",
+                                                   "semantic_access_before_freeze":  false
+                                               }
+                                  },
+    "deferred":  {
+                     "pcap":  {
+                                  "filename":  "2018-07-25-10-53-16-192.168.100.111.pcap",
+                                  "url":  "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset-v2/CTU-IoT-Malware-Capture-9-1/pcap/2018-07-25-10-53-16-192.168.100.111.pcap",
+                                  "decision":  "DEFERRED_NOT_REQUIRED",
+                                  "reason":  "Current holdout objective is Zeek/network analytic generalization"
+                              }
+                 },
+    "excluded_pre_evaluation":  {
+                                    "labels_config":  {
+                                                          "filename":  "2018-07-25-10-53-16-192.168.100.111-labels.config",
+                                                          "url":  "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset-v2/CTU-IoT-Malware-Capture-9-1/2018-07-25-10-53-16-192.168.100.111-labels.config",
+                                                          "acquire_before_evaluation":  false,
+                                                          "reason":  "Avoid unnecessary holdout-label leakage"
+                                                      }
+                                },
+    "isolation":  {
+                      "sealed_target":  "D:\\TraceSOC-Evidence\\holdout\\sealed\\iot23-v2\\CTU-IoT-Malware-Capture-9-1",
+                      "semantic_payload_accessed":  false,
+                      "labels_accessed":  false,
+                      "analytic_freeze_required":  true,
+                      "access_log":  "project-control/holdout-access-log.jsonl",
+                      "isolation_policy":  "project-control/holdout-isolation-policy.md"
+                  },
+    "current_evidence":  {
+                             "registered_external_raw_artifacts":  13,
+                             "raw_revalidation":  "13/13"
+                         },
+    "downloads_performed":  0,
+    "consolidated_test_record_changed":  false,
+    "next":  "PHASE_4C7_SEALED_HOLDOUT_ACQUISITION"
+}

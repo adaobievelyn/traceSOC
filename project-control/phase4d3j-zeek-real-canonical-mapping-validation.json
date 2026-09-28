@@ -1,0 +1,120 @@
+{
+  "anti_hardcoding": {
+    "capture34_counts_used_only_as_validation_gates": true,
+    "case_specific_selector": false,
+    "expected_corpus_counts_used_as_production_selectors": false,
+    "publisher_label_selector": false,
+    "source_native_schema_fields_allowed": true
+  },
+  "clock_contract": {
+    "clock_state": "OBSERVED",
+    "correction_applied": false,
+    "maximum_event_time_utc": "2018-12-22T14:50:13.942227+00:00",
+    "minimum_event_time_utc": "2018-12-21T14:50:16.870900+00:00",
+    "normalized_to_utc": true,
+    "raw_encoding": "unix_epoch_seconds_decimal",
+    "source_field": "ts",
+    "source_meaning": "time_of_first_packet",
+    "timezone_fabricated": false
+  },
+  "evidence": {
+    "bytes": 2926718,
+    "canonical_accepted": 23145,
+    "canonical_quarantined": 0,
+    "file": "conn.log.labeled",
+    "raw_accepted": 23145,
+    "raw_quarantined": 0,
+    "sha256": "d69e49b2aae8c1bd33286936531658202dec47d989f0439bad3f8be180467a6e",
+    "source_id": "TS-DEV-IOT23-034-ZEEK"
+  },
+  "external_evidence_modified": false,
+  "generated_utc": "2026-09-15T14:39:49Z",
+  "holdout_accessed": false,
+  "implementation": {
+    "adapter_id": "tracesoc-zeek-ascii-v1",
+    "function": "load_zeek_conn_ascii",
+    "module": "src/tracesoc/parsers/zeek.py",
+    "module_sha256": "1751bda4a6c4cfc51799529695de7577644a3168a07e6b7a4340015132be9ddc",
+    "schema_version": "1",
+    "test_module": "tests/unit/test_zeek_real_mapping.py",
+    "test_module_sha256": "031116f528bb88cccd3a36560ec96800294035a468482adb54ba6a2b43fe98a6"
+  },
+  "mapping_contract": {
+    "event_ids_total": 23145,
+    "event_ids_unique": 23145,
+    "event_type": "connection",
+    "host_identity_asserted": false,
+    "optional_semantic_coverage": {
+      "bytes_in": 5321,
+      "bytes_out": 5321,
+      "conn_state": 23145,
+      "duration": 5321,
+      "history": 23145,
+      "ip_bytes_in": 23145,
+      "ip_bytes_out": 23145,
+      "missed_bytes": 23145,
+      "packets_in": 23145,
+      "packets_out": 23145,
+      "service": 1847
+    },
+    "principal_identity_asserted": false,
+    "raw_locator_lineage_exact": true,
+    "raw_timestamp_preserved_exact": true,
+    "required_semantic_coverage": {
+      "dst_ip": 23145,
+      "dst_port": 23145,
+      "proto": 23145,
+      "src_ip": 23145,
+      "src_port": 23145,
+      "uid": 23145
+    }
+  },
+  "next": "PHASE_4D3K_REAL_SOURCE_RELATIONSHIP_CENSUS",
+  "objective": "Map the registered real IoT-23 Capture 34 Zeek conn.log into provenance-rich canonical connection events using source-native Zeek connection fields while preserving publisher analytic labels outside detector-facing semantics.",
+  "parent_commit": "28d34a4e35ea7062939fc22eac58c328e41b6d13",
+  "phase": "PHASE-4D.3J",
+  "publisher_label_boundary": {
+    "det_label_semantic_leaks": 0,
+    "label_semantic_leaks": 0,
+    "labels_used_as_semantic_selectors": false,
+    "labels_used_for_correlation": false,
+    "labels_used_for_detection": false,
+    "labels_used_for_maliciousness": false,
+    "plain_unlabeled_conn_log_supported": true,
+    "raw_det_label_column_retained": true,
+    "raw_label_column_retained": true,
+    "source_context_det_label_present": 23145,
+    "source_context_label_present": 23145
+  },
+  "record_type": "tracesoc-phase4d3j-zeek-real-canonical-mapping-validation",
+  "recovery_history": {
+    "freeze_wrapper_parse_failure": "POWERSHELL_5_1_LINE_BREAK_BEFORE_AND_OPERATOR",
+    "freeze_wrapper_parse_failure_mutated_repository": false,
+    "implementation_validation_wrapper_failure": "REPOSITORY_SRC_NOT_ON_PYTHONPATH",
+    "initial_4d3j_a_selection_stop": "EXPECTED_ONE_DEVELOPMENT_ZEEK_ROW",
+    "production_bug_from_import_failure": false,
+    "selection_corrected_to_exact_source_id": true,
+    "text_integrity_product_failure": false,
+    "text_integrity_wrapper_failure": "MISSING_REQUIRED_REPO_ARGUMENT"
+  },
+  "result": "PASS",
+  "scope_boundary": {
+    "canonical_event_model_modified": false,
+    "correlation_logic_added": false,
+    "detection_logic_added": false,
+    "host_equivalence_inferred": false,
+    "maliciousness_inferred": false,
+    "pcap_deleted_or_unregistered": false,
+    "readme_deleted_or_unregistered": false
+  },
+  "validation": {
+    "det_label_semantic_leaks": "0_PASS",
+    "full_unit_regression": "107/107_PASS",
+    "label_semantic_leaks": "0_PASS",
+    "raw_locator_lineage": "23145/23145_PASS",
+    "real_capture34_mapping": "23145/23145_PASS",
+    "repository_text_integrity": "PASS",
+    "targeted_real_mapping_tests": "5/5_PASS",
+    "unique_event_identity": "23145/23145_PASS"
+  }
+}

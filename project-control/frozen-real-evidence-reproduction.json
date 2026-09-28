@@ -1,0 +1,94 @@
+{
+  "acceptance": {
+    "clean_build_a": "PASS",
+    "clean_build_b": "PASS",
+    "overall": "PASS",
+    "raw_evidence_immutability": "PASS",
+    "real_raw_execution_a": "PASS",
+    "real_raw_execution_b": "PASS",
+    "repository_immutability": "PASS",
+    "source_install_equivalence_a": "PASS",
+    "source_install_equivalence_b": "PASS",
+    "stage9a_accessed": false,
+    "two_run_machine_output_determinism": "PASS"
+  },
+  "analytic_boundary": {
+    "detections_present": true,
+    "evidence_supported_relationships_present": false,
+    "findings_present": false,
+    "hypotheses_present": false,
+    "interpretation": "The heterogeneous development corpus produced canonical observations and matched detections but did not produce evidence-supported cross-source relationships required for downstream findings, hypotheses, narratives, or response records. Zero downstream records are preserved as an observed analytical boundary, not converted into unsupported conclusions.",
+    "narratives_present": false,
+    "responses_present": false
+  },
+  "build_reproduction": {
+    "independent_clean_build_count": 2,
+    "installed_product_byte_reproducible": true,
+    "run_a_source_install_equivalence": "60/60",
+    "run_a_wheel_sha256": "19848331a0fae0bd279b7310a10b37d0113ca3e2efe8e3e7d1f9535057e588db",
+    "run_b_source_install_equivalence": "60/60",
+    "run_b_wheel_sha256": "7772cd7b4769d21a2b9cc6ca40997a2a8a9db55501661b60f43fb9df33137ad3",
+    "source_and_installed_product_fingerprint_sha256": "9ef6e17a686a72ea9fe622b6e7608bd522dea1a6d2b36efebe6d6ffb2d2fc3e9",
+    "source_python_file_count": 60,
+    "wheel_artifact_byte_reproducible": false,
+    "wheel_nondeterminism_disposition": "Temporary wheel container bytes differed between the two clean builds. Both installed TraceSOC package trees were 60/60 byte-equivalent to frozen source and shared the same installed-product fingerprint. Runtime and derived case outputs were deterministic."
+  },
+  "case_reproduction": {
+    "artifact_count": 6,
+    "canonical_event_count": 232148,
+    "case_id": "case_c1c4c7ed3a1e1a89d8ed0f5f0959aac6cf9d752349bd78fae2f89f16f54928a0",
+    "case_seal_sha256": "a0781bd750b239670c876dd231492861ba251ee2208c8149abdd452805492ad6",
+    "correlation_evaluation_count": 664405,
+    "derived_byte_hash_match": true,
+    "derived_file_count": 19,
+    "derived_path_set_match": true,
+    "detection_evaluation_count": 1392910,
+    "finding_count": 0,
+    "hypothesis_count": 0,
+    "matched_correlation_count": 0,
+    "matched_detection_count": 1727,
+    "narrative_count": 0,
+    "relationship_count": 0,
+    "response_count": 0,
+    "run_a_manifest_sha256": "e544ca6ab67f6dc7e66f3e7fc9396b6f8f8a2354fcf5e7fb4cf1ffb5b489441f",
+    "run_b_manifest_sha256": "6a4d36a37f3ab640217e93303bc2e443bbdb27db0e09addf5068ebce4b2bd121",
+    "scriptblock_count": 11,
+    "stable_case_result_match": true,
+    "two_clean_run_comparison_sha256": "65ca39ff141727d564f3032e9b04b63ae0b5704a93cb9ee165d897ee423594ea"
+  },
+  "implementation": {
+    "analytical_candidate_sha256": "8f4f3033683141744a6e5b35bc86a06cbe6337961af316e63ef0fdb3bfa49566",
+    "canonical_commit_blob_sha256": "5f166d992e61003d26cd874b50463bb90a0ce598acd13bc8b70d9739125fb610",
+    "frozen_file_count": 174,
+    "implementation_freeze_record": "project-control/v04-implementation-freeze.json",
+    "implementation_freeze_record_sha256": "749ee97a19b4e7c3af11e34842667da2ab3c255303454cb6369ac4459d6c11a9",
+    "source_commit": "af8ea21eccad94061c3b99ad3c18faafda42fb5a"
+  },
+  "next_obligations": [
+    "construct and validate the one-command clean reproduction entry point",
+    "rebuild the consolidated final validation ledger",
+    "reverify the 8 GB workstation/resource evidence",
+    "run the frozen synthetic end-to-end walkthrough",
+    "run historical Stage9A compatibility replay after primary v0.4 validation",
+    "recheck README reproduction instructions",
+    "complete final evidence-backed reports and submission packaging"
+  ],
+  "product": "TraceSOC",
+  "product_version": "v0.4.8-RC",
+  "provenance": {
+    "raw1": "Initial frozen execution established six-artifact accounting, 232148 canonical events, 1727 matched detections, 19 derived files, sealed-case verification, and raw-evidence immutability.",
+    "raw2_r1": "Two independent clean build/install/run cycles established 60/60 source-install equivalence for each build, matching stable case results, matching derived path sets, and matching byte/hash identity for every derived file."
+  },
+  "raw_evidence": {
+    "all_files_embedded_in_case": true,
+    "all_source_hashes_verified": true,
+    "corpus_sha256": "ea3479609665bf818fff030e7f751ec21c01895f9791bb3f55c66c24951c32d2",
+    "file_count": 6,
+    "immutability_verified_before_between_after": true,
+    "root": "D:/TraceSOC-Evidence/raw/development",
+    "stage9a_input": false,
+    "total_bytes": 159866843
+  },
+  "record_type": "frozen-real-evidence-two-clean-build-reproduction",
+  "schema_version": "tracesoc-frozen-real-evidence-reproduction-v1"
+}

@@ -1,0 +1,62 @@
+{
+  "continuity": {
+    "aggregate_detector_created": false,
+    "correlations_created": 0,
+    "holdout_accessed": false
+  },
+  "deferred_or_rejected": {
+    "external_destination_dominance": "RETAINED_RESEARCH_ONLY; production aggregation scope and numerator/denominator lineage contract unresolved",
+    "single_flow_byte_dominance": "REJECTED_STANDALONE_BY_BENIGN_CONTROLS"
+  },
+  "detector": {
+    "c2_established": false,
+    "detection_id": "TRC-DET-004",
+    "development_matches": 1641,
+    "development_unique_event_ids": 1641,
+    "echo_benign_matches": 0,
+    "general_false_positive_rate_established": false,
+    "hue_benign_matches": 0,
+    "input": "SemanticEvent",
+    "malicious_intent_established": false,
+    "numeric_threshold_used": false,
+    "one_match_one_event_id": true,
+    "required_event_type": "connection",
+    "required_semantic_field": "service",
+    "required_semantic_value": "irc",
+    "required_source_type": "ZEEK",
+    "title": "Zeek IRC service observation"
+  },
+  "generated_utc": "2026-09-16T09:03:43Z",
+  "implementation": {
+    "production_module": "src/tracesoc/detection/zeek_irc.py",
+    "production_sha256": "4c7f438bd07a8134166b38073784f52148292e635528aa87fb53028ebb51f1cb",
+    "test_module": "tests/unit/test_zeek_irc_contextual_detection.py",
+    "test_sha256": "49bbe1041ac651b6a70b9c8f8f76d67a7198640fa1ab125842b99648e71dfc83"
+  },
+  "next": "PHASE_4D3O_REAL_DETECTION_PORTFOLIO_CENSUS",
+  "objective": "Freeze a bounded event-level Zeek IRC service observation detector without promoting aggregate research candidates or source assessment metadata.",
+  "parent_commit": "9f52d1bceed3f99d8efa0ee15e980fd30d0d001a",
+  "phase": "PHASE-4D.3N",
+  "record_type": "tracesoc-phase4d3n-zeek-irc-contextual-detection-validation",
+  "result": "PASS",
+  "selector_boundary": {
+    "expected_outcome_selectors": 0,
+    "ip_selectors": 0,
+    "numeric_thresholds": 0,
+    "port_selectors": 0,
+    "publisher_label_selectors": 0,
+    "source_context_used": false
+  },
+  "source_evidence": {
+    "development_zeek_sha256": "d69e49b2aae8c1bd33286936531658202dec47d989f0439bad3f8be180467a6e",
+    "echo_benign_zeek_sha256": "f36db06e7d6ba7364e932a5b003f75835e004b320d70019e8a2f0ba8685d9262",
+    "hue_benign_zeek_sha256": "aebe40ea0e03b120265a5c7bc140dd9b0d3fe2fce65559e84776b7dd5360e71e",
+    "source_evidence_modified": false
+  },
+  "validation": {
+    "full_unit_regression": "145/145 PASS",
+    "real_control_reproduction": "PASS",
+    "repository_text_integrity": "PASS",
+    "targeted_tests": "10/10 PASS"
+  }
+}

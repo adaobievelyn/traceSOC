@@ -1,0 +1,77 @@
+{
+    "record_type":  "tracesoc-phase4g-multisource-scenario-validation",
+    "schema_version":  1,
+    "phase":  "PHASE-4G-C",
+    "generated_utc":  "2026-09-16T14:17:20.6433716Z",
+    "result":  "PASS",
+    "parent_commit":  "da8d76de5c3e6a6eb35934afd2dac7c12b0aa1bb",
+    "scenario":  {
+                     "scenario_id":  "MULTISOURCE-SCENARIO-0002",
+                     "classification":  "SYNTHETIC_ARCHITECTURE_REGRESSION",
+                     "telemetry_families":  [
+                                                "SYSMON",
+                                                "POWERSHELL"
+                                            ],
+                     "powershell_path":  "tests/fixtures/scenarios/multisource-powershell-process-002/powershell.jsonl",
+                     "powershell_sha256":  "a2fbc7d78017b09f21440ab64c3de682ecf7d178f72f5a3dea8f65e4a088d00d",
+                     "sysmon_path":  "tests/fixtures/scenarios/multisource-powershell-process-002/sysmon.jsonl",
+                     "sysmon_sha256":  "0e27ed1318cf90672a39e450b363ce0355fad400ff8c020f5c893d558200d488",
+                     "manifest_path":  "tests/fixtures/scenarios/multisource-powershell-process-002/scenario-manifest.json",
+                     "manifest_sha256":  "a94f7690432e3d66dc1e5c2abfe12ed8ff8c3f0bdce6a176c511029f316d3dce"
+                 },
+    "production_path":  {
+                            "production_parsers_used":  true,
+                            "semantic_boundary_used":  true,
+                            "detection_id":  "TRC-DET-001",
+                            "detection_matched":  true,
+                            "correlation_id":  "TRC-CORR-002",
+                            "correlation_matched":  true,
+                            "correlation_sha256":  "cb039132424df07e5e64944b65a8f05ead0ee041f24b342b7eee8e1533a9e46c"
+                        },
+    "correlation_contract":  {
+                                 "same_host":  true,
+                                 "same_principal":  true,
+                                 "same_local_ip":  true,
+                                 "powershell_process_family":  true,
+                                 "directional_bounded_time":  true,
+                                 "maximum_seconds":  30,
+                                 "exact_pid_ancestry_required":  false
+                             },
+    "anti_hardcoding":  {
+                            "fixture_id_reached_semantic_fields":  false,
+                            "expected_answer_reached_semantic_fields":  false,
+                            "fixture_id_used_as_selector":  false,
+                            "expected_answer_used_as_selector":  false,
+                            "publisher_label_used_as_selector":  false,
+                            "scenario_id_used_as_selector":  false
+                        },
+    "falsification":  {
+                          "principal_mismatch":  "NO_MATCH",
+                          "local_ip_mismatch":  "NO_MATCH",
+                          "non_powershell_process":  "NO_MATCH",
+                          "process_creation_after_behavior":  "NO_MATCH",
+                          "outside_time_window":  "NO_MATCH"
+                      },
+    "claim_boundary":  {
+                           "real_corpora_joined":  false,
+                           "real_incident_established":  false,
+                           "malicious_intent_established":  false,
+                           "exact_pid_ancestry_established":  false,
+                           "causality_established":  false,
+                           "synthetic_multisource_corroboration_established":  true
+                       },
+    "machine_result":  {
+                           "path":  "results/scenarios/MULTISOURCE-SCENARIO-0002.json",
+                           "sha256":  "f022ac084768269832d5a8bfd656af293b9e76b49af901b8a2e8304f71b51651",
+                           "deterministic":  true,
+                           "exclusive_create":  true
+                       },
+    "tests":  {
+                  "unit_tests":  177,
+                  "integration_tests":  15,
+                  "total_tests":  192,
+                  "failures":  0
+              },
+    "multisource_scenario_progress":  "2_OF_3",
+    "next":  "PHASE_4G_MULTISOURCE_SCENARIO_3"
+}

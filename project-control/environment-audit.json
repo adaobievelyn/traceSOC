@@ -1,0 +1,111 @@
+{
+    "record_type":  "tracesoc-environment-audit",
+    "generated_utc":  "2026-09-14T10:26:53.3836665Z",
+    "no_installs_or_system_changes":  true,
+    "windows":  {
+                    "product_name":  "Windows 10 Home",
+                    "edition":  "Core",
+                    "version":  "10.0.26100",
+                    "build":  "26100",
+                    "powershell":  "5.1.26100.9444"
+                },
+    "hardware":  {
+                     "cpu":  "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+                     "logical_processors":  4,
+                     "ram_gb":  7.85,
+                     "system_drive":  "C:",
+                     "free_disk_gb":  43.63,
+                     "virtualization_firmware_enabled":  false
+                 },
+    "python":  {
+                   "present":  true,
+                   "path":  "C:\\Users\\Eve\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+                   "output":  "Python 3.13.14"
+               },
+    "pip":  {
+                "present":  true,
+                "path":  "C:\\Users\\Eve\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\pip.exe",
+                "output":  "pip 26.1.2 from C:\\Users\\Eve\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pip (python 3.13)"
+            },
+    "git":  {
+                "present":  true,
+                "path":  "C:\\Program Files\\Git\\cmd\\git.exe",
+                "output":  "git version 2.55.0.windows.3"
+            },
+    "sqlite":  {
+                   "usable":  true,
+                   "version":  "3.50.4",
+                   "error":  null
+               },
+    "venv":  {
+                 "usable":  true,
+                 "error":  null
+             },
+    "tshark":  {
+                   "present":  true,
+                   "path":  "C:\\Program Files\\Wireshark\\tshark.exe",
+                   "version":  "TShark (Wireshark) 4.6.8 (v4.6.8-0-ge677bf052328)."
+               },
+    "sysmon_services":  [
+
+                        ],
+    "event_logs":  {
+                       "security":  {
+                                        "present":  false,
+                                        "enabled":  false,
+                                        "record_count":  null,
+                                        "log_mode":  null,
+                                        "error":  "Could not retrieve information about the Security log. Error: Attempted to perform an unauthorized operation.."
+                                    },
+                       "powershell":  {
+                                          "present":  true,
+                                          "enabled":  true,
+                                          "record_count":  1343,
+                                          "log_mode":  "Circular"
+                                      },
+                       "sysmon":  {
+                                      "present":  false,
+                                      "enabled":  false,
+                                      "record_count":  null,
+                                      "log_mode":  null,
+                                      "error":  "There is not an event log on the localhost computer that matches \"Microsoft-Windows-Sysmon/Operational\"."
+                                  }
+                   },
+    "wsl":  {
+                "present":  true,
+                "path":  "C:\\WINDOWS\\system32\\wsl.exe",
+                "output":  "D\u0000e\u0000f\u0000a\u0000u\u0000l\u0000t\u0000 \u0000D\u0000i\u0000s\u0000t\u0000r\u0000i\u0000b\u0000u\u0000t\u0000i\u0000o\u0000n\u0000:\u0000 \u0000U\u0000b\u0000u\u0000n\u0000t\u0000u\u0000-\u00002\u00004\u0000.\u00000\u00004\u0000\r\n\u0000\r\n\u0000D\u0000e\u0000f\u0000a\u0000u\u0000l\u0000t\u0000 \u0000V\u0000e\u0000r\u0000s\u0000i\u0000o\u0000n\u0000:\u0000 \u00002\u0000\r\n\u0000\r\n\u0000"
+            },
+    "docker":  {
+                   "present":  true,
+                   "path":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe",
+                   "output":  "Docker version 28.3.3, build 980b856"
+               },
+    "zeek":  {
+                 "present":  false,
+                 "path":  null,
+                 "output":  null
+             },
+    "defender":  {
+                     "available":  true,
+                     "antivirus_enabled":  true,
+                     "realtime_enabled":  true
+                 },
+    "assessment":  {
+                       "ram_8gb_class":  true,
+                       "free_disk_20gb":  true,
+                       "python_present":  true,
+                       "python_venv_usable":  true,
+                       "sqlite_usable":  true,
+                       "git_present":  true,
+                       "powershell_log_present":  true,
+                       "security_log_present":  false,
+                       "tshark_present":  true,
+                       "sysmon_present":  false,
+                       "virtualization_available":  false,
+                       "wsl_present":  true,
+                       "docker_present":  true,
+                       "zeek_native_present":  false
+                   },
+    "core_environment_ready":  true
+}

@@ -1,0 +1,529 @@
+{
+  "case_id": "case_6bfc43f87590a1f654df3473d9d15c08e17304ed5030d191b4248ee3f4ee2348",
+  "case_schema_id": "tracesoc-case-v0.4.5a",
+  "response_register_schema_id": "tracesoc-case-response-register-v1",
+  "responses": [
+    {
+      "action_type": "SIMULATED_HOST_ISOLATION",
+      "business_tradeoff": {
+        "service_impact": "NOT_ESTABLISHED",
+        "statement": "Host isolation may interrupt service availability. Actual business impact is not established by the case evidence."
+      },
+      "dry_run": {
+        "reason": "Case analysis emits a plan only. HostIsolationSession.dry_run() requires an explicit sandbox target-state snapshot.",
+        "status": "NOT_EXECUTED",
+        "target_mutated": false
+      },
+      "evidence_preservation_required": true,
+      "execution_mode": "CASE_PLAN_ONLY",
+      "execution_status": "NOT_EXECUTED",
+      "finding_id": "fnd_ce8581031c955effad6c40280b04bcb56081852c758099ba115692d090c8f561",
+      "preconditions": [
+        {
+          "name": "CORROBORATED_FINDING",
+          "status": "PASS"
+        },
+        {
+          "name": "TARGET_HOST",
+          "reason": "OBSERVATION_HOST_ESTABLISHED",
+          "status": "PASS"
+        },
+        {
+          "name": "TARGET_STATE_SNAPSHOT",
+          "reason": "Case analysis does not invent current isolation or service state.",
+          "status": "NOT_EVALUATED"
+        },
+        {
+          "name": "EVIDENCE_PRESERVATION",
+          "status": "REQUIRED"
+        },
+        {
+          "name": "OPERATOR_AUTHORIZATION",
+          "status": "REQUIRED"
+        }
+      ],
+      "rationale": "Response planning is derived from corroborated finding fnd_ce8581031c955effad6c40280b04bcb56081852c758099ba115692d090c8f561. The supported host-isolation lifecycle is exposed for controlled sandbox validation, but case analysis does not execute response actions or fabricate target state.",
+      "record_schema_id": "tracesoc-case-response-record-v1",
+      "residual_risk": {
+        "statement": "Asset owner, current target state, service dependency, and operational impact require external validation before execution.",
+        "status": "NOT_ESTABLISHED"
+      },
+      "response_actions_executed": false,
+      "response_id": "resp_08af8df0dbc80fa6cffbc75e1976a1a934e4cb2d159ad96104aa44f8192f993c",
+      "rollback": {
+        "objective": "Restore the exact pre-action target-state snapshot.",
+        "required": true,
+        "status": "NOT_EXECUTED",
+        "verification_criterion": "State content and state SHA-256 must equal the pre-action snapshot.",
+        "verification_required": true
+      },
+      "safe_by_default": true,
+      "sandbox_contract": {
+        "action_type": "SIMULATED_HOST_ISOLATION",
+        "evidence_preservation_required": true,
+        "execution_mode": "SIMULATED_LOCAL_STATE",
+        "implementation": "tracesoc.response.sandbox.HostIsolationSession",
+        "lifecycle": [
+          "PRECONDITION",
+          "DRY_RUN",
+          "ACTION",
+          "VERIFY",
+          "ROLLBACK",
+          "VERIFY_ROLLBACK"
+        ],
+        "safe_by_default": true
+      },
+      "target": {
+        "asset_owner_status": "NOT_ESTABLISHED",
+        "current_isolation_state_status": "NOT_ESTABLISHED",
+        "host": "SensationalEve",
+        "reason": "OBSERVATION_HOST_ESTABLISHED",
+        "service_availability_status": "NOT_ESTABLISHED",
+        "status": "ESTABLISHED"
+      },
+      "verification": {
+        "criteria": [
+          "Observed simulated state must equal the intended isolated state.",
+          "Evidence preservation must remain true.",
+          "Any verification mismatch requires rollback."
+        ],
+        "status": "NOT_EXECUTED"
+      }
+    },
+    {
+      "action_type": "SIMULATED_HOST_ISOLATION",
+      "business_tradeoff": {
+        "service_impact": "NOT_ESTABLISHED",
+        "statement": "Host isolation may interrupt service availability. Actual business impact is not established by the case evidence."
+      },
+      "dry_run": {
+        "reason": "Case analysis emits a plan only. HostIsolationSession.dry_run() requires an explicit sandbox target-state snapshot.",
+        "status": "NOT_EXECUTED",
+        "target_mutated": false
+      },
+      "evidence_preservation_required": true,
+      "execution_mode": "CASE_PLAN_ONLY",
+      "execution_status": "NOT_EXECUTED",
+      "finding_id": "fnd_c07ddf11061bba5efdd401288ed900eb2252c5604ec68ec3690816404aec6006",
+      "preconditions": [
+        {
+          "name": "CORROBORATED_FINDING",
+          "status": "PASS"
+        },
+        {
+          "name": "TARGET_HOST",
+          "reason": "OBSERVATION_HOST_ESTABLISHED",
+          "status": "PASS"
+        },
+        {
+          "name": "TARGET_STATE_SNAPSHOT",
+          "reason": "Case analysis does not invent current isolation or service state.",
+          "status": "NOT_EVALUATED"
+        },
+        {
+          "name": "EVIDENCE_PRESERVATION",
+          "status": "REQUIRED"
+        },
+        {
+          "name": "OPERATOR_AUTHORIZATION",
+          "status": "REQUIRED"
+        }
+      ],
+      "rationale": "Response planning is derived from corroborated finding fnd_c07ddf11061bba5efdd401288ed900eb2252c5604ec68ec3690816404aec6006. The supported host-isolation lifecycle is exposed for controlled sandbox validation, but case analysis does not execute response actions or fabricate target state.",
+      "record_schema_id": "tracesoc-case-response-record-v1",
+      "residual_risk": {
+        "statement": "Asset owner, current target state, service dependency, and operational impact require external validation before execution.",
+        "status": "NOT_ESTABLISHED"
+      },
+      "response_actions_executed": false,
+      "response_id": "resp_2d7113e4cc561cf4d179829d19c6c35b4bdfcac91fd475322e842c7962c6f028",
+      "rollback": {
+        "objective": "Restore the exact pre-action target-state snapshot.",
+        "required": true,
+        "status": "NOT_EXECUTED",
+        "verification_criterion": "State content and state SHA-256 must equal the pre-action snapshot.",
+        "verification_required": true
+      },
+      "safe_by_default": true,
+      "sandbox_contract": {
+        "action_type": "SIMULATED_HOST_ISOLATION",
+        "evidence_preservation_required": true,
+        "execution_mode": "SIMULATED_LOCAL_STATE",
+        "implementation": "tracesoc.response.sandbox.HostIsolationSession",
+        "lifecycle": [
+          "PRECONDITION",
+          "DRY_RUN",
+          "ACTION",
+          "VERIFY",
+          "ROLLBACK",
+          "VERIFY_ROLLBACK"
+        ],
+        "safe_by_default": true
+      },
+      "target": {
+        "asset_owner_status": "NOT_ESTABLISHED",
+        "current_isolation_state_status": "NOT_ESTABLISHED",
+        "host": "SensationalEve",
+        "reason": "OBSERVATION_HOST_ESTABLISHED",
+        "service_availability_status": "NOT_ESTABLISHED",
+        "status": "ESTABLISHED"
+      },
+      "verification": {
+        "criteria": [
+          "Observed simulated state must equal the intended isolated state.",
+          "Evidence preservation must remain true.",
+          "Any verification mismatch requires rollback."
+        ],
+        "status": "NOT_EXECUTED"
+      }
+    },
+    {
+      "action_type": "SIMULATED_HOST_ISOLATION",
+      "business_tradeoff": {
+        "service_impact": "NOT_ESTABLISHED",
+        "statement": "Host isolation may interrupt service availability. Actual business impact is not established by the case evidence."
+      },
+      "dry_run": {
+        "reason": "Case analysis emits a plan only. HostIsolationSession.dry_run() requires an explicit sandbox target-state snapshot.",
+        "status": "NOT_EXECUTED",
+        "target_mutated": false
+      },
+      "evidence_preservation_required": true,
+      "execution_mode": "CASE_PLAN_ONLY",
+      "execution_status": "NOT_EXECUTED",
+      "finding_id": "fnd_e41974d0218248880b6d74fdcb4c1a156d26c79410dab2f19e597a0f3fd0be2a",
+      "preconditions": [
+        {
+          "name": "CORROBORATED_FINDING",
+          "status": "PASS"
+        },
+        {
+          "name": "TARGET_HOST",
+          "reason": "OBSERVATION_HOST_ESTABLISHED",
+          "status": "PASS"
+        },
+        {
+          "name": "TARGET_STATE_SNAPSHOT",
+          "reason": "Case analysis does not invent current isolation or service state.",
+          "status": "NOT_EVALUATED"
+        },
+        {
+          "name": "EVIDENCE_PRESERVATION",
+          "status": "REQUIRED"
+        },
+        {
+          "name": "OPERATOR_AUTHORIZATION",
+          "status": "REQUIRED"
+        }
+      ],
+      "rationale": "Response planning is derived from corroborated finding fnd_e41974d0218248880b6d74fdcb4c1a156d26c79410dab2f19e597a0f3fd0be2a. The supported host-isolation lifecycle is exposed for controlled sandbox validation, but case analysis does not execute response actions or fabricate target state.",
+      "record_schema_id": "tracesoc-case-response-record-v1",
+      "residual_risk": {
+        "statement": "Asset owner, current target state, service dependency, and operational impact require external validation before execution.",
+        "status": "NOT_ESTABLISHED"
+      },
+      "response_actions_executed": false,
+      "response_id": "resp_a3dc8e6260ac7db442bb240b4805c64f2449ecd17c7932f31809ab284b34663b",
+      "rollback": {
+        "objective": "Restore the exact pre-action target-state snapshot.",
+        "required": true,
+        "status": "NOT_EXECUTED",
+        "verification_criterion": "State content and state SHA-256 must equal the pre-action snapshot.",
+        "verification_required": true
+      },
+      "safe_by_default": true,
+      "sandbox_contract": {
+        "action_type": "SIMULATED_HOST_ISOLATION",
+        "evidence_preservation_required": true,
+        "execution_mode": "SIMULATED_LOCAL_STATE",
+        "implementation": "tracesoc.response.sandbox.HostIsolationSession",
+        "lifecycle": [
+          "PRECONDITION",
+          "DRY_RUN",
+          "ACTION",
+          "VERIFY",
+          "ROLLBACK",
+          "VERIFY_ROLLBACK"
+        ],
+        "safe_by_default": true
+      },
+      "target": {
+        "asset_owner_status": "NOT_ESTABLISHED",
+        "current_isolation_state_status": "NOT_ESTABLISHED",
+        "host": "SensationalEve",
+        "reason": "OBSERVATION_HOST_ESTABLISHED",
+        "service_availability_status": "NOT_ESTABLISHED",
+        "status": "ESTABLISHED"
+      },
+      "verification": {
+        "criteria": [
+          "Observed simulated state must equal the intended isolated state.",
+          "Evidence preservation must remain true.",
+          "Any verification mismatch requires rollback."
+        ],
+        "status": "NOT_EXECUTED"
+      }
+    },
+    {
+      "action_type": "SIMULATED_HOST_ISOLATION",
+      "business_tradeoff": {
+        "service_impact": "NOT_ESTABLISHED",
+        "statement": "Host isolation may interrupt service availability. Actual business impact is not established by the case evidence."
+      },
+      "dry_run": {
+        "reason": "Case analysis emits a plan only. HostIsolationSession.dry_run() requires an explicit sandbox target-state snapshot.",
+        "status": "NOT_EXECUTED",
+        "target_mutated": false
+      },
+      "evidence_preservation_required": true,
+      "execution_mode": "CASE_PLAN_ONLY",
+      "execution_status": "NOT_EXECUTED",
+      "finding_id": "fnd_ecdaefb6adcdaccaad479e10af263c7d6e3ce91be9ecdb81b7e141a146808e3d",
+      "preconditions": [
+        {
+          "name": "CORROBORATED_FINDING",
+          "status": "PASS"
+        },
+        {
+          "name": "TARGET_HOST",
+          "reason": "OBSERVATION_HOST_ESTABLISHED",
+          "status": "PASS"
+        },
+        {
+          "name": "TARGET_STATE_SNAPSHOT",
+          "reason": "Case analysis does not invent current isolation or service state.",
+          "status": "NOT_EVALUATED"
+        },
+        {
+          "name": "EVIDENCE_PRESERVATION",
+          "status": "REQUIRED"
+        },
+        {
+          "name": "OPERATOR_AUTHORIZATION",
+          "status": "REQUIRED"
+        }
+      ],
+      "rationale": "Response planning is derived from corroborated finding fnd_ecdaefb6adcdaccaad479e10af263c7d6e3ce91be9ecdb81b7e141a146808e3d. The supported host-isolation lifecycle is exposed for controlled sandbox validation, but case analysis does not execute response actions or fabricate target state.",
+      "record_schema_id": "tracesoc-case-response-record-v1",
+      "residual_risk": {
+        "statement": "Asset owner, current target state, service dependency, and operational impact require external validation before execution.",
+        "status": "NOT_ESTABLISHED"
+      },
+      "response_actions_executed": false,
+      "response_id": "resp_b586a6eb87d2f689a373e29f7900952a086c17420cd6c087923cd38b5dfb009b",
+      "rollback": {
+        "objective": "Restore the exact pre-action target-state snapshot.",
+        "required": true,
+        "status": "NOT_EXECUTED",
+        "verification_criterion": "State content and state SHA-256 must equal the pre-action snapshot.",
+        "verification_required": true
+      },
+      "safe_by_default": true,
+      "sandbox_contract": {
+        "action_type": "SIMULATED_HOST_ISOLATION",
+        "evidence_preservation_required": true,
+        "execution_mode": "SIMULATED_LOCAL_STATE",
+        "implementation": "tracesoc.response.sandbox.HostIsolationSession",
+        "lifecycle": [
+          "PRECONDITION",
+          "DRY_RUN",
+          "ACTION",
+          "VERIFY",
+          "ROLLBACK",
+          "VERIFY_ROLLBACK"
+        ],
+        "safe_by_default": true
+      },
+      "target": {
+        "asset_owner_status": "NOT_ESTABLISHED",
+        "current_isolation_state_status": "NOT_ESTABLISHED",
+        "host": "SensationalEve",
+        "reason": "OBSERVATION_HOST_ESTABLISHED",
+        "service_availability_status": "NOT_ESTABLISHED",
+        "status": "ESTABLISHED"
+      },
+      "verification": {
+        "criteria": [
+          "Observed simulated state must equal the intended isolated state.",
+          "Evidence preservation must remain true.",
+          "Any verification mismatch requires rollback."
+        ],
+        "status": "NOT_EXECUTED"
+      }
+    },
+    {
+      "action_type": "SIMULATED_HOST_ISOLATION",
+      "business_tradeoff": {
+        "service_impact": "NOT_ESTABLISHED",
+        "statement": "Host isolation may interrupt service availability. Actual business impact is not established by the case evidence."
+      },
+      "dry_run": {
+        "reason": "Case analysis emits a plan only. HostIsolationSession.dry_run() requires an explicit sandbox target-state snapshot.",
+        "status": "NOT_EXECUTED",
+        "target_mutated": false
+      },
+      "evidence_preservation_required": true,
+      "execution_mode": "CASE_PLAN_ONLY",
+      "execution_status": "NOT_EXECUTED",
+      "finding_id": "fnd_58f1928ff20055d34196bb0faeb26a8e055c74636f43cb67a2126444a0e0c57f",
+      "preconditions": [
+        {
+          "name": "CORROBORATED_FINDING",
+          "status": "PASS"
+        },
+        {
+          "name": "TARGET_HOST",
+          "reason": "OBSERVATION_HOST_ESTABLISHED",
+          "status": "PASS"
+        },
+        {
+          "name": "TARGET_STATE_SNAPSHOT",
+          "reason": "Case analysis does not invent current isolation or service state.",
+          "status": "NOT_EVALUATED"
+        },
+        {
+          "name": "EVIDENCE_PRESERVATION",
+          "status": "REQUIRED"
+        },
+        {
+          "name": "OPERATOR_AUTHORIZATION",
+          "status": "REQUIRED"
+        }
+      ],
+      "rationale": "Response planning is derived from corroborated finding fnd_58f1928ff20055d34196bb0faeb26a8e055c74636f43cb67a2126444a0e0c57f. The supported host-isolation lifecycle is exposed for controlled sandbox validation, but case analysis does not execute response actions or fabricate target state.",
+      "record_schema_id": "tracesoc-case-response-record-v1",
+      "residual_risk": {
+        "statement": "Asset owner, current target state, service dependency, and operational impact require external validation before execution.",
+        "status": "NOT_ESTABLISHED"
+      },
+      "response_actions_executed": false,
+      "response_id": "resp_b787252b85881e50338a549aa298ef22623c12ee1ebb4c6c66ee86b9199ad3ee",
+      "rollback": {
+        "objective": "Restore the exact pre-action target-state snapshot.",
+        "required": true,
+        "status": "NOT_EXECUTED",
+        "verification_criterion": "State content and state SHA-256 must equal the pre-action snapshot.",
+        "verification_required": true
+      },
+      "safe_by_default": true,
+      "sandbox_contract": {
+        "action_type": "SIMULATED_HOST_ISOLATION",
+        "evidence_preservation_required": true,
+        "execution_mode": "SIMULATED_LOCAL_STATE",
+        "implementation": "tracesoc.response.sandbox.HostIsolationSession",
+        "lifecycle": [
+          "PRECONDITION",
+          "DRY_RUN",
+          "ACTION",
+          "VERIFY",
+          "ROLLBACK",
+          "VERIFY_ROLLBACK"
+        ],
+        "safe_by_default": true
+      },
+      "target": {
+        "asset_owner_status": "NOT_ESTABLISHED",
+        "current_isolation_state_status": "NOT_ESTABLISHED",
+        "host": "SensationalEve",
+        "reason": "OBSERVATION_HOST_ESTABLISHED",
+        "service_availability_status": "NOT_ESTABLISHED",
+        "status": "ESTABLISHED"
+      },
+      "verification": {
+        "criteria": [
+          "Observed simulated state must equal the intended isolated state.",
+          "Evidence preservation must remain true.",
+          "Any verification mismatch requires rollback."
+        ],
+        "status": "NOT_EXECUTED"
+      }
+    },
+    {
+      "action_type": "SIMULATED_HOST_ISOLATION",
+      "business_tradeoff": {
+        "service_impact": "NOT_ESTABLISHED",
+        "statement": "Host isolation may interrupt service availability. Actual business impact is not established by the case evidence."
+      },
+      "dry_run": {
+        "reason": "Case analysis emits a plan only. HostIsolationSession.dry_run() requires an explicit sandbox target-state snapshot.",
+        "status": "NOT_EXECUTED",
+        "target_mutated": false
+      },
+      "evidence_preservation_required": true,
+      "execution_mode": "CASE_PLAN_ONLY",
+      "execution_status": "NOT_EXECUTED",
+      "finding_id": "fnd_1d3a9be149214daaabe76d56a7b3a229d25199331a23b9208b82414d05023746",
+      "preconditions": [
+        {
+          "name": "CORROBORATED_FINDING",
+          "status": "PASS"
+        },
+        {
+          "name": "TARGET_HOST",
+          "reason": "OBSERVATION_HOST_ESTABLISHED",
+          "status": "PASS"
+        },
+        {
+          "name": "TARGET_STATE_SNAPSHOT",
+          "reason": "Case analysis does not invent current isolation or service state.",
+          "status": "NOT_EVALUATED"
+        },
+        {
+          "name": "EVIDENCE_PRESERVATION",
+          "status": "REQUIRED"
+        },
+        {
+          "name": "OPERATOR_AUTHORIZATION",
+          "status": "REQUIRED"
+        }
+      ],
+      "rationale": "Response planning is derived from corroborated finding fnd_1d3a9be149214daaabe76d56a7b3a229d25199331a23b9208b82414d05023746. The supported host-isolation lifecycle is exposed for controlled sandbox validation, but case analysis does not execute response actions or fabricate target state.",
+      "record_schema_id": "tracesoc-case-response-record-v1",
+      "residual_risk": {
+        "statement": "Asset owner, current target state, service dependency, and operational impact require external validation before execution.",
+        "status": "NOT_ESTABLISHED"
+      },
+      "response_actions_executed": false,
+      "response_id": "resp_e3182eebff358538e67a6092681096e97a7aa81dbb192a274ca546a9dceda764",
+      "rollback": {
+        "objective": "Restore the exact pre-action target-state snapshot.",
+        "required": true,
+        "status": "NOT_EXECUTED",
+        "verification_criterion": "State content and state SHA-256 must equal the pre-action snapshot.",
+        "verification_required": true
+      },
+      "safe_by_default": true,
+      "sandbox_contract": {
+        "action_type": "SIMULATED_HOST_ISOLATION",
+        "evidence_preservation_required": true,
+        "execution_mode": "SIMULATED_LOCAL_STATE",
+        "implementation": "tracesoc.response.sandbox.HostIsolationSession",
+        "lifecycle": [
+          "PRECONDITION",
+          "DRY_RUN",
+          "ACTION",
+          "VERIFY",
+          "ROLLBACK",
+          "VERIFY_ROLLBACK"
+        ],
+        "safe_by_default": true
+      },
+      "target": {
+        "asset_owner_status": "NOT_ESTABLISHED",
+        "current_isolation_state_status": "NOT_ESTABLISHED",
+        "host": "SensationalEve",
+        "reason": "OBSERVATION_HOST_ESTABLISHED",
+        "service_availability_status": "NOT_ESTABLISHED",
+        "status": "ESTABLISHED"
+      },
+      "verification": {
+        "criteria": [
+          "Observed simulated state must equal the intended isolated state.",
+          "Evidence preservation must remain true.",
+          "Any verification mismatch requires rollback."
+        ],
+        "status": "NOT_EXECUTED"
+      }
+    }
+  ]
+}

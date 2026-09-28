@@ -1,0 +1,43 @@
+{
+    "schema_version":  "1.0",
+    "record_type":  "tracesoc-finalist-rebuild-utility-safeguard",
+    "technical_freeze":  {
+                             "commit":  "8751a679f36b4983cdd3d2b0b35f44e9a11c4f39",
+                             "tree":  "fc420ee3fd1988cf578c0cf309ee3aefcccf33b2"
+                         },
+    "rebuild_root_indexes":  {
+                                 "path":  "scripts/rebuild_root_indexes.py",
+                                 "before_sha256":  "0faa12608fd90fc82abfc840e0381780c8eed5671f9c938ef97f66593e704248",
+                                 "after_sha256":  "5eb2b711a8158c09e42517d7c254b6ac11025536bfe369d84147c0dc238db3fa",
+                                 "finalist_root_write_allowed":  false,
+                                 "explicit_nonroot_output_required":  true,
+                                 "legacy_engineering_schema_retained":  true,
+                                 "finalist_submission_schema_authority":  "scripts/build_finalist_package.py"
+                             },
+    "rebuild_master_control_record":  {
+                                          "path":  "scripts/rebuild_master_control_record.py",
+                                          "before_sha256":  "ac14eaa1921d6f359c249c4f65535653ec91e736496fdd1c3818b1e837501b66",
+                                          "after_sha256":  "fadd9fb00b8d1eb3f80422045ba1b6ddd1cc8c966b28730b0f3371f2c852f0cc",
+                                          "canonical_finalist_master_overwrite_allowed":  false,
+                                          "role":  "LEGACY_ENGINEERING_SNAPSHOT_ONLY"
+                                      },
+    "validation":  {
+                       "patches_built_outside_repository":  true,
+                       "syntax_gate_before_promotion":  true,
+                       "root_destination_fail_closed_test":  true,
+                       "master_destination_fail_closed_test":  true,
+                       "syntax_gate_after_promotion":  true,
+                       "protected_finalist_artifacts_byte_identical":  true
+                   },
+    "boundaries":  {
+                       "product_source_mutated":  false,
+                       "test_source_mutated":  false,
+                       "holdout_rerun":  false,
+                       "root_submission_artifacts_regenerated":  false,
+                       "master_record_regenerated":  false,
+                       "stage_performed":  false,
+                       "commit_created":  false,
+                       "push_performed":  false
+                   },
+    "final_status":  "PASS"
+}

@@ -1,0 +1,94 @@
+{
+    "record_type":  "tracesoc-phase4d3p-clock-evidence-explanation-adapter-validation",
+    "phase":  "PHASE-4D.3P",
+    "generated_utc":  "2026-09-16T10:10:06Z",
+    "result":  "PASS",
+    "parent_commit":  "d46ee3c655ddf2f7277e44b6908d9dce2e2edfb8",
+    "objective":  "Freeze a generic master-backed explanation and raw-drilldown adapter for existing corroborated ClockEvidence objects without creating detection, correlation, finding, maliciousness, or new clock semantics.",
+    "implementation":  {
+                           "production_module":  "src/tracesoc/evidence/clock_explanation.py",
+                           "production_sha256":  "ea38b428000ee0d9139937a0ea4c7c608b1b2b1328101df34532bf1602af3a05",
+                           "test_module":  "tests/unit/test_clock_evidence_explanation.py",
+                           "test_sha256":  "95b8ad4abbe235c6e9b2daf7ed2d5fc88985e9ff58bf9241d614d0d6700722c7",
+                           "serialization_id":  "tracesoc-clock-evidence-explanation-v1"
+                       },
+    "relationship_contract":  {
+                                  "clock_evidence_is_relationship_object":  true,
+                                  "duplicate_correlation_model_required":  false,
+                                  "finding_model_change_required":  false,
+                                  "correlation_model_change_required":  false,
+                                  "clock_evidence_model_change_required":  false,
+                                  "parser_change_required":  false,
+                                  "downstream_consumer_added":  true
+                              },
+    "source_resolution":  {
+                              "strategy":  "master source_id to storage_path",
+                              "master_artifact_registry_records":  15,
+                              "duplicate_source_ids":  0,
+                              "whole_artifact_sha256_verification_required":  true,
+                              "physical_storage_path_emitted":  false,
+                              "hardcoded_external_storage_paths":  0,
+                              "corpus_source_id_selectors":  0
+                          },
+    "raw_locator_contract":  {
+                                 "authoritative_record_locator":  "byte_offset + byte_length",
+                                 "authoritative_record_identity":  "raw_sha256",
+                                 "line_number_role":  "record start physical line",
+                                 "line_number_requires_single_line_record":  false,
+                                 "line_start_must_equal_byte_offset":  true,
+                                 "multiline_records_allowed":  true,
+                                 "security_parent_record_line_span":  41,
+                                 "sysmon_parent_record_line_span":  1
+                             },
+    "real_validation":  {
+                            "clock_evidence_objects":  8,
+                            "explanations":  8,
+                            "parent_evidence_references":  16,
+                            "parent_raw_hashes_verified":  16,
+                            "record_start_lines_verified":  16,
+                            "explanation_determinism":  true,
+                            "whole_artifact_hash_verification":  "PASS",
+                            "master_backed_source_resolution":  "PASS",
+                            "multiline_security_records_supported":  true,
+                            "single_line_sysmon_records_supported":  true
+                        },
+    "analytic_boundary":  {
+                              "detection_ids_created":  0,
+                              "correlation_ids_created":  0,
+                              "finding_ids_created":  0,
+                              "malicious_intent_assigned":  false,
+                              "security_clock_mutated":  false,
+                              "clock_evidence_mutated":  false,
+                              "publisher_label_selectors":  0,
+                              "expected_answer_selectors":  0,
+                              "holdout_accessed":  false
+                          },
+    "prior_relationship_adjudication":  {
+                                            "trc_det_005_to_sysmon_process_create":  "NOT_ESTABLISHED",
+                                            "trc_det_005_to_windows_security_identity_chain":  "NOT_ESTABLISHED",
+                                            "trc_det_005_security_correlation_justified":  false,
+                                            "established_security_sysmon_process_anchors":  8,
+                                            "boot_process_anchors_promoted_to_detections":  false,
+                                            "duplicate_boot_process_correlation_edges_created":  0
+                                        },
+    "source_evidence":  {
+                            "development_sysmon_sha256":  "8886e363b137555f5a0403783106e656b77e328fab2e503a645015f5e1cc3756",
+                            "development_security_sha256":  "b55c57fd0256fa73f55116f9ad307de3b7403f1ba7536c10431b56426a09bd89",
+                            "source_evidence_modified":  false
+                        },
+    "validation":  {
+                       "targeted_tests":  "11/11 PASS",
+                       "full_unit_regression":  "168/168 PASS",
+                       "real_development_reproduction":  "PASS",
+                       "raw_record_hash_verification":  "16/16 PASS",
+                       "record_start_line_verification":  "16/16 PASS",
+                       "repository_text_integrity":  "PASS"
+                   },
+    "continuity":  {
+                       "detections_created":  0,
+                       "correlations_created":  0,
+                       "findings_created":  0,
+                       "holdout_accessed":  false
+                   },
+    "next":  "PHASE_4D3Q_REAL_CORRELATION_COVERAGE_ADJUDICATION"
+}

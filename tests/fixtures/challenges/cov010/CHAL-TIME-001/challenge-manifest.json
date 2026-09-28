@@ -1,0 +1,64 @@
+{
+  "base_parents": [
+    {
+      "exact_locator": {
+        "byte_length": 1089,
+        "byte_offset": 16547172,
+        "line_number": 9466,
+        "record_index": 9465
+      },
+      "parent_id": "PARENT-SYSMON-DET005-EARLY",
+      "record_sha256": "7604de165fa39e7e09c13a8ba28cc153f4087ed2ec7cb8d15db60b05b1bf603e",
+      "semantic_role": "DET005_EXACT_TIMED_EVENT_EARLY",
+      "source_id": "TS-DEV-SPLUNK-SYSMON-001",
+      "source_sha256": "8886e363b137555f5a0403783106e656b77e328fab2e503a645015f5e1cc3756",
+      "telemetry_family": "SYSMON"
+    },
+    {
+      "exact_locator": {
+        "byte_length": 1089,
+        "byte_offset": 16468071,
+        "line_number": 9400,
+        "record_index": 9399
+      },
+      "parent_id": "PARENT-SYSMON-DET005-LATE",
+      "record_sha256": "934cfe2581594436a718afe935099b0e296f8b307e3bf854c19ab05bea1b455d",
+      "semantic_role": "DET005_EXACT_TIMED_EVENT_LATE",
+      "source_id": "TS-DEV-SPLUNK-SYSMON-001",
+      "source_sha256": "8886e363b137555f5a0403783106e656b77e328fab2e503a645015f5e1cc3756",
+      "telemetry_family": "SYSMON"
+    }
+  ],
+  "challenge_id": "CHAL-TIME-001",
+  "challenge_id_embedded_in_input": false,
+  "challenge_id_is_test_metadata": true,
+  "creation_timestamp_utc": "2026-09-17T10:13:44.7916301Z",
+  "execution_status": "NOT_EXECUTED",
+  "expected_analytical_boundary": "File adjacency/order must not replace observed event-time semantics.",
+  "expected_answer_is_production_selector": false,
+  "expected_structural_effect": "File order is opposite the established event-time order.",
+  "generated_artifacts": [
+    {
+      "parent_ids": [
+        "PARENT-SYSMON-DET005-EARLY",
+        "PARENT-SYSMON-DET005-LATE"
+      ],
+      "path": "CHAL-TIME-001/sysmon.xml",
+      "sha256": "e463305d5cf2c516b9ed1f3073f8325091c2518493a58c8f2431a0210be3a0a5"
+    }
+  ],
+  "mutation": {
+    "operator": "REVERSE_CHRONOLOGICAL_RECORD_ORDER",
+    "parameters": {
+      "first": "LATE",
+      "second": "EARLY"
+    }
+  },
+  "publisher_label_is_production_selector": false,
+  "purpose": "Reordered records relative to observed timestamps.",
+  "raw_original_modified": false,
+  "real_incident_claim": false,
+  "record_type": "tracesoc-derived-challenge-v1",
+  "serialization_templates": [],
+  "tool_script_version": "1.0.0"
+}

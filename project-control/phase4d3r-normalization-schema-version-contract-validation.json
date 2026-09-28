@@ -1,0 +1,97 @@
+{
+    "record_type":  "tracesoc-phase4d3r-normalization-schema-version-contract-validation",
+    "phase":  "PHASE-4D.3R",
+    "generated_utc":  "2026-09-16T10:55:17Z",
+    "result":  "PASS",
+    "parent_commit":  "a1671983dbb54244b9337e3fafb5eaa24d1bcfc4",
+    "objective":  "Freeze the first explicit global TraceSOC canonical normalization schema version by assigning version 1 to the already-existing RawLocator, CanonicalEvent, and SemanticEvent structure without changing model fields, parser semantics, event identity, detections, correlations, or clock semantics.",
+    "normalization_schema":  {
+                                 "name":  "tracesoc-canonical-normalization",
+                                 "version":  "1",
+                                 "manifest_sha256":  "1fbdec2f6cf43997b5ab7af0e228ec21c9b9fe28877c2d5aed9c87534e781e75",
+                                 "version_role":  "GLOBAL_CANONICAL_NORMALIZATION_CONTRACT",
+                                 "first_explicit_version":  true,
+                                 "parser_input_schema_version_equivalence_claimed":  false
+                             },
+    "model_contract":  {
+                           "RawLocator":  [
+                                              "logical_source",
+                                              "record_index",
+                                              "raw_sha256",
+                                              "adapter_id",
+                                              "input_schema_version",
+                                              "line_number",
+                                              "byte_offset",
+                                              "byte_length"
+                                          ],
+                           "CanonicalEvent":  [
+                                                  "event_id",
+                                                  "source_type",
+                                                  "event_type",
+                                                  "clock_state",
+                                                  "provenance",
+                                                  "event_time_raw",
+                                                  "event_time_utc",
+                                                  "host",
+                                                  "principal",
+                                                  "semantic_fields",
+                                                  "source_context"
+                                              ],
+                           "SemanticEvent":  [
+                                                 "event_id",
+                                                 "source_type",
+                                                 "event_type",
+                                                 "clock_state",
+                                                 "event_time_utc",
+                                                 "host",
+                                                 "principal",
+                                                 "fields"
+                                             ]
+                       },
+    "implementation":  {
+                           "production_module":  "src/tracesoc/normalization/schema.py",
+                           "production_sha256":  "caa93db0774eab92a42c07b965a2224d35ac13d889fd41524a8968e4a2a129c1",
+                           "test_module":  "tests/unit/test_normalization_schema_contract.py",
+                           "test_sha256":  "dc8b626a8f7b1d73d8683c12c8fd6a4e45b0bc857434e564b886d665e4440536"
+                       },
+    "prior_contract_identity":  {
+                                    "models_module":  "src/tracesoc/models.py",
+                                    "models_sha256":  "31e6ee887ef7573f76ba971e94961da9f3f0bee302479999c97d20a0a3bde8ad",
+                                    "event_identity_module":  "src/tracesoc/evidence/identity.py",
+                                    "event_identity_sha256":  "c512df0e48061aeef4b8f4a6c7c6518787e5a32c3da31355a880ce472896f389"
+                                },
+    "semantic_boundary":  {
+                              "model_fields_changed":  false,
+                              "event_identity_changed":  false,
+                              "parser_input_schema_relabelled":  false,
+                              "parser_semantics_changed":  false,
+                              "detection_semantics_changed":  false,
+                              "correlation_semantics_changed":  false,
+                              "clock_semantics_changed":  false,
+                              "evidence_modified":  false,
+                              "holdout_payload_accessed":  false
+                          },
+    "holdout_freeze_gate":  {
+                                "previously_unresolved_field":  "normalization_schema_version",
+                                "field_now_explicitly_resolved":  true,
+                                "analytic_freeze_declared":  false,
+                                "holdout_semantic_access_authorized":  false,
+                                "holdout_semantic_access_performed":  false
+                            },
+    "validation":  {
+                       "normalization_contract_reproduction":  "PASS",
+                       "targeted_tests":  "3/3 PASS",
+                       "full_unit_regression":  "171/171 PASS",
+                       "canonical_models_unchanged":  "PASS",
+                       "event_identity_contract_unchanged":  "PASS",
+                       "repository_text_integrity":  "PASS"
+                   },
+    "continuity":  {
+                       "detections_created":  0,
+                       "correlations_created":  0,
+                       "findings_created":  0,
+                       "analytic_freeze_declared":  false,
+                       "holdout_accessed":  false
+                   },
+    "next":  "PHASE_4D3S_ANALYTIC_FREEZE_PROOF"
+}

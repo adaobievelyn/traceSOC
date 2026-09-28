@@ -1,0 +1,151 @@
+{
+  "analysis_counts": {
+    "canonical_events": 5442,
+    "complete_powershell_scriptblocks": 3,
+    "correlation_evaluations": 16259,
+    "detection_evaluations": 32658,
+    "event_detection_evaluations": 32652,
+    "findings": 6,
+    "graph_entities": 79,
+    "graph_relationships": 76,
+    "hypotheses": 6,
+    "incomplete_powershell_scriptblocks": 0,
+    "matched_correlations": 76,
+    "matched_detections": 5,
+    "narrative_records": 6,
+    "native_observations": 5415,
+    "powershell_scriptblocks": 3,
+    "response_records": 6,
+    "scriptblock_detection_evaluations": 6
+  },
+  "analysis_observed_time_status": "VOLATILE_RUNTIME_EXCLUDED",
+  "analysis_observed_utc": null,
+  "analytic_boundary": {
+    "generic_findings_created": true,
+    "generic_hypotheses_created": true,
+    "generic_relationships_created": true,
+    "incident_declared": false,
+    "malicious_intent_established": false,
+    "response_actions_executed": false
+  },
+  "artifact_accounting": {
+    "accounted": 6,
+    "discovered": 6,
+    "failed_explicit": 0,
+    "malformed_quarantined": 0,
+    "supported_partial": 1,
+    "supported_processed": 5,
+    "unsupported_preserved": 0,
+    "zero_silent_loss": true
+  },
+  "case_id": "case_6bfc43f87590a1f654df3473d9d15c08e17304ed5030d191b4248ee3f4ee2348",
+  "case_schema_id": "tracesoc-case-v0.4.5a",
+  "correlation_coverage": {
+    "causality_inferred": false,
+    "evaluated_correlation_ids": [
+      "TRC-CORR-001",
+      "TRC-CORR-002",
+      "TRC-CORR-003",
+      "TRC-CORR-004",
+      "TRC-CORR-005",
+      "TRC-CORR-006"
+    ],
+    "malicious_intent_inferred": false,
+    "non_temporal_anchor_required": true,
+    "relationships_created_only_for_matches": true,
+    "timestamp_only_relationship_allowed": false
+  },
+  "detector_coverage": {
+    "all_registered_detectors_integrated": true,
+    "deferred_reason": null,
+    "deferred_scriptblock_detectors": [],
+    "evaluated_event_detectors": [
+      "TRC-DET-001",
+      "TRC-DET-004",
+      "TRC-DET-005",
+      "TRC-DET-006",
+      "TRC-DET-007",
+      "TRC-DET-008"
+    ],
+    "evaluated_scriptblock_detectors": [
+      "TRC-DET-002",
+      "TRC-DET-003"
+    ]
+  },
+  "finding_boundary": {
+    "alternative_or_falsifier_required": true,
+    "concrete_detection_result_reference_required": true,
+    "created_only_from_corroborated_hypotheses": true,
+    "incident_declared": false,
+    "malicious_intent_established": false,
+    "numeric_confidence_used": false,
+    "observation_lineage_required": true,
+    "rationale_required": true,
+    "supporting_relationship_required": true
+  },
+  "hypothesis_boundary": {
+    "created_only_from_matched_correlation_relationships": true,
+    "incident_membership_implied": false,
+    "malicious_intent_implied": false,
+    "no_match_detection_used_as_support": false,
+    "numeric_confidence_used": false
+  },
+  "narrative_boundary": {
+    "additional_inference_introduced": false,
+    "alternative_or_falsifier_preserved": true,
+    "detection_citations_required": true,
+    "finding_citations_required": true,
+    "hypothesis_citations_required": true,
+    "incident_declared": false,
+    "malicious_intent_established": false,
+    "numeric_confidence_used": false,
+    "observation_citations_required": true,
+    "raw_locators_embedded_in_observation_citations": true,
+    "records_generated_from_findings": true,
+    "relationship_citations_required": true,
+    "response_execution_claimed": false
+  },
+  "outputs": [
+    "artifact-index.json",
+    "normalized-events.json",
+    "powershell-scriptblocks.json",
+    "detections.json",
+    "correlations.json",
+    "relationships.json",
+    "hypotheses.json",
+    "findings.json",
+    "response-register.json",
+    "narrative-register.json",
+    "raw-evidence-index.json",
+    "case-manifest.json"
+  ],
+  "raw_evidence_accounting": {
+    "byte_count": 11727424,
+    "embedded": true,
+    "embedded_hash_verified": true,
+    "every_input_artifact_embedded": true,
+    "file_count": 6,
+    "source_hash_verified_after_copy": true,
+    "source_hash_verified_before_copy": true
+  },
+  "reconstruction_boundary": {
+    "detection_mutates_reconstruction": false,
+    "eligible_source": "PowerShell canonical Event ID 4104",
+    "incomplete_groups_assert_complete_text": false,
+    "incomplete_groups_preserved": true
+  },
+  "response_boundary": {
+    "asset_owner_fabricated": false,
+    "dry_run_recorded_as_not_executed": true,
+    "plan_only": true,
+    "records_generated_from_findings": true,
+    "response_actions_executed": false,
+    "rollback_plan_present": true,
+    "sandbox_lifecycle_available": true,
+    "service_availability_fabricated": false,
+    "supported_action_type": "SIMULATED_HOST_ISOLATION",
+    "target_state_fabricated": false,
+    "verification_criteria_present": true
+  },
+  "runtime_analysis_time_in_sealed_truth": false
+}

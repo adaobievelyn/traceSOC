@@ -1,0 +1,66 @@
+{
+    "record_type":  "tracesoc-evidence-manifest-schema",
+    "schema_version":  1,
+    "hash_algorithm":  "SHA-256",
+    "real_evidence_acquired":  false,
+    "source_families":  [
+                            "SYSMON",
+                            "WINDOWS_SECURITY",
+                            "POWERSHELL",
+                            "ZEEK"
+                        ],
+    "roles":  [
+                  "DEVELOPMENT",
+                  "BENIGN_CONTROL",
+                  "HOLDOUT",
+                  "SCALE_TEST"
+              ],
+    "candidate_statuses":  [
+                               "CANDIDATE",
+                               "APPROVED",
+                               "REJECTED",
+                               "ACQUIRED",
+                               "INTEGRITY_VERIFIED",
+                               "QUARANTINED"
+                           ],
+    "integrity_statuses":  [
+                               "NOT_ACQUIRED",
+                               "PENDING",
+                               "VERIFIED",
+                               "FAILED",
+                               "UNKNOWN"
+                           ],
+    "required_fields":  [
+                            "source_id",
+                            "role",
+                            "status",
+                            "telemetry_family",
+                            "origin_type",
+                            "publisher",
+                            "source_title",
+                            "source_url",
+                            "license_or_terms",
+                            "acquired_utc",
+                            "original_filename",
+                            "storage_path",
+                            "byte_size",
+                            "sha256",
+                            "time_start_utc",
+                            "time_end_utc",
+                            "host_coverage",
+                            "user_coverage",
+                            "known_labels",
+                            "known_limitations",
+                            "acquisition_method",
+                            "integrity_status",
+                            "notes"
+                        ],
+    "immutable_original_required":  true,
+    "hash_on_acquisition_required":  true,
+    "hash_after_storage_required":  true,
+    "holdout_isolation_required":  true,
+    "source_labels_allowed_as_detector_selectors":  false,
+    "preferred_bulk_storage":  "D:\\TraceSOC-Evidence",
+    "preferred_bulk_storage_mandatory_runtime_dependency":  false,
+    "source_selection_required_before_download":  true
+}

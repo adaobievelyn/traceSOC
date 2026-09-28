@@ -1,0 +1,88 @@
+{
+  "assessed_stage9a_score": "89/90",
+  "assessed_submission_authority": {
+    "archive_filename": "UBI-2026-0091-STAGE_9-20260911T160346Z-1-001.zip",
+    "archive_sha256": "83ae8b71ead89033f9ae0aa58eee96b8af437860d6f270202664c27c551da0b6",
+    "assessed_score": "89/90",
+    "contains_byte_identical_raw_evidence_copies": true,
+    "role": "ASSESSED_SUBMISSION_PACKAGE"
+  },
+  "authoritative_review": {
+    "path": "project-control/stage9a-authoritative-submission-review.md",
+    "sha256": "53c3932c52b0fcf6ea85c1372e4e9ac224e61364786397a0fac03f85efd93cda"
+  },
+  "authority": "SUBMITTED_STAGE9A_PACKAGE",
+  "authority_scope": "ASSESSED_SUBMISSION_PACKAGE_AND_GRADER_RESULT",
+  "carry_forward_matrix": {
+    "path": "project-control/stage9a-carry-forward-matrix.csv",
+    "sha256": "c7cbcc150032c0e82c07f7f835f730515a2b55cfb2e0843bdbc807bfd1fa4437"
+  },
+  "continuity_rule": "If developmental and submitted Stage 9A evidence conflict, the submitted package governs.",
+  "cross_archive_raw_evidence_identity": {
+    "byte_identity": true,
+    "expected_artifact_count": 4,
+    "raw_artifacts": [
+      {
+        "logical_path": "host/powershell-operational.jsonl",
+        "raw_archive_member": "evidence/sealed-evidence/evidence/host/powershell-operational.jsonl",
+        "sha256": "09ff04af864454f87f94dc71406c2cb01c49f2830913e5be6ab0ffc64a3840ad",
+        "submitted_package_copy": "UBI-2026-0091-STAGE_9/original/sealed-package/evidence/sealed-evidence/evidence/host/powershell-operational.jsonl"
+      },
+      {
+        "logical_path": "host/sysmon.jsonl",
+        "raw_archive_member": "evidence/sealed-evidence/evidence/host/sysmon.jsonl",
+        "sha256": "f27c3807903ef8a6c72847761b0e62af5b1da8dd599c52782c38d2386acbab9d",
+        "submitted_package_copy": "UBI-2026-0091-STAGE_9/original/sealed-package/evidence/sealed-evidence/evidence/host/sysmon.jsonl"
+      },
+      {
+        "logical_path": "mail/initial-access.eml",
+        "raw_archive_member": "evidence/sealed-evidence/evidence/mail/initial-access.eml",
+        "sha256": "8dd40f12866217b153a7af539d675950c3edcfdd78649e7ddf236adff6e14d4e",
+        "submitted_package_copy": "UBI-2026-0091-STAGE_9/original/sealed-package/evidence/sealed-evidence/evidence/mail/initial-access.eml"
+      },
+      {
+        "logical_path": "network/incident.pcap",
+        "raw_archive_member": "evidence/sealed-evidence/evidence/network/incident.pcap",
+        "sha256": "a2ff3da37c045ab933c5c4a71c18b8ca80596349e19d3fb5624d27228e70d90d",
+        "submitted_package_copy": "UBI-2026-0091-STAGE_9/original/sealed-package/evidence/sealed-evidence/evidence/network/incident.pcap"
+      }
+    ],
+    "sha256_identity": true,
+    "status": "PASS",
+    "verified_artifact_count": 4
+  },
+  "developmental_repository_role": "HISTORICAL_DISCOVERY_ONLY",
+  "generated_utc": "2026-09-14T12:00:01.0210052Z",
+  "last_reconciled_utc": "2026-09-24T06:58:04.963584Z",
+  "phase": "2D",
+  "production_source_copied": false,
+  "provenance_model": {
+    "r2_replay_rerun_required_after_provenance_correction": false,
+    "r2_replay_tested_same_immutable_raw_bytes": true,
+    "sequence": [
+      "SEPARATE_STAGE9A_RAW_EVIDENCE_ARCHIVE",
+      "BYTE_IDENTICAL_RAW_EVIDENCE_COPIES_IN_ASSESSED_SUBMISSION",
+      "FROZEN_V0.4_R2_COMPATIBILITY_REPLAY"
+    ]
+  },
+  "raw_evidence_authority": {
+    "archive_filename": "soc-analysis-stage-9-shared-b1.tar.gz",
+    "archive_format": "tar.gz",
+    "archive_sha256": "df8fb093a6a69ca885a0f22518f842cf6a470232a6df821fb759a507389f2022",
+    "regular_file_count": 24,
+    "role": "RAW_EVIDENCE_AUTHORITY",
+    "verified_stage9a_raw_artifact_count": 4
+  },
+  "record_type": "tracesoc-stage9a-authoritative-continuity-source",
+  "submitted_archive": {
+    "filename": "UBI-2026-0091-STAGE_9-20260911T160346Z-1-001.zip",
+    "local_revalidation": true,
+    "sha256": "83ae8b71ead89033f9ae0aa58eee96b8af437860d6f270202664c27c551da0b6"
+  },
+  "submitted_package_integrity": {
+    "files_total": 255,
+    "hash_mismatches": 0,
+    "manifest_entries": 254,
+    "missing_files": 0
+  }
+}

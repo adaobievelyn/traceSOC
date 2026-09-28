@@ -1,0 +1,609 @@
+{
+  "corpus_manifest": {
+    "path": "tests/fixtures/challenges/cov010/corpus-manifest.json",
+    "sha256": "3523e9c659e97f0d68641139c493461971ee44824cd2df55b777d7b0b60acc19"
+  },
+  "execution_order_source": "committed corpus-manifest.json challenges list",
+  "freeze_boundaries": {
+    "challenge_count": 15,
+    "challenge_execution_performed": false,
+    "challenge_semantic_inputs_opened_during_freeze": false,
+    "coverage_promoted": false,
+    "expectations_may_be_changed_after_execution": false,
+    "first_genuine_red_policy": "STOP_AND_PRESERVE_BEFORE_DIAGNOSIS_OR_REPAIR",
+    "holdout_opened": false,
+    "production_logic_changed": false,
+    "raw_evidence_opened": false,
+    "semantic_input_count": 20
+  },
+  "freeze_parent_commit": "7c94e556888469cd92d48bb9a44e531300b5661d",
+  "frozen_utc": "2026-09-17T10:57:20.200723+00:00",
+  "generation_proof": {
+    "path": "project-control/phase4i-challenge-generation-validation.json",
+    "sha256": "1b0b808395567e22618cf3a1757e4be11db7661dc8ffcf5ae9957cbcf47ff402"
+  },
+  "grounding": {
+    "production_surfaces": [
+      "read_windows_event_xml_records",
+      "read_windows_security_splunk_records",
+      "read_zeek_ascii_records",
+      "load_powershell_windows_event_xml",
+      "load_powershell_jsonl",
+      "load_sysmon_windows_event_xml",
+      "load_sysmon_jsonl",
+      "load_windows_security_splunk",
+      "load_zeek_conn_ascii",
+      "load_zeek_jsonl",
+      "reconstruct_powershell_scriptblocks",
+      "detect_powershell_web_retrieval_execution",
+      "detect_powershell_web_retrieval",
+      "detect_sysmon_domain_firewall_zero_write",
+      "detect_zeek_irc_service",
+      "correlate_web_retrieval_with_zeek",
+      "correlate_powershell_detection_with_sysmon_process"
+    ],
+    "runtime_contract_phase": "PHASE-4I-G7B",
+    "test_discovery_recovery_phase": "PHASE-4I-G7AR"
+  },
+  "matrix_version": "1.0.0",
+  "next": "EXECUTE_FROZEN_MATRIX_IN_ORDER",
+  "phase": "PHASE-4I-G7C",
+  "record_type": "tracesoc-cov010-execution-matrix-v1",
+  "requirement": "COV-010",
+  "rows": [
+    {
+      "challenge_id": "CHAL-CLOCK-001",
+      "correlation_required": false,
+      "detector_required": false,
+      "execution_kind": "INVALID_WINDOWS_SECURITY_CLOCK",
+      "execution_stops_at": "Windows Security adapter clock state",
+      "expected_analytical_boundary": "Clock handling must remain invalid/unresolved or reject the record; UTC must not be fabricated.",
+      "expected_structural_effect": "Security record structure is retained while its source time token is invalid.",
+      "genuine_red_if": [
+        "A non-null UTC timestamp is fabricated from the invalid literal.",
+        "The record disappears from accounting."
+      ],
+      "initial_execution_state": "NOT_EXECUTED",
+      "input_count": 1,
+      "input_paths": [
+        "CHAL-CLOCK-001/windows-security.txt"
+      ],
+      "mutation_operator": "REPLACE_SECURITY_TIME_TOKEN_WITH_INVALID_LITERAL",
+      "ordinal": 1,
+      "pass_invariants": [
+        "Accepted plus quarantined accounting covers the generated record.",
+        "If a canonical event is accepted, event_time_utc remains None.",
+        "Quarantine is also an acceptable disposition."
+      ],
+      "production_call_chain": [
+        "read_windows_security_splunk_records",
+        "load_windows_security_splunk"
+      ],
+      "red_handling": "STOP_AND_PRESERVE_BEFORE_DIAGNOSIS_OR_REPAIR",
+      "required_observations": [
+        "The structurally retained Security record is explicitly accounted for.",
+        "The invalid source time token does not acquire fabricated UTC semantics."
+      ]
+    },
+    {
+      "challenge_id": "CHAL-CORR-001",
+      "correlation_required": true,
+      "detector_required": true,
+      "execution_kind": "CORR001_WRONG_IDENTITY",
+      "execution_stops_at": "TRC-CORR-001",
+      "expected_analytical_boundary": "Destination/time adjacency alone must not create TRC-CORR-001.",
+      "expected_structural_effect": "Derived PowerShell and Zeek inputs share destination/time but not host/source identity.",
+      "genuine_red_if": [
+        "TRC-CORR-001 MATCHES despite wrong host/source identity.",
+        "An edge is emitted using destination/time adjacency alone."
+      ],
+      "initial_execution_state": "NOT_EXECUTED",
+      "input_count": 2,
+      "input_paths": [
+        "CHAL-CORR-001/powershell.jsonl",
+        "CHAL-CORR-001/zeek.jsonl"
+      ],
+      "mutation_operator": "SYNTHESIZE_CORR001_SAME_DESTINATION_WRONG_IDENTITY",
+      "ordinal": 2,
+      "pass_invariants": [
+        "The PowerShell detection MATCHES its supplied contributing event.",
+        "TRC-CORR-001 does NOT MATCH.",
+        "No correlation edge is returned.",
+        "Destination/time adjacency alone is insufficient to override identity mismatch."
+      ],
+      "production_call_chain": [
+        "load_powershell_jsonl",
+        "load_zeek_jsonl",
+        "detect_powershell_web_retrieval",
+        "correlate_web_retrieval_with_zeek"
+      ],
+      "red_handling": "STOP_AND_PRESERVE_BEFORE_DIAGNOSIS_OR_REPAIR",
+      "required_observations": [
+        "The derived records share the intended destination/time adjacency.",
+        "Host/source identity is deliberately incompatible.",
+        "The PowerShell behavioral detector is evaluated before correlation."
+      ]
+    },
+    {
+      "challenge_id": "CHAL-CORR-002",
+      "correlation_required": true,
+      "detector_required": true,
+      "execution_kind": "CORR001_DIRECTIONALITY",
+      "execution_stops_at": "TRC-CORR-001",
+      "expected_analytical_boundary": "TRC-CORR-001 must retain directionality.",
+      "expected_structural_effect": "The network direction is reversed relative to the PowerShell retrieval direction.",
+      "genuine_red_if": [
+        "TRC-CORR-001 MATCHES after source/destination direction is reversed.",
+        "A correlation edge is emitted despite incompatible directionality."
+      ],
+      "initial_execution_state": "NOT_EXECUTED",
+      "input_count": 2,
+      "input_paths": [
+        "CHAL-CORR-002/powershell.jsonl",
+        "CHAL-CORR-002/zeek.jsonl"
+      ],
+      "mutation_operator": "SYNTHESIZE_CORR001_REVERSED_DIRECTION",
+      "ordinal": 3,
+      "pass_invariants": [
+        "The PowerShell behavioral detector MATCHES its supplied event.",
+        "TRC-CORR-001 does NOT MATCH the reversed network direction.",
+        "No correlation edge is returned."
+      ],
+      "production_call_chain": [
+        "load_powershell_jsonl",
+        "load_zeek_jsonl",
+        "detect_powershell_web_retrieval",
+        "correlate_web_retrieval_with_zeek"
+      ],
+      "red_handling": "STOP_AND_PRESERVE_BEFORE_DIAGNOSIS_OR_REPAIR",
+      "required_observations": [
+        "The PowerShell behavior and Zeek record remain parseable.",
+        "The generated network direction is reversed relative to the retrieval direction expected by TRC-CORR-001."
+      ]
+    },
+    {
+      "challenge_id": "CHAL-DUP-001",
+      "correlation_required": false,
+      "detector_required": false,
+      "execution_kind": "RAW_AND_ADAPTER_ACCOUNTING",
+      "execution_stops_at": "PowerShell real-format adapter accounting",
+      "expected_analytical_boundary": "Both raw inputs must remain explicitly accounted for.",
+      "expected_structural_effect": "Two byte-identical PowerShell Event records.",
+      "genuine_red_if": [
+        "Two physical records are silently collapsed into one raw provenance record.",
+        "A physical input record disappears from accepted/quarantined accounting."
+      ],
+      "initial_execution_state": "NOT_EXECUTED",
+      "input_count": 1,
+      "input_paths": [
+        "CHAL-DUP-001/powershell.xml"
+      ],
+      "mutation_operator": "EXACT_RECORD_DUPLICATION",
+      "ordinal": 4,
+      "pass_invariants": [
+        "Exactly two raw records are accounted for across accepted plus quarantined dispositions.",
+        "The duplicate records are not collapsed into one provenance record.",
+        "If both records are accepted, their locators remain distinct even though their raw SHA-256 values are equal."
+      ],
+      "production_call_chain": [
+        "read_windows_event_xml_records",
+        "load_powershell_windows_event_xml"
+      ],
+      "red_handling": "STOP_AND_PRESERVE_BEFORE_DIAGNOSIS_OR_REPAIR",
+      "required_observations": [
+        "The two byte-identical Event records remain separately represented by raw-record provenance.",
+        "Record accounting is measured before any reconstruction or detector is considered."
+      ]
+    },
+    {
+      "challenge_id": "CHAL-DUP-002",
+      "correlation_required": false,
+      "detector_required": true,
+      "execution_kind": "RAW_ADAPTER_AND_DETECTION_ACCOUNTING",
+      "execution_stops_at": "DET005 evaluation of accepted repeated events",
+      "expected_analytical_boundary": "A semantic repeat must remain separately accountable.",
+      "expected_structural_effect": "Two separate Sysmon records retain the selected behavior.",
+      "genuine_red_if": [
+        "The repeated record is silently deduplicated.",
+        "Distinct record identity is lost.",
+        "One physical input disappears from accounting."
+      ],
+      "initial_execution_state": "NOT_EXECUTED",
+      "input_count": 1,
+      "input_paths": [
+        "CHAL-DUP-002/sysmon.xml"
+      ],
+      "mutation_operator": "SEMANTIC_REPEAT_DISTINCT_EVENT_RECORD_ID",
+      "ordinal": 5,
+      "pass_invariants": [
+        "Exactly two physical records are accounted for.",
+        "Two accepted semantic repeats remain distinct canonical events when both parse successfully.",
+        "No semantic repeat is discarded merely because the behavior duplicates another record.",
+        "Each accepted retained DET005 behavior is evaluated independently."
+      ],
+      "production_call_chain": [
+        "read_windows_event_xml_records",
+        "load_sysmon_windows_event_xml",
+        "detect_sysmon_domain_firewall_zero_write"
+      ],
+      "red_handling": "STOP_AND_PRESERVE_BEFORE_DIAGNOSIS_OR_REPAIR",
+      "required_observations": [
+        "Both distinct Sysmon records remain separately accountable.",
+        "Their canonical provenance/event identities are not collapsed.",
+        "The retained selected firewall-write behavior is evaluated independently for each accepted event."
+      ]
+    },
+    {
+      "challenge_id": "CHAL-LABEL-001",
+      "correlation_required": false,
+      "detector_required": true,
+      "execution_kind": "PUBLISHER_LABEL_ISOLATION",
+      "execution_stops_at": "Zeek IRC detector",
+      "expected_analytical_boundary": "Publisher label context alone must not create production detector behavior.",
+      "expected_structural_effect": "One structurally valid benign publisher-derived Zeek record is retained.",
+      "genuine_red_if": [
+        "Publisher label context itself causes the production IRC detector to MATCH.",
+        "Publisher-derived expected-answer context becomes production semantic selection logic."
+      ],
+      "initial_execution_state": "NOT_EXECUTED",
+      "input_count": 1,
+      "input_paths": [
+        "CHAL-LABEL-001/zeek.log"
+      ],
+      "mutation_operator": "PRESERVE_LABEL_BEARING_SOURCE_CONTEXT",
+      "ordinal": 6,
+      "pass_invariants": [
+        "The record remains explicitly accounted for.",
+        "Publisher label fields are not used as the production detector selector.",
+        "The IRC service detector does NOT MATCH solely because publisher label context exists.",
+        "A service_not_irc or missing_service no-match is acceptable when applicable."
+      ],
+      "production_call_chain": [
+        "read_zeek_ascii_records",
+        "load_zeek_conn_ascii",
+        "detect_zeek_irc_service"
+      ],
+      "red_handling": "STOP_AND_PRESERVE_BEFORE_DIAGNOSIS_OR_REPAIR",
+      "required_observations": [
+        "The benign label-bearing Zeek record remains parseable/accounted.",
+        "Publisher-derived label context does not create semantic IRC detector behavior."
+      ]
+    },
+    {
+      "challenge_id": "CHAL-MAL-001",
+      "correlation_required": false,
+      "detector_required": false,
+      "execution_kind": "MALFORMED_WINDOWS_SECURITY_ACCOUNTING",
+      "execution_stops_at": "Windows Security adapter disposition",
+      "expected_analytical_boundary": "Malformed input must be rejected/quarantined or otherwise explicitly accounted for.",
+      "expected_structural_effect": "The Security export ends mid-record.",
+      "genuine_red_if": [
+        "The truncated record disappears from accounting.",
+        "The truncated bytes become an apparently complete canonical event with no explicit malformed/incomplete disposition.",
+        "Malformed record boundaries are silently merged into another record."
+      ],
+      "initial_execution_state": "NOT_EXECUTED",
+      "input_count": 1,
+      "input_paths": [
+        "CHAL-MAL-001/windows-security.txt"
+      ],
+      "mutation_operator": "TRUNCATE_RECORD",
+      "ordinal": 7,
+      "pass_invariants": [
+        "The input produces an explicit accepted/quarantined accounting outcome.",
+        "A malformed record is quarantined unless the production model exposes an explicit incomplete state.",
+        "Because CanonicalEvent has no generic incomplete-record field, silently treating truncated bytes as a complete canonical event is not acceptable."
+      ],
+      "production_call_chain": [
+        "read_windows_security_splunk_records",
+        "load_windows_security_splunk"
+      ],
+      "red_handling": "STOP_AND_PRESERVE_BEFORE_DIAGNOSIS_OR_REPAIR",
+      "required_observations": [
+        "The truncated Security export is explicitly accounted for.",
+        "Malformed/truncated bytes must not be silently converted into an apparently complete canonical event."
+      ]
+    },
+    {
+      "challenge_id": "CHAL-MAL-002",
+      "correlation_required": false,
+      "detector_required": false,
+      "execution_kind": "MALFORMED_XML_ACCOUNTING",
+      "execution_stops_at": "Sysmon real-format adapter disposition",
+      "expected_analytical_boundary": "Malformed XML must not be silently coerced into a valid event.",
+      "expected_structural_effect": "The derived Sysmon XML is not well formed.",
+      "genuine_red_if": [
+        "Malformed XML is silently coerced into a valid canonical event.",
+        "The malformed input disappears from accounting."
+      ],
+      "initial_execution_state": "NOT_EXECUTED",
+      "input_count": 1,
+      "input_paths": [
+        "CHAL-MAL-002/sysmon.xml"
+      ],
+      "mutation_operator": "REMOVE_XML_EVENT_CLOSING_TAG",
+      "ordinal": 8,
+      "pass_invariants": [
+        "Malformed XML remains explicitly accounted for.",
+        "No apparently valid canonical Sysmon event is emitted from the malformed Event document."
+      ],
+      "production_call_chain": [
+        "read_windows_event_xml_records",
+        "load_sysmon_windows_event_xml"
+      ],
+      "red_handling": "STOP_AND_PRESERVE_BEFORE_DIAGNOSIS_OR_REPAIR",
+      "required_observations": [
+        "The XML lacking the Event closing tag is explicitly rejected/quarantined.",
+        "No valid Sysmon semantic event is fabricated from malformed XML."
+      ]
+    },
+    {
+      "challenge_id": "CHAL-MISS-001",
+      "correlation_required": false,
+      "detector_required": false,
+      "execution_kind": "MISSING_ZEEK_TIMESTAMP",
+      "execution_stops_at": "Zeek real-format adapter clock disposition",
+      "expected_analytical_boundary": "No UTC time may be fabricated for an absent timestamp.",
+      "expected_structural_effect": "Zeek schema is retained while ts is unset.",
+      "genuine_red_if": [
+        "A UTC timestamp is fabricated from the unset marker.",
+        "The record disappears from accounting."
+      ],
+      "initial_execution_state": "NOT_EXECUTED",
+      "input_count": 1,
+      "input_paths": [
+        "CHAL-MISS-001/zeek.log"
+      ],
+      "mutation_operator": "REPLACE_ZEEK_TIMESTAMP_WITH_UNSET_MARKER",
+      "ordinal": 9,
+      "pass_invariants": [
+        "Accepted plus quarantined accounting covers the generated record.",
+        "No accepted canonical event from this input may contain a fabricated non-null event_time_utc.",
+        "Quarantine is an acceptable production disposition."
+      ],
+      "production_call_chain": [
+        "read_zeek_ascii_records",
+        "load_zeek_conn_ascii"
+      ],
+      "red_handling": "STOP_AND_PRESERVE_BEFORE_DIAGNOSIS_OR_REPAIR",
+      "required_observations": [
+        "The Zeek record with an unset ts remains explicitly accounted for.",
+        "No UTC timestamp is invented."
+      ]
+    },
+    {
+      "challenge_id": "CHAL-MISS-002",
+      "correlation_required": false,
+      "detector_required": "CONDITIONAL",
+      "execution_kind": "MISSING_POWERSHELL_SEMANTIC_FIELD",
+      "execution_stops_at": "Reconstructed PowerShell behavioral detector or earlier explicit quarantine",
+      "expected_analytical_boundary": "Behavior requiring ScriptBlockText must not be invented.",
+      "expected_structural_effect": "Event 4104 remains structured but ScriptBlockText is absent.",
+      "genuine_red_if": [
+        "ScriptBlockText is fabricated.",
+        "TRC web-retrieval/execution behavior matches despite absent supporting script text.",
+        "The record disappears from accounting."
+      ],
+      "initial_execution_state": "NOT_EXECUTED",
+      "input_count": 1,
+      "input_paths": [
+        "CHAL-MISS-002/powershell.xml"
+      ],
+      "mutation_operator": "REMOVE_SCRIPTBLOCKTEXT_FIELD",
+      "ordinal": 10,
+      "pass_invariants": [
+        "The record remains explicitly accounted for by parse/adapter disposition.",
+        "If reconstruction occurs, absent ScriptBlockText must not become invented script text.",
+        "The reconstructed web-retrieval/execution detector must not MATCH on invented text.",
+        "Parser quarantine is acceptable.",
+        "If the detector is reached, an incomplete_script_block or missing_script_text no-match is acceptable."
+      ],
+      "production_call_chain": [
+        "read_windows_event_xml_records",
+        "load_powershell_windows_event_xml",
+        "reconstruct_powershell_scriptblocks_if_eligible",
+        "detect_powershell_web_retrieval_execution_if_reconstructed"
+      ],
+      "red_handling": "STOP_AND_PRESERVE_BEFORE_DIAGNOSIS_OR_REPAIR",
+      "required_observations": [
+        "Missing ScriptBlockText is not synthesized.",
+        "Web-retrieval-plus-execution behavior is not invented."
+      ]
+    },
+    {
+      "challenge_id": "CHAL-MIX-001",
+      "correlation_required": false,
+      "detector_required": true,
+      "execution_kind": "CROSS_INPUT_CONTEXT_ISOLATION",
+      "execution_stops_at": "Independent Zeek IRC detection for both inputs",
+      "expected_analytical_boundary": "Processing in one test run must not leak source/label context between events.",
+      "expected_structural_effect": "Development and benign Zeek records remain in separate schema-preserving inputs.",
+      "genuine_red_if": [
+        "The benign event inherits detector behavior from the development event.",
+        "Publisher/source context crosses event boundaries.",
+        "The two inputs are merged into one semantic record."
+      ],
+      "initial_execution_state": "NOT_EXECUTED",
+      "input_count": 2,
+      "input_paths": [
+        "CHAL-MIX-001/development-zeek.log",
+        "CHAL-MIX-001/benign-zeek.log"
+      ],
+      "mutation_operator": "BUNDLE_DISTINCT_ZEEK_INPUTS",
+      "ordinal": 11,
+      "pass_invariants": [
+        "Both generated inputs remain separately accounted for.",
+        "The development IRC parent retains the IRC detector MATCH expected from its own semantic service.",
+        "The benign ECHO parent does NOT gain an IRC MATCH from processing alongside the development input.",
+        "No source or label context leaks between the two events."
+      ],
+      "production_call_chain": [
+        "read_zeek_ascii_records_each_input",
+        "load_zeek_conn_ascii_each_input",
+        "detect_zeek_irc_service_each_event"
+      ],
+      "red_handling": "STOP_AND_PRESERVE_BEFORE_DIAGNOSIS_OR_REPAIR",
+      "required_observations": [
+        "Development and benign Zeek records remain separate inputs.",
+        "Both are evaluated during one challenge run without sharing publisher/source semantic context."
+      ]
+    },
+    {
+      "challenge_id": "CHAL-TIME-001",
+      "correlation_required": false,
+      "detector_required": true,
+      "execution_kind": "EVENT_TIME_VS_FILE_ORDER",
+      "execution_stops_at": "DET005 evaluation plus event-time ordering check",
+      "expected_analytical_boundary": "File adjacency/order must not replace observed event-time semantics.",
+      "expected_structural_effect": "File order is opposite the established event-time order.",
+      "genuine_red_if": [
+        "File position overwrites or fabricates event-time semantics.",
+        "One of the two records disappears.",
+        "Detector outcome depends on file adjacency instead of the event semantics."
+      ],
+      "initial_execution_state": "NOT_EXECUTED",
+      "input_count": 1,
+      "input_paths": [
+        "CHAL-TIME-001/sysmon.xml"
+      ],
+      "mutation_operator": "REVERSE_CHRONOLOGICAL_RECORD_ORDER",
+      "ordinal": 12,
+      "pass_invariants": [
+        "Exactly two physical records are accounted for.",
+        "Accepted events retain their independently parsed event_time_utc values.",
+        "The first file record has a later event time than the second file record, preserving the deliberate reverse ordering.",
+        "Chronological ordering derived from event_time_utc restores the established early/late relation.",
+        "Each accepted retained firewall-zero-write behavior is evaluated independently."
+      ],
+      "production_call_chain": [
+        "read_windows_event_xml_records",
+        "load_sysmon_windows_event_xml",
+        "detect_sysmon_domain_firewall_zero_write"
+      ],
+      "red_handling": "STOP_AND_PRESERVE_BEFORE_DIAGNOSIS_OR_REPAIR",
+      "required_observations": [
+        "Two Sysmon records remain accepted/accounted despite reverse file order.",
+        "Source-native UtcTime remains the activity-time semantic.",
+        "DET005 behavior does not depend on chronological file adjacency."
+      ]
+    },
+    {
+      "challenge_id": "CHAL-TIME-002",
+      "correlation_required": true,
+      "detector_required": true,
+      "execution_kind": "CORR002_EXACT_BOUNDARY",
+      "execution_stops_at": "TRC-CORR-002",
+      "expected_analytical_boundary": "The established 30-second CORR002 boundary is tested exactly.",
+      "expected_structural_effect": "Derived CORR002 identities align at exactly 30 seconds.",
+      "genuine_red_if": [
+        "Exactly 30 seconds is rejected as outside the established boundary.",
+        "The correlation matches without detection-event binding.",
+        "The correlation matches without the required identity dimensions."
+      ],
+      "initial_execution_state": "NOT_EXECUTED",
+      "input_count": 2,
+      "input_paths": [
+        "CHAL-TIME-002/sysmon.jsonl",
+        "CHAL-TIME-002/powershell.jsonl"
+      ],
+      "mutation_operator": "SYNTHESIZE_CORR002_EXACT_TIME_BOUNDARY",
+      "ordinal": 13,
+      "pass_invariants": [
+        "PowerShell adapter accepts exactly one relevant event.",
+        "Sysmon adapter accepts exactly one relevant process_create event.",
+        "The PowerShell detector MATCHES and binds the supplied PowerShell event.",
+        "The observed directional delta is exactly 30 seconds.",
+        "TRC-CORR-002 MATCHES at the inclusive 30-second boundary.",
+        "A non-null correlation edge is returned."
+      ],
+      "production_call_chain": [
+        "load_powershell_jsonl",
+        "load_sysmon_jsonl",
+        "detect_powershell_web_retrieval",
+        "correlate_powershell_detection_with_sysmon_process(max_seconds=30.0)"
+      ],
+      "red_handling": "STOP_AND_PRESERVE_BEFORE_DIAGNOSIS_OR_REPAIR",
+      "required_observations": [
+        "Both JSONL records parse as the expected synthetic semantic families.",
+        "The PowerShell behavioral detection matches its contributing event.",
+        "The correlation is evaluated at exactly a 30-second directional delta."
+      ]
+    },
+    {
+      "challenge_id": "CHAL-TIME-003",
+      "correlation_required": true,
+      "detector_required": true,
+      "execution_kind": "CORR002_JUST_OUTSIDE_BOUNDARY",
+      "execution_stops_at": "TRC-CORR-002",
+      "expected_analytical_boundary": "CORR002 must not silently expand beyond its 30-second bound.",
+      "expected_structural_effect": "Derived CORR002 identities align except for a 31-second delta.",
+      "genuine_red_if": [
+        "TRC-CORR-002 silently expands beyond the 30-second bound.",
+        "A correlation edge is emitted at the 31-second delta."
+      ],
+      "initial_execution_state": "NOT_EXECUTED",
+      "input_count": 2,
+      "input_paths": [
+        "CHAL-TIME-003/sysmon.jsonl",
+        "CHAL-TIME-003/powershell.jsonl"
+      ],
+      "mutation_operator": "SYNTHESIZE_CORR002_JUST_OUTSIDE_TIME_BOUNDARY",
+      "ordinal": 14,
+      "pass_invariants": [
+        "The PowerShell behavioral detection MATCHES its contributing event.",
+        "The observed directional delta is exactly 31 seconds.",
+        "TRC-CORR-002 does NOT MATCH.",
+        "No correlation edge is returned."
+      ],
+      "production_call_chain": [
+        "load_powershell_jsonl",
+        "load_sysmon_jsonl",
+        "detect_powershell_web_retrieval",
+        "correlate_powershell_detection_with_sysmon_process(max_seconds=30.0)"
+      ],
+      "red_handling": "STOP_AND_PRESERVE_BEFORE_DIAGNOSIS_OR_REPAIR",
+      "required_observations": [
+        "Both JSONL records parse as the expected synthetic semantic families.",
+        "All intended identity dimensions remain aligned.",
+        "The directional event-time delta is exactly 31 seconds."
+      ]
+    },
+    {
+      "challenge_id": "CHAL-UNKNOWN-001",
+      "correlation_required": false,
+      "detector_required": false,
+      "execution_kind": "UNSUPPORTED_PROVIDER_EVENT",
+      "execution_stops_at": "PowerShell adapter provider/event validation",
+      "expected_analytical_boundary": "Unsupported input must not be coerced into a supported event family.",
+      "expected_structural_effect": "XML remains well formed but identifies an unsupported provider/event.",
+      "genuine_red_if": [
+        "Unsupported provider/event identity is silently rewritten into the supported PowerShell family.",
+        "Supported behavior is fabricated from the unsupported event.",
+        "The physical record disappears from accounting."
+      ],
+      "initial_execution_state": "NOT_EXECUTED",
+      "input_count": 1,
+      "input_paths": [
+        "CHAL-UNKNOWN-001/powershell.xml"
+      ],
+      "mutation_operator": "REPLACE_PROVIDER_AND_EVENT_ID",
+      "ordinal": 15,
+      "pass_invariants": [
+        "The physical XML record remains explicitly accounted for.",
+        "No accepted event from this input may be falsely promoted as supported script_execution behavior solely because its XML shape resembles Event 4104.",
+        "Explicit quarantine is acceptable."
+      ],
+      "production_call_chain": [
+        "read_windows_event_xml_records",
+        "load_powershell_windows_event_xml"
+      ],
+      "red_handling": "STOP_AND_PRESERVE_BEFORE_DIAGNOSIS_OR_REPAIR",
+      "required_observations": [
+        "Well-formed XML remains structurally attributable.",
+        "Unsupported provider/event identity is not coerced into a supported PowerShell ScriptBlock semantic event."
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "state": "FROZEN_BEFORE_EXECUTION"
+}

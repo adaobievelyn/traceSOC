@@ -1,0 +1,56 @@
+{
+    "schema_version":  "1.0",
+    "record_type":  "tracesoc-finalist-business-impact-validation",
+    "technical_freeze":  {
+                             "commit":  "8751a679f36b4983cdd3d2b0b35f44e9a11c4f39",
+                             "tree":  "fc420ee3fd1988cf578c0cf309ee3aefcccf33b2"
+                         },
+    "narrative_source":  {
+                             "path":  "evidence/finalist-problem-impact-proof-defense.md",
+                             "sha256":  "792b6d093ebdbb88e4cdc9f7de596655d2552ede568e791b327fd89a2109ee2d",
+                             "bytes":  19907
+                         },
+    "structure":  {
+                      "problem":  true,
+                      "impact":  true,
+                      "product_response":  true,
+                      "proof":  true,
+                      "defense":  true,
+                      "business_value":  true,
+                      "explicit_non_claims":  true,
+                      "future_business_measurement":  true,
+                      "report_framing":  true,
+                      "finalist_story":  true
+                  },
+    "measured_support":  {
+                             "reference_canonical_observations":  5442,
+                             "reference_raw_locator_coverage":  "5442/5442",
+                             "reference_detector_evaluations":  32658,
+                             "external_real_zeek_rows":  23145,
+                             "holdout_source_rows":  156458,
+                             "holdout_canonical_observations":  156458,
+                             "holdout_detector_evaluations":  938748,
+                             "combined_separate_run_observations":  185045,
+                             "regression":  "524/524 PASS",
+                             "public_acceptance":  "4/4 PASS",
+                             "scale_records":  198463,
+                             "scale_runtime_seconds":  15.9617856,
+                             "scale_peak_working_set_bytes":  486924288,
+                             "detection_accuracy":  "UNADJUDICATED",
+                             "confirmed_malicious_iocs":  0
+                         },
+    "business_claim_boundary":  {
+                                    "model":  "CAPABILITY_BASED_NOT_INVENTED_ROI",
+                                    "monetary_savings_measured":  false,
+                                    "analyst_hours_saved_measured":  false,
+                                    "false_positive_reduction_measured":  false,
+                                    "breach_cost_reduction_measured":  false,
+                                    "universal_detection_accuracy_measured":  false
+                                },
+    "report_direction":  {
+                             "executive_brief":  "BUSINESS_FIRST",
+                             "technical_report_title":  "TraceSOC Technical Validation and Evidence Reconstruction Report",
+                             "controlled_reference_case_claimed_malicious":  false
+                         },
+    "final_status":  "PASS"
+}

@@ -1,0 +1,742 @@
+{
+  "assignment": {
+    "analytical_use": "PROVENANCE_ONLY_NOT_DECISION_INPUT",
+    "assigned_pack": {
+      "file_name": "soc-analysis-stage-9-shared-b1.tar.gz",
+      "manifest_signature": "a8d15c6e852e04741c0169e57dac3bc05b9a77a869a94bf16b5c9ed4fe267fbf",
+      "sha256": "df8fb093a6a69ca885a0f22518f842cf6a470232a6df821fb759a507389f2022",
+      "verified_before_use": true
+    },
+    "candidate_binding": "UBI-2026-0091",
+    "evidence_marker": "UBI-A9-4BC183701F3C",
+    "project_id": "SOC-A5",
+    "variant": "V3"
+  },
+  "authority_statement": "This ledger is an additional machine-readable grader navigation record. Required UBI artifacts remain governed by the supplied templates.",
+  "business_impact": {
+    "measured_support": {
+      "current_regression_tests": 524,
+      "external_real_zeek_rows": 23145,
+      "postfreeze_holdout_rows": 156458,
+      "reference_case_canonical_observations": 5442,
+      "reference_case_raw_locator_coverage": "5442/5442",
+      "scale_benchmark_records": 198463
+    },
+    "not_measured": [
+      "monetary savings",
+      "analyst-hours saved",
+      "breach-cost reduction",
+      "false-positive reduction percentage",
+      "universal detection accuracy"
+    ],
+    "operational_value": [
+      "Preserves raw evidence identity and exact locators through analysis.",
+      "Accounts for unsupported or partial evidence rather than silently discarding it.",
+      "Makes downstream findings mechanically reversible to raw evidence.",
+      "Supports later reproduction and defense of analytical decisions."
+    ],
+    "problem": "SOC/DFIR evidence is fragmented across email, endpoint and network representations; manual stitching can detach analytical conclusions from exact source evidence."
+  },
+  "claims": [
+    {
+      "alternative_considered": "A later packaging commit may exist, but the technical candidate remains this freeze.",
+      "artifact_path": "project-control/finalist-candidate-freeze-v04.json",
+      "claim": "TraceSOC finalist technical candidate is frozen at commit 8751a679f36b4983cdd3d2b0b35f44e9a11c4f39 and tree fc420ee3fd1988cf578c0cf309ee3aefcccf33b2.",
+      "claim_id": "C-001",
+      "collection_time_utc": "2026-09-24T16:46:03Z",
+      "confidence": "high",
+      "disposition": "FROZEN_TECHNICAL_CANDIDATE",
+      "does_not_prove": "Does not by itself prove unseen-evidence generalization or detection accuracy.",
+      "exact_locator": "$.candidate;$.parent_commit;$.validation",
+      "proves": "Identifies the exact pre-holdout technical candidate.",
+      "report_section": "Product integrity",
+      "sha256": "8cc67c7b17f9a168938fba9119c518f4ac1dd748932419539f5215f0edeceae0"
+    },
+    {
+      "alternative_considered": "External and post-freeze evidence validation is independently required.",
+      "artifact_path": "results/acceptance/public-test-results.json",
+      "claim": "The frozen candidate currently passes 524/524 regression tests and all 4 public acceptance classes.",
+      "claim_id": "C-002",
+      "collection_time_utc": "2026-09-25T13:07:14Z",
+      "confidence": "high",
+      "disposition": "524_OF_524_PASS",
+      "does_not_prove": "Regression success does not establish universal correctness or detector accuracy.",
+      "exact_locator": "$.full_regression;$.public_acceptance",
+      "proves": "The frozen candidate passes the current machine-readable regression surface.",
+      "report_section": "Regression",
+      "sha256": "ed379e5d1672569e772df8b3f59fff98991ea298dc41e5ef51e78bae4716230a"
+    },
+    {
+      "alternative_considered": "The same evidence is correctly interpreted as controlled interoperability/provenance validation.",
+      "artifact_path": "evidence/reference-case/case-manifest.json",
+      "claim": "The six-source R3 case contains 5,442 canonical observations, 32,658 detection evaluations, 5 matched detections and 6 findings.",
+      "claim_id": "C-003",
+      "collection_time_utc": "2026-09-24T16:46:03Z",
+      "confidence": "high",
+      "disposition": "CONTROLLED_REFERENCE_CASE",
+      "does_not_prove": "Does not establish that the controlled reference activity is malicious ground truth.",
+      "exact_locator": "$.analysis_counts",
+      "proves": "Demonstrates integrated processing of the controlled six-source reference case.",
+      "report_section": "Reference reconstruction",
+      "sha256": "35e799edea98e91624f4dac8442e75479e50f8cbcc4b21d0a571ad6d6319fdba"
+    },
+    {
+      "alternative_considered": "End-to-end downstream linkage is tested separately.",
+      "artifact_path": "evidence/final-proof/final-grader-feedback-closure-audit.json",
+      "claim": "All 5,442 R3 canonical observations carry raw locators.",
+      "claim_id": "C-004",
+      "collection_time_utc": "2026-09-25T13:07:14Z",
+      "confidence": "high",
+      "disposition": "5442_OF_5442_RAW_LOCATORS",
+      "does_not_prove": "Locator presence alone does not establish the correctness of every interpretation.",
+      "exact_locator": "$.mechanical_measurements.r3_traceability",
+      "proves": "Every R3 canonical observation is anchored to raw location metadata.",
+      "report_section": "Traceability",
+      "sha256": "db54bfea97dc8777296388479d66a164ff7de1e8df98659683f02a38dbd41065"
+    },
+    {
+      "alternative_considered": "The selected chain is evidence-backed corroboration rather than a compromise verdict.",
+      "artifact_path": "evidence/final-proof/r3-end-to-end-reverse-trace-proof.json",
+      "claim": "A complete R3 chain was mechanically proved from response to original raw artifact SHA-256.",
+      "claim_id": "C-005",
+      "collection_time_utc": "2026-09-25T12:43:18Z",
+      "confidence": "high",
+      "disposition": "END_TO_END_REVERSE_TRACE_PASS",
+      "does_not_prove": "Does not establish maliciousness, causality, incident membership or executed response.",
+      "exact_locator": "$.selected_chain;$.proof_checks;$.observation_proofs",
+      "proves": "Demonstrates mechanical reversibility of one complete downstream analytical chain.",
+      "report_section": "Reverse traceability",
+      "sha256": "cf32024dd0af104a27e8174343483ecc902bd8d4334c724001c80e43e99515db"
+    },
+    {
+      "alternative_considered": "Representation generalization and detector accuracy are separate questions.",
+      "artifact_path": "project-control/finalist-candidate-freeze-v04.json",
+      "claim": "External IoT-23 Zeek evidence reconciled 23,145 source rows to 23,145 canonical observations without using publisher labels as expected verdicts.",
+      "claim_id": "C-006",
+      "collection_time_utc": "2026-09-24T16:46:03Z",
+      "confidence": "high",
+      "disposition": "EXTERNAL_REAL_EVIDENCE_PASS",
+      "does_not_prove": "Matched detections are not claimed as ground-truth maliciousness or accuracy.",
+      "exact_locator": "$.external_real_evidence",
+      "proves": "Supports real external Zeek representation ingestion/accounting beyond the controlled case.",
+      "report_section": "External real evidence",
+      "sha256": "8cc67c7b17f9a168938fba9119c518f4ac1dd748932419539f5215f0edeceae0"
+    },
+    {
+      "alternative_considered": "Detection accuracy remains UNADJUDICATED because no exact valid scoring comparator was established.",
+      "artifact_path": "evidence/final-proof/holdout-final-adjudication.json",
+      "claim": "The sealed semantically unseen holdout reconciled 156,458 source rows to 156,458 canonical observations and executed 938,748 detector evaluations after freeze.",
+      "claim_id": "C-007",
+      "collection_time_utc": "2026-09-25T12:28:36Z",
+      "confidence": "high",
+      "disposition": "INGESTION_PROVENANCE_GENERALIZATION_PASS",
+      "does_not_prove": "Zero matched detections do not establish true/false-negative rates or accuracy.",
+      "exact_locator": "$.holdout;$.measured_status;$.detection_accuracy_boundary",
+      "proves": "Supports post-freeze ingestion, provenance, accounting and representation generalization.",
+      "report_section": "Post-freeze holdout",
+      "sha256": "cf4764f865a07d75bea647706434fa405b9ac65fb047061cb570511f5785d80b"
+    },
+    {
+      "alternative_considered": "Raw frames remain preserved even when not normalized into the supported IPv4 model.",
+      "artifact_path": "evidence/final-proof/r3-pcap-processing-issue-final-adjudication.json",
+      "claim": "All 9,672 reference PCAPNG packet locators are accounted: 5,412 normalized IPv4 TCP/UDP events plus 4,260 processing issues, with zero recorded errors.",
+      "claim_id": "C-008",
+      "collection_time_utc": "2026-09-25T12:52:41Z",
+      "confidence": "high",
+      "disposition": "CLOSED_ACCOUNTED_SUPPORTED_PARTIAL",
+      "does_not_prove": "Does not establish protocol names for the two non-IPv4 EtherType values or universal PCAP support.",
+      "exact_locator": "$.packet_accounting;$.mechanical_proof;$.adjudication",
+      "proves": "The 4,260 issue records are mechanically reconciled under supported-partial PCAP handling.",
+      "report_section": "Packet accounting",
+      "sha256": "0a322b28e3b1dafe6fdddb774746267d440db866a96f835c0cf826692f51dadd"
+    },
+    {
+      "alternative_considered": "A separate scale benchmark provides the stronger resource measurement.",
+      "artifact_path": "evidence/final-proof/frozen-clean-reproduction-resource-validation.json",
+      "claim": "Two fresh frozen six-source reproductions completed in 3.438 s and 3.393 s and produced the same 11 deterministic core artifact hashes as each other and as R3.",
+      "claim_id": "C-009",
+      "collection_time_utc": "2026-09-25T12:58:39Z",
+      "confidence": "high",
+      "disposition": "TWO_RUN_DETERMINISTIC_REPRODUCTION_PASS",
+      "does_not_prove": "The ~4.5 MiB child-process metric is not total system consumption or a universal scalability bound.",
+      "exact_locator": "$.run1;$.run2;$.proof_checks",
+      "proves": "Demonstrates deterministic regeneration of the measured R3 analytical outputs.",
+      "report_section": "Reproducibility",
+      "sha256": "36c2764bc8dbd87a3b567620d9d2958531abdbd7b5cbc7f5f3fd32a881621857"
+    },
+    {
+      "alternative_considered": "Runtime is descriptive because no runtime threshold was frozen.",
+      "artifact_path": "project-control/phase4j-cov011-benchmark-result-v1.json",
+      "claim": "The real-format scale benchmark processed 198,463 records with 198,463 accepted, zero quarantined and 198,463 semantic events in 15.9617856 seconds; peak working set was 486,924,288 bytes.",
+      "claim_id": "C-010",
+      "collection_time_utc": "2026-09-17T14:38:59.703027Z",
+      "confidence": "high",
+      "disposition": "RESOURCE_ACCOUNTING_BENCHMARK_PASS",
+      "does_not_prove": "Real cross-source correlation was not executed in this benchmark and detector accuracy is not measured.",
+      "exact_locator": "$.accounting;$.runtime;$.memory;$.holdout_boundary",
+      "proves": "Demonstrates measured parser/accounting/semantic-conversion resource behavior on the target workstation.",
+      "report_section": "Resource validation",
+      "sha256": "33d05b38159fa4b67e9ec377028e4f6427c9466c58b47ab2e9a4c8facc35cc33"
+    },
+    {
+      "alternative_considered": "External and post-freeze behavior provides additional generalization evidence.",
+      "artifact_path": "evidence/final-proof/final-grader-feedback-closure-audit.json",
+      "claim": "The closure audit found zero selected known reference-answer literal hits in frozen production source.",
+      "claim_id": "C-011",
+      "collection_time_utc": "2026-09-25T13:07:14Z",
+      "confidence": "high",
+      "disposition": "ANTI_HARDCODING_SCAN_PASS",
+      "does_not_prove": "A finite literal scan cannot prove absence of every possible hardcoding mechanism.",
+      "exact_locator": "$.mechanical_measurements.anti_hardcoding",
+      "proves": "Supports the measured anti-hardcoding control against selected known literals.",
+      "report_section": "Generalization controls",
+      "sha256": "db54bfea97dc8777296388479d66a164ff7de1e8df98659683f02a38dbd41065"
+    },
+    {
+      "alternative_considered": "Historical task-specific answers are not silently reintroduced as TraceSOC requirements.",
+      "artifact_path": "evidence/final-proof/final-grader-feedback-closure-audit.json",
+      "claim": "The final carry-forward audit records 13 transferable lessons SATISFIED, 4 historical task-specific requirements NOT_APPLICABLE_TO_TRACESOC and 0 OPEN.",
+      "claim_id": "C-012",
+      "collection_time_utc": "2026-09-25T13:07:14Z",
+      "confidence": "high",
+      "disposition": "CARRY_FORWARD_AUDIT_PASS",
+      "does_not_prove": "Does not predict or guarantee an external competition result.",
+      "exact_locator": "$.closure_matrix;$.counts",
+      "proves": "Shows explicit reconciliation of applicable prior grader engineering lessons.",
+      "report_section": "Grader-feedback closure",
+      "sha256": "db54bfea97dc8777296388479d66a164ff7de1e8df98659683f02a38dbd41065"
+    },
+    {
+      "alternative_considered": "Future product work can strengthen no-match result identity semantics.",
+      "artifact_path": "evidence/final-proof/r3-end-to-end-reverse-trace-proof.json",
+      "claim": "detection_result_id is not globally unique across distinct no-match evaluations; hypothesis-cited matched IDs measured in R3 are unique.",
+      "claim_id": "C-013",
+      "collection_time_utc": "2026-09-25T12:43:18Z",
+      "confidence": "high",
+      "disposition": "KNOWN_NONBLOCKING_LIMITATION",
+      "does_not_prove": "Does not establish globally unique identity for all no-match detection evaluations.",
+      "exact_locator": "$.known_identifier_limitation",
+      "proves": "Defines the measured identifier limitation and its effect on R3 reverse traceability.",
+      "report_section": "Known limitation",
+      "sha256": "cf32024dd0af104a27e8174343483ecc902bd8d4334c724001c80e43e99515db"
+    },
+    {
+      "alternative_considered": "An exact observation-level labeled comparator would be required for scoring.",
+      "artifact_path": "evidence/final-proof/holdout-final-adjudication.json",
+      "claim": "Post-freeze holdout detection accuracy remains UNADJUDICATED.",
+      "claim_id": "C-014",
+      "collection_time_utc": "2026-09-25T12:28:36Z",
+      "confidence": "high",
+      "disposition": "UNADJUDICATED",
+      "does_not_prove": "Does not establish precision, recall, FPR, FNR, TPR or TNR.",
+      "exact_locator": "$.measured_status.detection_accuracy;$.posthoc_comparator",
+      "proves": "Prevents zero matched detections from being converted into an unsupported accuracy claim.",
+      "report_section": "Known limitation",
+      "sha256": "cf4764f865a07d75bea647706434fa405b9ac65fb047061cb570511f5785d80b"
+    },
+    {
+      "alternative_considered": "A future sealed corpus from another publisher would address this limitation.",
+      "artifact_path": "evidence/final-proof/final-grader-feedback-closure-audit.json",
+      "claim": "Cross-publisher network holdout diversity is not established because development and holdout network evidence both originate from IoT-23.",
+      "claim_id": "C-015",
+      "collection_time_utc": "2026-09-25T13:07:14Z",
+      "confidence": "high",
+      "disposition": "KNOWN_NONBLOCKING_LIMITATION",
+      "does_not_prove": "Does not support a cross-publisher network generalization claim.",
+      "exact_locator": "$.known_nonblocking_limitations",
+      "proves": "Defines the current population boundary of network generalization evidence.",
+      "report_section": "Known limitation",
+      "sha256": "db54bfea97dc8777296388479d66a164ff7de1e8df98659683f02a38dbd41065"
+    },
+    {
+      "alternative_considered": "Controlled observables remain evidence without being classified as malicious IOCs.",
+      "artifact_path": "project-control/finalist-candidate-freeze-v04.json",
+      "claim": "No controlled reference observable is promoted to a confirmed malicious IOC.",
+      "claim_id": "C-016",
+      "collection_time_utc": "2026-09-24T16:46:03Z",
+      "confidence": "high",
+      "disposition": "NO_CONFIRMED_MALICIOUS_IOCS",
+      "does_not_prove": "An empty confirmed-malicious IOC set does not mean observables cannot be preserved or used as validation pivots.",
+      "exact_locator": "$.claim_boundary",
+      "proves": "Preserves the non-fabrication and non-maliciousness claim boundary.",
+      "report_section": "Indicator boundary",
+      "sha256": "8cc67c7b17f9a168938fba9119c518f4ac1dd748932419539f5215f0edeceae0"
+    }
+  ],
+  "ioc_summary": {
+    "confirmed_malicious_ioc_count": 0,
+    "status": "NO_CONFIRMED_MALICIOUS_IOCS"
+  },
+  "known_limitations": [
+    {
+      "id": "LIMIT-DET-ID",
+      "statement": "detection_result_id is not globally unique across distinct no-match evaluations; all hypothesis-cited matched result IDs measured in R3 are unique."
+    },
+    {
+      "id": "LIMIT-HOLDOUT-ACCURACY",
+      "statement": "The post-freeze holdout produced zero matched detections, but detection accuracy is UNADJUDICATED because the separately acquired publisher-labeled artifact is not an exact observation-level comparator."
+    },
+    {
+      "id": "LIMIT-NETWORK-DIVERSITY",
+      "statement": "Development and holdout network evidence both originate from IoT-23; cross-publisher network holdout diversity is not established."
+    },
+    {
+      "id": "LIMIT-RESOURCE-METRIC",
+      "statement": "Resource validation reports observed wall-clock runtime and the monitored child process peak working-set metric on this machine; it is not a universal scalability or total-system-memory claim."
+    }
+  ],
+  "product": {
+    "name": "TraceSOC",
+    "pipeline": [
+      "raw evidence",
+      "representation extraction",
+      "canonical observation",
+      "detection",
+      "relationship/correlation",
+      "hypothesis",
+      "finding",
+      "narrative",
+      "response"
+    ],
+    "purpose": "Provenance-first SOC/DFIR evidence reconstruction from heterogeneous raw evidence to evidence-backed analytical records with reversible raw provenance."
+  },
+  "proof_authorities": {
+    "final-grader-feedback-closure-audit.json": {
+      "path": "evidence/final-proof/final-grader-feedback-closure-audit.json",
+      "sha256": "db54bfea97dc8777296388479d66a164ff7de1e8df98659683f02a38dbd41065"
+    },
+    "final-grader-feedback-closure-audit.md": {
+      "path": "evidence/final-proof/final-grader-feedback-closure-audit.md",
+      "sha256": "5ca1f0d0133dcc6ba4ad79dd2c340efc331d818c58098f4f0f12a07aa345a2f5"
+    },
+    "frozen-clean-reproduction-resource-validation.json": {
+      "path": "evidence/final-proof/frozen-clean-reproduction-resource-validation.json",
+      "sha256": "36c2764bc8dbd87a3b567620d9d2958531abdbd7b5cbc7f5f3fd32a881621857"
+    },
+    "holdout-final-adjudication.json": {
+      "path": "evidence/final-proof/holdout-final-adjudication.json",
+      "sha256": "cf4764f865a07d75bea647706434fa405b9ac65fb047061cb570511f5785d80b"
+    },
+    "r3-end-to-end-reverse-trace-proof.json": {
+      "path": "evidence/final-proof/r3-end-to-end-reverse-trace-proof.json",
+      "sha256": "cf32024dd0af104a27e8174343483ecc902bd8d4334c724001c80e43e99515db"
+    },
+    "r3-pcap-processing-issue-census.json": {
+      "path": "evidence/final-proof/r3-pcap-processing-issue-census.json",
+      "sha256": "51b5df8c79fdad3c197cf0fb6a2f9e1c88e796eb1a9fbb069c46f14949e7b0c3"
+    },
+    "r3-pcap-processing-issue-final-adjudication.json": {
+      "path": "evidence/final-proof/r3-pcap-processing-issue-final-adjudication.json",
+      "sha256": "0a322b28e3b1dafe6fdddb774746267d440db866a96f835c0cf826692f51dadd"
+    }
+  },
+  "record_type": "tracesoc-finalist-evidence-ledger",
+  "reference_case": {
+    "analysis_counts": {
+      "canonical_events": 5442,
+      "complete_powershell_scriptblocks": 3,
+      "correlation_evaluations": 16259,
+      "detection_evaluations": 32658,
+      "event_detection_evaluations": 32652,
+      "findings": 6,
+      "graph_entities": 79,
+      "graph_relationships": 76,
+      "hypotheses": 6,
+      "incomplete_powershell_scriptblocks": 0,
+      "matched_correlations": 76,
+      "matched_detections": 5,
+      "narrative_records": 6,
+      "native_observations": 5415,
+      "powershell_scriptblocks": 3,
+      "response_records": 6,
+      "scriptblock_detection_evaluations": 6
+    },
+    "case_id": "case_6bfc43f87590a1f654df3473d9d15c08e17304ed5030d191b4248ee3f4ee2348",
+    "controlled_case_malicious_ground_truth_claimed": false,
+    "primary_timeline_rows": 73,
+    "raw_inputs": [
+      {
+        "bytes": 3565,
+        "path": "evidence/reference-case/raw-evidence/powershell.xml",
+        "sha256": "3bc13a61b5134a55529f4026bab151ab0fe8ed7015d499a285ad144a2c7b40b9",
+        "source_path_display": "powershell.xml"
+      },
+      {
+        "bytes": 11023744,
+        "path": "evidence/reference-case/raw-evidence/reference-capture.pcapng",
+        "sha256": "290491c9da90048a25c2d8613ffa4cdeb8d027ac7764451c06f7a3d5ccf205da",
+        "source_path_display": "reference-capture.pcapng"
+      },
+      {
+        "bytes": 679130,
+        "path": "evidence/reference-case/raw-evidence/reference-message.eml",
+        "sha256": "d5ad4f1ea52f764ab0655d7e57302c0dfbdfed968458921427c4416b2cc7b968",
+        "source_path_display": "reference-message.eml"
+      },
+      {
+        "bytes": 4948,
+        "path": "evidence/reference-case/raw-evidence/security.xml",
+        "sha256": "503741b32966c57239d4d0541be97526daa9d2f016ddf0b78185471a0fefdeb4",
+        "source_path_display": "security.xml"
+      },
+      {
+        "bytes": 13881,
+        "path": "evidence/reference-case/raw-evidence/sysmon.xml",
+        "sha256": "f93d896f0f6e8dbf62e7575fc7e54494d6415583bd6fe1dd67f53672d8d3a77f",
+        "source_path_display": "sysmon.xml"
+      },
+      {
+        "bytes": 2156,
+        "path": "evidence/reference-case/raw-evidence/zeek/conn.log",
+        "sha256": "b8b98f8bde72d6df7d418a1eae94d4e09a5d628283e1d5a2a9429a0496ab8d55",
+        "source_path_display": "zeek/conn.log"
+      }
+    ],
+    "role": "CONTROLLED_INTEROPERABILITY_AND_PROVENANCE_REFERENCE",
+    "source_type_counts": {
+      "email": 3,
+      "pcap": 5412,
+      "powershell": 3,
+      "sysmon": 8,
+      "windows_security": 3,
+      "zeek": 13
+    },
+    "timeline_rows": 5442
+  },
+  "schema_version": "1.0",
+  "submission_state": {
+    "continuity_record": "PENDING_TEMPLATE_GOVERNED_FINALIZATION",
+    "integrity_attestation": "PENDING_USER_SIGNATURE_AND_UTC_DATE",
+    "machine_readable_core": "DRY_RUN_READY",
+    "manifest_sha256": "PENDING_GENERATE_LAST",
+    "reports": "PENDING"
+  },
+  "technical_freeze": {
+    "candidate": "v0.4 finalist candidate",
+    "claim_boundary": "Correlation and corroboration are not promoted into unsupported maliciousness, intent, causality, or incident membership.",
+    "commit": "8751a679f36b4983cdd3d2b0b35f44e9a11c4f39",
+    "tree": "fc420ee3fd1988cf578c0cf309ee3aefcccf33b2"
+  },
+  "template_authorities": {
+    "assessment-manifest-template.json": {
+      "path": "evidence/submission-templates/assessment-manifest-template.json",
+      "sha256": "41c93f5d164b2a69a8e99ed3a9ff74dfa1a4ac372c0375b1f16b2560ccb5175f"
+    },
+    "evidence-index-template.csv": {
+      "path": "evidence/submission-templates/evidence-index-template.csv",
+      "sha256": "835f9c3fb4183dfa1e4743a760ece0243d40edf3f777e47ae002a2c58d342073"
+    },
+    "integrity-attestation-template.md": {
+      "path": "evidence/submission-templates/integrity-attestation-template.md",
+      "sha256": "94b46c5a21af7ef11ffb3a2793a39fbe9552b60c08cf9a80733b8817da893c6c"
+    },
+    "ioc-set-template.csv": {
+      "path": "evidence/submission-templates/ioc-set-template.csv",
+      "sha256": "47dac2cc4842a5cad7a43e88e898ffba0e65d7d474fce9a8c1dcbdd730558809"
+    },
+    "portfolio-continuity.md": {
+      "path": "evidence/submission-templates/portfolio-continuity.md",
+      "sha256": "c41a8917d3e312550987d8f53b32d29d5e7a827e015de91c9a2adf29ff567426"
+    },
+    "timeline-template.csv": {
+      "path": "evidence/submission-templates/timeline-template.csv",
+      "sha256": "f8fcc55e0543ee2f7a48f93ac46207e25eebec0eafa13d6db828401f066ef898"
+    }
+  },
+  "validation": {
+    "clean_reproduction": {
+      "proof_checks": {
+        "both_analysis_counts_match_reference": true,
+        "both_case_ids_match_reference": true,
+        "both_runs_embed_exact_input_evidence": true,
+        "input_unchanged": true,
+        "repository_unchanged": true,
+        "resource_measurement_completed": true,
+        "run1_completed": true,
+        "run1_deterministic_outputs_equal_reference_r3": true,
+        "run1_deterministic_outputs_equal_run2": true,
+        "run2_completed": true,
+        "run2_deterministic_outputs_equal_reference_r3": true
+      },
+      "run1": {
+        "analysis_counts": {
+          "canonical_events": 5442,
+          "complete_powershell_scriptblocks": 3,
+          "correlation_evaluations": 16259,
+          "detection_evaluations": 32658,
+          "event_detection_evaluations": 32652,
+          "findings": 6,
+          "graph_entities": 79,
+          "graph_relationships": 76,
+          "hypotheses": 6,
+          "incomplete_powershell_scriptblocks": 0,
+          "matched_correlations": 76,
+          "matched_detections": 5,
+          "narrative_records": 6,
+          "native_observations": 5415,
+          "powershell_scriptblocks": 3,
+          "response_records": 6,
+          "scriptblock_detection_evaluations": 6
+        },
+        "case_id": "case_6bfc43f87590a1f654df3473d9d15c08e17304ed5030d191b4248ee3f4ee2348",
+        "command": [
+          "C:\\Users\\Eve\\tracesoc\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "tracesoc",
+          "case",
+          "analyze",
+          "C:\\TraceSOC-Reference-Case\\analysis\\six-source-case-r3\\raw-evidence",
+          "--output",
+          "C:\\TraceSOC-Reference-Case\\analysis\\frozen-clean-reproduction-resource-validation\\run1-output"
+        ],
+        "console_log": "C:\\TraceSOC-Reference-Case\\analysis\\frozen-clean-reproduction-resource-validation\\run1-console.txt",
+        "deterministic_output_sha256": {
+          "artifact-index.json": "a602658a3db11bc4ad3ee5d973ba1709ea4c8dd0274f49b205fb67467b75501a",
+          "correlations.json": "3078bc752749a016d66e0fa2f7eb02d90fd0d677e278bf14932e5154ebd44fab",
+          "detections.json": "674a988cbed0711e438165e0ff04c47a2def93461d33516a838bb3eb039d6fab",
+          "findings.json": "15779bc3b4f49793af98261b66e8ef59bd41f83b6a305bb8f98b4bb8c17eef26",
+          "hypotheses.json": "d575e077efb63d5b7b29903767e60badc909c51f3329ea27a9c2bc0a95f783ac",
+          "narrative-register.json": "d66605369393ef30ff6562daf55b9b8251bc298a8bf096473e5c3ffc92ba23fd",
+          "normalized-events.json": "729c42df46dc7e5fe900e8c292a19dce1acaff8b588891a971fac250611678f0",
+          "powershell-scriptblocks.json": "7e966a12149c975af76b7a1d6c386a05771d78bf09848905a43625440ba980d5",
+          "raw-evidence-index.json": "2e383646e116e8a7bc2fa42ae85a9bdb6e388024b0348505bb889cd5eedd1ff1",
+          "relationships.json": "6aa9ff4230694c4a422b3dd445f9fcfcdc818a99bcdbd08e7709d8db7677a9f4",
+          "response-register.json": "2c9e3de5564045ebe5ea076e8eb03c5013e45504916f55c5cf0302747b62fdda"
+        },
+        "output_bytes": 57335425,
+        "peak_working_set_bytes": 4710400,
+        "peak_working_set_percent_of_physical_ram": 0.056,
+        "raw_evidence_files": 6,
+        "raw_evidence_identity": true,
+        "runtime_seconds": 3.438
+      },
+      "run2": {
+        "analysis_counts": {
+          "canonical_events": 5442,
+          "complete_powershell_scriptblocks": 3,
+          "correlation_evaluations": 16259,
+          "detection_evaluations": 32658,
+          "event_detection_evaluations": 32652,
+          "findings": 6,
+          "graph_entities": 79,
+          "graph_relationships": 76,
+          "hypotheses": 6,
+          "incomplete_powershell_scriptblocks": 0,
+          "matched_correlations": 76,
+          "matched_detections": 5,
+          "narrative_records": 6,
+          "native_observations": 5415,
+          "powershell_scriptblocks": 3,
+          "response_records": 6,
+          "scriptblock_detection_evaluations": 6
+        },
+        "case_id": "case_6bfc43f87590a1f654df3473d9d15c08e17304ed5030d191b4248ee3f4ee2348",
+        "command": [
+          "C:\\Users\\Eve\\tracesoc\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "tracesoc",
+          "case",
+          "analyze",
+          "C:\\TraceSOC-Reference-Case\\analysis\\six-source-case-r3\\raw-evidence",
+          "--output",
+          "C:\\TraceSOC-Reference-Case\\analysis\\frozen-clean-reproduction-resource-validation\\run2-output"
+        ],
+        "console_log": "C:\\TraceSOC-Reference-Case\\analysis\\frozen-clean-reproduction-resource-validation\\run2-console.txt",
+        "deterministic_output_sha256": {
+          "artifact-index.json": "a602658a3db11bc4ad3ee5d973ba1709ea4c8dd0274f49b205fb67467b75501a",
+          "correlations.json": "3078bc752749a016d66e0fa2f7eb02d90fd0d677e278bf14932e5154ebd44fab",
+          "detections.json": "674a988cbed0711e438165e0ff04c47a2def93461d33516a838bb3eb039d6fab",
+          "findings.json": "15779bc3b4f49793af98261b66e8ef59bd41f83b6a305bb8f98b4bb8c17eef26",
+          "hypotheses.json": "d575e077efb63d5b7b29903767e60badc909c51f3329ea27a9c2bc0a95f783ac",
+          "narrative-register.json": "d66605369393ef30ff6562daf55b9b8251bc298a8bf096473e5c3ffc92ba23fd",
+          "normalized-events.json": "729c42df46dc7e5fe900e8c292a19dce1acaff8b588891a971fac250611678f0",
+          "powershell-scriptblocks.json": "7e966a12149c975af76b7a1d6c386a05771d78bf09848905a43625440ba980d5",
+          "raw-evidence-index.json": "2e383646e116e8a7bc2fa42ae85a9bdb6e388024b0348505bb889cd5eedd1ff1",
+          "relationships.json": "6aa9ff4230694c4a422b3dd445f9fcfcdc818a99bcdbd08e7709d8db7677a9f4",
+          "response-register.json": "2c9e3de5564045ebe5ea076e8eb03c5013e45504916f55c5cf0302747b62fdda"
+        },
+        "output_bytes": 57335425,
+        "peak_working_set_bytes": 4714496,
+        "peak_working_set_percent_of_physical_ram": 0.056,
+        "raw_evidence_files": 6,
+        "raw_evidence_identity": true,
+        "runtime_seconds": 3.393
+      },
+      "status": "PASS"
+    },
+    "external_real_evidence": {
+      "canonical_events": 23145,
+      "case_id": "case_9bee7ebf9ae6ada1c4cc11b0f82bda160bde15221296cd159b2af2c9d277a1d9",
+      "labels_used_as_expected_verdict": false,
+      "production_tuning": false,
+      "source_rows": 23145,
+      "source_sha256": "d69e49b2aae8c1bd33286936531658202dec47d989f0439bad3f8be180467a6e"
+    },
+    "grader_feedback_closure": {
+      "counts": {
+        "not_applicable_to_tracesoc": 4,
+        "open": 0,
+        "satisfied": 13
+      },
+      "status": "PASS"
+    },
+    "holdout": {
+      "detection_accuracy_boundary": {
+        "observed_matched_detections": 0,
+        "publisher_labels_used_to_score_first_run": false,
+        "reason": "The separately acquired publisher-labeled artifact was proven not to be an exact observation-level comparator for the sealed holdout. It contains 156103 rows versus 156458 sealed rows and is not an exact shared-row subset. Detection sensitivity or accuracy is therefore not scored from it.",
+        "zero_matches_interpreted_as_false_negatives": false,
+        "zero_matches_interpreted_as_true_negatives": false
+      },
+      "holdout": {
+        "canonical_events": 156458,
+        "case_id": "case_546fcd9d9783d76dc223ad7f7919ad32b1089714d6156da13224e7c10b21a898",
+        "detection_evaluations": 938748,
+        "findings": 0,
+        "matched_detections": 0,
+        "source_data_rows": 156458,
+        "source_family": "ZEEK",
+        "source_role": "SEALED_POSTFREEZE_HOLDOUT",
+        "source_sha256": "1481a5c82b96ce3b902e383b7da7dbebc0466275af6a8bfaf1b453443bd2c7ba",
+        "source_to_canonical_difference": 0
+      },
+      "measured_status": {
+        "case_sealing": "PASS",
+        "detection_accuracy": "UNADJUDICATED",
+        "detector_execution": "PASS",
+        "first_semantic_execution": "PASS",
+        "ingestion_generalization": "PASS",
+        "raw_evidence_preservation": "PASS",
+        "source_to_canonical_reconciliation": "PASS"
+      }
+    },
+    "pcap_accounting": {
+      "adjudication": {
+        "classification": "NON_NORMALIZED_NON_IPV4_ETHERTYPE_FRAMES",
+        "malformed_packet_claimed": false,
+        "parser_failure_established": false,
+        "silent_evidence_loss_established": false,
+        "statement": "All 9672 PCAPNG packet locators are accounted. Exactly 5412 Ethernet frames classify as IPv4 TCP or UDP and exactly 5412 PCAP observations were normalized. The remaining 4260 frames classify into two non-IPv4 EtherType values (0xBC9B and 0xC297), exactly matching the artifact's 4260 processing issues. The artifact records no errors and preserves the complete raw capture. The evidence therefore supports classification of the 4260 records as accounted non-normalized packet classes under partial PCAP support, not silent evidence loss or a demonstrated parser failure.",
+        "status": "CLOSED_ACCOUNTED_SUPPORTED_PARTIAL",
+        "unsupported_protocol_identity_claimed": false
+      },
+      "packet_accounting": {
+        "ethertype_0xbc9b": 3552,
+        "ethertype_0xc297": 708,
+        "ipv4_tcp": 438,
+        "ipv4_udp": 4974,
+        "normalized_ipv4_packet_events": 5412,
+        "processing_issues": 4260,
+        "recorded_errors": 0,
+        "total_packet_locators": 9672
+      },
+      "status": "PASS"
+    },
+    "public_acceptance": {
+      "clean_state": {
+        "result": "PASS",
+        "test_id": "test_first_behavioral_detection.FirstBehavioralDetectionTests.test_benign_and_archive_controls_do_not_match"
+      },
+      "malformed_input": {
+        "result": "PASS",
+        "test_id": "test_real_format_raw_readers.RealFormatRawReaderTests.test_windows_security_splunk_quarantines_malformed_header_without_merging"
+      },
+      "negative": {
+        "result": "PASS",
+        "test_id": "test_multisource_scenario_001.MultiSourceScenario001Tests.test_wrong_host_falsifies_correlation"
+      },
+      "positive": {
+        "result": "PASS",
+        "test_id": "test_multisource_scenario_002.MultiSourceScenario002Tests.test_positive_distinct_correlation_matches"
+      }
+    },
+    "regression": {
+      "discovered": 524,
+      "error_test_ids": [],
+      "errors": 0,
+      "expected_failure_test_ids": [],
+      "expected_failures": 0,
+      "failed": 0,
+      "failure_test_ids": [],
+      "passed": 524,
+      "skipped": 0,
+      "skipped_test_ids": [],
+      "tests_run": 524,
+      "unexpected_success_test_ids": [],
+      "unexpected_successes": 0
+    },
+    "reverse_traceability": {
+      "known_identifier_limitation": {
+        "detection_result_id_globally_unique": false,
+        "downstream_cited_detection_result_unique": true,
+        "effect_on_selected_reverse_trace": "NONE",
+        "scope": "NO_MATCH_EVALUATIONS",
+        "statement": "detections.json reuses some detection_result_id values across distinct no-match evaluations. The hypothesis-cited matched detection selected for this proof resolves to exactly one record. No global deduplication was performed."
+      },
+      "selected_chain": {
+        "correlation_id": "TRC-CORR-002",
+        "detection_id": "TRC-DET-002",
+        "detection_result_id": "detres_64cc608aaddaeebd801dc7d228bcd32eb5196c9547e5d91945e8684510b16966",
+        "detection_result_id_multiplicity": 1,
+        "finding_id": "fnd_ce8581031c955effad6c40280b04bcb56081852c758099ba115692d090c8f561",
+        "hypothesis_id": "hyp_0c9d4f716f1409455574fd0f1d3b76da9abd236cb9d81ca1da946763e328f74a",
+        "legacy_edge_id": "edge_dd4cfed4b04f774d2a73306c6a5f9f4221f20d2e22b87ad04aca8f0c29c8818c",
+        "narrative_id": "nar_6e8b400daedb628ae2a5ca9d3f2ee89eb4fa395b127b7013d07f6a526ca7aaab",
+        "observation_ids": [
+          "evt_97afd387a33264b4c849809b0c2fac06ff4ad494f6b6134db6ceb924b8ca9c94",
+          "evt_bf89c58d4a6d99539abb32b05e7d5e059e1698e7528071eb98cd1ed62929707f"
+        ],
+        "relationship_id": "rel_1913dfbf139a1f0f10c677fb6835529891a0bb9f8d42a18148f917e58e410944",
+        "response_id": "resp_08af8df0dbc80fa6cffbc75e1976a1a934e4cb2d159ad96104aa44f8192f993c"
+      },
+      "status": "PASS"
+    },
+    "scale_resource_benchmark": {
+      "accounting": {
+        "accepted_records": 198463,
+        "expected_records": 198463,
+        "pass": true,
+        "quarantined_records": 0,
+        "semantic_events": 198463,
+        "silently_discarded_records": 0
+      },
+      "correlation": {
+        "real_cross_source_correlation_executed": false
+      },
+      "holdout_boundary": {
+        "accuracy_claim": false,
+        "analytic_tuning_performed": false,
+        "primary_role": "HOLDOUT",
+        "publisher_labels_used": false,
+        "reclassified": false,
+        "secondary_use": "RESOURCE_MEASUREMENT_ONLY"
+      },
+      "memory": {
+        "api": "Windows GetProcessMemoryInfo",
+        "final": {
+          "peak_working_set_bytes": 486924288,
+          "private_usage_bytes": 45142016,
+          "working_set_bytes": 53256192
+        },
+        "metric": "PeakWorkingSetSize",
+        "pass": true,
+        "start": {
+          "peak_working_set_bytes": 22851584,
+          "private_usage_bytes": 14376960,
+          "working_set_bytes": 22851584
+        },
+        "threshold_bytes": 4000000000
+      },
+      "result": "PASS",
+      "runtime": {
+        "end_to_end_seconds": 15.9617856,
+        "processing_seconds": 15.6762686,
+        "threshold_applied": false,
+        "threshold_seconds": null
+      },
+      "scope": "REAL_FORMAT_PARSER_TO_CANONICAL_ACCOUNTING_TO_SEMANTIC_CONVERSION"
+    }
+  }
+}

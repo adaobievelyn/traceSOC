@@ -1,0 +1,69 @@
+{
+    "schema_version":  "1.0",
+    "record_type":  "tracesoc-finalist-assignment-binding-v1",
+    "role":  "SUBMISSION_PROVENANCE_ONLY",
+    "analytical_use":  "PROVENANCE_ONLY_NOT_DECISION_INPUT",
+    "technical_freeze":  {
+                             "commit":  "8751a679f36b4983cdd3d2b0b35f44e9a11c4f39",
+                             "tree":  "fc420ee3fd1988cf578c0cf309ee3aefcccf33b2"
+                         },
+    "project_id":  "SOC-A5",
+    "public_variant":  "V3",
+    "private_assignment_set":  "D3",
+    "candidate_binding":  "UBI-2026-0091",
+    "evidence_marker":  "UBI-A9-4BC183701F3C",
+    "assigned_pack":  {
+                          "file_name":  "soc-analysis-stage-9-shared-b1.tar.gz",
+                          "sha256":  "df8fb093a6a69ca885a0f22518f842cf6a470232a6df821fb759a507389f2022",
+                          "manifest_signature":  "a8d15c6e852e04741c0169e57dac3bc05b9a77a869a94bf16b5c9ed4fe267fbf",
+                          "verified_before_use":  true
+                      },
+    "source_records":  [
+                           {
+                               "path":  "results/submission-preview-v5r1/project-control/assignment-binding.json",
+                               "sha256":  "ff9930d275729b4bebb5c52afab8cd6174874cd6fb546ff8c3c2da366c2f2dfe",
+                               "fields_used":  [
+                                                   "candidate_binding",
+                                                   "public_variant",
+                                                   "private_assignment_set",
+                                                   "evidence_marker",
+                                                   "assigned_pack"
+                                               ]
+                           },
+                           {
+                               "path":  "results/submission-preview-v5r1/assessment-manifest.json",
+                               "sha256":  "7a3210e5ca8a0b3b38b46cb42bb5a77767c3fead35d66c68270c4ceff8d37485",
+                               "fields_used":  [
+                                                   "project_id",
+                                                   "variant",
+                                                   "candidate_binding",
+                                                   "assigned_pack"
+                                               ]
+                           }
+                       ],
+    "excluded_stale_fields":  [
+                                  "commit",
+                                  "commands",
+                                  "results",
+                                  "runtime_seconds",
+                                  "peak_memory_mb",
+                                  "output_hashes",
+                                  "inputs",
+                                  "outputs",
+                                  "manual_preconditions",
+                                  "known_limitations",
+                                  "five-source analytical counts",
+                                  "437-test state",
+                                  "SC11 state"
+                              ],
+    "template_population_authority":  [
+                                          "assessment-manifest.json: project_id",
+                                          "assessment-manifest.json: variant",
+                                          "assessment-manifest.json: candidate_binding",
+                                          "assessment-manifest.json: assigned_pack",
+                                          "integrity-attestation.md: variant",
+                                          "integrity-attestation.md: evidence marker"
+                                      ],
+    "interpretive_boundary":  "This record preserves assignment and submission provenance only. No candidate identifier, variant, evidence marker, assigned-pack identity, staff signature, or private assignment value may be used as product detection, correlation, maliciousness, or verdict logic.",
+    "final_status":  "PASS"
+}

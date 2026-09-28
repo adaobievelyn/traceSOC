@@ -1,0 +1,123 @@
+{
+  "case_id": "case_6bfc43f87590a1f654df3473d9d15c08e17304ed5030d191b4248ee3f4ee2348",
+  "created_utc": "2026-09-25T12:43:18Z",
+  "final_status": "PASS",
+  "frozen_candidate": {
+    "commit": "8751a679f36b4983cdd3d2b0b35f44e9a11c4f39",
+    "tree": "fc420ee3fd1988cf578c0cf309ee3aefcccf33b2"
+  },
+  "interpretive_boundary": {
+    "incident_declared": false,
+    "maliciousness_inferred_from_traceability": false,
+    "purpose": "This proof establishes mechanical traceability of an existing R3 analytical chain back to original raw evidence. It does not elevate analytical confidence, establish malicious intent, or claim response execution.",
+    "response_actions_executed": false
+  },
+  "known_identifier_limitation": {
+    "detection_result_id_globally_unique": false,
+    "downstream_cited_detection_result_unique": true,
+    "effect_on_selected_reverse_trace": "NONE",
+    "scope": "NO_MATCH_EVALUATIONS",
+    "statement": "detections.json reuses some detection_result_id values across distinct no-match evaluations. The hypothesis-cited matched detection selected for this proof resolves to exactly one record. No global deduplication was performed."
+  },
+  "observation_proofs": [
+    {
+      "artifact_sha256": "f93d896f0f6e8dbf62e7575fc7e54494d6415583bd6fe1dd67f53672d8d3a77f",
+      "case_relative_path": "raw-evidence/sysmon.xml",
+      "embedded_equals_original_by_sha256": true,
+      "embedded_raw_path": "C:\\TraceSOC-Reference-Case\\analysis\\six-source-case-r3\\raw-evidence\\sysmon.xml",
+      "embedded_raw_sha256": "f93d896f0f6e8dbf62e7575fc7e54494d6415583bd6fe1dd67f53672d8d3a77f",
+      "event_id": "evt_97afd387a33264b4c849809b0c2fac06ff4ad494f6b6134db6ceb924b8ca9c94",
+      "event_type": "process_create",
+      "narrative_raw_locator_identical": true,
+      "original_artifact_path": "C:\\TraceSOC-Reference-Case\\evidence\\sysmon.xml",
+      "original_artifact_sha256": "f93d896f0f6e8dbf62e7575fc7e54494d6415583bd6fe1dd67f53672d8d3a77f",
+      "raw_evidence_index_artifact_id": "art_8218c4e99382358f4bb0c064ae8548c2bb15e2d7a018740b89cfc9daa53ee909",
+      "raw_locator": {
+        "adapter_id": "tracesoc-sysmon-windows-event-xml-v1",
+        "byte_length": 2097,
+        "byte_offset": 1480,
+        "input_schema_version": "1",
+        "line_number": 2,
+        "logical_source": "sysmon.xml",
+        "raw_sha256": "49f3498ca8591b20eeece75db582bb0177eacd8d54e1c8f300c1f3da290267d0",
+        "record_index": 1
+      },
+      "source_path_display": "sysmon.xml",
+      "source_type": "sysmon"
+    },
+    {
+      "artifact_sha256": "3bc13a61b5134a55529f4026bab151ab0fe8ed7015d499a285ad144a2c7b40b9",
+      "case_relative_path": "raw-evidence/powershell.xml",
+      "embedded_equals_original_by_sha256": true,
+      "embedded_raw_path": "C:\\TraceSOC-Reference-Case\\analysis\\six-source-case-r3\\raw-evidence\\powershell.xml",
+      "embedded_raw_sha256": "3bc13a61b5134a55529f4026bab151ab0fe8ed7015d499a285ad144a2c7b40b9",
+      "event_id": "evt_bf89c58d4a6d99539abb32b05e7d5e059e1698e7528071eb98cd1ed62929707f",
+      "event_type": "powershell_event",
+      "narrative_raw_locator_identical": true,
+      "original_artifact_path": "C:\\TraceSOC-Reference-Case\\evidence\\powershell.xml",
+      "original_artifact_sha256": "3bc13a61b5134a55529f4026bab151ab0fe8ed7015d499a285ad144a2c7b40b9",
+      "raw_evidence_index_artifact_id": "art_cff80088a80bd06395baadecedfa94be8b941ccfcd88ab0cffa4609a3973b86c",
+      "raw_locator": {
+        "adapter_id": "tracesoc-powershell-windows-event-xml-v1",
+        "byte_length": 1741,
+        "byte_offset": 0,
+        "input_schema_version": "1",
+        "line_number": 1,
+        "logical_source": "powershell.xml",
+        "raw_sha256": "ade911389995144c98a306c9ad8afb44a01dc48d0973dfc546d5693049ac2e67",
+        "record_index": 0
+      },
+      "source_path_display": "powershell.xml",
+      "source_type": "powershell"
+    }
+  ],
+  "proof_checks": {
+    "canonical_events_exist": true,
+    "embedded_raw_artifacts_exist": true,
+    "embedded_raw_hashes_match_index": true,
+    "finding_to_hypothesis": true,
+    "hypothesis_to_relationship": true,
+    "hypothesis_to_unique_matched_detection": true,
+    "matched_detection_references_observation": true,
+    "narrative_citations_match_chain": true,
+    "narrative_raw_locators_equal_canonical_raw_locators": true,
+    "narrative_to_finding": true,
+    "original_artifact_hashes_match_embedded_artifacts": true,
+    "original_reference_artifacts_exist": true,
+    "raw_locators_map_to_raw_evidence_index": true,
+    "relationship_supports_both_observations": true,
+    "relationship_to_matched_correlation": true,
+    "response_to_finding": true
+  },
+  "r3_source_artifact_sha256": {
+    "artifact-index.json": "a602658a3db11bc4ad3ee5d973ba1709ea4c8dd0274f49b205fb67467b75501a",
+    "case-manifest.json": "35e799edea98e91624f4dac8442e75479e50f8cbcc4b21d0a571ad6d6319fdba",
+    "correlations.json": "3078bc752749a016d66e0fa2f7eb02d90fd0d677e278bf14932e5154ebd44fab",
+    "detections.json": "674a988cbed0711e438165e0ff04c47a2def93461d33516a838bb3eb039d6fab",
+    "findings.json": "15779bc3b4f49793af98261b66e8ef59bd41f83b6a305bb8f98b4bb8c17eef26",
+    "hypotheses.json": "d575e077efb63d5b7b29903767e60badc909c51f3329ea27a9c2bc0a95f783ac",
+    "narrative-register.json": "d66605369393ef30ff6562daf55b9b8251bc298a8bf096473e5c3ffc92ba23fd",
+    "normalized-events.json": "729c42df46dc7e5fe900e8c292a19dce1acaff8b588891a971fac250611678f0",
+    "raw-evidence-index.json": "2e383646e116e8a7bc2fa42ae85a9bdb6e388024b0348505bb889cd5eedd1ff1",
+    "relationships.json": "6aa9ff4230694c4a422b3dd445f9fcfcdc818a99bcdbd08e7709d8db7677a9f4",
+    "response-register.json": "2c9e3de5564045ebe5ea076e8eb03c5013e45504916f55c5cf0302747b62fdda"
+  },
+  "record_type": "tracesoc-r3-end-to-end-reverse-traceability-proof",
+  "schema_version": "1.0",
+  "selected_chain": {
+    "correlation_id": "TRC-CORR-002",
+    "detection_id": "TRC-DET-002",
+    "detection_result_id": "detres_64cc608aaddaeebd801dc7d228bcd32eb5196c9547e5d91945e8684510b16966",
+    "detection_result_id_multiplicity": 1,
+    "finding_id": "fnd_ce8581031c955effad6c40280b04bcb56081852c758099ba115692d090c8f561",
+    "hypothesis_id": "hyp_0c9d4f716f1409455574fd0f1d3b76da9abd236cb9d81ca1da946763e328f74a",
+    "legacy_edge_id": "edge_dd4cfed4b04f774d2a73306c6a5f9f4221f20d2e22b87ad04aca8f0c29c8818c",
+    "narrative_id": "nar_6e8b400daedb628ae2a5ca9d3f2ee89eb4fa395b127b7013d07f6a526ca7aaab",
+    "observation_ids": [
+      "evt_97afd387a33264b4c849809b0c2fac06ff4ad494f6b6134db6ceb924b8ca9c94",
+      "evt_bf89c58d4a6d99539abb32b05e7d5e059e1698e7528071eb98cd1ed62929707f"
+    ],
+    "relationship_id": "rel_1913dfbf139a1f0f10c677fb6835529891a0bb9f8d42a18148f917e58e410944",
+    "response_id": "resp_08af8df0dbc80fa6cffbc75e1976a1a934e4cb2d159ad96104aa44f8192f993c"
+  }
+}

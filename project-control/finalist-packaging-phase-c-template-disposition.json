@@ -1,0 +1,104 @@
+{
+    "schema_version":  "1.0",
+    "record_type":  "tracesoc-finalist-packaging-attempt-disposition",
+    "phase":  "FINALIST_PACKAGING_PHASE_C_ATTEMPT_1",
+    "classification":  "PACKAGING_TEMPLATE_CONTRACT_DEFECT",
+    "product_defect":  false,
+    "promoted_to_root":  false,
+    "tracesoc_rerun":  false,
+    "holdout_rerun":  false,
+    "technical_freeze":  {
+                             "commit":  "8751a679f36b4983cdd3d2b0b35f44e9a11c4f39",
+                             "tree":  "fc420ee3fd1988cf578c0cf309ee3aefcccf33b2"
+                         },
+    "rejected_generator":  {
+                               "path":  "scripts/build_finalist_package.py",
+                               "sha256":  "bbf76906c84436c75b7d8e52d6e6ac710dddda862b8906dc597a8efeed938c62"
+                           },
+    "rejected_outputs":  [
+                             {
+                                 "file":  "assessment-manifest.json",
+                                 "bytes":  18555,
+                                 "sha256":  "1e5fb7c8334b7fa52a78c02b9f9c7c01f0d7551ff0ce2f3bd9b62e639a73e67c"
+                             },
+                             {
+                                 "file":  "evidence-index.csv",
+                                 "bytes":  11363,
+                                 "sha256":  "8a6dc392e0d1d5a46b374875a49bca84bbeeb3a3bc7c2a5a81edc4af84c61b45"
+                             },
+                             {
+                                 "file":  "finalist-evidence-ledger.json",
+                                 "bytes":  36783,
+                                 "sha256":  "44fc981e0315ddfe287cc31e7be4dcbbd2c901504da31a3a960d1f25cc6ae2c7"
+                             },
+                             {
+                                 "file":  "ioc-set.csv",
+                                 "bytes":  91,
+                                 "sha256":  "46f355ddc90cd0cd9ffa5d3e5f23d2dcb8b467f363aaa3dd66acdca9910c698b"
+                             },
+                             {
+                                 "file":  "package-generation-record.json",
+                                 "bytes":  1212,
+                                 "sha256":  "c97f7046c328946976e0952beb28251c63190e06328c6dc756d282897ba9e4c8"
+                             },
+                             {
+                                 "file":  "timeline.csv",
+                                 "bytes":  3821476,
+                                 "sha256":  "ad35dd52c36aa94b6ad17326dff6992d1a77175ebf2926e30fba6544f74b0aeb"
+                             }
+                         ],
+    "adjudication":  {
+                         "evidence_index_schema":  "COMPLIANT_WITH_SUPPLIED_TEMPLATE",
+                         "timeline_schema":  "NONCOMPLIANT_WITH_SUPPLIED_TEMPLATE",
+                         "ioc_schema":  "NONCOMPLIANT_WITH_SUPPLIED_TEMPLATE",
+                         "assessment_manifest_schema":  "NONCOMPLIANT_WITH_SUPPLIED_TEMPLATE",
+                         "integrity_attestation":  "NOT_GENERATED",
+                         "continuity_record":  "NOT_GENERATED"
+                     },
+    "corrective_rule":  "SUPPLIED_UBI_TEMPLATES_DEFINE_REQUIRED_SUBMISSION_SCHEMAS",
+    "corrective_action":  [
+                              "Reject and remove non-promoted Phase C generator.",
+                              "Delete external Phase C dry-run outputs after identity is recorded.",
+                              "Import authenticated UBI templates as immutable packaging authorities.",
+                              "Rebuild the finalist generator to populate required templates rather than replace their schemas."
+                          ],
+    "authoritative_templates":  [
+                                    {
+                                        "id":  "ASSESSMENT",
+                                        "source_path":  "C:\\Users\\Eve\\soc-stage9\\original\\sealed-package\\evidence\\common\\assessment-manifest-template.json",
+                                        "destination_name":  "assessment-manifest-template.json",
+                                        "sha256":  "41c93f5d164b2a69a8e99ed3a9ff74dfa1a4ac372c0375b1f16b2560ccb5175f"
+                                    },
+                                    {
+                                        "id":  "EVIDENCE_INDEX",
+                                        "source_path":  "C:\\Users\\Eve\\soc-stage9\\original\\sealed-package\\evidence\\common\\evidence-index-template.csv",
+                                        "destination_name":  "evidence-index-template.csv",
+                                        "sha256":  "835f9c3fb4183dfa1e4743a760ece0243d40edf3f777e47ae002a2c58d342073"
+                                    },
+                                    {
+                                        "id":  "CONTINUITY",
+                                        "source_path":  "C:\\Users\\Eve\\soc-stage9\\original\\sealed-package\\evidence\\common\\portfolio-continuity.md",
+                                        "destination_name":  "portfolio-continuity.md",
+                                        "sha256":  "c41a8917d3e312550987d8f53b32d29d5e7a827e015de91c9a2adf29ff567426"
+                                    },
+                                    {
+                                        "id":  "ATTESTATION",
+                                        "source_path":  "C:\\Users\\Eve\\soc-stage9\\original\\sealed-package\\evidence\\brief\\integrity-attestation.md",
+                                        "destination_name":  "integrity-attestation-template.md",
+                                        "sha256":  "94b46c5a21af7ef11ffb3a2793a39fbe9552b60c08cf9a80733b8817da893c6c"
+                                    },
+                                    {
+                                        "id":  "IOC",
+                                        "source_path":  "C:\\Users\\Eve\\soc-stage9\\original\\sealed-package\\evidence\\brief\\ioc-set.csv",
+                                        "destination_name":  "ioc-set-template.csv",
+                                        "sha256":  "47dac2cc4842a5cad7a43e88e898ffba0e65d7d474fce9a8c1dcbdd730558809"
+                                    },
+                                    {
+                                        "id":  "TIMELINE",
+                                        "source_path":  "C:\\Users\\Eve\\soc-stage9\\original\\sealed-package\\evidence\\brief\\timeline.csv",
+                                        "destination_name":  "timeline-template.csv",
+                                        "sha256":  "f8fcc55e0543ee2f7a48f93ac46207e25eebec0eafa13d6db828401f066ef898"
+                                    }
+                                ],
+    "final_status":  "REJECTED_NOT_PROMOTED"
+}

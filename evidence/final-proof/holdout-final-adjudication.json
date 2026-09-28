@@ -1,0 +1,80 @@
+{
+  "adjudication": {
+    "comparator_equivalence_established": false,
+    "detection_claim_supported": "The frozen candidate executed 938748 detector evaluations and produced zero matched detections. No claim is made about detection correctness, sensitivity, specificity, false negatives, or true negatives for this holdout.",
+    "final_status": "CLOSED_FOR_INGESTION_PROVENANCE_GENERALIZATION;DETECTION_ACCURACY_UNADJUDICATED",
+    "generalization_claim_supported": "The frozen candidate successfully ingested and reconciled 156458 previously semantically unseen real Zeek source rows into 156458 canonical events while preserving raw evidence and repository integrity.",
+    "holdout_execution_closed": true,
+    "product_defect_established": false
+  },
+  "created_utc": "2026-09-25T12:28:36Z",
+  "detection_accuracy_boundary": {
+    "observed_matched_detections": 0,
+    "publisher_labels_used_to_score_first_run": false,
+    "reason": "The separately acquired publisher-labeled artifact was proven not to be an exact observation-level comparator for the sealed holdout. It contains 156103 rows versus 156458 sealed rows and is not an exact shared-row subset. Detection sensitivity or accuracy is therefore not scored from it.",
+    "zero_matches_interpreted_as_false_negatives": false,
+    "zero_matches_interpreted_as_true_negatives": false
+  },
+  "frozen_candidate": {
+    "commit": "8751a679f36b4983cdd3d2b0b35f44e9a11c4f39",
+    "holdout_rerun": false,
+    "product_modified_after_freeze": false,
+    "product_tuning_after_holdout": false,
+    "tree": "fc420ee3fd1988cf578c0cf309ee3aefcccf33b2"
+  },
+  "holdout": {
+    "canonical_events": 156458,
+    "case_id": "case_546fcd9d9783d76dc223ad7f7919ad32b1089714d6156da13224e7c10b21a898",
+    "detection_evaluations": 938748,
+    "findings": 0,
+    "matched_detections": 0,
+    "source_data_rows": 156458,
+    "source_family": "ZEEK",
+    "source_role": "SEALED_POSTFREEZE_HOLDOUT",
+    "source_sha256": "1481a5c82b96ce3b902e383b7da7dbebc0466275af6a8bfaf1b453443bd2c7ba",
+    "source_to_canonical_difference": 0
+  },
+  "measured_status": {
+    "case_sealing": "PASS",
+    "detection_accuracy": "UNADJUDICATED",
+    "detector_execution": "PASS",
+    "first_semantic_execution": "PASS",
+    "ingestion_generalization": "PASS",
+    "raw_evidence_preservation": "PASS",
+    "source_to_canonical_reconciliation": "PASS"
+  },
+  "next_action": "R3_END_TO_END_REVERSE_TRACEABILITY_PROOF",
+  "posthoc_comparator": {
+    "full_scoring_authorized": false,
+    "label_values_used_for_tuning": false,
+    "publisher_labeled_rows": 156103,
+    "sealed_rows": 156458,
+    "source_sha256": "9851009bbca03e15089fa1a356dd4b5eee4a98161a51703626058a0b507f50d0",
+    "structural_relationship": "NOT_EXACT_SUBSET",
+    "subset_scoring_authorized": false
+  },
+  "record_type": "tracesoc-postfreeze-holdout-final-adjudication",
+  "schema_version": "1.0",
+  "source_records": {
+    "case_manifest": {
+      "path": "C:\\TraceSOC-Reference-Case\\analysis\\post-freeze-holdout-r1\\output\\case-manifest.json",
+      "sha256": "d38e3e5917f34504f6e8e71e4f7c2b12ea16eeefa15c3e5d4e01b7652462a7f3"
+    },
+    "first_run_record": {
+      "path": "C:\\TraceSOC-Reference-Case\\analysis\\post-freeze-holdout-r1\\first-run-execution.json",
+      "sha256": "de87519210b02f95c2a6709ffc5deff04e2e26d3f4d51c955e7119456432956b"
+    },
+    "posthoc_acquisition_manifest": {
+      "path": "D:\\TraceSOC-Evidence\\manifests\\phase4d3x-posthoc-labeled-connlog-acquisition.json",
+      "sha256": "b80fbfadb1510b3d0ee815f8e8cc02c7122f8ed4b825bc16c915924f84afedb0"
+    },
+    "posthoc_row_set_census": {
+      "path": "C:\\TraceSOC-Reference-Case\\analysis\\post-freeze-holdout-posthoc-shared-row-set-census.json",
+      "sha256": "0950ebf14bff2919e740577c946a51701a0746adeb8a1de5b10916ebdfe66cc1"
+    },
+    "prerun_record": {
+      "path": "C:\\TraceSOC-Reference-Case\\analysis\\post-freeze-holdout-prerun-custody.json",
+      "sha256": "0b3ce59e1f833276b082de024a06fbdf4ee82d5b6497872f274062c28aa59449"
+    }
+  }
+}

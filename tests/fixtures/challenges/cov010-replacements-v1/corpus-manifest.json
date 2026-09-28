@@ -1,0 +1,100 @@
+{
+  "COV_010": "DERIVED_CORPUS_PENDING",
+  "challenge_count": 3,
+  "challenge_manifest_count": 3,
+  "challenges": [
+    {
+      "challenge_id": "CHAL-MAL-001-V2",
+      "execution_status": "NOT_EXECUTED",
+      "generated_artifacts": [
+        {
+          "bytes": 1874,
+          "path": "CHAL-MAL-001-V2/windows-security.txt",
+          "role": "MALFORMED_WINDOWS_SECURITY_INPUT",
+          "sha256": "9a8214077c384f800072ede8aa9cf34baf7ec235fbe2db411dbe00f1ddfcf45d"
+        }
+      ],
+      "manifest_path": "CHAL-MAL-001-V2/challenge-manifest.json",
+      "manifest_sha256": "34d5b41a624817506538971cfe1b921f6e2f92759db2ae05b3c1aa397b7163c0"
+    },
+    {
+      "challenge_id": "CHAL-TIME-002-V2",
+      "execution_status": "NOT_EXECUTED",
+      "generated_artifacts": [
+        {
+          "bytes": 436,
+          "path": "CHAL-TIME-002-V2/powershell.jsonl",
+          "role": "POWERSHELL_SCRIPT_EXECUTION_INPUT",
+          "sha256": "31c59257440b32f96517ff814bc9df4eef5435af5e02f07f278bd1fbf1b93703"
+        },
+        {
+          "bytes": 456,
+          "path": "CHAL-TIME-002-V2/sysmon.jsonl",
+          "role": "SYSMON_PROCESS_CREATE_INPUT",
+          "sha256": "0e27ed1318cf90672a39e450b363ce0355fad400ff8c020f5c893d558200d488"
+        }
+      ],
+      "manifest_path": "CHAL-TIME-002-V2/challenge-manifest.json",
+      "manifest_sha256": "33438d81d03bce8022ea8c24042b26d96e1b9fb0d27caf441e1fcb67f0f76faf"
+    },
+    {
+      "challenge_id": "CHAL-TIME-003-V2",
+      "execution_status": "NOT_EXECUTED",
+      "generated_artifacts": [
+        {
+          "bytes": 436,
+          "path": "CHAL-TIME-003-V2/powershell.jsonl",
+          "role": "POWERSHELL_SCRIPT_EXECUTION_INPUT",
+          "sha256": "69e2c0f16c137fa2c2ff8e097c4034d9de116439ab6c607a4ac07c1ca970c6ee"
+        },
+        {
+          "bytes": 456,
+          "path": "CHAL-TIME-003-V2/sysmon.jsonl",
+          "role": "SYSMON_PROCESS_CREATE_INPUT",
+          "sha256": "0e27ed1318cf90672a39e450b363ce0355fad400ff8c020f5c893d558200d488"
+        }
+      ],
+      "manifest_path": "CHAL-TIME-003-V2/challenge-manifest.json",
+      "manifest_sha256": "5317f3b6d22e99a081a8767c20e18c7cbb3f0f965cf5966b1aeccd7acc953823"
+    }
+  ],
+  "contract_freeze_commit": "f42e9b122bad5bbef841be47c56d9eb3b275cb94",
+  "contract_path": "project-control/phase4i-cov010-replacement-contracts-v1.json",
+  "contract_sha256": "0fbc57c552b8fddea20a9aa2cdb271ecc8c352338964410389f02a6b8df0b900",
+  "execution_order": [
+    "CHAL-MAL-001-V2",
+    "CHAL-TIME-002-V2",
+    "CHAL-TIME-003-V2"
+  ],
+  "file_count": 9,
+  "generated_input_count": 5,
+  "generator_path": "scripts/generate_cov010_replacements_v1.py",
+  "generator_sha256": "f25e681ea1145d7c0132508c3f2519401c36ad62838a7d45ae585cc0af4a9eff",
+  "generator_version": "1.0.0",
+  "holdout_sources_used": 0,
+  "logical_root": "tests/fixtures/challenges/cov010-replacements-v1",
+  "original_frozen_run": {
+    "observed_rows": 15,
+    "pass_rows": 12,
+    "preserved_adjudicated_red_rows": [
+      7,
+      13,
+      14
+    ],
+    "replacement_results_rewrite_original_history": false,
+    "row_denominator": 15
+  },
+  "production_logic_executed_during_generation": false,
+  "raw_originals_modified": false,
+  "record_type": "tracesoc-cov010-replacement-corpus-manifest-v1",
+  "replacement_execution": "NOT_STARTED",
+  "replacement_set_id": "COV010-RPL-V1",
+  "schema_version": 1,
+  "source_controls": {
+    "contract_path": "project-control/phase4i-cov010-replacement-contracts-v1.json",
+    "parent_selection_path": "project-control/phase4i-challenge-exact-parent-selection.json",
+    "parent_selection_sha256": "b9838e2d9c8c9d81a6f0a5220442ee6652a8c396d4a1411ff5a8754049efb53e",
+    "scenario_manifest_path": "tests/fixtures/scenarios/multisource-powershell-process-002/scenario-manifest.json",
+    "scenario_manifest_sha256": "a94f7690432e3d66dc1e5c2abfe12ed8ff8c3f0bdce6a176c511029f316d3dce"
+  }
+}

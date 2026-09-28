@@ -1,0 +1,49 @@
+{
+  "base_parents": [
+    {
+      "exact_locator": {
+        "byte_length": 125,
+        "byte_offset": 504,
+        "line_number": 9,
+        "record_index": 0
+      },
+      "parent_id": "PARENT-ZEEK-BENIGN-ECHO-001",
+      "record_sha256": "3ae0e2fd02d2e93deda640166c775c6dcd7a29f44b72d94f4ed44b03371e1972",
+      "semantic_role": "BENIGN_ZEEK_CONNECTION",
+      "source_id": "TS-BEN-IOT23V2-ECHO-ZEEK",
+      "source_sha256": "f36db06e7d6ba7364e932a5b003f75835e004b320d70019e8a2f0ba8685d9262",
+      "telemetry_family": "ZEEK"
+    }
+  ],
+  "challenge_id": "CHAL-LABEL-001",
+  "challenge_id_embedded_in_input": false,
+  "challenge_id_is_test_metadata": true,
+  "creation_timestamp_utc": "2026-09-17T10:13:44.7916301Z",
+  "execution_status": "NOT_EXECUTED",
+  "expected_analytical_boundary": "Publisher label context alone must not create production detector behavior.",
+  "expected_answer_is_production_selector": false,
+  "expected_structural_effect": "One structurally valid benign publisher-derived Zeek record is retained.",
+  "generated_artifacts": [
+    {
+      "parent_ids": [
+        "PARENT-ZEEK-BENIGN-ECHO-001"
+      ],
+      "path": "CHAL-LABEL-001/zeek.log",
+      "sha256": "f3cc130f48f36e78dc34df00ddb20cd7ecf2adde12131de3d1c085cf2041d876"
+    }
+  ],
+  "mutation": {
+    "operator": "PRESERVE_LABEL_BEARING_SOURCE_CONTEXT",
+    "parameters": {
+      "label_used_as_selector": false,
+      "publisher_label_value_modified": false
+    }
+  },
+  "publisher_label_is_production_selector": false,
+  "purpose": "Publisher-label challenge context.",
+  "raw_original_modified": false,
+  "real_incident_claim": false,
+  "record_type": "tracesoc-derived-challenge-v1",
+  "serialization_templates": [],
+  "tool_script_version": "1.0.0"
+}

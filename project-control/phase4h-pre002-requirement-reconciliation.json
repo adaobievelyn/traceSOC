@@ -1,0 +1,59 @@
+{
+    "record_type":  "tracesoc-phase4h-pre002-requirement-reconciliation",
+    "schema_version":  1,
+    "phase":  "PHASE-4H-F1A",
+    "generated_utc":  "2026-09-16T17:07:24.6511258Z",
+    "result":  "PASS",
+    "parent_commit":  "0b5888ef51d4d6b681c425263f379fff2769b04e",
+    "recovery":  {
+                     "prior_stop_class":  "M11_SECTION_BOUNDARY_WINDOW_ASSUMPTION",
+                     "production_defect_established":  false,
+                     "evidence_defect_established":  false,
+                     "prior_mutation_reached":  false,
+                     "repaired_check":  "M11 section bounded by next level-2 heading"
+                 },
+    "requirement":  {
+                        "requirement_id":  "PRE-002",
+                        "requirement_text":  "Separate observed fact inference residual risk and business impact",
+                        "source_requirement_changed":  false,
+                        "prior_status":  "PARTIAL",
+                        "final_status":  "PASS"
+                    },
+    "evidence_basis":  {
+                           "material_claim_denominator":  2,
+                           "final_claims":  "2/2",
+                           "observed_state":  "2/2",
+                           "observed_fact_coverage":  "2/2",
+                           "inference_coverage":  "2/2",
+                           "residual_risk_coverage":  "2/2",
+                           "business_impact_coverage":  "2/2",
+                           "alternative_coverage":  "2/2",
+                           "falsifier_coverage":  "2/2",
+                           "decision_required_coverage":  "2/2",
+                           "raw_to_result_paths":  "2/2"
+                       },
+    "scope_correction":  {
+                             "executive_brief_required_by_PRE_002":  false,
+                             "M11_status":  "NOT_STARTED",
+                             "M11_mutated":  false,
+                             "final_executive_communication_deferred":  true,
+                             "reason":  "The prior executive-output blocker was an added implementation condition not present in the PRE-002 requirement text."
+                         },
+    "non_mutation":  {
+                         "raw_evidence_accessed":  false,
+                         "raw_evidence_mutated":  false,
+                         "holdout_accessed":  false,
+                         "claim_register_mutated":  false,
+                         "claim_state_changed":  false,
+                         "analytic_logic_changed":  false,
+                         "root_views_changed":  false,
+                         "defense_checklist_changed":  false
+                     },
+    "tests":  {
+                  "unit":  182,
+                  "integration":  21,
+                  "total":  203,
+                  "failures":  0
+              },
+    "next":  "PHASE_4I_CHALLENGE_CORPUS"
+}

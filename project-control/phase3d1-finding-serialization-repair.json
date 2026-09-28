@@ -1,0 +1,55 @@
+{
+    "record_type":  "tracesoc-phase3d1-finding-serialization-repair",
+    "generated_utc":  "2026-09-14T13:20:25.8872945Z",
+    "phase":  "3D.1",
+    "parent_commit":  "dd4d549bc1a345393e3d61b7f2768ab0b6779c79",
+    "defect":  {
+                   "category":  "PLATFORM_DEPENDENT_TEXT_SERIALIZATION",
+                   "discovered_by":  "PHASE_3E_INDEPENDENT_FINDING_HASH_CHECK",
+                   "historical_platform":  "WINDOWS",
+                   "historical_text_newline":  "CRLF",
+                   "canonical_newline":  "LF",
+                   "semantic_json_changed":  false
+               },
+    "serialization_contract":  {
+                                   "serialization_id":  "tracesoc-finding-json-v1",
+                                   "encoding":  "UTF-8",
+                                   "bom":  false,
+                                   "sort_keys":  true,
+                                   "indent":  2,
+                                   "newline":  "LF",
+                                   "final_newline":  true,
+                                   "write_mode":  "BINARY"
+                               },
+    "historical_finding":  {
+                               "finding_id":  "FINDING-001",
+                               "sha256":  "c57f110ed7b3f27aed59f8e93f6908e39997aa30e91ba181c5030f0e093dc964",
+                               "status":  "PRESERVED_HISTORICAL_PHASE3D_HASH"
+                           },
+    "canonical_finding":  {
+                              "finding_id":  "FINDING-001",
+                              "sha256":  "fbb56699bb3f1dd5f75f5ccf153d10f0956be3940ed55a9edf3c9667e89e3c90",
+                              "status":  "AUTHORITATIVE_FOR_POST_REPAIR_INTEGRITY_CHECKS",
+                              "semantic_json_identity_with_historical":  true
+                          },
+    "analytical_result":  {
+                              "changed":  false,
+                              "detection_id":  "TRC-DET-001",
+                              "correlation_id":  "TRC-CORR-001",
+                              "malicious_intent_established":  false,
+                              "synthetic_fixture":  true
+                          },
+    "validation":  {
+                       "python_compile":  "PASS",
+                       "tests_run":  40,
+                       "failures":  0,
+                       "errors":  0,
+                       "new_serialization_tests":  4
+                   },
+    "files":  {
+                  "src/tracesoc/findings/serialization.py":  "93cec309b13a4fd042d83c9a064b37092f44aa03ad2004d02435d35511a82732",
+                  "tests/unit/test_finding_serialization.py":  "021e7438d7fb05b6341515e70e9f95e3b463d0d512de2e29d7174eee0cd244b9"
+              },
+    "supersession_rule":  "For finding-byte integrity checks after Phase 3D.1, canonical_finding.sha256 supersedes the historical Phase 3D Windows-text hash. Historical proof remains unchanged.",
+    "next":  "PHASE_3E_EXPLAIN_FINDING_001_RETRY"
+}

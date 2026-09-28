@@ -1,0 +1,160 @@
+{
+  "artifact_accounting": {
+    "accounted": 4,
+    "discovered": 4,
+    "failed_explicit": 0,
+    "malformed_quarantined": 0,
+    "supported_partial": 0,
+    "supported_processed": 2,
+    "unsupported_preserved": 2,
+    "zero_silent_loss": true
+  },
+  "case_file_hashes": {
+    "artifact-index.json": {
+      "bytes": 3481,
+      "sha256": "51025e9c23052017adde3472bde960f4ff392736ee406f7a4fa05f3b08f0cfe4"
+    },
+    "case-manifest.json": {
+      "bytes": 4753,
+      "sha256": "5c7dd249c02e0b5688295cb6037f8657e21c0fb4a5a730d7d88c9a73fab09a96"
+    },
+    "case-seal.json": {
+      "bytes": 2634,
+      "sha256": "b3f4bed5235cbeceb75ced92138331718462ef2dcf87b7c5b3a0c81bc8c9ca3c"
+    },
+    "normalized-events.json": {
+      "bytes": 121600,
+      "sha256": "c7ce209c580501f9b73f8b5a919b8f8beb152fbe68144a0dc5a14499a2ffc390"
+    },
+    "raw-evidence-index.json": {
+      "bytes": 1551,
+      "sha256": "d28c0aebfbe3f79a4bf71476dd209d0e6da0958b0cc2427f82024611de43ab71"
+    }
+  },
+  "compatibility_boundary": {
+    "design_input": false,
+    "full_historical_semantic_reconstruction_claimed": false,
+    "legacy_powershell_jsonl_semantic_support_claimed": false,
+    "legacy_sysmon_jsonl_semantic_support_claimed": false,
+    "old_stage9a_answers_required": false,
+    "old_stage9a_counts_required": false,
+    "post_replay_product_tuning_allowed": false,
+    "tuning_input": false
+  },
+  "execution_record": {
+    "bytes": 2220,
+    "sha256": "3bf72ec82ea056d3832962085fb2c0fb64d9deb2aa7523edf44e914c79b0cac7"
+  },
+  "generated_utc": "2026-09-24T06:58:04.963584Z",
+  "historical_inputs": [
+    {
+      "logical_path": "host/powershell-operational.jsonl",
+      "raw_archive_member": "evidence/sealed-evidence/evidence/host/powershell-operational.jsonl",
+      "sha256": "09ff04af864454f87f94dc71406c2cb01c49f2830913e5be6ab0ffc64a3840ad",
+      "submitted_package_copy": "UBI-2026-0091-STAGE_9/original/sealed-package/evidence/sealed-evidence/evidence/host/powershell-operational.jsonl"
+    },
+    {
+      "logical_path": "host/sysmon.jsonl",
+      "raw_archive_member": "evidence/sealed-evidence/evidence/host/sysmon.jsonl",
+      "sha256": "f27c3807903ef8a6c72847761b0e62af5b1da8dd599c52782c38d2386acbab9d",
+      "submitted_package_copy": "UBI-2026-0091-STAGE_9/original/sealed-package/evidence/sealed-evidence/evidence/host/sysmon.jsonl"
+    },
+    {
+      "logical_path": "mail/initial-access.eml",
+      "raw_archive_member": "evidence/sealed-evidence/evidence/mail/initial-access.eml",
+      "sha256": "8dd40f12866217b153a7af539d675950c3edcfdd78649e7ddf236adff6e14d4e",
+      "submitted_package_copy": "UBI-2026-0091-STAGE_9/original/sealed-package/evidence/sealed-evidence/evidence/mail/initial-access.eml"
+    },
+    {
+      "logical_path": "network/incident.pcap",
+      "raw_archive_member": "evidence/sealed-evidence/evidence/network/incident.pcap",
+      "sha256": "a2ff3da37c045ab933c5c4a71c18b8ca80596349e19d3fb5624d27228e70d90d",
+      "submitted_package_copy": "UBI-2026-0091-STAGE_9/original/sealed-package/evidence/sealed-evidence/evidence/network/incident.pcap"
+    }
+  ],
+  "implementation": {
+    "analytical_candidate_sha256": "8f4f3033683141744a6e5b35bc86a06cbe6337961af316e63ef0fdb3bfa49566",
+    "canonical_commit_blob_fingerprint_sha256": "5f166d992e61003d26cd874b50463bb90a0ce598acd13bc8b70d9739125fb610",
+    "frozen_file_count": 174,
+    "implementation_freeze_sha256": "749ee97a19b4e7c3af11e34842667da2ab3c255303454cb6369ac4459d6c11a9",
+    "source_commit": "af8ea21eccad94061c3b99ad3c18faafda42fb5a"
+  },
+  "interpretation": "Frozen TraceSOC v0.4.8-RC successfully accounted for all four authoritative historical Stage9A raw artifacts under generic v0.4 evidence contracts. The separate Stage9A tar.gz is the raw-evidence authority. The assessed submission ZIP contains byte-identical copies of the four replayed raw artifacts. EML and PCAP were processed. Historical Sysmon and PowerShell JSONL representations were explicitly preserved as unsupported rather than coerced into fabricated semantics. This is compatibility evidence only and is not a design or tuning input.",
+  "observed_artifact_states": {
+    "host/powershell-operational.jsonl": {
+      "adapter_family": "UNSUPPORTED",
+      "canonical_event_count": 0,
+      "issue_count": 0,
+      "native_observation_count": 0,
+      "processing_state": "UNSUPPORTED_PRESERVED"
+    },
+    "host/sysmon.jsonl": {
+      "adapter_family": "UNSUPPORTED",
+      "canonical_event_count": 0,
+      "issue_count": 0,
+      "native_observation_count": 0,
+      "processing_state": "UNSUPPORTED_PRESERVED"
+    },
+    "mail/initial-access.eml": {
+      "adapter_family": "EMAIL",
+      "canonical_event_count": 0,
+      "issue_count": 0,
+      "native_observation_count": 3,
+      "processing_state": "SUPPORTED_PROCESSED"
+    },
+    "network/incident.pcap": {
+      "adapter_family": "PCAP",
+      "canonical_event_count": 0,
+      "issue_count": 0,
+      "native_observation_count": 51,
+      "processing_state": "SUPPORTED_PROCESSED"
+    }
+  },
+  "observed_case_result": {
+    "canonical_event_count": 54,
+    "canonical_event_raw_locators": "PASS",
+    "case_id": "case_e7eeeaf05aa1dc6ffeceb0f201ab2236e4f4b9f3dbb68945b5a016df4aafcda8",
+    "finding_count": 0,
+    "hypothesis_count": 0,
+    "matched_correlation_count": 0,
+    "matched_detection_count": 0,
+    "narrative_count": 0,
+    "raw_evidence_embedded": true,
+    "raw_evidence_file_count": 4,
+    "raw_evidence_hashes_verified": 4,
+    "relationship_count": 0,
+    "response_count": 0,
+    "seal_sha256": "b3f4bed5235cbeceb75ced92138331718462ef2dcf87b7c5b3a0c81bc8c9ca3c",
+    "seal_verified": true
+  },
+  "prior_failed_attempt": {
+    "attempt": "S9A-P1-R1",
+    "failure": "transient FileNotFoundError during Sysmon input immutability read",
+    "followup_stability": "5_OF_5_COMPLETE_READS_PASS_FOR_ALL_4_FILES",
+    "fresh_r2_result": "PASS",
+    "outcome": "STOPPED_BEFORE_ANALYTICAL_RESULT",
+    "postmortem": "input later present with original SHA-256; no Defender event; no destructive operation identified in relevant frozen intake path"
+  },
+  "product": "TraceSOC",
+  "product_version": "v0.4.8-RC",
+  "provenance": {
+    "assessed_submission_package": {
+      "archive_filename": "UBI-2026-0091-STAGE_9-20260911T160346Z-1-001.zip",
+      "archive_sha256": "83ae8b71ead89033f9ae0aa58eee96b8af437860d6f270202664c27c551da0b6",
+      "assessed_score": "89/90"
+    },
+    "authority_control_record": "project-control/stage9a-authoritative-source.json",
+    "authority_control_record_sha256_after_reconciliation": "9cf44ebe2815571002250dcda1f12c4b000f94795f4ecfae5dc9e7ebfd53e86a",
+    "cross_archive_raw_byte_identity": "4/4_PASS",
+    "r2_replay_tested_same_immutable_raw_bytes": true,
+    "raw_evidence_authority": {
+      "archive_filename": "soc-analysis-stage-9-shared-b1.tar.gz",
+      "archive_sha256": "df8fb093a6a69ca885a0f22518f842cf6a470232a6df821fb759a507389f2022",
+      "regular_file_count": 24
+    }
+  },
+  "record_type": "historical-stage9a-compatibility-validation",
+  "role": "HISTORICAL_COMPATIBILITY_ONLY",
+  "schema_version": "tracesoc-stage9a-compatibility-validation-v1",
+  "status": "PASS"
+}

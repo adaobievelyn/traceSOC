@@ -1,0 +1,75 @@
+{
+  "anti_hardcoding": {
+    "delta_aware_gate": "PASS",
+    "event_code_4688_class": "source_protocol_semantic_identifier",
+    "forbidden_production_delta_hits": 0,
+    "scenario_or_answer_selector": false
+  },
+  "clock_contract": {
+    "clock_correction_performed": false,
+    "clock_state": "unresolved",
+    "event_count": 7116,
+    "utc_time_fabricated": false
+  },
+  "evidence": {
+    "canonical_events": 7116,
+    "event_code_4688_records": 61,
+    "non_4688_records": 7055,
+    "sha256": "b55c57fd0256fa73f55116f9ad307de3b7403f1ba7536c10431b56426a09bd89",
+    "source_id": "TS-DEV-SPLUNK-SECURITY-001"
+  },
+  "external_evidence_modified": false,
+  "generated_utc": "2026-09-15T12:29:38Z",
+  "holdout_accessed": false,
+  "implementation": {
+    "mapper": "load_windows_security_splunk",
+    "module": "src/tracesoc/parsers/windows_security.py",
+    "module_sha256": "0a7f42af315603be62fbe6e6cc268d9797a4a28eab33c1aa3060dc8794f64a11",
+    "test_module": "tests/unit/test_windows_security_4688_promotion.py",
+    "test_module_sha256": "688c73341b0306218ce45f090bb88e723a565a5c1ad81033f81693fc925d6014"
+  },
+  "next": "PHASE_4D3F_SYSMON_REAL_CANONICAL_MAPPING",
+  "objective": "Promote only evidence-supported Windows Security EventCode 4688 records from the generic canonical Windows Security event type into the established TraceSOC process_create semantic vocabulary.",
+  "parent_commit": "1defecfcc76dc588cb7c43a526a21d3fe984e877",
+  "phase": "PHASE-4D.3E",
+  "promotion_contract": {
+    "command_line_coverage": "0/61",
+    "empty_command_line_fabricated": false,
+    "generic_count": 7055,
+    "generic_event_type": "windows_security_event",
+    "incomplete_4688_fallback": "windows_security_event",
+    "non_4688_promotion": false,
+    "parent_process_coverage": "55/61",
+    "parent_process_id_coverage": "61/61",
+    "principal_coverage": "61/61",
+    "process_id_coverage": "61/61",
+    "process_name_coverage": "61/61",
+    "promoted_count": 61,
+    "promoted_event_type": "process_create",
+    "required_process_fields": [
+      "process_name",
+      "process_id",
+      "parent_process_id"
+    ],
+    "source_event_code": 4688
+  },
+  "record_type": "tracesoc-phase4d3e-windows-security-4688-semantic-promotion-validation",
+  "result": "PASS",
+  "semantic_boundary": {
+    "correlation_logic_added": false,
+    "detection_logic_added": false,
+    "generic_events_received_semantic_fields": false,
+    "maliciousness_inferred": false,
+    "source_context_leaked_to_semantic_event": false
+  },
+  "validation": {
+    "deterministic_promoted_identity": "PASS",
+    "focused_4688_tests": "6/6_PASS",
+    "full_unit_regression": "76/76_PASS",
+    "generic_events_preserved": "7055/7055_PASS",
+    "process_create_promotion": "61/61_PASS",
+    "repository_text_integrity": "PASS",
+    "semantic_separation": "PASS",
+    "unresolved_clock_contract": "7116/7116_PASS"
+  }
+}

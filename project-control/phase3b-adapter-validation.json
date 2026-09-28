@@ -1,0 +1,49 @@
+{
+    "record_type":  "tracesoc-phase3b-adapter-validation",
+    "generated_utc":  "2026-09-14T12:29:37.1757832Z",
+    "phase":  "3B",
+    "parent_commit":  "ebce20631bf2e1740935cd19a9c460065a77f9ed",
+    "implementation_origin":  "TRACESOC_NATIVE",
+    "stage9a_source_copied":  false,
+    "fixture_role":  "SYNTHETIC_ARCHITECTURE_VALIDATION_ONLY",
+    "real_evidence_acquired":  false,
+    "production_detection_implemented":  false,
+    "production_correlation_implemented":  false,
+    "source_families":  [
+                            "sysmon",
+                            "windows_security",
+                            "powershell",
+                            "zeek"
+                        ],
+    "accounting":  {
+                       "total_records":  16,
+                       "accepted":  12,
+                       "quarantined":  4,
+                       "unique_event_ids":  12,
+                       "semantic_fixture_metadata_leaks":  0
+                   },
+    "validation":  {
+                       "python_compile":  "PASS",
+                       "unit_tests_run":  18,
+                       "unit_test_failures":  0,
+                       "unit_test_errors":  0,
+                       "adapter_accounting":  "PASS"
+                   },
+    "anti_drift_gate":  "NO_SECOND_PRODUCTION_DETECTION_BEFORE_PHASE4_REAL_EVIDENCE_ACQUISITION",
+    "fixtures":  {
+                     "tests/fixtures/tiny/sysmon.jsonl":  "7548549443890118980fc6a7b08cd4a2cd5317dd39052596b20d8c8ec88e7963",
+                     "tests/fixtures/tiny/windows-security.jsonl":  "be76e89236f43cc726ca55dec526f6af1cbc15bd5bb0d758613c983e81839cb6",
+                     "tests/fixtures/tiny/powershell.jsonl":  "fd3a8972b229c1103cfa0e962c7ae1ed118208a9e1ce7844a0ec9b8c47fc5b8d",
+                     "tests/fixtures/tiny/zeek.jsonl":  "2e9f9c60d619b07ba81ae7f605b700c428f22d4d8a442bee2830e6d709b40a88"
+                 },
+    "implementation_files":  {
+                                 "src/tracesoc/parsers/common.py":  "c61f34a2b06ed65ddee873eae8d87779c9cc54badf9622598e03234d65e12a7d",
+                                 "src/tracesoc/parsers/sysmon.py":  "575468532f5ab7d3cb7571bd13148bd9d5211c812cc2ccb68be143082ca5cf02",
+                                 "src/tracesoc/parsers/windows_security.py":  "197a204b4df20295370ce55b256349addd2af4bb50d7ddd483523921b30ad142",
+                                 "src/tracesoc/parsers/powershell.py":  "3c8247d8a9d1152db9366ecac722a4e4b810fa78c54fdc460e6337d9a2e6b695",
+                                 "src/tracesoc/parsers/zeek.py":  "5d8dba98259cd427cda1c990a102652bd682e2f06b009fb547099e478fad6017",
+                                 "tests/unit/test_four_source_adapters.py":  "9b66866280cc8c988dc347aef1e209a53162ca6fadcf2a29ab7a0448d6fdc90d",
+                                 "docs/four-source-adapter-slice.md":  "b4a3da1697e1085fffd225246eca9f0e2732b193d8c020623095f21f03987f7a"
+                             },
+    "next":  "PHASE_3C_ONE_BEHAVIORAL_DETECTION"
+}
