@@ -1,255 +1,509 @@
 # TraceSOC
 
-**Evidence-first SOC/DFIR reconstruction with mechanically preserved raw provenance.**
+**Provenance-first SOC/DFIR evidence reconstruction with reversible raw-evidence traceability.**
 
-TraceSOC transforms heterogeneous security evidence into normalized observations, detections, correlations, findings, narratives and response records while preserving a reversible path back to the exact raw source.
+TraceSOC is a security engineering project that reconstructs analytical findings from heterogeneous raw security evidence while preserving the path back to the exact source observations that support each conclusion.
 
-## Finalist status
-
-- Project: `SOC-A5`
-- Variant: `V3`
-- Candidate: `UBI-2026-0091`
-- Evidence marker: `UBI-A9-4BC183701F3C`
-- Repository: **https://github.com/adaobievelyn/traceSOC.git**
-- Frozen technical commit: `8751a679f36b4983cdd3d2b0b35f44e9a11c4f39`
-- Frozen technical tree: `fc420ee3fd1988cf578c0cf309ee3aefcccf33b2`
-- Technical candidate: **READY / FROZEN**
-- Submission machine-readable core: **READY**
-- Final human-facing reports: **READY / VISUALLY VALIDATED**
-
-The technical candidate was frozen before semantic holdout access. Later work is submission packaging, validation and documentation; it is not post-holdout product tuning.
-
-## Problem
-
-SOC and DFIR investigations often combine evidence from email, packet captures, network logs and endpoint telemetry. The difficult part is not only parsing those sources: analytical conclusions can become detached from the raw observations that support them.
-
-TraceSOC is designed to keep consequential claims reproducible, auditable and defensible by preserving exact provenance and explicit uncertainty throughout the analytical chain.
-
-## Evidence contract
+Instead of treating normalization, detection and correlation as permission to discard source context, TraceSOC keeps provenance and uncertainty attached throughout the analytical chain.
 
 ```text
 raw evidence
--> representation extraction
--> canonical observation
--> evidence graph
--> detection
--> relationship / correlation
--> hypothesis / finding
--> narrative
--> response
+    ↓
+representation extraction
+    ↓
+canonical observations
+    ↓
+evidence graph
+    ↓
+detections
+    ↓
+bounded correlations
+    ↓
+hypotheses / findings
+    ↓
+narratives
+    ↓
+response records
 ```
 
 The reverse path is equally important:
 
 ```text
-downstream conclusion
--> finding
--> relationship / detection
--> canonical observation
--> exact raw locator
--> original artifact identity
--> SHA-256
+finding / response
+    ↓
+supporting relationship or detection
+    ↓
+canonical observation
+    ↓
+exact raw locator
+    ↓
+original artifact
+    ↓
+SHA-256
 ```
 
-Correlation is evidence-supported corroboration within its defined contract. It does not independently establish causality or maliciousness.
+The design goal is simple:
 
-## Supported representation boundary
+> A consequential security conclusion should remain reproducible, challengeable and traceable to the evidence that actually supports it.
 
-- `EML_MIME`
-- `PCAP`
-- `PCAPNG`
-- `ZEEK_ASCII_CONN_LOG`
-- `ZEEK_JSON_JSONL`
-- `SYSMON_WINDOWS_EVENT_XML`
-- `SYSMON_RECOGNIZED_WINDOWS_EVENT_JSON_JSONL`
-- `POWERSHELL_OPERATIONAL_WINDOWS_EVENT_XML`
-- `POWERSHELL_RECOGNIZED_WINDOWS_EVENT_JSON_JSONL`
-- `WINDOWS_SECURITY_WINDOWS_EVENT_XML`
-- `WINDOWS_SECURITY_RECOGNIZED_WINDOWS_EVENT_JSON_JSONL`
-- `WINDOWS_SECURITY_SUPPORTED_SPLUNK_STYLE_TEXT`
+---
 
-TraceSOC is not a universal parser or mini-SIEM. Unsupported or partial evidence must be retained and accounted rather than silently discarded or converted into invented semantics.
+## Why I Built TraceSOC
 
-## Measured finalist proof
+SOC and DFIR investigations often involve several evidence sources at once:
 
-- Controlled evidence families: 6
-- Canonical observations: 5442
-- Raw-locator coverage: 5442/5442
-- Detector evaluations: 32658
-- Matched detections: 5
-- Hypotheses: 6
-- Findings: 6
-- Narratives: 6
-- Responses: 6
-- Reference incident status: `NOT_ESTABLISHED`
+- endpoint telemetry
+- Windows event logs
+- PowerShell activity
+- email
+- packet captures
+- network telemetry
 
-External real Zeek validation reconciled **23145 / 23145** source rows to canonical observations with source difference **0**.
+The difficult problem is not only parsing those sources.
 
-The sealed post-freeze holdout reconciled **156458 / 156458** rows and executed **938748** detector evaluations without post-freeze tuning.
+As an investigation progresses through normalization, detection, correlation and reporting, conclusions can become detached from the raw observations that produced them.
 
-Holdout detection accuracy remains **UNADJUDICATED**. Zero holdout matches are therefore not scored as detection success or failure.
+That creates problems for:
 
-Current regression: **524/524 PASS**.
+- investigation reproducibility
+- analyst handoff
+- evidence review
+- auditability
+- false certainty
+- later technical validation
 
-Current public acceptance: **4/4 PASS**.
+TraceSOC was built around the idea that **provenance should be part of the analytical architecture rather than documentation added after an investigation is complete.**
 
-Clean reproduction: 2 fresh runs; 11 deterministic core outputs; byte-identical to reference = True.
+---
 
-Measured scale workload: 198463 accepted records, 0 quarantined records, 15.9617856 seconds end-to-end, peak working set 486924288 bytes against the frozen 4000000000-byte ceiling.
+## Core Design Principles
 
-These are measured workloads, not universal scalability claims.
+### Provenance first
 
-## Supported environment
+Canonical observations preserve exact source locators and artifact identity so downstream findings can be traced back to raw evidence.
 
-- OS: Windows 11 10.0.26100
-- CPU: Intel64 Family 6 Model 142 Stepping 9, GenuineIntel
-- Memory: 7.85 GB
-- git: git version 2.55.0.windows.3
-- pip: 26.1.2
-- powershell: 5.1.26100.9444
-- python: 3.13.14
-- setuptools: 84.0.0
-- tracesoc: 0.1.0
+### Observation before inference
 
-## Reproduction
+TraceSOC distinguishes what the evidence directly establishes from what a detector, correlation rule or analyst infers.
 
-Run from the repository root on the supported Windows environment.
+### No silent evidence loss
 
-### One-command finalist clean build and test
+Unsupported, malformed or partially supported evidence is accounted for rather than silently disappearing or being converted into invented semantics.
 
-The primary finalist build/test entry point is:
+### Bounded correlation
+
+Correlation is only created when the implemented evidence relationship is satisfied.
+
+Temporal proximity alone is not treated as causality.
+
+### Deterministic identity and output
+
+Event and analytical identities are generated from defined evidence contracts rather than fixture IDs, expected answers or case-specific verdicts.
+
+### Explicit uncertainty
+
+Findings can preserve alternatives, falsifiers, limitations and residual uncertainty instead of forcing every observation into a definitive incident narrative.
+
+### Safe response semantics
+
+Recommended or simulated response activity remains distinguishable from actions that were actually executed.
+
+---
+
+## Supported Evidence Boundary
+
+TraceSOC currently supports six security-evidence families across twelve defined representations.
+
+### Email
+
+- EML / MIME
+
+### Packet Evidence
+
+- PCAP
+- PCAPNG
+
+### Zeek
+
+- ASCII/header-aware `conn.log`
+- JSON / JSONL
+
+### Sysmon
+
+- Windows Event XML
+- recognized Windows Event JSON / JSONL
+
+### PowerShell Operational
+
+- Windows Event XML
+- recognized Windows Event JSON / JSONL
+
+### Windows Security
+
+- Windows Event XML
+- recognized Windows Event JSON / JSONL
+- supported Splunk-style text export
+
+TraceSOC is **not** intended to be a universal parser or a replacement SIEM.
+
+Unknown or partially supported evidence remains explicitly accounted for rather than being silently discarded.
+
+---
+
+## Detection and Correlation
+
+TraceSOC separates detection from correlation.
+
+A detector establishes that a defined semantic condition matched.
+
+A correlation establishes only the relationship supported by its selectors and evidence.
+
+Implemented correlation families include relationships across:
+
+- PowerShell and Zeek network telemetry
+- PowerShell and Sysmon process telemetry
+- Sysmon process and packet evidence
+- Windows Security process creation and Sysmon Event 1
+- email attachments and Sysmon process evidence
+- Sysmon Event 1 and Event 3 process/network activity
+
+Correlation selectors include evidence such as:
+
+- exact SHA-256 identity
+- host identity
+- PID
+- process image
+- normalized `ProcessGuid`
+- source/destination network attributes
+- bounded temporal relationships
+
+A correlation does **not** independently establish:
+
+- malicious intent
+- causality
+- compromise
+- incident membership
+- threat-actor attribution
+
+Those claims require additional evidence.
+
+---
+
+## Evidence Reconstruction
+
+A TraceSOC case can preserve:
+
+- raw artifact identity
+- canonical observations
+- reconstructed PowerShell ScriptBlocks
+- detector evaluations
+- correlation evaluations
+- evidence relationships
+- hypotheses
+- findings
+- narratives
+- response records
+- raw-evidence indexes
+- case-level accounting
+
+The controlled reference case included six evidence sources and produced a complete raw-to-result reconstruction.
+
+### Reference-case measurements
+
+| Measurement | Result |
+| --- | ---: |
+| Canonical observations | 5,442 |
+| Observations with raw locators | 5,442 / 5,442 |
+| Detector evaluations | 32,658 |
+| Matched detections | 5 |
+| Hypotheses | 6 |
+| Findings | 6 |
+| Narratives | 6 |
+| Response records | 6 |
+
+The reference case is controlled validation evidence.
+
+It is **not malicious ground truth**, and TraceSOC does not convert the controlled activity into a confirmed compromise simply because detections or correlations exist.
+
+---
+
+## Reverse Traceability
+
+TraceSOC mechanically validated a complete consequential chain from a downstream response record back to original evidence:
+
+```text
+response
+→ narrative
+→ finding
+→ hypothesis
+→ detection / relationship
+→ correlation
+→ canonical observation
+→ exact raw locator
+→ embedded raw artifact
+→ original artifact SHA-256
+```
+
+This demonstrates that provenance survives the analytical pipeline rather than ending at the normalized-event layer.
+
+---
+
+## Validation Beyond the Reference Case
+
+The project was also tested against evidence outside the controlled six-source reconstruction.
+
+### External Zeek Validation
+
+```text
+23,145 source records
+→ 23,145 canonical observations
+→ source difference: 0
+```
+
+This tested real Zeek representation handling and source accounting outside the reference case.
+
+### Post-Freeze Holdout
+
+A semantically unseen holdout was evaluated only after the analytical implementation had been frozen.
+
+```text
+156,458 source records
+→ 156,458 canonical observations
+→ 938,748 detector evaluations
+```
+
+No production tuning was performed after holdout access.
+
+The holdout produced zero matched detections.
+
+That result is **not classified as detection success or failure**, because an exact valid observation-level scoring comparator was not established.
+
+Detection accuracy therefore remains:
+
+```text
+UNADJUDICATED
+```
+
+This distinction is intentional.
+
+---
+
+## Software Validation
+
+Current regression state:
+
+```text
+524 / 524 tests passed
+```
+
+Public acceptance:
+
+```text
+4 / 4 acceptance classes passed
+```
+
+The acceptance surface includes positive, negative, malformed-input and clean-state behavior.
+
+TraceSOC also includes tests covering areas such as:
+
+- provenance contracts
+- evidence-directory intake
+- malformed evidence handling
+- deterministic case output
+- source-native mapping
+- PowerShell ScriptBlock reconstruction
+- Sysmon semantics
+- Windows Security semantics
+- Zeek parsing
+- behavioral detections
+- bounded correlations
+- evidence graphs
+- hypotheses and findings
+- response validation
+- clock-state handling
+- source contradiction
+- multi-source scenarios
+
+---
+
+## Deterministic Reproduction
+
+Two fresh controlled six-source runs reproduced the same **11 core output hashes** and matched the accepted reference outputs.
+
+TraceSOC also provides a reproduction workflow for supplied evidence.
 
 ```powershell
-powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\finalist-reproduce.ps1
+powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass `
+  -File .\reproduce.ps1 `
+  -EvidenceDirectory 'C:\path\to\evidence' `
+  -OutputDirectory 'C:\path\to\tracesoc-output' `
+  -PythonExecutable '.\.venv\Scripts\python.exe'
 ```
 
-It runs the validated sequence `clean.ps1 -> provision.ps1 -> build.ps1 -> test.ps1` using the pinned finalist environment.
+The reproduction process validates that the supplied evidence remains unchanged and compares independently generated analytical outputs.
 
-Validated result:
+A successfully processed evidence set may legitimately produce **zero detections or zero findings** if its contents do not satisfy the implemented analytical rules.
 
-- `FINALIST_ONE_COMMAND_REPRODUCTION=PASS`
-- `FULL_REGRESSION=524/524_PASS`
-- `PUBLIC_ACCEPTANCE_CLASSES=4/4_PASS`
-- product source changed: `false`
-- test source changed: `false`
-- sealed holdout accessed: `false`
+---
 
-Current proof:
+## Build and Test
 
-`project-control/finalist-one-command-reproduction-validation.json`
+The validated development environment uses:
 
-### Deterministic reproduction on supplied evidence
+- Windows
+- Python 3.13.14
+- PowerShell 5.1
+- Git
+- Wazuh-independent local processing
+- approximately 8 GB host memory
 
-TraceSOC also provides `reproduce.ps1` for deterministic analysis of a supplied evidence directory.
-
-After the pinned finalist environment has been provisioned, use:
+Clean the local environment:
 
 ```powershell
-powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\reproduce.ps1 -EvidenceDirectory 'C:\path\to\evidence' -OutputDirectory 'C:\path\to\new-tracesoc-output' -PythonExecutable '.\.venv\Scripts\python.exe'
+.\clean.ps1
 ```
 
-The evidence directory must exist. The output directory must not already exist, must be outside the repository, and must not be inside the evidence directory.
-
-The reproduction driver performs two independent isolated builds/runs, executes regression and public-acceptance validation, compares deterministic derived outputs, and verifies that the supplied raw evidence remains unchanged.
-
-Evidence must fall within the documented supported representation boundary for semantic interpretation. A successfully ingested input can legitimately produce zero detections or zero findings when its evidence does not satisfy the implemented detection or correlation semantics.
-
-### Preconditions
-
-- Run supported commands from the repository root on Windows.
-- Supported Python is exactly 3.13.14 with the pinned repository environment.
-- The six reference-case raw evidence files must remain byte-identical to their indexed hashes.
-- Do not rerun or tune against the sealed post-freeze holdout during normal submission reproduction.
-- The process-scoped PowerShell execution-policy bypass changes no machine-wide execution-policy setting.
-
-### 1. Clean
+Provision the pinned Python environment:
 
 ```powershell
-powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\clean.ps1
+.\provision.ps1
 ```
 
-### 2. Provision
+Build and install TraceSOC:
 
 ```powershell
-powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\provision.ps1
+.\build.ps1
 ```
 
-### 3. Build
+Run the regression and public acceptance suite:
 
 ```powershell
-powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\build.ps1
+.\test.ps1
 ```
 
-### 4. Test
+---
 
-```powershell
-powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\test.ps1 -Commit 8751a679f36b4983cdd3d2b0b35f44e9a11c4f39 -Output results\acceptance\public-test-results.json
+## Resource Validation
+
+A larger real-format workload was used to measure processing behavior on the development workstation.
+
+| Measurement | Result |
+| --- | ---: |
+| Input records | 198,463 |
+| Accepted | 198,463 |
+| Quarantined | 0 |
+| Semantic events | 198,463 |
+| End-to-end runtime | 15.96 seconds |
+| Peak working set | ~487 MB |
+
+These are measurements from the tested workload and machine.
+
+They are **not universal scalability claims**.
+
+---
+
+## Repository Structure
+
+```text
+traceSOC/
+├── src/
+│   └── tracesoc/              # Product implementation
+│
+├── tests/
+│   ├── unit/                  # Unit and contract validation
+│   ├── integration/           # Multi-source integration testing
+│   └── fixtures/              # Controlled and synthetic test evidence
+│
+├── docs/                      # Architecture and evidence-contract documentation
+│
+├── evidence/
+│   ├── reference-case/        # Controlled six-source reconstruction
+│   └── final-proof/           # Validation and traceability proof
+│
+├── results/                   # Acceptance and validation results
+│
+├── scripts/                   # Reproduction and validation utilities
+│
+├── project-control/           # Engineering history and validation records
+│
+├── build.ps1
+├── clean.ps1
+├── provision.ps1
+├── reproduce.ps1
+├── test.ps1
+└── pyproject.toml
 ```
 
-The accepted clean-reproduction authority is:
+`project-control/` contains detailed development and validation records retained as engineering history. The product implementation itself lives under `src/tracesoc/`.
 
-`evidence/final-proof/frozen-clean-reproduction-resource-validation.json`
+---
 
-The current regression authority is:
+## Useful Technical Documentation
 
-`results/acceptance/public-test-results.json`
+- [`docs/evidence-contract.md`](./docs/evidence-contract.md) — provenance, canonical-event and semantic-event contracts
+- [`docs/first-behavioral-detection.md`](./docs/first-behavioral-detection.md) — behavioral detection boundary
+- [`docs/first-bounded-correlation.md`](./docs/first-bounded-correlation.md) — correlation design and claim boundaries
+- [`docs/explain-finding.md`](./docs/explain-finding.md) — raw-to-finding explanation path
+- [`docs/finding-serialization-contract.md`](./docs/finding-serialization-contract.md) — deterministic finding serialization
+- [`docs/four-source-adapter-slice.md`](./docs/four-source-adapter-slice.md) — early multi-source adapter architecture
 
-## Reviewer navigation
+---
 
-- `executive-brief.pdf` — executive Problem / Impact / Proof / Defense summary
-- `incident-report.pdf` — technical validation and evidence-reconstruction report
-- `defense-runbook.md` — live-defense walkthrough and verification guide
-- `assessment-manifest.json` — submission/environment/command contract
-- `finalist-evidence-ledger.json` — machine-readable finalist claim ledger
-- `evidence-index.csv` — evidence-backed claims and limitations
-- `timeline.csv` — canonical finalist timeline surface
-- `ioc-set.csv` — confirmed-malicious IOC submission surface
-- `continuity-record.md` — prior-stage continuity and migration record
-- `project-control/finalist-candidate-freeze-v04.json` — frozen technical candidate
-- `evidence/reference-case/` — controlled six-source reconstruction
-- `evidence/final-proof/` — finalist proof and adjudication records
-- `evidence/finalist-problem-impact-proof-defense.md` — problem, impact, proof and defense source
+## Known Limitations
 
-## Known claim boundaries
+TraceSOC deliberately records its current boundaries.
 
-- Controlled six-source reference activity is not malicious ground truth.
-- Correlation does not independently establish causality or maliciousness.
-- Post-freeze holdout detection accuracy is UNADJUDICATED.
-- Cross-publisher network holdout diversity is not established.
-- No confirmed malicious IOC is asserted from the finalist reference evidence.
-- Response records do not claim live response execution.
-- Resource measurements are measured-case evidence, not universal scalability claims.
+- It is not a universal log parser.
+- Native EVTX ingestion is outside the current supported boundary.
+- Correlation does not independently prove causality or malicious intent.
+- Detection accuracy on the post-freeze holdout remains unadjudicated.
+- Current network development and holdout evidence do not establish cross-publisher generalization.
+- Response records distinguish planning/simulation from executed containment.
+- Resource measurements apply only to the measured workloads and machine.
+- A matched detection is not automatically a confirmed incident.
 
-The zero-row confirmed-malicious IOC result is intentional: the finalist reference evidence does not independently establish a malicious IOC.
+These limitations are part of the product's evidence model rather than hidden behind stronger claims.
 
-## Packaging state
+---
 
-Completed:
+## Project Origin
 
-- technical candidate freeze
-- machine-readable finalist core
-- controlled six-source reconstruction
-- external real-evidence validation
-- sealed post-freeze holdout adjudication
-- end-to-end reverse-trace proof
-- deterministic clean reproduction
-- measured resource validation
-- regression and acceptance validation
-- continuity finalization
-- business-impact source
-- stale presentation cleanup
-- rebuild-utility safeguards
-- finalist living-control refresh
-- README technical and reproduction content reconciliation
+TraceSOC is my original security-engineering project, designed and implemented from scratch.
 
-Remaining final submission gates:
+It was developed during the finalist phase of the Ubuntu Bridge Initiative Advanced SOC Analysis programme, where I used the project to bring together lessons from earlier work in:
 
-- `manifest.sha256` generation only after the submission tree is frozen
-- final manifest verification after upload
+- SOC investigation
+- DFIR
+- telemetry normalization
+- detection engineering
+- evidence provenance
+- threat hunting
+- adversarial testing
+- deterministic validation
 
-## Anti-drift rule
+The architecture and implementation are TraceSOC-native rather than a repackaging of an earlier investigation.
 
-Do not treat historical test counts, development milestones, Stage 9A case-specific answers, provisional plans, or superseded report artifacts as current finalist truth.
+---
 
-When a summary conflicts with the current finalist authorities, the authenticated proof/control records govern.
+## What TraceSOC Demonstrates
 
+This project demonstrates hands-on work across:
+
+- SOC and DFIR engineering
+- multi-source security telemetry
+- Python security tooling
+- evidence normalization
+- provenance preservation
+- detection engineering
+- cross-source correlation
+- hypothesis and finding construction
+- deterministic testing
+- anti-hardcoding controls
+- malformed-input handling
+- holdout methodology
+- reproducible security analysis
+- resource-constrained engineering
+
+The central design principle remains:
+
+> **Preserve what the evidence proves, preserve what it does not prove, and make every consequential conclusion traceable back to source.**
